@@ -1,0 +1,453 @@
+DateTime : 3/3/2018 11:06:57 AM
+
+
+MessageObject reference not set to an instance of an object.
+
+StackTrace   at AdminWebapi.Controllers.UserController.<Login>d__2.MoveNext() in E:\Mehmood ul Hassan\Test Project\AdminWebApi\AdminWebapi\Controllers\UserController.cs:line 72
+DateTime : 3/3/2018 11:07:43 AM
+
+
+MessageObject reference not set to an instance of an object.
+
+StackTrace   at AdminWebapi.Controllers.UserController.<Login>d__2.MoveNext() in E:\Mehmood ul Hassan\Test Project\AdminWebApi\AdminWebapi\Controllers\UserController.cs:line 72
+DateTime : 3/3/2018 11:07:56 AM
+
+
+MessageColumn names in each table must be unique. Column name 'User_Id' in table 'PaymentCards' is specified more than once.
+
+StackTrace   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.RunExecuteNonQueryTds(String methodName, Boolean async, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.<NonQuery>b__0(DbCommand t, DbCommandInterceptionContext`1 c)
+   at System.Data.Entity.Infrastructure.Interception.InternalDispatcher`1.Dispatch[TTarget,TInterceptionContext,TResult](TTarget target, Func`3 operation, TInterceptionContext interceptionContext, Action`3 executing, Action`3 executed)
+   at System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.NonQuery(DbCommand command, DbCommandInterceptionContext interceptionContext)
+   at System.Data.Entity.Internal.InterceptableDbCommand.ExecuteNonQuery()
+   at System.Data.Entity.Migrations.DbMigrator.ExecuteSql(MigrationStatement migrationStatement, DbConnection connection, DbTransaction transaction, DbInterceptionContext interceptionContext)
+   at System.Data.Entity.Migrations.DbMigrator.ExecuteStatementsInternal(IEnumerable`1 migrationStatements, DbConnection connection, DbTransaction transaction, DbInterceptionContext interceptionContext)
+   at System.Data.Entity.Migrations.DbMigrator.ExecuteStatementsWithinTransaction(IEnumerable`1 migrationStatements, DbTransaction transaction, DbInterceptionContext interceptionContext)
+   at System.Data.Entity.Migrations.DbMigrator.ExecuteStatementsWithinNewTransaction(IEnumerable`1 migrationStatements, DbConnection connection, DbInterceptionContext interceptionContext)
+   at System.Data.Entity.Migrations.DbMigrator.ExecuteStatementsInternal(IEnumerable`1 migrationStatements, DbConnection connection, DbInterceptionContext interceptionContext)
+   at System.Data.Entity.Migrations.DbMigrator.ExecuteStatementsInternal(IEnumerable`1 migrationStatements, DbConnection connection)
+   at System.Data.Entity.Migrations.DbMigrator.<>c__DisplayClass32.<ExecuteStatements>b__30()
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.<>c__DisplayClass1.<Execute>b__0()
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute(Action operation)
+   at System.Data.Entity.Migrations.DbMigrator.ExecuteStatements(IEnumerable`1 migrationStatements, DbTransaction existingTransaction)
+   at System.Data.Entity.Migrations.DbMigrator.ExecuteStatements(IEnumerable`1 migrationStatements)
+   at System.Data.Entity.Migrations.DbMigrator.ExecuteOperations(String migrationId, VersionedModel targetModel, IEnumerable`1 operations, IEnumerable`1 systemOperations, Boolean downgrading, Boolean auto)
+   at System.Data.Entity.Migrations.DbMigrator.AutoMigrate(String migrationId, VersionedModel sourceModel, VersionedModel targetModel, Boolean downgrading)
+   at System.Data.Entity.Migrations.DbMigrator.Upgrade(IEnumerable`1 pendingMigrations, String targetMigrationId, String lastMigrationId)
+   at System.Data.Entity.Migrations.DbMigrator.UpdateInternal(String targetMigration)
+   at System.Data.Entity.Migrations.DbMigrator.<>c__DisplayClasse.<Update>b__d()
+   at System.Data.Entity.Migrations.DbMigrator.EnsureDatabaseExists(Action mustSucceedToKeepDatabase)
+   at System.Data.Entity.Migrations.DbMigrator.Update(String targetMigration)
+   at System.Data.Entity.MigrateDatabaseToLatestVersion`2.InitializeDatabase(TContext context)
+   at System.Data.Entity.Internal.InternalContext.<>c__DisplayClassf`1.<CreateInitializationAction>b__e()
+   at System.Data.Entity.Internal.InternalContext.PerformInitializationAction(Action action)
+   at System.Data.Entity.Internal.InternalContext.PerformDatabaseInitialization()
+   at System.Data.Entity.Internal.LazyInternalContext.<InitializeDatabase>b__4(InternalContext c)
+   at System.Data.Entity.Internal.RetryAction`1.PerformAction(TInput input)
+   at System.Data.Entity.Internal.LazyInternalContext.InitializeDatabaseAction(Action`1 action)
+   at System.Data.Entity.Internal.LazyInternalContext.InitializeDatabase()
+   at System.Data.Entity.Internal.InternalContext.Initialize()
+   at System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   at System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   at System.Data.Entity.Internal.Linq.InternalSet`1.Include(String path)
+   at System.Data.Entity.Infrastructure.DbQuery`1.Include(String path)
+   at System.Data.Entity.QueryableExtensions.Include[T](IQueryable`1 source, String path)
+   at System.Data.Entity.QueryableExtensions.Include[T,TProperty](IQueryable`1 source, Expression`1 path)
+   at AdminWebapi.Controllers.UserController.<Login>d__2.MoveNext() in E:\Mehmood ul Hassan\Test Project\AdminWebApi\AdminWebapi\Controllers\UserController.cs:line 73
+DateTime : 3/6/2018 11:42:33 AM
+
+
+MessageLINQ to Entities does not recognize the method 'System.String Hash(System.String)' method, and this method cannot be translated into a store expression.
+
+StackTrace   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.DefaultTranslator.Translate(ExpressionConverter parent, MethodCallExpression call)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.TypedTranslate(ExpressionConverter parent, MethodCallExpression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TypedTranslator`1.Translate(ExpressionConverter parent, Expression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.EqualsTranslator.TypedTranslate(ExpressionConverter parent, BinaryExpression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TypedTranslator`1.Translate(ExpressionConverter parent, Expression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.BinaryTranslator.TypedTranslate(ExpressionConverter parent, BinaryExpression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TypedTranslator`1.Translate(ExpressionConverter parent, Expression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateLambda(LambdaExpression lambda, DbExpression input)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateLambda(LambdaExpression lambda, DbExpression input, DbExpressionBinding& binding)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.OneLambdaTranslator.Translate(ExpressionConverter parent, MethodCallExpression call, DbExpression& source, DbExpressionBinding& sourceBinding, DbExpression& lambda)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.OneLambdaTranslator.Translate(ExpressionConverter parent, MethodCallExpression call)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.SequenceMethodTranslator.Translate(ExpressionConverter parent, MethodCallExpression call, SequenceMethod sequenceMethod)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.TypedTranslate(ExpressionConverter parent, MethodCallExpression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TypedTranslator`1.Translate(ExpressionConverter parent, Expression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.UnarySequenceMethodTranslator.Translate(ExpressionConverter parent, MethodCallExpression call)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.SequenceMethodTranslator.Translate(ExpressionConverter parent, MethodCallExpression call, SequenceMethod sequenceMethod)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.TypedTranslate(ExpressionConverter parent, MethodCallExpression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TypedTranslator`1.Translate(ExpressionConverter parent, Expression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.Convert()
+   at System.Data.Entity.Core.Objects.ELinq.ELinqQueryState.GetExecutionPlan(Nullable`1 forMergeOption)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__6()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__5()
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<System.Collections.Generic.IEnumerable<T>.GetEnumerator>b__0()
+   at System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   at System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.<GetElementFunction>b__1[TResult](IEnumerable`1 sequence)
+   at System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.ExecuteSingle[TResult](IEnumerable`1 query, Expression queryRoot)
+   at System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.System.Linq.IQueryProvider.Execute[TResult](Expression expression)
+   at System.Data.Entity.Internal.Linq.DbQueryProvider.Execute[TResult](Expression expression)
+   at System.Linq.Queryable.FirstOrDefault[TSource](IQueryable`1 source)
+   at BusinessLogic.UserServices.UserService.ValidateUser(LoginBindingModel loginModel) in E:\Mehmood ul Hassan\Test Project\AdminWebApi\BusinessLogic\UserServices\UserService.cs:line 39
+   at AdminWebapi.Controllers.UserController.<Login>d__3.MoveNext() in E:\Mehmood ul Hassan\Test Project\AdminWebApi\AdminWebapi\Controllers\UserController.cs:line 76
+DateTime : 3/6/2018 11:42:55 AM
+
+
+MessageLINQ to Entities does not recognize the method 'System.String Hash(System.String)' method, and this method cannot be translated into a store expression.
+
+StackTrace   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.DefaultTranslator.Translate(ExpressionConverter parent, MethodCallExpression call)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.TypedTranslate(ExpressionConverter parent, MethodCallExpression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TypedTranslator`1.Translate(ExpressionConverter parent, Expression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.EqualsTranslator.TypedTranslate(ExpressionConverter parent, BinaryExpression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TypedTranslator`1.Translate(ExpressionConverter parent, Expression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.BinaryTranslator.TypedTranslate(ExpressionConverter parent, BinaryExpression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TypedTranslator`1.Translate(ExpressionConverter parent, Expression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateLambda(LambdaExpression lambda, DbExpression input)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateLambda(LambdaExpression lambda, DbExpression input, DbExpressionBinding& binding)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.OneLambdaTranslator.Translate(ExpressionConverter parent, MethodCallExpression call, DbExpression& source, DbExpressionBinding& sourceBinding, DbExpression& lambda)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.OneLambdaTranslator.Translate(ExpressionConverter parent, MethodCallExpression call)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.SequenceMethodTranslator.Translate(ExpressionConverter parent, MethodCallExpression call, SequenceMethod sequenceMethod)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.TypedTranslate(ExpressionConverter parent, MethodCallExpression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TypedTranslator`1.Translate(ExpressionConverter parent, Expression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.UnarySequenceMethodTranslator.Translate(ExpressionConverter parent, MethodCallExpression call)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.SequenceMethodTranslator.Translate(ExpressionConverter parent, MethodCallExpression call, SequenceMethod sequenceMethod)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.TypedTranslate(ExpressionConverter parent, MethodCallExpression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TypedTranslator`1.Translate(ExpressionConverter parent, Expression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.Convert()
+   at System.Data.Entity.Core.Objects.ELinq.ELinqQueryState.GetExecutionPlan(Nullable`1 forMergeOption)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__6()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__5()
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<System.Collections.Generic.IEnumerable<T>.GetEnumerator>b__0()
+   at System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   at System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.<GetElementFunction>b__1[TResult](IEnumerable`1 sequence)
+   at System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.ExecuteSingle[TResult](IEnumerable`1 query, Expression queryRoot)
+   at System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.System.Linq.IQueryProvider.Execute[TResult](Expression expression)
+   at System.Data.Entity.Internal.Linq.DbQueryProvider.Execute[TResult](Expression expression)
+   at System.Linq.Queryable.FirstOrDefault[TSource](IQueryable`1 source)
+   at BusinessLogic.UserServices.UserService.ValidateUser(LoginBindingModel loginModel) in E:\Mehmood ul Hassan\Test Project\AdminWebApi\BusinessLogic\UserServices\UserService.cs:line 39
+   at AdminWebapi.Controllers.UserController.<Login>d__3.MoveNext() in E:\Mehmood ul Hassan\Test Project\AdminWebApi\AdminWebapi\Controllers\UserController.cs:line 76
+DateTime : 3/6/2018 4:00:03 PM
+
+
+MessageLogin failed for user 'AXACT\ISB-APP-F1-08$'.
+
+StackTrace   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at System.Data.Entity.Infrastructure.Interception.InternalDispatcher`1.Dispatch[TTarget,TInterceptionContext](TTarget target, Action`2 operation, TInterceptionContext interceptionContext, Action`3 executing, Action`3 executed)
+   at System.Data.Entity.Infrastructure.Interception.DbConnectionDispatcher.Open(DbConnection connection, DbInterceptionContext interceptionContext)
+   at System.Data.Entity.SqlServer.SqlProviderServices.<>c__DisplayClass33.<UsingConnection>b__32()
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.<>c__DisplayClass1.<Execute>b__0()
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.SqlServer.SqlProviderServices.UsingMasterConnection(DbConnection sqlConnection, Action`1 act)
+   at System.Data.Entity.SqlServer.SqlProviderServices.CreateDatabaseFromScript(Nullable`1 commandTimeout, DbConnection sqlConnection, String createDatabaseScript)
+   at System.Data.Entity.SqlServer.SqlProviderServices.DbCreateDatabase(DbConnection connection, Nullable`1 commandTimeout, StoreItemCollection storeItemCollection)
+   at System.Data.Entity.Migrations.Utilities.DatabaseCreator.Create(DbConnection connection)
+   at System.Data.Entity.Migrations.DbMigrator.EnsureDatabaseExists(Action mustSucceedToKeepDatabase)
+   at System.Data.Entity.Migrations.DbMigrator.Update(String targetMigration)
+   at System.Data.Entity.MigrateDatabaseToLatestVersion`2.InitializeDatabase(TContext context)
+   at System.Data.Entity.Internal.InternalContext.PerformInitializationAction(Action action)
+   at System.Data.Entity.Internal.InternalContext.PerformDatabaseInitialization()
+   at System.Data.Entity.Internal.RetryAction`1.PerformAction(TInput input)
+   at System.Data.Entity.Internal.LazyInternalContext.InitializeDatabaseAction(Action`1 action)
+   at System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   at System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   at System.Data.Entity.Internal.Linq.InternalSet`1.Include(String path)
+   at System.Data.Entity.Infrastructure.DbQuery`1.Include(String path)
+   at DBAccess.GenericRepository.GenericRepository`1.<>c.<GetWithInclude>b__17_0(IQueryable`1 current, String inc) in E:\Mehmood ul Hassan\Test Project\AdminWebApi\DBAccess\GenericRepository\GenericRepository.cs:line 189
+   at System.Linq.Enumerable.Aggregate[TSource,TAccumulate](IEnumerable`1 source, TAccumulate seed, Func`3 func)
+   at DBAccess.GenericRepository.GenericRepository`1.GetWithInclude(Expression`1 predicate, String[] include) in E:\Mehmood ul Hassan\Test Project\AdminWebApi\DBAccess\GenericRepository\GenericRepository.cs:line 189
+   at BusinessLogic.UserServices.UserService.ValidateUser(LoginBindingModel loginModel) in E:\Mehmood ul Hassan\Test Project\AdminWebApi\BusinessLogic\UserServices\UserService.cs:line 40
+   at AdminWebapi.Controllers.UserController.<Login>d__3.MoveNext() in E:\Mehmood ul Hassan\Test Project\AdminWebApi\AdminWebapi\Controllers\UserController.cs:line 76
+DateTime : 3/7/2018 10:23:57 AM
+
+
+MessageObject reference not set to an instance of an object.
+
+StackTrace   at BusinessLogic.UserServices.UserService.ValidateAdmin(LoginBindingModel loginModel) in E:\Mehmood ul Hassan\Test Project\AdminWebApi\BusinessLogic\UserServices\UserService.cs:line 44
+   at AdminWebapi.Controllers.UserController.<WebPanelLogin>d__4.MoveNext() in E:\Mehmood ul Hassan\Test Project\AdminWebApi\AdminWebapi\Controllers\UserController.cs:line 116
+DateTime : 3/7/2018 10:24:11 AM
+
+
+MessageObject reference not set to an instance of an object.
+
+StackTrace   at BusinessLogic.UserServices.UserService.ValidateAdmin(LoginBindingModel loginModel) in E:\Mehmood ul Hassan\Test Project\AdminWebApi\BusinessLogic\UserServices\UserService.cs:line 44
+   at AdminWebapi.Controllers.UserController.<WebPanelLogin>d__4.MoveNext() in E:\Mehmood ul Hassan\Test Project\AdminWebApi\AdminWebapi\Controllers\UserController.cs:line 116
+DateTime : 3/7/2018 10:24:34 AM
+
+
+MessageObject reference not set to an instance of an object.
+
+StackTrace   at BusinessLogic.UserServices.UserService.ValidateAdmin(LoginBindingModel loginModel) in E:\Mehmood ul Hassan\Test Project\AdminWebApi\BusinessLogic\UserServices\UserService.cs:line 44
+   at AdminWebapi.Controllers.UserController.<WebPanelLogin>d__4.MoveNext() in E:\Mehmood ul Hassan\Test Project\AdminWebApi\AdminWebapi\Controllers\UserController.cs:line 116
+DateTime : 3/9/2018 1:04:44 PM
+
+
+MessageNo MediaTypeFormatter is available to read an object of type 'Token' from content with media type 'text/html'.
+
+StackTrace   at DBAccess.Models.UserExtension.<GenerateToken>d__2.MoveNext() in E:\Mehmood ul Hassan\Test Project\AdminWebApi\DBAccess\Models\User.cs:line 166
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at AdminWebapi.Controllers.UserController.<WebPanelLogin>d__5.MoveNext() in E:\Mehmood ul Hassan\Test Project\AdminWebApi\AdminWebapi\Controllers\UserController.cs:line 121
+DateTime : 3/9/2018 1:08:01 PM
+
+
+MessageNo MediaTypeFormatter is available to read an object of type 'Token' from content with media type 'text/html'.
+
+StackTrace   at DBAccess.Models.UserExtension.<GenerateToken>d__2.MoveNext() in E:\Mehmood ul Hassan\Test Project\AdminWebApi\DBAccess\Models\User.cs:line 166
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at AdminWebapi.Controllers.UserController.<WebPanelLogin>d__5.MoveNext() in E:\Mehmood ul Hassan\Test Project\AdminWebApi\AdminWebapi\Controllers\UserController.cs:line 121
+DateTime : 3/9/2018 1:10:11 PM
+
+
+MessageNo MediaTypeFormatter is available to read an object of type 'Token' from content with media type 'text/html'.
+
+StackTrace   at DBAccess.Models.UserExtension.<GenerateToken>d__2.MoveNext() in E:\Mehmood ul Hassan\Test Project\AdminWebApi\DBAccess\Models\User.cs:line 166
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at AdminWebapi.Controllers.UserController.<WebPanelLogin>d__5.MoveNext() in E:\Mehmood ul Hassan\Test Project\AdminWebApi\AdminWebapi\Controllers\UserController.cs:line 121
+DateTime : 3/9/2018 1:10:12 PM
+
+
+MessageNo MediaTypeFormatter is available to read an object of type 'Token' from content with media type 'text/html'.
+
+StackTrace   at DBAccess.Models.UserExtension.<GenerateToken>d__2.MoveNext() in E:\Mehmood ul Hassan\Test Project\AdminWebApi\DBAccess\Models\User.cs:line 166
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at AdminWebapi.Controllers.UserController.<WebPanelLogin>d__5.MoveNext() in E:\Mehmood ul Hassan\Test Project\AdminWebApi\AdminWebapi\Controllers\UserController.cs:line 121
+DateTime : 3/9/2018 1:10:13 PM
+
+
+MessageNo MediaTypeFormatter is available to read an object of type 'Token' from content with media type 'text/html'.
+
+StackTrace   at DBAccess.Models.UserExtension.<GenerateToken>d__2.MoveNext() in E:\Mehmood ul Hassan\Test Project\AdminWebApi\DBAccess\Models\User.cs:line 166
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at AdminWebapi.Controllers.UserController.<WebPanelLogin>d__5.MoveNext() in E:\Mehmood ul Hassan\Test Project\AdminWebApi\AdminWebapi\Controllers\UserController.cs:line 121
+DateTime : 3/9/2018 1:10:13 PM
+
+
+MessageNo MediaTypeFormatter is available to read an object of type 'Token' from content with media type 'text/html'.
+
+StackTrace   at DBAccess.Models.UserExtension.<GenerateToken>d__2.MoveNext() in E:\Mehmood ul Hassan\Test Project\AdminWebApi\DBAccess\Models\User.cs:line 166
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at AdminWebapi.Controllers.UserController.<WebPanelLogin>d__5.MoveNext() in E:\Mehmood ul Hassan\Test Project\AdminWebApi\AdminWebapi\Controllers\UserController.cs:line 121
+DateTime : 3/9/2018 1:10:13 PM
+
+
+MessageNo MediaTypeFormatter is available to read an object of type 'Token' from content with media type 'text/html'.
+
+StackTrace   at DBAccess.Models.UserExtension.<GenerateToken>d__2.MoveNext() in E:\Mehmood ul Hassan\Test Project\AdminWebApi\DBAccess\Models\User.cs:line 166
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at AdminWebapi.Controllers.UserController.<WebPanelLogin>d__5.MoveNext() in E:\Mehmood ul Hassan\Test Project\AdminWebApi\AdminWebapi\Controllers\UserController.cs:line 121
+DateTime : 3/9/2018 1:10:13 PM
+
+
+MessageNo MediaTypeFormatter is available to read an object of type 'Token' from content with media type 'text/html'.
+
+StackTrace   at DBAccess.Models.UserExtension.<GenerateToken>d__2.MoveNext() in E:\Mehmood ul Hassan\Test Project\AdminWebApi\DBAccess\Models\User.cs:line 166
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at AdminWebapi.Controllers.UserController.<WebPanelLogin>d__5.MoveNext() in E:\Mehmood ul Hassan\Test Project\AdminWebApi\AdminWebapi\Controllers\UserController.cs:line 121
+DateTime : 3/9/2018 1:10:13 PM
+
+
+MessageNo MediaTypeFormatter is available to read an object of type 'Token' from content with media type 'text/html'.
+
+StackTrace   at DBAccess.Models.UserExtension.<GenerateToken>d__2.MoveNext() in E:\Mehmood ul Hassan\Test Project\AdminWebApi\DBAccess\Models\User.cs:line 166
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at AdminWebapi.Controllers.UserController.<WebPanelLogin>d__5.MoveNext() in E:\Mehmood ul Hassan\Test Project\AdminWebApi\AdminWebapi\Controllers\UserController.cs:line 121
+DateTime : 3/9/2018 1:10:14 PM
+
+
+MessageNo MediaTypeFormatter is available to read an object of type 'Token' from content with media type 'text/html'.
+
+StackTrace   at DBAccess.Models.UserExtension.<GenerateToken>d__2.MoveNext() in E:\Mehmood ul Hassan\Test Project\AdminWebApi\DBAccess\Models\User.cs:line 166
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at AdminWebapi.Controllers.UserController.<WebPanelLogin>d__5.MoveNext() in E:\Mehmood ul Hassan\Test Project\AdminWebApi\AdminWebapi\Controllers\UserController.cs:line 121
+DateTime : 3/9/2018 1:10:14 PM
+
+
+MessageNo MediaTypeFormatter is available to read an object of type 'Token' from content with media type 'text/html'.
+
+StackTrace   at DBAccess.Models.UserExtension.<GenerateToken>d__2.MoveNext() in E:\Mehmood ul Hassan\Test Project\AdminWebApi\DBAccess\Models\User.cs:line 166
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at AdminWebapi.Controllers.UserController.<WebPanelLogin>d__5.MoveNext() in E:\Mehmood ul Hassan\Test Project\AdminWebApi\AdminWebapi\Controllers\UserController.cs:line 121
+DateTime : 3/9/2018 1:10:14 PM
+
+
+MessageNo MediaTypeFormatter is available to read an object of type 'Token' from content with media type 'text/html'.
+
+StackTrace   at DBAccess.Models.UserExtension.<GenerateToken>d__2.MoveNext() in E:\Mehmood ul Hassan\Test Project\AdminWebApi\DBAccess\Models\User.cs:line 166
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at AdminWebapi.Controllers.UserController.<WebPanelLogin>d__5.MoveNext() in E:\Mehmood ul Hassan\Test Project\AdminWebApi\AdminWebapi\Controllers\UserController.cs:line 121
+DateTime : 3/9/2018 1:10:14 PM
+
+
+MessageNo MediaTypeFormatter is available to read an object of type 'Token' from content with media type 'text/html'.
+
+StackTrace   at DBAccess.Models.UserExtension.<GenerateToken>d__2.MoveNext() in E:\Mehmood ul Hassan\Test Project\AdminWebApi\DBAccess\Models\User.cs:line 166
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at AdminWebapi.Controllers.UserController.<WebPanelLogin>d__5.MoveNext() in E:\Mehmood ul Hassan\Test Project\AdminWebApi\AdminWebapi\Controllers\UserController.cs:line 121
+DateTime : 3/9/2018 1:10:14 PM
+
+
+MessageNo MediaTypeFormatter is available to read an object of type 'Token' from content with media type 'text/html'.
+
+StackTrace   at DBAccess.Models.UserExtension.<GenerateToken>d__2.MoveNext() in E:\Mehmood ul Hassan\Test Project\AdminWebApi\DBAccess\Models\User.cs:line 166
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at AdminWebapi.Controllers.UserController.<WebPanelLogin>d__5.MoveNext() in E:\Mehmood ul Hassan\Test Project\AdminWebApi\AdminWebapi\Controllers\UserController.cs:line 121
+DateTime : 3/9/2018 1:10:14 PM
+
+
+MessageNo MediaTypeFormatter is available to read an object of type 'Token' from content with media type 'text/html'.
+
+StackTrace   at DBAccess.Models.UserExtension.<GenerateToken>d__2.MoveNext() in E:\Mehmood ul Hassan\Test Project\AdminWebApi\DBAccess\Models\User.cs:line 166
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at AdminWebapi.Controllers.UserController.<WebPanelLogin>d__5.MoveNext() in E:\Mehmood ul Hassan\Test Project\AdminWebApi\AdminWebapi\Controllers\UserController.cs:line 121
+DateTime : 3/9/2018 1:10:15 PM
+
+
+MessageNo MediaTypeFormatter is available to read an object of type 'Token' from content with media type 'text/html'.
+
+StackTrace   at DBAccess.Models.UserExtension.<GenerateToken>d__2.MoveNext() in E:\Mehmood ul Hassan\Test Project\AdminWebApi\DBAccess\Models\User.cs:line 166
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at AdminWebapi.Controllers.UserController.<WebPanelLogin>d__5.MoveNext() in E:\Mehmood ul Hassan\Test Project\AdminWebApi\AdminWebapi\Controllers\UserController.cs:line 121
+DateTime : 3/9/2018 1:10:15 PM
+
+
+MessageNo MediaTypeFormatter is available to read an object of type 'Token' from content with media type 'text/html'.
+
+StackTrace   at DBAccess.Models.UserExtension.<GenerateToken>d__2.MoveNext() in E:\Mehmood ul Hassan\Test Project\AdminWebApi\DBAccess\Models\User.cs:line 166
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at AdminWebapi.Controllers.UserController.<WebPanelLogin>d__5.MoveNext() in E:\Mehmood ul Hassan\Test Project\AdminWebApi\AdminWebapi\Controllers\UserController.cs:line 121
+DateTime : 3/9/2018 1:10:16 PM
+
+
+MessageNo MediaTypeFormatter is available to read an object of type 'Token' from content with media type 'text/html'.
+
+StackTrace   at DBAccess.Models.UserExtension.<GenerateToken>d__2.MoveNext() in E:\Mehmood ul Hassan\Test Project\AdminWebApi\DBAccess\Models\User.cs:line 166
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at AdminWebapi.Controllers.UserController.<WebPanelLogin>d__5.MoveNext() in E:\Mehmood ul Hassan\Test Project\AdminWebApi\AdminWebapi\Controllers\UserController.cs:line 121
+DateTime : 3/9/2018 1:10:16 PM
+
+
+MessageNo MediaTypeFormatter is available to read an object of type 'Token' from content with media type 'text/html'.
+
+StackTrace   at DBAccess.Models.UserExtension.<GenerateToken>d__2.MoveNext() in E:\Mehmood ul Hassan\Test Project\AdminWebApi\DBAccess\Models\User.cs:line 166
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at AdminWebapi.Controllers.UserController.<WebPanelLogin>d__5.MoveNext() in E:\Mehmood ul Hassan\Test Project\AdminWebApi\AdminWebapi\Controllers\UserController.cs:line 121
+DateTime : 3/9/2018 1:10:16 PM
+
+
+MessageNo MediaTypeFormatter is available to read an object of type 'Token' from content with media type 'text/html'.
+
+StackTrace   at DBAccess.Models.UserExtension.<GenerateToken>d__2.MoveNext() in E:\Mehmood ul Hassan\Test Project\AdminWebApi\DBAccess\Models\User.cs:line 166
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at AdminWebapi.Controllers.UserController.<WebPanelLogin>d__5.MoveNext() in E:\Mehmood ul Hassan\Test Project\AdminWebApi\AdminWebapi\Controllers\UserController.cs:line 121
+DateTime : 3/9/2018 1:10:16 PM
+
+
+MessageNo MediaTypeFormatter is available to read an object of type 'Token' from content with media type 'text/html'.
+
+StackTrace   at DBAccess.Models.UserExtension.<GenerateToken>d__2.MoveNext() in E:\Mehmood ul Hassan\Test Project\AdminWebApi\DBAccess\Models\User.cs:line 166
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at AdminWebapi.Controllers.UserController.<WebPanelLogin>d__5.MoveNext() in E:\Mehmood ul Hassan\Test Project\AdminWebApi\AdminWebapi\Controllers\UserController.cs:line 121
+DateTime : 3/9/2018 1:11:11 PM
+
+
+MessageNo MediaTypeFormatter is available to read an object of type 'Token' from content with media type 'text/html'.
+
+StackTrace   at DBAccess.Models.UserExtension.<GenerateToken>d__2.MoveNext() in E:\Mehmood ul Hassan\Test Project\AdminWebApi\DBAccess\Models\User.cs:line 166
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at AdminWebapi.Controllers.UserController.<WebPanelLogin>d__5.MoveNext() in E:\Mehmood ul Hassan\Test Project\AdminWebApi\AdminWebapi\Controllers\UserController.cs:line 121
