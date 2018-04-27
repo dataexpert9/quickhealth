@@ -24,6 +24,7 @@ namespace DBAccess.Models
             UserAddresses = new HashSet<UserAddress>();
             UserDevices = new HashSet<UserDevice>();
             Feedback = new HashSet<ContactUs>();
+            DoctorDocuments = new HashSet<DoctorDocument>();
         }
 
         public int Id { get; set; }
@@ -56,18 +57,15 @@ namespace DBAccess.Models
         public bool EmailConfirmed { get; set; }
 
         public bool PhoneConfirmed { get; set; }
-
-
         public string Country { get; set; }
         public string City { get; set; }
         public int ProviderType { get; set; }
-        public string SpecializationFileURL { get; set; }
-        public string DepartmentFileURL { get; set; }
-        public string LatestQualificationFileURL { get; set; }
-        public string EductionCertificateFileURL { get; set; }
-        public string ProfessionalCertificateFileURL { get; set; }
+        public string Specialization { get; set; }
+        public string Department { get; set; }
+        public string LatestQualification { get; set; }
 
-
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<DoctorDocument> DoctorDocuments { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PaymentCard> PaymentCards { get; set; }
 

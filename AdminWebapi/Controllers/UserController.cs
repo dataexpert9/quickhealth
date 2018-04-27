@@ -361,8 +361,8 @@ namespace AdminWebapi.Controllers
             {
                 return BadRequest(ModelState);
             }
-            var vendor = _UserService.RegisterAsDoctor(model);
-            if (vendor == null)
+            var doctor = _UserService.RegisterAsDoctor(model);
+            if (doctor == null)
             {
                 return Content(HttpStatusCode.OK, new CustomResponse<Error>
                 {
@@ -373,8 +373,8 @@ namespace AdminWebapi.Controllers
             }
             else
             {
-                await vendor.GenerateToken(Request);
-                CustomResponse<User> response = new CustomResponse<User> { Message = GlobalUtility.ResponseMessages.Success, StatusCode = (int)HttpStatusCode.OK, Result = vendor };
+                await doctor.GenerateToken(Request);
+                CustomResponse<User> response = new CustomResponse<User> { Message = GlobalUtility.ResponseMessages.Success, StatusCode = (int)HttpStatusCode.OK, Result = doctor };
                 return Ok(response);
             }
         }

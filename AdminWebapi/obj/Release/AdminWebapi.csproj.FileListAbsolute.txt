@@ -91,8 +91,6 @@ E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\Unity.RegistrationByConvent
 E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\Unity.ServiceLocation.dll
 E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\Unity.WebApi.dll
 E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\WebActivatorEx.dll
-E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\Microsoft.Practices.ServiceLocation.dll
-E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\CommonServiceLocator.dll
 E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\BusinessLogic.pdb
 E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\BusinessLogic.dll.config
 E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\DBAccess.pdb

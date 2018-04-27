@@ -102,13 +102,70 @@ namespace BusinessLogic.UserServices
                     Country = model.Country,
                     City = model.City,
                     ProviderType = model.ProviderType,
-                    SpecializationFileURL = ImageHelper.SaveFileFromBytes(model.Specialization, "ProviderDocuments"),
-                    DepartmentFileURL = ImageHelper.SaveFileFromBytes(model.Department, "ProviderDocuments"),
-                    LatestQualificationFileURL = ImageHelper.SaveFileFromBytes(model.LatestQualification, "ProviderDocuments"),
-                    EductionCertificateFileURL = ImageHelper.SaveFileFromBytes(model.EductionCertificate, "ProviderDocuments"),
-                    ProfessionalCertificateFileURL = ImageHelper.SaveFileFromBytes(model.ProfessionalCertificate, "ProviderDocuments"),
-
+                    Specialization=model.Specialization,
+                    Department=model.Department,
+                    LatestQualification=model.LatestQualification
                 };
+                //if (model.Specialization != null)
+                //{
+                //    foreach (var item in model.Specialization)
+                //    {
+                //        userModel.DoctorDocuments.Add(new DoctorDocument()
+                //        {
+                //            DocumentType = (int)DoctorDocumentType.Specialization,
+                //            FilePath = ImageHelper.SaveFileFromBytes(item, "DoctorDocuments"),
+                //            UploadDate = DateTime.Now
+                //        });
+                //    }
+                //}
+                //if (model.Department != null)
+                //{
+                //    foreach (var item in model.Department)
+                //    {
+                //        userModel.DoctorDocuments.Add(new DoctorDocument()
+                //        {
+                //            DocumentType = (int)DoctorDocumentType.Department,
+                //            FilePath = ImageHelper.SaveFileFromBytes(item, "DoctorDocuments"),
+                //            UploadDate = DateTime.Now
+                //        });
+                //    }
+                //}
+                //if (model.LatestQualification != null)
+                //{
+                //    foreach (var item in model.LatestQualification)
+                //    {
+                //        userModel.DoctorDocuments.Add(new DoctorDocument()
+                //        {
+                //            DocumentType = (int)DoctorDocumentType.LatestQualification,
+                //            FilePath = ImageHelper.SaveFileFromBytes(item, "DoctorDocuments"),
+                //            UploadDate = DateTime.Now
+                //        });
+                //    }
+                //}
+                if (model.EductionCertificate != null)
+                {
+                    foreach (var item in model.EductionCertificate)
+                    {
+                        userModel.DoctorDocuments.Add(new DoctorDocument()
+                        {
+                            DocumentType = (int)DoctorDocumentType.EductionCertificate,
+                            FilePath = ImageHelper.SaveFileFromBytes(item, "DoctorDocuments"),
+                            UploadDate = DateTime.Now
+                        });
+                    }
+                }
+                if (model.ProfessionalCertificate != null)
+                {
+                    foreach (var item in model.ProfessionalCertificate)
+                    {
+                        userModel.DoctorDocuments.Add(new DoctorDocument()
+                        {
+                            DocumentType = (int)DoctorDocumentType.ProfessionalCertificate,
+                            FilePath = ImageHelper.SaveFileFromBytes(item, "DoctorDocuments"),
+                            UploadDate = DateTime.Now
+                        });
+                    }
+                }
                 _UserRepository.Insert(userModel);
                 _UserRepository.Save();
                 SettingsModel.LoadSettings();

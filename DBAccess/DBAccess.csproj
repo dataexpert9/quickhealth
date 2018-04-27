@@ -100,6 +100,7 @@
     <Compile Include="Models\AppRatings.cs" />
     <Compile Include="Models\ContactUs.cs" />
     <Compile Include="Models\CreditCard.cs" />
+    <Compile Include="Models\DoctorDocument.cs" />
     <Compile Include="Models\Favourite.cs" />
     <Compile Include="Models\ForgotPasswordToken.cs" />
     <Compile Include="Models\Notification.cs" />

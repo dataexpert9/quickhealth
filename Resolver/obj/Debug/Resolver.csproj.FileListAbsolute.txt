@@ -36,6 +36,5 @@ E:\Mehmood ul Hassan\Global Hospital\Resolver\bin\Debug\System.Web.Razor.xml
 E:\Mehmood ul Hassan\Global Hospital\Resolver\bin\Debug\System.Web.WebPages.xml
 E:\Mehmood ul Hassan\Global Hospital\Resolver\bin\Debug\System.Web.WebPages.Deployment.xml
 E:\Mehmood ul Hassan\Global Hospital\Resolver\bin\Debug\System.Web.WebPages.Razor.xml
-E:\Mehmood ul Hassan\Global Hospital\Resolver\obj\Debug\Resolver.csprojResolveAssemblyReference.cache
 E:\Mehmood ul Hassan\Global Hospital\Resolver\obj\Debug\Resolver.dll
 E:\Mehmood ul Hassan\Global Hospital\Resolver\obj\Debug\Resolver.pdb

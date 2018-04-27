@@ -25,6 +25,5 @@ E:\Mehmood ul Hassan\Global Hospital\DBAccess\bin\Debug\Microsoft.Practices.Unit
 E:\Mehmood ul Hassan\Global Hospital\DBAccess\bin\Debug\Microsoft.Practices.Unity.Configuration.xml
 E:\Mehmood ul Hassan\Global Hospital\DBAccess\bin\Debug\Newtonsoft.Json.xml
 E:\Mehmood ul Hassan\Global Hospital\DBAccess\bin\Debug\System.Net.Http.Formatting.xml
-E:\Mehmood ul Hassan\Global Hospital\DBAccess\obj\Debug\DBAccess.csprojResolveAssemblyReference.cache
 E:\Mehmood ul Hassan\Global Hospital\DBAccess\obj\Debug\DBAccess.dll
 E:\Mehmood ul Hassan\Global Hospital\DBAccess\obj\Debug\DBAccess.pdb

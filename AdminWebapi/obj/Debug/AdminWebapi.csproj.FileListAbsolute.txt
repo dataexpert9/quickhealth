@@ -1,3 +1,4 @@
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\PushSharp.Apple.dll
 E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\roslyn\csc.exe
 E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\roslyn\csc.exe.config
 E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\roslyn\csc.rsp
@@ -61,7 +62,6 @@ E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\Newtonsoft.Json.dll
 E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\Nexmo.Api.dll
 E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\Owin.dll
 E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\PushSharp.Amazon.dll
-E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\PushSharp.Apple.dll
 E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\PushSharp.Blackberry.dll
 E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\PushSharp.Core.dll
 E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\PushSharp.Firefox.dll
@@ -138,5 +138,3 @@ E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\System.Web.Http.WebHost.xml
 E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\obj\Debug\AdminWebapi.csprojResolveAssemblyReference.cache
 E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\obj\Debug\AdminWebapi.dll
 E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\obj\Debug\AdminWebapi.pdb
-E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\Microsoft.Practices.ServiceLocation.dll
-E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\CommonServiceLocator.dll

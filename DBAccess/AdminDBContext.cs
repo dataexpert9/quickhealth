@@ -29,6 +29,7 @@ namespace DBAccess
         public virtual DbSet<RefreshTokens> RefreshTokens { get; set; }
         public virtual DbSet<Settings> Settings { get; set; }
         public virtual DbSet<AdminNotifications> AdminNotifications { get; set; }
+        public virtual DbSet<DoctorDocument> DoctorDocuments { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -91,6 +92,13 @@ namespace DBAccess
              .WithRequired(e => e.User)
              .HasForeignKey(e => e.User_ID)
              .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<User>()
+               .HasMany(e => e.DoctorDocuments)
+               .WithRequired(e => e.User)
+               .HasForeignKey(e => e.UserId)
+               .WillCascadeOnDelete(false);
+            
         }
     }
 }

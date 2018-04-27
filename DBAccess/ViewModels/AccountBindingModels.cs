@@ -4,6 +4,7 @@ using Newtonsoft.Json;
 using System.Web;
 using System.IO;
 using MultipartDataMediaFormatter.Infrastructure;
+using System.Collections.Generic;
 
 namespace DBAccess.ViewModels
 {
@@ -95,11 +96,11 @@ namespace DBAccess.ViewModels
         public string Country { get; set; }
         public string City { get; set; }
         public int ProviderType { get; set; }
-        public HttpFile Specialization { get; set; }
-        public HttpFile Department { get; set; }
-        public HttpFile LatestQualification { get; set; }
-        public HttpFile EductionCertificate { get; set; }
-        public HttpFile ProfessionalCertificate { get; set; }
+        public string Specialization { get; set; }
+        public string Department { get; set; }
+        public string LatestQualification { get; set; }
+        public List<HttpFile> EductionCertificate { get; set; }
+        public List<HttpFile> ProfessionalCertificate { get; set; }
         public HttpFile ProfilePictureUrl { get; set; }
     }
 
