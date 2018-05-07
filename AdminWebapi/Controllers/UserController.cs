@@ -63,11 +63,21 @@ namespace AdminWebapi.Controllers
             User userModel = _UserService.ValidateUser(model);
             if (userModel != null)
             {
-                await userModel.GenerateToken(Request);
-                SettingsModel.LoadSettings();
-                userModel.AppSettings = new Settings { ContactNo = SettingsModel.ContactNo, AboutUs = SettingsModel.AboutUs, PrivacyPolicy = SettingsModel.PrivacyPolicy, TermsConditions = SettingsModel.TermsConditions, Tax = SettingsModel.Tax, Currency = SettingsModel.Currency };
-                return Ok(new CustomResponse<User> { Message = GlobalUtility.ResponseMessages.Success, StatusCode = (int)HttpStatusCode.OK, Result = userModel });
-
+                if (userModel.Status == (int)GlobalUtility.StatusCode.Verified)
+                {
+                    await userModel.GenerateToken(Request);
+                    SettingsModel.LoadSettings();
+                    userModel.AppSettings = new Settings { Id = SettingsModel.Id, ContactNo = SettingsModel.ContactNo, AboutUs = SettingsModel.AboutUs, PrivacyPolicy = SettingsModel.PrivacyPolicy, TermsConditions = SettingsModel.TermsConditions, Tax = SettingsModel.Tax, Currency = SettingsModel.Currency };
+                    return Ok(new CustomResponse<User> { Message = GlobalUtility.ResponseMessages.Success, StatusCode = (int)HttpStatusCode.OK, Result = userModel });
+                }else
+                {
+                    return Content(HttpStatusCode.OK, new CustomResponse<Error>
+                    {
+                        Message = "Forbidden",
+                        StatusCode = (int)HttpStatusCode.Forbidden,
+                        Result = new Error { ErrorMessage = "Please verify your mobile number to proceed." }
+                    });
+                }
             }
 
             return Content(HttpStatusCode.OK, new CustomResponse<Error>
@@ -89,37 +99,37 @@ namespace AdminWebapi.Controllers
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
-        [AllowAnonymous]
-        [Route("WebPanelLogin")]
-        [HttpPost]
-        public async Task<IHttpActionResult> WebPanelLogin(LoginBindingModel model)
-        {
-            try
-            {
-                if (!ModelState.IsValid)
-                {
-                    return BadRequest(ModelState);
-                }
-                Admin adminModel = _UserService.ValidateAdmin(model);
-                if (adminModel != null)
-                {
-                    await adminModel.GenerateToken(Request);
-                    CustomResponse<Admin> response = new CustomResponse<Admin> { Message = GlobalUtility.ResponseMessages.Success, StatusCode = (int)HttpStatusCode.OK, Result = adminModel };
-                    return Ok(response);
-                }
-                else
-                    return Content(HttpStatusCode.OK, new CustomResponse<Error>
-                    {
-                        Message = "Forbidden",
-                        StatusCode = (int)HttpStatusCode.Forbidden,
-                        Result = new Error { ErrorMessage = "Invalid Email or Password" }
-                    });
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(Utility.LogError(ex));
-            }
-        }
+        //[AllowAnonymous]
+        //[Route("WebPanelLogin")]
+        //[HttpPost]
+        //public async Task<IHttpActionResult> WebPanelLogin(LoginBindingModel model)
+        //{
+        //    try
+        //    {
+        //        if (!ModelState.IsValid)
+        //        {
+        //            return BadRequest(ModelState);
+        //        }
+        //        Admin adminModel = _UserService.ValidateAdmin(model);
+        //        if (adminModel != null)
+        //        {
+        //            await adminModel.GenerateToken(Request);
+        //            CustomResponse<Admin> response = new CustomResponse<Admin> { Message = GlobalUtility.ResponseMessages.Success, StatusCode = (int)HttpStatusCode.OK, Result = adminModel };
+        //            return Ok(response);
+        //        }
+        //        else
+        //            return Content(HttpStatusCode.OK, new CustomResponse<Error>
+        //            {
+        //                Message = "Forbidden",
+        //                StatusCode = (int)HttpStatusCode.Forbidden,
+        //                Result = new Error { ErrorMessage = "Invalid Email or Password" }
+        //            });
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return StatusCode(Utility.LogError(ex));
+        //    }
+        //}
 
         private int SavePicture(HttpRequestMessage request, out string PicturePath)
         {
@@ -245,29 +255,29 @@ namespace AdminWebapi.Controllers
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
-        [Authorize]
-        [Route("ChangeForgotPassword")]
-        public async Task<IHttpActionResult> ChangeForgotPassword(SetForgotPasswordBindingModel model)
-        {
-            var userEmail = User.Identity.Name;
-            if (string.IsNullOrEmpty(userEmail))
-            {
-                throw new Exception("User Email is empty in user.identity.name.");
-            }
-            else if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
+        //[Authorize]
+        //[Route("ChangeForgotPassword")]
+        //public async Task<IHttpActionResult> ChangeForgotPassword(SetForgotPasswordBindingModel model)
+        //{
+        //    var userEmail = User.Identity.Name;
+        //    if (string.IsNullOrEmpty(userEmail))
+        //    {
+        //        throw new Exception("User Email is empty in user.identity.name.");
+        //    }
+        //    else if (!ModelState.IsValid)
+        //    {
+        //        return BadRequest(ModelState);
+        //    }
 
-            if (_UserService.ChangeForgetPassword(model, userEmail))
-            {
-                return Ok(new CustomResponse<string> { Message = GlobalUtility.ResponseMessages.Success, StatusCode = (int)HttpStatusCode.OK });
-            }
-            else
-            {
-                return Ok(new CustomResponse<Error> { Message = "Forbidden", StatusCode = (int)HttpStatusCode.Forbidden, Result = new Error { ErrorMessage = "Invalid old password." } });
-            }
-        }
+        //    if (_UserService.ChangeForgetPassword(model, userEmail))
+        //    {
+        //        return Ok(new CustomResponse<string> { Message = GlobalUtility.ResponseMessages.Success, StatusCode = (int)HttpStatusCode.OK });
+        //    }
+        //    else
+        //    {
+        //        return Ok(new CustomResponse<Error> { Message = "Forbidden", StatusCode = (int)HttpStatusCode.Forbidden, Result = new Error { ErrorMessage = "Invalid old password." } });
+        //    }
+        //}
 
         /// <summary>
         /// Verify code sent to user. 
@@ -346,6 +356,21 @@ namespace AdminWebapi.Controllers
             }
             else
             {
+                NexmoBindingModel verificationMessageModel = new NexmoBindingModel();
+
+                var nexmoResponse = _UserService.UserVerificationSMS(new NexmoBindingModel {PhoneNumber=userModel.Phone,User_Id=userModel.Id });
+
+                if(!nexmoResponse)
+                {
+                    return Content(HttpStatusCode.OK, new CustomResponse<Error>
+                    {
+                        Message = "Conflict",
+                        StatusCode = (int)HttpStatusCode.Conflict,
+                        Result = new Error { ErrorMessage = "Verification SMS failed due to some reason." }
+
+                    });
+                }
+
                 await userModel.GenerateToken(Request);
                 CustomResponse<User> response = new CustomResponse<User> { Message = GlobalUtility.ResponseMessages.Success, StatusCode = (int)HttpStatusCode.OK, Result = userModel };
                 return Ok(response);
@@ -379,33 +404,33 @@ namespace AdminWebapi.Controllers
             }
         }
 
-        [Route("RegisterAsAdmin")]
-        [HttpPost]
-        [Authorize]
-        public IHttpActionResult RegisterAsAdmin(Admin model)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-            if(model.Base64EncodedString != "")
-            model.ImageUrl = _ImageUpload.uploadImage(model.Base64EncodedString, "ProfileImages");
-            var admin = _UserService.CreateUpdateAdmin(model);
-            if (admin == null)
-            {
-                return Content(HttpStatusCode.OK, new CustomResponse<Error>
-                {
-                    Message = "Conflict",
-                    StatusCode = (int)HttpStatusCode.Conflict,
-                    Result = new Error { ErrorMessage = "User with entered email already exists." }
-                });
-            }
-            else
-            {
-                CustomResponse<Admin> response = new CustomResponse<Admin> { Message = GlobalUtility.ResponseMessages.Success, StatusCode = (int)HttpStatusCode.OK, Result = admin };
-                return Ok(response);
-            }
-        }
+        //[Route("RegisterAsAdmin")]
+        //[HttpPost]
+        //[Authorize]
+        //public IHttpActionResult RegisterAsAdmin(Admin model)
+        //{
+        //    if (!ModelState.IsValid)
+        //    {
+        //        return BadRequest(ModelState);
+        //    }
+        //    if(model.Base64EncodedString != "")
+        //    model.ImageUrl = _ImageUpload.uploadImage(model.Base64EncodedString, "ProfileImages");
+        //    var admin = _UserService.CreateUpdateAdmin(model);
+        //    if (admin == null)
+        //    {
+        //        return Content(HttpStatusCode.OK, new CustomResponse<Error>
+        //        {
+        //            Message = "Conflict",
+        //            StatusCode = (int)HttpStatusCode.Conflict,
+        //            Result = new Error { ErrorMessage = "User with entered email already exists." }
+        //        });
+        //    }
+        //    else
+        //    {
+        //        CustomResponse<Admin> response = new CustomResponse<Admin> { Message = GlobalUtility.ResponseMessages.Success, StatusCode = (int)HttpStatusCode.OK, Result = admin };
+        //        return Ok(response);
+        //    }
+        //}
 
         [Route("UploadUserImage")]
         [Authorize]
@@ -529,188 +554,204 @@ namespace AdminWebapi.Controllers
                     return Ok(new CustomResponse<Error> { Message = "Forbidden", StatusCode = (int)HttpStatusCode.Forbidden, Result = new Error { ErrorMessage = "Invalid old password." } });
         }
 
-        [Route("AddExternalLogin")]
-        public async Task<IHttpActionResult> AddExternalLogin(AddExternalLoginBindingModel model)
+        [HttpGet]
+        [Route("UpdateNotificationStatus")]
+        public async Task<IHttpActionResult> UpdateNotificationStatus(bool Status,string Email)
         {
-            if (!ModelState.IsValid)
+            var user = _UserService.UpdateNotificationStatus(Status, Email);
+            if (user != null)
             {
-                return BadRequest(ModelState);
+                return Ok(new CustomResponse<User> { Message = GlobalUtility.ResponseMessages.Success, StatusCode = (int)HttpStatusCode.OK, Result = user });
             }
-
-            Authentication.SignOut(DefaultAuthenticationTypes.ExternalCookie);
-
-            AuthenticationTicket ticket = AccessTokenFormat.Unprotect(model.ExternalAccessToken);
-
-            if (ticket == null || ticket.Identity == null || (ticket.Properties != null
-                && ticket.Properties.ExpiresUtc.HasValue
-                && ticket.Properties.ExpiresUtc.Value < DateTimeOffset.UtcNow))
+            else
             {
-                return BadRequest("External login failure.");
+                return Ok(new CustomResponse<Error> { Message = "NotFound", StatusCode = (int)HttpStatusCode.NotFound, Result = new Error { ErrorMessage = "User with entered email doesn’t exist." } });
             }
-
-            ExternalLoginData externalData = ExternalLoginData.FromIdentity(ticket.Identity);
-
-            if (externalData == null)
-            {
-                return BadRequest("The external login is already associated with an account.");
-            }
-
-            IdentityResult result = await UserManager.AddLoginAsync(User.Identity.GetUserId(),
-                new UserLoginInfo(externalData.LoginProvider, externalData.ProviderKey));
-
-            if (!result.Succeeded)
-            {
-                //return GetErrorResult(result);
-            }
-
-            return Ok();
         }
+
+
+        //[Route("AddExternalLogin")]
+        //public async Task<IHttpActionResult> AddExternalLogin(AddExternalLoginBindingModel model)
+        //{
+        //    if (!ModelState.IsValid)
+        //    {
+        //        return BadRequest(ModelState);
+        //    }
+
+        //    Authentication.SignOut(DefaultAuthenticationTypes.ExternalCookie);
+
+        //    AuthenticationTicket ticket = AccessTokenFormat.Unprotect(model.ExternalAccessToken);
+
+        //    if (ticket == null || ticket.Identity == null || (ticket.Properties != null
+        //        && ticket.Properties.ExpiresUtc.HasValue
+        //        && ticket.Properties.ExpiresUtc.Value < DateTimeOffset.UtcNow))
+        //    {
+        //        return BadRequest("External login failure.");
+        //    }
+
+        //    ExternalLoginData externalData = ExternalLoginData.FromIdentity(ticket.Identity);
+
+        //    if (externalData == null)
+        //    {
+        //        return BadRequest("The external login is already associated with an account.");
+        //    }
+
+        //    IdentityResult result = await UserManager.AddLoginAsync(User.Identity.GetUserId(),
+        //        new UserLoginInfo(externalData.LoginProvider, externalData.ProviderKey));
+
+        //    if (!result.Succeeded)
+        //    {
+        //        //return GetErrorResult(result);
+        //    }
+
+        //    return Ok();
+        //}
 
 
         /// <summary>
         /// Update user profile with image. This is multipart request. SignInType 0 for user, 1 for deliverer
         /// </summary>
         /// <returns></returns>
-        [Authorize]
-        [Route("UpdateUserProfile")]
-        public async Task<IHttpActionResult> UpdateUserProfileWithImage()
-        {
-            var userId = Convert.ToInt32(User.GetClaimValue("userid"));
-            var httpRequest = HttpContext.Current.Request;
-            #region InitializingModel
-            EditUserProfileBindingModel model = new EditUserProfileBindingModel();
-            model.FirstName = httpRequest.Params["FirstName"];
-            model.LastName = httpRequest.Params["LastName"];
-            model.SurName = httpRequest.Params["SurName"];
-            model.Bio = httpRequest.Params["Bio"];
-            model.Airline_Id = Convert.ToInt16(httpRequest.Params["Airline_Id"]);
-            model.JobTitle = httpRequest.Params["JobTitle"];
-            model.Grade = httpRequest.Params["Grade"];
-            model.AircraftTrainedFor = httpRequest.Params["AircraftTrainedFor"];
-            model.Base = httpRequest.Params["Base"];
-            model.DateofBirth = httpRequest.Params["DateofBirth"];
-            model.Language_Id = Convert.ToInt16(httpRequest.Params["Language_Id"]);
-            model.PassportNo = httpRequest.Params["PassportNo"];
-            model.PassportCountryIssued = httpRequest.Params["CountryIssued"];
-            model.ExpiryDate = httpRequest.Params["ExpiryDate"];
-            model.Email = httpRequest.Params["Email"];
-            model.PhoneNumber = httpRequest.Params["PhoneNumber"];
-            model.Gender = Convert.ToInt32(httpRequest.Params["Gender"]);
-            model.JobTitle = httpRequest.Params["JobTitle"];
+        //[Authorize]
+        //[Route("UpdateUserProfile")]
+        //public async Task<IHttpActionResult> UpdateUserProfileWithImage()
+        //{
+        //    var userId = Convert.ToInt32(User.GetClaimValue("userid"));
+        //    var httpRequest = HttpContext.Current.Request;
+        //    #region InitializingModel
+        //    EditUserProfileBindingModel model = new EditUserProfileBindingModel();
+        //    model.FirstName = httpRequest.Params["FirstName"];
+        //    model.LastName = httpRequest.Params["LastName"];
+        //    model.SurName = httpRequest.Params["SurName"];
+        //    model.Bio = httpRequest.Params["Bio"];
+        //    model.Airline_Id = Convert.ToInt16(httpRequest.Params["Airline_Id"]);
+        //    model.JobTitle = httpRequest.Params["JobTitle"];
+        //    model.Grade = httpRequest.Params["Grade"];
+        //    model.AircraftTrainedFor = httpRequest.Params["AircraftTrainedFor"];
+        //    model.Base = httpRequest.Params["Base"];
+        //    model.DateofBirth = httpRequest.Params["DateofBirth"];
+        //    model.Language_Id = Convert.ToInt16(httpRequest.Params["Language_Id"]);
+        //    model.PassportNo = httpRequest.Params["PassportNo"];
+        //    model.PassportCountryIssued = httpRequest.Params["CountryIssued"];
+        //    model.ExpiryDate = httpRequest.Params["ExpiryDate"];
+        //    model.Email = httpRequest.Params["Email"];
+        //    model.PhoneNumber = httpRequest.Params["PhoneNumber"];
+        //    model.Gender = Convert.ToInt32(httpRequest.Params["Gender"]);
+        //    model.JobTitle = httpRequest.Params["JobTitle"];
 
-            #endregion
-            Validate(model);
+        //    #endregion
+        //    Validate(model);
 
-            #region Validations
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
+        //    #region Validations
+        //    if (!ModelState.IsValid)
+        //    {
+        //        return BadRequest(ModelState);
+        //    }
 
-            if (!Request.Content.IsMimeMultipartContent())
-            {
-                return Content(HttpStatusCode.OK, new CustomResponse<Error>
-                {
-                    Message = "UnsupportedMediaType",
-                    StatusCode = (int)HttpStatusCode.UnsupportedMediaType,
-                    Result = new Error { ErrorMessage = "Multipart data is not included in request." }
-                });
-            }
-            else if (httpRequest.Files.Count > 1)
-            {
-                return Content(HttpStatusCode.OK, new CustomResponse<Error>
-                {
-                    Message = "UnsupportedMediaType",
-                    StatusCode = (int)HttpStatusCode.UnsupportedMediaType,
-                    Result = new Error { ErrorMessage = "Multiple images are not supported, please upload one image." }
-                });
-            }
-            #endregion
+        //    if (!Request.Content.IsMimeMultipartContent())
+        //    {
+        //        return Content(HttpStatusCode.OK, new CustomResponse<Error>
+        //        {
+        //            Message = "UnsupportedMediaType",
+        //            StatusCode = (int)HttpStatusCode.UnsupportedMediaType,
+        //            Result = new Error { ErrorMessage = "Multipart data is not included in request." }
+        //        });
+        //    }
+        //    else if (httpRequest.Files.Count > 1)
+        //    {
+        //        return Content(HttpStatusCode.OK, new CustomResponse<Error>
+        //        {
+        //            Message = "UnsupportedMediaType",
+        //            StatusCode = (int)HttpStatusCode.UnsupportedMediaType,
+        //            Result = new Error { ErrorMessage = "Multiple images are not supported, please upload one image." }
+        //        });
+        //    }
+        //    #endregion
 
-            HttpPostedFile postedFile = null;
-            string fileExtension = string.Empty;
+        //    HttpPostedFile postedFile = null;
+        //    string fileExtension = string.Empty;
 
-            #region ImageSaving
-            if (httpRequest.Files.Count > 0)
-            {
-                postedFile = httpRequest.Files[0];
-                if (postedFile != null && postedFile.ContentLength > 0)
-                {
-                    IList<string> AllowedFileExtensions = new List<string> { ".jpg", ".gif", ".png" };
-                    var ext = Path.GetExtension(postedFile.FileName);
-                    fileExtension = ext.ToLower();
-                    if (!AllowedFileExtensions.Contains(fileExtension))
-                    {
-                        return Content(HttpStatusCode.OK, new CustomResponse<Error>
-                        {
-                            Message = "UnsupportedMediaType",
-                            StatusCode = (int)HttpStatusCode.UnsupportedMediaType,
-                            Result = new Error { ErrorMessage = "Please Upload image of type .jpg,.gif,.png." }
-                        });
-                    }
-                    else if (postedFile.ContentLength > GlobalUtility.MaximumImageSize)
-                    {
-                        return Content(HttpStatusCode.OK, new CustomResponse<Error>
-                        {
-                            Message = "UnsupportedMediaType",
-                            StatusCode = (int)HttpStatusCode.UnsupportedMediaType,
-                            Result = new Error { ErrorMessage = "Please Upload a file upto " + GlobalUtility.ImageSize + "." }
-                        });
-                    }
-                }
-            }
-            #endregion
+        //    #region ImageSaving
+        //    if (httpRequest.Files.Count > 0)
+        //    {
+        //        postedFile = httpRequest.Files[0];
+        //        if (postedFile != null && postedFile.ContentLength > 0)
+        //        {
+        //            IList<string> AllowedFileExtensions = new List<string> { ".jpg", ".gif", ".png" };
+        //            var ext = Path.GetExtension(postedFile.FileName);
+        //            fileExtension = ext.ToLower();
+        //            if (!AllowedFileExtensions.Contains(fileExtension))
+        //            {
+        //                return Content(HttpStatusCode.OK, new CustomResponse<Error>
+        //                {
+        //                    Message = "UnsupportedMediaType",
+        //                    StatusCode = (int)HttpStatusCode.UnsupportedMediaType,
+        //                    Result = new Error { ErrorMessage = "Please Upload image of type .jpg,.gif,.png." }
+        //                });
+        //            }
+        //            else if (postedFile.ContentLength > GlobalUtility.MaximumImageSize)
+        //            {
+        //                return Content(HttpStatusCode.OK, new CustomResponse<Error>
+        //                {
+        //                    Message = "UnsupportedMediaType",
+        //                    StatusCode = (int)HttpStatusCode.UnsupportedMediaType,
+        //                    Result = new Error { ErrorMessage = "Please Upload a file upto " + GlobalUtility.ImageSize + "." }
+        //                });
+        //            }
+        //        }
+        //    }
+        //    #endregion
 
-            if (_UserService.CheckPhoneAlreadyRegister(model.PhoneNumber, model.Email))
-            {
-                return Ok(new CustomResponse<Error>
-                {
-                    Message = "Conflict",
-                    StatusCode = (int)HttpStatusCode.Conflict,
-                    Result = new Error { ErrorMessage = "User with entered phone number already exists." }
-                });
-            }
+        //    if (_UserService.CheckPhoneAlreadyRegister(model.PhoneNumber, model.Email))
+        //    {
+        //        return Ok(new CustomResponse<Error>
+        //        {
+        //            Message = "Conflict",
+        //            StatusCode = (int)HttpStatusCode.Conflict,
+        //            Result = new Error { ErrorMessage = "User with entered phone number already exists." }
+        //        });
+        //    }
 
-            User userModel = _UserService.UpdateUserProfileWithImage(model, httpRequest, postedFile);
-            if (userModel == null)
-            {
-                return Content(HttpStatusCode.OK, new CustomResponse<Error>
-                {
-                    Message = "NotFound",
-                    StatusCode = (int)HttpStatusCode.NotFound,
-                    Result = new Error { ErrorMessage = "UserId does not exist." }
-                });
-            }
-            else
-            {
-                await userModel.GenerateToken(Request);
-                SettingsModel.LoadSettings();
-                userModel.AppSettings = new Settings { ContactNo = SettingsModel.ContactNo, AboutUs = SettingsModel.AboutUs, PrivacyPolicy = SettingsModel.PrivacyPolicy, TermsConditions = SettingsModel.TermsConditions, Tax = SettingsModel.Tax, Currency = SettingsModel.Currency };
-                CustomResponse<User> response = new CustomResponse<User> { Message = GlobalUtility.ResponseMessages.Success, StatusCode = (int)HttpStatusCode.OK, Result = userModel };
-                return Ok(response);
-            }
-        }
-        
+        //    User userModel = _UserService.UpdateUserProfileWithImage(model, httpRequest, postedFile);
+        //    if (userModel == null)
+        //    {
+        //        return Content(HttpStatusCode.OK, new CustomResponse<Error>
+        //        {
+        //            Message = "NotFound",
+        //            StatusCode = (int)HttpStatusCode.NotFound,
+        //            Result = new Error { ErrorMessage = "UserId does not exist." }
+        //        });
+        //    }
+        //    else
+        //    {
+        //        await userModel.GenerateToken(Request);
+        //        SettingsModel.LoadSettings();
+        //        userModel.AppSettings = new Settings { ContactNo = SettingsModel.ContactNo, AboutUs = SettingsModel.AboutUs, PrivacyPolicy = SettingsModel.PrivacyPolicy, TermsConditions = SettingsModel.TermsConditions, Tax = SettingsModel.Tax, Currency = SettingsModel.Currency };
+        //        CustomResponse<User> response = new CustomResponse<User> { Message = GlobalUtility.ResponseMessages.Success, StatusCode = (int)HttpStatusCode.OK, Result = userModel };
+        //        return Ok(response);
+        //    }
+        //}
+
 
         /// <summary>
         /// Get All Admins
         /// </summary>
         /// <returns></returns>
-        [Route("GetAllAdmin")]
-        [Authorize]
-        [HttpGet]
-        public async Task<IHttpActionResult> GetAllAdmins()
-        {
-            var users = _UserService.GetAllAdmins();
-            CustomResponse<IEnumerable<Admin>> response = new CustomResponse<IEnumerable<Admin>>
-            {
-                Message = GlobalUtility.ResponseMessages.Success,
-                StatusCode = (int)HttpStatusCode.OK,
-                Result = users
-            };
+        //[Route("GetAllAdmin")]
+        //[Authorize]
+        //[HttpGet]
+        //public async Task<IHttpActionResult> GetAllAdmins()
+        //{
+        //    var users = _UserService.GetAllAdmins();
+        //    CustomResponse<IEnumerable<Admin>> response = new CustomResponse<IEnumerable<Admin>>
+        //    {
+        //        Message = GlobalUtility.ResponseMessages.Success,
+        //        StatusCode = (int)HttpStatusCode.OK,
+        //        Result = users
+        //    };
 
-            return Ok(response);
-        }
+        //    return Ok(response);
+        //}
 
 
         //[AllowAnonymous]
@@ -787,7 +828,7 @@ namespace AdminWebapi.Controllers
         //        }
         //        else
         //            return BadRequest("Please provide access token along with social login type");
-        
+
         //}
 
         /// <summary>
@@ -795,82 +836,84 @@ namespace AdminWebapi.Controllers
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
-        [HttpGet]
-        [Route("ContactUs")]
-        [Authorize]
-        public async Task<IHttpActionResult> ContactUs(string Description)
-        {
-            if (String.IsNullOrWhiteSpace(Description))
-            {
-                return Ok(new CustomResponse<Error> { Message = GlobalUtility.ResponseMessages.BadRequest, StatusCode = (int)HttpStatusCode.BadRequest, Result = new Error { ErrorMessage = GlobalUtility.ResponseMessages.CannotBeEmpty("Description") } });
-            }
-            else
-            {
-                var userId = Convert.ToInt32(User.GetClaimValue("userid"));
-                var user = _UserService.ContactUs(userId, Description);
-                if (user == null)
-                {
-                    return Ok(new CustomResponse<Error> { Message = GlobalUtility.ResponseMessages.NotFound, StatusCode = (int)HttpStatusCode.BadRequest, Result = new Error { ErrorMessage = "UserId not found." } });
-                }
-                else
-                {
-                    return Ok(new CustomResponse<string> { Message = GlobalUtility.ResponseMessages.Success, StatusCode = (int)HttpStatusCode.OK });
-                }
-            }
-        }
+        //[HttpGet]
+        //[Route("ContactUs")]
+        //[Authorize]
+        //public async Task<IHttpActionResult> ContactUs(string Description)
+        //{
+        //    if (String.IsNullOrWhiteSpace(Description))
+        //    {
+        //        return Ok(new CustomResponse<Error> { Message = GlobalUtility.ResponseMessages.BadRequest, StatusCode = (int)HttpStatusCode.BadRequest, Result = new Error { ErrorMessage = GlobalUtility.ResponseMessages.CannotBeEmpty("Description") } });
+        //    }
+        //    else
+        //    {
+        //        var userId = Convert.ToInt32(User.GetClaimValue("userid"));
+        //        var user = _UserService.ContactUs(userId, Description);
+        //        if (user == null)
+        //        {
+        //            return Ok(new CustomResponse<Error> { Message = GlobalUtility.ResponseMessages.NotFound, StatusCode = (int)HttpStatusCode.BadRequest, Result = new Error { ErrorMessage = "UserId not found." } });
+        //        }
+        //        else
+        //        {
+        //            return Ok(new CustomResponse<string> { Message = GlobalUtility.ResponseMessages.Success, StatusCode = (int)HttpStatusCode.OK });
+        //        }
+        //    }
+        //}
 
-        [Authorize]
+
         /// <summary>
         /// Add user address
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
-        [HttpPost]
-        [Route("AddUserAddress")]
-        public async Task<IHttpActionResult> AddUserAddress(AddUserAddressBindingModel model)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-            bool addressAlreadyExist = false;
-            var user = _UserService.AddUserAddress(model, ref addressAlreadyExist);
-            if (user != null)
-            {
-                if (addressAlreadyExist)
-                {
-                    return Ok(new CustomResponse<Error> { Message = GlobalUtility.ResponseMessages.Conflict, StatusCode = (int)HttpStatusCode.Conflict, Result = new Error { ErrorMessage = GlobalUtility.ResponseMessages.GenerateAlreadyExists("Address") } });
-                }
-                return Ok(new CustomResponse<User> { Message = GlobalUtility.ResponseMessages.Success, StatusCode = (int)HttpStatusCode.OK, Result = user });
-            }
-            else
-            {
-                return Ok(new CustomResponse<Error> { Message = GlobalUtility.ResponseMessages.NotFound, StatusCode = (int)HttpStatusCode.NotFound, Result = new Error { ErrorMessage = GlobalUtility.ResponseMessages.GenerateNotFound("User") } });
-            }
-        }
-        [Authorize]
-        [HttpPost]
-        [Route("EditUserAddress")]
-        public async Task<IHttpActionResult> EditUserAddress(EditUserAddressBindingModel model)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-            bool AddressNotExist = false;
-            var user = _UserService.EditUserAddress(model, ref AddressNotExist);
 
-            if (user != null)
-            {
-                if (AddressNotExist)
-                {
-                    return Ok(new CustomResponse<Error> { Message = GlobalUtility.ResponseMessages.NotFound, StatusCode = (int)HttpStatusCode.NotFound, Result = new Error { ErrorMessage = GlobalUtility.ResponseMessages.GenerateInvalid("AddressId") } });
-                }
-                return Ok(new CustomResponse<User> { Message = GlobalUtility.ResponseMessages.Success, StatusCode = (int)HttpStatusCode.OK, Result = user });
-            }
-            else
-                return Ok(new CustomResponse<Error> { Message = GlobalUtility.ResponseMessages.NotFound, StatusCode = (int)HttpStatusCode.NotFound, Result = new Error { ErrorMessage = GlobalUtility.ResponseMessages.GenerateInvalid("UserId") } });
-        }
+        //[Authorize]
+        //[HttpPost]
+        //[Route("AddUserAddress")]
+        //public async Task<IHttpActionResult> AddUserAddress(AddUserAddressBindingModel model)
+        //{
+        //    if (!ModelState.IsValid)
+        //    {
+        //        return BadRequest(ModelState);
+        //    }
+        //    bool addressAlreadyExist = false;
+        //    var user = _UserService.AddUserAddress(model, ref addressAlreadyExist);
+        //    if (user != null)
+        //    {
+        //        if (addressAlreadyExist)
+        //        {
+        //            return Ok(new CustomResponse<Error> { Message = GlobalUtility.ResponseMessages.Conflict, StatusCode = (int)HttpStatusCode.Conflict, Result = new Error { ErrorMessage = GlobalUtility.ResponseMessages.GenerateAlreadyExists("Address") } });
+        //        }
+        //        return Ok(new CustomResponse<User> { Message = GlobalUtility.ResponseMessages.Success, StatusCode = (int)HttpStatusCode.OK, Result = user });
+        //    }
+        //    else
+        //    {
+        //        return Ok(new CustomResponse<Error> { Message = GlobalUtility.ResponseMessages.NotFound, StatusCode = (int)HttpStatusCode.NotFound, Result = new Error { ErrorMessage = GlobalUtility.ResponseMessages.GenerateNotFound("User") } });
+        //    }
+        //}
+        //[Authorize]
+        //[HttpPost]
+        //[Route("EditUserAddress")]
+        //public async Task<IHttpActionResult> EditUserAddress(EditUserAddressBindingModel model)
+        //{
+        //    if (!ModelState.IsValid)
+        //    {
+        //        return BadRequest(ModelState);
+        //    }
+        //    bool AddressNotExist = false;
+        //    var user = _UserService.EditUserAddress(model, ref AddressNotExist);
+
+        //    if (user != null)
+        //    {
+        //        if (AddressNotExist)
+        //        {
+        //            return Ok(new CustomResponse<Error> { Message = GlobalUtility.ResponseMessages.NotFound, StatusCode = (int)HttpStatusCode.NotFound, Result = new Error { ErrorMessage = GlobalUtility.ResponseMessages.GenerateInvalid("AddressId") } });
+        //        }
+        //        return Ok(new CustomResponse<User> { Message = GlobalUtility.ResponseMessages.Success, StatusCode = (int)HttpStatusCode.OK, Result = user });
+        //    }
+        //    else
+        //        return Ok(new CustomResponse<Error> { Message = GlobalUtility.ResponseMessages.NotFound, StatusCode = (int)HttpStatusCode.NotFound, Result = new Error { ErrorMessage = GlobalUtility.ResponseMessages.GenerateInvalid("UserId") } });
+        //}
 
         /// <summary>
         /// An email will be sent to user containing password reset url. Which will redirect user to password reset page.
@@ -1016,75 +1059,75 @@ namespace AdminWebapi.Controllers
         //    }
         //}
 
-        [Authorize]
-        [HttpGet]
-        [Route("DeletePaymentCard")]
-        public async Task<IHttpActionResult> DeletePaymentCard(int UserId, int CardId)
-        {
-            bool AddressNotExist = false;
-            var user = _UserService.DeleteUserAddress(UserId, CardId, ref AddressNotExist);
-            if (user != null)
-            {
-                if (AddressNotExist)
-                {
-                    return Ok(new CustomResponse<Error> { Message = GlobalUtility.ResponseMessages.NotFound, StatusCode = (int)HttpStatusCode.NotFound, Result = new Error { ErrorMessage = GlobalUtility.ResponseMessages.GenerateInvalid("Card") } });
-                }
-                return Ok(new CustomResponse<User> { Message = GlobalUtility.ResponseMessages.Success, StatusCode = (int)HttpStatusCode.OK, Result = user });
-            }
-            else
-                return Ok(new CustomResponse<Error> { Message = GlobalUtility.ResponseMessages.NotFound, StatusCode = (int)HttpStatusCode.NotFound, Result = new Error { ErrorMessage = GlobalUtility.ResponseMessages.GenerateInvalid("User") } });
-        }
+        //[Authorize]
+        //[HttpGet]
+        //[Route("DeletePaymentCard")]
+        //public async Task<IHttpActionResult> DeletePaymentCard(int UserId, int CardId)
+        //{
+        //    bool AddressNotExist = false;
+        //    var user = _UserService.DeleteUserAddress(UserId, CardId, ref AddressNotExist);
+        //    if (user != null)
+        //    {
+        //        if (AddressNotExist)
+        //        {
+        //            return Ok(new CustomResponse<Error> { Message = GlobalUtility.ResponseMessages.NotFound, StatusCode = (int)HttpStatusCode.NotFound, Result = new Error { ErrorMessage = GlobalUtility.ResponseMessages.GenerateInvalid("Card") } });
+        //        }
+        //        return Ok(new CustomResponse<User> { Message = GlobalUtility.ResponseMessages.Success, StatusCode = (int)HttpStatusCode.OK, Result = user });
+        //    }
+        //    else
+        //        return Ok(new CustomResponse<Error> { Message = GlobalUtility.ResponseMessages.NotFound, StatusCode = (int)HttpStatusCode.NotFound, Result = new Error { ErrorMessage = GlobalUtility.ResponseMessages.GenerateInvalid("User") } });
+        //}
 
-        [Authorize]
-        [HttpGet]
-        [Route("DeleteUserAddress")]
-        public async Task<IHttpActionResult> DeleteUserAddress(int UserId, int AddressId)
-        {
-            bool AddressNotExist = false;
-            var user = _UserService.DeleteUserAddress(UserId,AddressId, ref AddressNotExist);
-            if (user != null)
-            {
-                if (AddressNotExist)
-                {
-                    return Ok(new CustomResponse<Error> { Message = GlobalUtility.ResponseMessages.NotFound, StatusCode = (int)HttpStatusCode.NotFound, Result = new Error { ErrorMessage = GlobalUtility.ResponseMessages.GenerateInvalid("Address") } });
-                }
-                return Ok(new CustomResponse<User> { Message = GlobalUtility.ResponseMessages.Success, StatusCode = (int)HttpStatusCode.OK, Result = user });
-            }
-            else
-                return Ok(new CustomResponse<Error> { Message = GlobalUtility.ResponseMessages.NotFound, StatusCode = (int)HttpStatusCode.NotFound, Result = new Error { ErrorMessage = GlobalUtility.ResponseMessages.GenerateInvalid("User") } });
-        }
+        //[Authorize]
+        //[HttpGet]
+        //[Route("DeleteUserAddress")]
+        //public async Task<IHttpActionResult> DeleteUserAddress(int UserId, int AddressId)
+        //{
+        //    bool AddressNotExist = false;
+        //    var user = _UserService.DeleteUserAddress(UserId,AddressId, ref AddressNotExist);
+        //    if (user != null)
+        //    {
+        //        if (AddressNotExist)
+        //        {
+        //            return Ok(new CustomResponse<Error> { Message = GlobalUtility.ResponseMessages.NotFound, StatusCode = (int)HttpStatusCode.NotFound, Result = new Error { ErrorMessage = GlobalUtility.ResponseMessages.GenerateInvalid("Address") } });
+        //        }
+        //        return Ok(new CustomResponse<User> { Message = GlobalUtility.ResponseMessages.Success, StatusCode = (int)HttpStatusCode.OK, Result = user });
+        //    }
+        //    else
+        //        return Ok(new CustomResponse<Error> { Message = GlobalUtility.ResponseMessages.NotFound, StatusCode = (int)HttpStatusCode.NotFound, Result = new Error { ErrorMessage = GlobalUtility.ResponseMessages.GenerateInvalid("User") } });
+        //}
 
-        [Authorize]
-        [HttpGet]
-        [Route("GetUser")]
-        public async Task<IHttpActionResult> GetUser(int UserId)
-        {
-            var userModel = _UserService.GetUserById(UserId);
-            if (userModel != null)
-            {
-                SettingsModel.LoadSettings();
-                await userModel.GenerateToken(Request);
-                userModel.AppSettings = new Settings { ContactNo = SettingsModel.ContactNo, AboutUs = SettingsModel.AboutUs, PrivacyPolicy = SettingsModel.PrivacyPolicy, TermsConditions = SettingsModel.TermsConditions, Tax = SettingsModel.Tax, Currency = SettingsModel.Currency };
-                return Ok(new CustomResponse<User> { Message = GlobalUtility.ResponseMessages.Success, StatusCode = (int)HttpStatusCode.OK, Result = userModel });
-            }
-            else
-                return Ok(new CustomResponse<Error> { Message = GlobalUtility.ResponseMessages.Success, StatusCode = (int)HttpStatusCode.OK, Result = new Error { ErrorMessage = "Invalid UserId" } });
-        }
+        //[Authorize]
+        //[HttpGet]
+        //[Route("GetUser")]
+        //public async Task<IHttpActionResult> GetUser(int UserId)
+        //{
+        //    var userModel = _UserService.GetUserById(UserId);
+        //    if (userModel != null)
+        //    {
+        //        SettingsModel.LoadSettings();
+        //        await userModel.GenerateToken(Request);
+        //        userModel.AppSettings = new Settings { ContactNo = SettingsModel.ContactNo, AboutUs = SettingsModel.AboutUs, PrivacyPolicy = SettingsModel.PrivacyPolicy, TermsConditions = SettingsModel.TermsConditions, Tax = SettingsModel.Tax, Currency = SettingsModel.Currency };
+        //        return Ok(new CustomResponse<User> { Message = GlobalUtility.ResponseMessages.Success, StatusCode = (int)HttpStatusCode.OK, Result = userModel });
+        //    }
+        //    else
+        //        return Ok(new CustomResponse<Error> { Message = GlobalUtility.ResponseMessages.Success, StatusCode = (int)HttpStatusCode.OK, Result = new Error { ErrorMessage = "Invalid UserId" } });
+        //}
 
-        [HttpGet]
-        [Route("MarkDeviceAsInActive")]
-        public async Task<IHttpActionResult> MarkDeviceAsInActive(int UserId, int DeviceId)
-        {
-            bool isDone = _UserService.MarkDeviceAsInActive(UserId, DeviceId);
-            if (isDone)
-            {
-                return Ok(new CustomResponse<string> { Message = GlobalUtility.ResponseMessages.Success, StatusCode = (int)HttpStatusCode.OK });
-            }
-            else
-            {
-                return Ok(new CustomResponse<Error> { Message = GlobalUtility.ResponseMessages.Success, StatusCode = (int)HttpStatusCode.OK, Result = new Error { ErrorMessage = "Invalid UserId or DeviceId." } });
-            }
-        }
+        //[HttpGet]
+        //[Route("MarkDeviceAsInActive")]
+        //public async Task<IHttpActionResult> MarkDeviceAsInActive(int UserId, int DeviceId)
+        //{
+        //    bool isDone = _UserService.MarkDeviceAsInActive(UserId, DeviceId);
+        //    if (isDone)
+        //    {
+        //        return Ok(new CustomResponse<string> { Message = GlobalUtility.ResponseMessages.Success, StatusCode = (int)HttpStatusCode.OK });
+        //    }
+        //    else
+        //    {
+        //        return Ok(new CustomResponse<Error> { Message = GlobalUtility.ResponseMessages.Success, StatusCode = (int)HttpStatusCode.OK, Result = new Error { ErrorMessage = "Invalid UserId or DeviceId." } });
+        //    }
+        //}
 
 
         public ApplicationUserManager UserManager

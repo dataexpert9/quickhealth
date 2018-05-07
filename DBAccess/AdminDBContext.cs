@@ -49,17 +49,17 @@ namespace DBAccess
                 .HasForeignKey(e => e.User_Id)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<User>()
-                .HasMany(e => e.UserAddresses)
-                .WithRequired(e => e.User)
-                .HasForeignKey(e => e.User_ID)
-                .WillCascadeOnDelete(false);
+            //modelBuilder.Entity<User>()
+            //    .HasMany(e => e.UserAddresses)
+            //    .WithRequired(e => e.User)
+            //    .HasForeignKey(e => e.User_ID)
+            //    .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<User>()
-              .HasMany(e => e.AppRatings)
-              .WithRequired(e => e.User)
-              .HasForeignKey(e => e.User_ID)
-              .WillCascadeOnDelete(false);
+            //modelBuilder.Entity<User>()
+            //  .HasMany(e => e.AppRatings)
+            //  .WithRequired(e => e.User)
+            //  .HasForeignKey(e => e.User_ID)
+            //  .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<User>()
                 .HasMany(e => e.Notifications)
@@ -67,19 +67,19 @@ namespace DBAccess
                 .HasForeignKey(e => e.User_ID)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<User>()
-                .Property(e => e.FirstName)
-                .IsUnicode(false);
+            //modelBuilder.Entity<User>()
+            //    .Property(e => e.FirstName)
+            //    .IsUnicode(false);
 
-            modelBuilder.Entity<User>()
-                .Property(e => e.LastName)
-                .IsUnicode(false);
+            //modelBuilder.Entity<User>()
+            //    .Property(e => e.LastName)
+            //    .IsUnicode(false);
 
-            modelBuilder.Entity<User>()
-                .HasMany(e => e.Favourites)
-                .WithRequired(e => e.User)
-                .HasForeignKey(e => e.User_ID)
-                .WillCascadeOnDelete(false);
+            //modelBuilder.Entity<User>()
+            //    .HasMany(e => e.Favourites)
+            //    .WithRequired(e => e.User)
+            //    .HasForeignKey(e => e.User_ID)
+            //    .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<User>()
                 .HasMany(e => e.ForgotPasswordTokens)
@@ -87,11 +87,11 @@ namespace DBAccess
                 .HasForeignKey(e => e.User_ID)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<User>()
-             .HasMany(e => e.PaymentCards)
-             .WithRequired(e => e.User)
-             .HasForeignKey(e => e.User_ID)
-             .WillCascadeOnDelete(false);
+            //modelBuilder.Entity<User>()
+            // .HasMany(e => e.PaymentCards)
+            // .WithRequired(e => e.User)
+            // .HasForeignKey(e => e.User_ID)
+            // .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<User>()
                .HasMany(e => e.DoctorDocuments)

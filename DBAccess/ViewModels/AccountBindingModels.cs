@@ -55,10 +55,21 @@ namespace DBAccess.ViewModels
         [Required]
         public string FullName { get; set; }
         
+        public string Surname { get; set; }
+
+        public DateTime DOB { get; set; }
+
+        [Required]
+        public string PhoneNumber { get; set; }
+
         [Required]
         [Display(Name = "Email")]
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
+
+        public string Country { get; set; }
+
+        public string City { get; set; }
 
         [Required]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
@@ -67,7 +78,11 @@ namespace DBAccess.ViewModels
         public string Password { get; set; }
 
         [Required]
-        public string PhoneNumber { get; set; }
+        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
+        [DataType(DataType.Password)]
+        [Display(Name = "Confirm Password")]
+        [CompareAttribute("Password", ErrorMessage = "Password does not match the confirm password.")]
+        public string ConfirmPassword { get; set; }
 
         public HttpFile UserImage { get; set; }
 
@@ -258,5 +273,15 @@ namespace DBAccess.ViewModels
         [Required]
         [Display(Name = "Code")]
         public string Code { get; set; }
+    }
+
+    public class NexmoBindingModel
+    {
+        [Required]
+        [Display(Name = "Phone Number")]
+        public string PhoneNumber { get; set; }
+
+        public int User_Id { get; set; }
+        
     }
 }

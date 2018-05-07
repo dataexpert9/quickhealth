@@ -20,21 +20,27 @@ namespace BusinessLogic.UserServices
 
         User RegisterAsUser(RegisterUserBindingModel model);
         User RegisterAsDoctor(RegisterDoctorBindingModel model);
+        User UpdateNotificationStatus(bool Status,string Email);
+
+
+        //User RegisterAsDoctor(NexmoBindingModel model);
+
         Admin CreateUpdateAdmin(Admin model);
         bool MarkUserAccountAsVerified(UserModel model);
 
         User SendVerificationSms(PhoneBindingModel model);
+        bool UserVerificationSMS(NexmoBindingModel model);
 
         List<Admin> GetAllAdmins();
 
         User VerifyUserCode(int userId, int code);
         void updateProfileImage(string email, string imageUrl);
         User ContactUs(int userId, string description);
-        User AddUserAddress(AddUserAddressBindingModel model,ref bool AddressAlreadyExist);
+        //User AddUserAddress(AddUserAddressBindingModel model,ref bool AddressAlreadyExist);
 
-        User EditUserAddress(EditUserAddressBindingModel model, ref bool AddressNotExist);
-        User DeleteUserAddress(int UserId, int AddressId, ref bool AddressNotExist);
-        User DeletePaymentCard(int UserId, int CardId, ref bool AddressNotExist);
+        //User EditUserAddress(EditUserAddressBindingModel model, ref bool AddressNotExist);
+        //User DeleteUserAddress(int UserId, int AddressId, ref bool AddressNotExist);
+        //User DeletePaymentCard(int UserId, int CardId, ref bool AddressNotExist);
         User ResetPasswordThroughEmail(string Email);
         User UpdateUserProfileWithImage(EditUserProfileBindingModel model, HttpRequest request, HttpPostedFile postedFile);
 

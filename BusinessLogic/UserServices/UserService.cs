@@ -34,15 +34,22 @@ namespace BusinessLogic.UserServices
             _UserDeviceRepository = new GenericRepository<UserDevice>(_DBContext);
             _AdminRepository = new GenericRepository<Admin>(_DBContext);
         }
-        public User ValidateUser(LoginBindingModel loginModel)
-        {
-            var hashPass = CryptoHelper.Hash(loginModel.Password);
-            return _UserRepository.GetWithInclude(x => x.Email == loginModel.Email && x.Password == hashPass, "UserAddresses", "PaymentCards").FirstOrDefault();
-        }
+
         public Admin ValidateAdmin(LoginBindingModel loginModel)
         {
             var hashPass = CryptoHelper.Hash(loginModel.Password);
             return _AdminRepository.GetFirst(x => x.Email == loginModel.Email && x.Password == hashPass && x.IsDeleted == false);
+        }
+
+
+        
+        /* User Related Servies  */
+        public User ValidateUser(LoginBindingModel loginModel)
+        {
+            var hashPass = CryptoHelper.Hash(loginModel.Password);
+            //return _UserRepository.GetWithInclude(x => x.Email == loginModel.Email && x.Password == hashPass, "UserAddresses", "PaymentCards").FirstOrDefault();
+            return _UserRepository.GetWithInclude(x => x.Email == loginModel.Email && x.Password == hashPass).FirstOrDefault();
+
         }
         public User RegisterAsUser(RegisterUserBindingModel model)
         {
@@ -69,7 +76,9 @@ namespace BusinessLogic.UserServices
                     Status = (int)GlobalUtility.StatusCode.NotVerified,
                     SignInType = (int)RoleTypes.User,
                     IsNotificationsOn = true,
-                    ProfilePictureUrl= imageUrl
+                    ProfilePictureUrl = imageUrl,
+                    PhoneConfirmed = false,
+                    EmailConfirmed = false
                 };
                 _UserRepository.Insert(userModel);
                 _UserRepository.Save();
@@ -78,6 +87,86 @@ namespace BusinessLogic.UserServices
                 return userModel;
             }
         }
+        public bool UserVerificationSMS(NexmoBindingModel model)
+        {
+            var user = _UserRepository.GetFirst(x => x.Phone == model.PhoneNumber && x.Id == model.User_Id);
+            if (user != null)
+            {
+                var nexmoVerifyResponse = NumberVerify.Verify(new NumberVerify.VerifyRequest { brand = "INGIC", number = user.Phone });
+
+                if (nexmoVerifyResponse.status == "0")
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public User UpdateNotificationStatus(bool Status, string Email)
+        {
+            var user = _UserRepository.GetFirst(x => x.Email == Email && x.Status == (int)GlobalUtility.StatusCode.Verified);
+            if (user != null)
+            {
+                user.IsNotificationsOn = Status;
+                _UserRepository.Save();
+                return user;
+            }
+            else
+            {
+                return null;
+            }
+        }
+        public User SendVerificationSms(PhoneBindingModel model)
+        {
+            var user = _UserRepository.GetFirst(x => x.Phone == model.PhoneNumber);
+            if (user != null)
+            {
+                var codeInt = new Random().Next(111111, 999999);
+
+                var results = SMS.Send(new SMS.SMSRequest
+                {
+                    from = "Skribl",
+                    title = "Skribl",
+                    to = model.PhoneNumber,
+                    text = "Use this code to reset your password " + codeInt
+                });
+                if (results.messages.First().status == "0")
+                {
+                    user.ForgotPasswordTokens.Add(new ForgotPasswordToken { CreatedAt = DateTime.Now, IsDeleted = false, User_ID = user.Id, Code = Convert.ToString(codeInt) });
+                    _UserRepository.Update(user);
+                    _UserRepository.Save();
+                    return user;
+                }
+                else
+                {
+                    return new User();
+                }
+            }
+            else
+            {
+                return null;
+            }
+        }
+        public User VerifyUserCode(int userId, int code)
+        {
+            var user = _UserRepository.GetWithInclude(x => x.Id == userId, "ForgotPasswordTokens").FirstOrDefault();
+            if (user != null && user.ForgotPasswordTokens.Count > 0)
+            {
+                var token = user.ForgotPasswordTokens.FirstOrDefault(x => x.Code == Convert.ToString(code) && x.IsDeleted == false && DateTime.Now.Subtract(x.CreatedAt).Minutes < 11);
+                user.ForgotPasswordTokens = null;
+                user.ForgotPasswordTokens.Add(token);
+            }
+            return user;
+        }
+        /* END User Related Services */
+
+        /*Dcotor Related Services */
         public User RegisterAsDoctor(RegisterDoctorBindingModel model)
         {
             if (_UserRepository.Exists(x => x.Email == model.Email))
@@ -102,9 +191,9 @@ namespace BusinessLogic.UserServices
                     Country = model.Country,
                     City = model.City,
                     ProviderType = model.ProviderType,
-                    Specialization=model.Specialization,
-                    Department=model.Department,
-                    LatestQualification=model.LatestQualification
+                    Specialization = model.Specialization,
+                    Department = model.Department,
+                    LatestQualification = model.LatestQualification
                 };
                 //if (model.Specialization != null)
                 //{
@@ -173,11 +262,45 @@ namespace BusinessLogic.UserServices
                 return userModel;
             }
         }
+        /* END Doctor Related Services */
 
+
+        /*Other Services or not verified section */
+        public bool MarkDeviceAsInActive(int UserId, int DeviceId)
+        {
+            var device = _UserDeviceRepository.GetFirst(x => x.Id == DeviceId && x.User_Id == UserId);
+            if (device != null)
+            {
+                device.IsActive = false;
+                _UserDeviceRepository.Update(device);
+                _UserDeviceRepository.Save();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public User ResetPasswordThroughEmail(string Email)
+        {
+            var user = _UserRepository.GetFirst(x => x.Email == Email);
+            if (user != null)
+            {
+                var codeInt = new Random().Next(111111, 999999);
+                string subject = "Reset your password - " + EmailUtil.FromName;
+                string body = "Your new password is :";
+                body = body + " " + codeInt;
+                user.Password = codeInt.ToString();
+                EmailUtil.sendEmail(subject, body, Email);
+                _UserRepository.Update(user);
+                _UserRepository.Save();
+            }
+            return user;
+        }
         public Admin CreateUpdateAdmin(Admin model)
         {
             var admin = _AdminRepository.GetByID(model.Id);
-            if(admin != null)
+            if (admin != null)
             {
                 admin.FirstName = model.FirstName;
                 admin.LastName = model.LastName;
@@ -236,6 +359,7 @@ namespace BusinessLogic.UserServices
             if (user != null)
             {
                 user.Status = (int)GlobalUtility.StatusCode.Verified;
+                user.PhoneConfirmed = true;
                 _UserRepository.Update(user);
                 _UserRepository.Save();
                 return true;
@@ -245,52 +369,10 @@ namespace BusinessLogic.UserServices
                 return false;
             }
         }
-        public User SendVerificationSms(PhoneBindingModel model)
-        {
-            var user = _UserRepository.GetFirst(x => x.Phone == model.PhoneNumber);
-            if (user != null)
-            {
-                var codeInt = new Random().Next(111111, 999999);
-
-                var results = SMS.Send(new SMS.SMSRequest
-                {
-                    from = "Skribl",
-                    title = "Skribl",
-                    to = model.PhoneNumber,
-                    text = "Use this code to reset your password " + codeInt
-                });
-                if (results.messages.First().status == "0")
-                {
-                    user.ForgotPasswordTokens.Add(new ForgotPasswordToken { CreatedAt = DateTime.Now, IsDeleted = false, User_ID = user.Id, Code = Convert.ToString(codeInt) });
-                    _UserRepository.Update(user);
-                    _UserRepository.Save();
-                    return user;
-                }
-                else
-                {
-                    return new User();
-                }
-            }
-            else
-            {
-                return null;
-            }
-        }
         public List<Admin> GetAllAdmins()
         {
             //  return _UserRepository.GetMany(x => x.SignInType == (int)RoleTypes.SubAdmin || x.SignInType == (int)RoleTypes.SuperAdmin);
             return _AdminRepository.GetMany(x => x.IsDeleted == false);
-        }
-        public User VerifyUserCode(int userId, int code)
-        {
-            var user = _UserRepository.GetWithInclude(x => x.Id == userId, "ForgotPasswordTokens").FirstOrDefault();
-            if (user != null && user.ForgotPasswordTokens.Count > 0)
-            {
-                var token = user.ForgotPasswordTokens.FirstOrDefault(x => x.Code == Convert.ToString(code) && x.IsDeleted == false && DateTime.Now.Subtract(x.CreatedAt).Minutes < 11);
-                user.ForgotPasswordTokens = null;
-                user.ForgotPasswordTokens.Add(token);
-            }
-            return user;
         }
         public void updateProfileImage(string email, string imageUrl)
         {
@@ -312,175 +394,149 @@ namespace BusinessLogic.UserServices
             }
             return user;
         }
-        public User AddUserAddress(AddUserAddressBindingModel model, ref bool AddressAlreadyExist)
-        {
-            User user;
-            user = _UserRepository.GetWithInclude(x => x.Id == model.UserId, "UserAddresses", "PaymentCards").FirstOrDefault();
-            if (user != null)
-            {
-                if (!user.UserAddresses.Any(
-                    x => x.Apartment == model.Apartment
-                    && x.City == model.City
-                    && x.Country == model.Country
-                    && x.Floor == model.Floor
-                    && x.NearestLandmark == model.NearestLandmark
-                    && x.BuildingName == model.BuildingName
-                    && x.StreetName == model.StreetName
-                    && x.Type == model.AddressType
-                    && x.IsDeleted == false)
-                    )
-                {
-                    foreach (var address in user.UserAddresses)
-                        address.IsPrimary = false;
-                    user.UserAddresses.Add(new UserAddress
-                    {
-                        Apartment = model.Apartment,
-                        City = model.City,
-                        Country = model.Country,
-                        Floor = model.Floor,
-                        NearestLandmark = model.NearestLandmark,
-                        BuildingName = model.BuildingName,
-                        StreetName = model.StreetName,
-                        Type = model.AddressType,
-                        IsPrimary = true
-                    });
-                    _UserRepository.Update(user);
-                    _UserRepository.Save();
-                }
-                else
-                {
-                    AddressAlreadyExist = true;
-                }
-            }
-            return user;
-        }
-        public User EditUserAddress(EditUserAddressBindingModel model, ref bool AddressNotExist)
-        {
-            User user;
-            user = _UserRepository.GetWithInclude(x => x.Id == model.UserId, "UserAddresses", "PaymentCards").FirstOrDefault();
-            if (user != null)
-            {
-                var address = user.UserAddresses.FirstOrDefault(
-                               x => x.Id == model.AddressId && x.IsDeleted == false
-                               );
-                if (address != null)
-                {
-                    address.Apartment = model.Apartment;
-                    address.City = model.City;
-                    address.Country = model.Country;
-                    address.Floor = model.Floor;
-                    address.NearestLandmark = model.NearestLandmark;
-                    address.BuildingName = model.BuildingName;
-                    address.StreetName = model.StreetName;
-                    address.Type = model.AddressType;
-                    address.IsPrimary = model.IsPrimary;
-                    _UserRepository.Update(user);
-                    _UserRepository.Save();
-                }
-                else
-                {
-                    AddressNotExist = true;
-                }
-            }
-            return user;
-        }
-        public User DeleteUserAddress(int UserId, int AddressId, ref bool AddressNotExist)
-        {
-            User user;
-            user = _UserRepository.GetWithInclude(x => x.Id == UserId, "UserAddresses", "PaymentCards").FirstOrDefault();
-            if (user != null)
-            {
-                var address = user.UserAddresses.FirstOrDefault(
-                               x => x.Id == AddressId && x.IsDeleted == false
-                               );
-                if (address != null)
-                {
-                    address.IsDeleted = true;
-                    _UserRepository.Update(user);
-                    _UserRepository.Save();
-                }
-                else
-                {
-                    AddressNotExist = true;
-                }
-            }
-            return user;
+        #region UserAddressRelatedAPIs
+        //public User AddUserAddress(AddUserAddressBindingModel model, ref bool AddressAlreadyExist)
+        //{
+        //    User user;
+        //    user = _UserRepository.GetWithInclude(x => x.Id == model.UserId, "UserAddresses", "PaymentCards").FirstOrDefault();
+        //    if (user != null)
+        //    {
+        //        if (!user.UserAddresses.Any(
+        //            x => x.Apartment == model.Apartment
+        //            && x.City == model.City
+        //            && x.Country == model.Country
+        //            && x.Floor == model.Floor
+        //            && x.NearestLandmark == model.NearestLandmark
+        //            && x.BuildingName == model.BuildingName
+        //            && x.StreetName == model.StreetName
+        //            && x.Type == model.AddressType
+        //            && x.IsDeleted == false)
+        //            )
+        //        {
+        //            foreach (var address in user.UserAddresses)
+        //                address.IsPrimary = false;
+        //            user.UserAddresses.Add(new UserAddress
+        //            {
+        //                Apartment = model.Apartment,
+        //                City = model.City,
+        //                Country = model.Country,
+        //                Floor = model.Floor,
+        //                NearestLandmark = model.NearestLandmark,
+        //                BuildingName = model.BuildingName,
+        //                StreetName = model.StreetName,
+        //                Type = model.AddressType,
+        //                IsPrimary = true
+        //            });
+        //            _UserRepository.Update(user);
+        //            _UserRepository.Save();
+        //        }
+        //        else
+        //        {
+        //            AddressAlreadyExist = true;
+        //        }
+        //    }
+        //    return user;
+        //} 
 
-        }
-        public User DeletePaymentCard(int UserId, int CardId, ref bool AddressNotExist)
-        {
-            User user;
-            user = _UserRepository.GetWithInclude(x => x.Id == UserId, "PaymentCards").FirstOrDefault();
-            if (user != null)
-            {
-                var card = user.PaymentCards.FirstOrDefault(
-                               x => x.Id == CardId && x.IsDeleted == false
-                               );
-                if (card != null)
-                {
-                    card.IsDeleted = true;
-                    _UserRepository.Update(user);
-                    _UserRepository.Save();
-                }
-                else
-                {
-                    AddressNotExist = true;
-                }
-            }
-            return user;
+        //public User EditUserAddress(EditUserAddressBindingModel model, ref bool AddressNotExist)
+        //{
+        //    User user;
+        //    user = _UserRepository.GetWithInclude(x => x.Id == model.UserId, "UserAddresses", "PaymentCards").FirstOrDefault();
+        //    if (user != null)
+        //    {
+        //        var address = user.UserAddresses.FirstOrDefault(
+        //                       x => x.Id == model.AddressId && x.IsDeleted == false
+        //                       );
+        //        if (address != null)
+        //        {
+        //            address.Apartment = model.Apartment;
+        //            address.City = model.City;
+        //            address.Country = model.Country;
+        //            address.Floor = model.Floor;
+        //            address.NearestLandmark = model.NearestLandmark;
+        //            address.BuildingName = model.BuildingName;
+        //            address.StreetName = model.StreetName;
+        //            address.Type = model.AddressType;
+        //            address.IsPrimary = model.IsPrimary;
+        //            _UserRepository.Update(user);
+        //            _UserRepository.Save();
+        //        }
+        //        else
+        //        {
+        //            AddressNotExist = true;
+        //        }
+        //    }
+        //    return user;
+        //}
+        //public User DeleteUserAddress(int UserId, int AddressId, ref bool AddressNotExist)
+        //{
+        //    User user;
+        //    user = _UserRepository.GetWithInclude(x => x.Id == UserId, "UserAddresses", "PaymentCards").FirstOrDefault();
+        //    if (user != null)
+        //    {
+        //        var address = user.UserAddresses.FirstOrDefault(
+        //                       x => x.Id == AddressId && x.IsDeleted == false
+        //                       );
+        //        if (address != null)
+        //        {
+        //            address.IsDeleted = true;
+        //            _UserRepository.Update(user);
+        //            _UserRepository.Save();
+        //        }
+        //        else
+        //        {
+        //            AddressNotExist = true;
+        //        }
+        //    }
+        //    return user;
 
-        }
-        public User ResetPasswordThroughEmail(string Email)
-        {
-            var user = _UserRepository.GetFirst(x => x.Email == Email);
-            if (user != null)
-            {
-                var codeInt = new Random().Next(111111, 999999);
-                string subject = "Reset your password - " + EmailUtil.FromName;
-                string body = "Your new password is :";
-                body = body + " " + codeInt;
-                user.Password = codeInt.ToString();
-                EmailUtil.sendEmail(subject, body, Email);
-                _UserRepository.Update(user);
-                _UserRepository.Save();
-            }
-            return user;
-        }
+        //}
+        #endregion
+        #region DeletePaymentCard
+        //public User DeletePaymentCard(int UserId, int CardId, ref bool AddressNotExist)
+        //{
+        //    User user;
+        //    user = _UserRepository.GetWithInclude(x => x.Id == UserId, "PaymentCards").FirstOrDefault();
+        //    if (user != null)
+        //    {
+        //        var card = user.PaymentCards.FirstOrDefault(
+        //                       x => x.Id == CardId && x.IsDeleted == false
+        //                       );
+        //        if (card != null)
+        //        {
+        //            card.IsDeleted = true;
+        //            _UserRepository.Update(user);
+        //            _UserRepository.Save();
+        //        }
+        //        else
+        //        {
+        //            AddressNotExist = true;
+        //        }
+        //    }
+        //    return user;
+
+        //} 
+        #endregion
         public User GetUserById(int userId)
         {
             return _UserRepository.GetWithInclude(x => x.Id == userId && x.IsDeleted == false, "UserAddresses", "PaymentCards").FirstOrDefault();
-        }
-        public bool MarkDeviceAsInActive(int UserId, int DeviceId)
-        {
-            var device = _UserDeviceRepository.GetFirst(x => x.Id == DeviceId && x.User_Id == UserId);
-            if (device != null)
-            {
-                device.IsActive = false;
-                _UserDeviceRepository.Update(device);
-                _UserDeviceRepository.Save();
-                return true;
-            }
-            else
-            {
-                return false;
-            }
         }
         public User UpdateUserProfileWithImage(EditUserProfileBindingModel model, HttpRequest httpRequest, HttpPostedFile postedFile)
         {
             string newFullPath = string.Empty;
             string fileNameOnly = string.Empty;
 
-            var userModel =_UserRepository.GetWithInclude(x => x.Email == model.Email,"UserAddresses","PaymentCards").FirstOrDefault();
-            userModel.FirstName = model.FirstName;
-            userModel.LastName = model.LastName;
+            var userModel = _UserRepository.GetWithInclude(x => x.Email == model.Email, "UserAddresses", "PaymentCards").FirstOrDefault();
+            //userModel.FirstName = model.FirstName;
+            //userModel.LastName = model.LastName;
             userModel.SurName = model.SurName;
             userModel.Gender = model.Gender;
             userModel.Bio = model.Bio;
 
             userModel.DateofBirth = model.DateofBirth;
-            userModel.PassportNo = model.PassportNo;
-            userModel.PassportCountryIssued = model.PassportCountryIssued;
-            userModel.PassportExpiryDate = model.PassportExpiryDate;
+            //userModel.PassportNo = model.PassportNo;
+            //userModel.PassportCountryIssued = model.PassportCountryIssued;
+            //userModel.PassportExpiryDate = model.PassportExpiryDate;
             userModel.Phone = model.PhoneNumber;
 
             if (httpRequest.Files.Count > 0)
@@ -492,11 +548,12 @@ namespace BusinessLogic.UserServices
                 userModel.ProfilePictureUrl = ConfigurationManager.AppSettings["UserImageFolderPath"] + userModel.Id + ext;
             }
             return userModel;
-            
+
         }
         public bool CheckPhoneAlreadyRegister(string phoneNumber, string exceptUserEmail)
         {
             return _UserRepository.GetFirst(x => x.Phone == phoneNumber && x.Email != exceptUserEmail) != null;
         }
+        /* END Other Services or not verified section */
     }
 }

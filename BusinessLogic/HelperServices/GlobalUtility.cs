@@ -57,7 +57,7 @@ namespace BusinessLogic.HelperServices
             gm = 1,
             kg = 2
         }
-
+        
         public enum StatusCode
         {
             NotVerified = 1,

@@ -25,6 +25,7 @@ namespace BusinessLogic.HelperServices
                     var setting = ctx.Settings.FirstOrDefault();
                     if (setting != null)
                     {
+                        Id = setting.Id;
                         Currency = setting.Currency;
                         Tax = setting.Tax;
                         PrivacyPolicy = setting.PrivacyPolicy;

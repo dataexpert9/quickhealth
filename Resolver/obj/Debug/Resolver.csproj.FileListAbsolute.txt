@@ -38,3 +38,44 @@ E:\Mehmood ul Hassan\Global Hospital\Resolver\bin\Debug\System.Web.WebPages.Depl
 E:\Mehmood ul Hassan\Global Hospital\Resolver\bin\Debug\System.Web.WebPages.Razor.xml
 E:\Mehmood ul Hassan\Global Hospital\Resolver\obj\Debug\Resolver.dll
 E:\Mehmood ul Hassan\Global Hospital\Resolver\obj\Debug\Resolver.pdb
+F:\Projects\GlobalHospitalApi\Resolver\bin\Debug\Resolver.dll.config
+F:\Projects\GlobalHospitalApi\Resolver\bin\Debug\Resolver.dll
+F:\Projects\GlobalHospitalApi\Resolver\bin\Debug\Resolver.pdb
+F:\Projects\GlobalHospitalApi\Resolver\bin\Debug\CommonServiceLocator.dll
+F:\Projects\GlobalHospitalApi\Resolver\bin\Debug\Microsoft.Practices.Unity.Configuration.dll
+F:\Projects\GlobalHospitalApi\Resolver\bin\Debug\Microsoft.Practices.Unity.dll
+F:\Projects\GlobalHospitalApi\Resolver\bin\Debug\Microsoft.Web.Infrastructure.dll
+F:\Projects\GlobalHospitalApi\Resolver\bin\Debug\Newtonsoft.Json.dll
+F:\Projects\GlobalHospitalApi\Resolver\bin\Debug\System.Net.Http.Formatting.dll
+F:\Projects\GlobalHospitalApi\Resolver\bin\Debug\System.Web.Helpers.dll
+F:\Projects\GlobalHospitalApi\Resolver\bin\Debug\System.Web.Http.dll
+F:\Projects\GlobalHospitalApi\Resolver\bin\Debug\System.Web.Http.WebHost.dll
+F:\Projects\GlobalHospitalApi\Resolver\bin\Debug\System.Web.Mvc.dll
+F:\Projects\GlobalHospitalApi\Resolver\bin\Debug\System.Web.Razor.dll
+F:\Projects\GlobalHospitalApi\Resolver\bin\Debug\System.Web.WebPages.Deployment.dll
+F:\Projects\GlobalHospitalApi\Resolver\bin\Debug\System.Web.WebPages.dll
+F:\Projects\GlobalHospitalApi\Resolver\bin\Debug\System.Web.WebPages.Razor.dll
+F:\Projects\GlobalHospitalApi\Resolver\bin\Debug\Unity.Abstractions.dll
+F:\Projects\GlobalHospitalApi\Resolver\bin\Debug\Unity.Configuration.dll
+F:\Projects\GlobalHospitalApi\Resolver\bin\Debug\Unity.Container.dll
+F:\Projects\GlobalHospitalApi\Resolver\bin\Debug\Unity.Interception.Configuration.dll
+F:\Projects\GlobalHospitalApi\Resolver\bin\Debug\Unity.Interception.dll
+F:\Projects\GlobalHospitalApi\Resolver\bin\Debug\Unity.Mvc3.dll
+F:\Projects\GlobalHospitalApi\Resolver\bin\Debug\Unity.RegistrationByConvention.dll
+F:\Projects\GlobalHospitalApi\Resolver\bin\Debug\Unity.ServiceLocation.dll
+F:\Projects\GlobalHospitalApi\Resolver\bin\Debug\WebActivatorEx.dll
+F:\Projects\GlobalHospitalApi\Resolver\bin\Debug\Microsoft.Practices.Unity.xml
+F:\Projects\GlobalHospitalApi\Resolver\bin\Debug\Microsoft.Practices.Unity.Configuration.xml
+F:\Projects\GlobalHospitalApi\Resolver\bin\Debug\Newtonsoft.Json.xml
+F:\Projects\GlobalHospitalApi\Resolver\bin\Debug\System.Net.Http.Formatting.xml
+F:\Projects\GlobalHospitalApi\Resolver\bin\Debug\System.Web.Helpers.xml
+F:\Projects\GlobalHospitalApi\Resolver\bin\Debug\System.Web.Http.xml
+F:\Projects\GlobalHospitalApi\Resolver\bin\Debug\System.Web.Http.WebHost.xml
+F:\Projects\GlobalHospitalApi\Resolver\bin\Debug\System.Web.Mvc.xml
+F:\Projects\GlobalHospitalApi\Resolver\bin\Debug\System.Web.Razor.xml
+F:\Projects\GlobalHospitalApi\Resolver\bin\Debug\System.Web.WebPages.xml
+F:\Projects\GlobalHospitalApi\Resolver\bin\Debug\System.Web.WebPages.Deployment.xml
+F:\Projects\GlobalHospitalApi\Resolver\bin\Debug\System.Web.WebPages.Razor.xml
+F:\Projects\GlobalHospitalApi\Resolver\obj\Debug\Resolver.csprojResolveAssemblyReference.cache
+F:\Projects\GlobalHospitalApi\Resolver\obj\Debug\Resolver.dll
+F:\Projects\GlobalHospitalApi\Resolver\obj\Debug\Resolver.pdb

@@ -27,3 +27,34 @@ E:\Mehmood ul Hassan\Global Hospital\DBAccess\bin\Debug\Newtonsoft.Json.xml
 E:\Mehmood ul Hassan\Global Hospital\DBAccess\bin\Debug\System.Net.Http.Formatting.xml
 E:\Mehmood ul Hassan\Global Hospital\DBAccess\obj\Debug\DBAccess.dll
 E:\Mehmood ul Hassan\Global Hospital\DBAccess\obj\Debug\DBAccess.pdb
+F:\Projects\GlobalHospitalApi\DBAccess\bin\Debug\DBAccess.dll.config
+F:\Projects\GlobalHospitalApi\DBAccess\bin\Debug\DBAccess.dll
+F:\Projects\GlobalHospitalApi\DBAccess\bin\Debug\DBAccess.pdb
+F:\Projects\GlobalHospitalApi\DBAccess\bin\Debug\EntityFramework.dll
+F:\Projects\GlobalHospitalApi\DBAccess\bin\Debug\EntityFramework.SqlServer.dll
+F:\Projects\GlobalHospitalApi\DBAccess\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+F:\Projects\GlobalHospitalApi\DBAccess\bin\Debug\Microsoft.Practices.Unity.Configuration.dll
+F:\Projects\GlobalHospitalApi\DBAccess\bin\Debug\Microsoft.Practices.Unity.dll
+F:\Projects\GlobalHospitalApi\DBAccess\bin\Debug\MultipartDataMediaFormatter.dll
+F:\Projects\GlobalHospitalApi\DBAccess\bin\Debug\Newtonsoft.Json.dll
+F:\Projects\GlobalHospitalApi\DBAccess\bin\Debug\PushSharp.Amazon.dll
+F:\Projects\GlobalHospitalApi\DBAccess\bin\Debug\PushSharp.Apple.dll
+F:\Projects\GlobalHospitalApi\DBAccess\bin\Debug\PushSharp.Blackberry.dll
+F:\Projects\GlobalHospitalApi\DBAccess\bin\Debug\PushSharp.Core.dll
+F:\Projects\GlobalHospitalApi\DBAccess\bin\Debug\PushSharp.Firefox.dll
+F:\Projects\GlobalHospitalApi\DBAccess\bin\Debug\PushSharp.Google.dll
+F:\Projects\GlobalHospitalApi\DBAccess\bin\Debug\PushSharp.Windows.dll
+F:\Projects\GlobalHospitalApi\DBAccess\bin\Debug\System.Net.Http.Formatting.dll
+F:\Projects\GlobalHospitalApi\DBAccess\bin\Debug\Unity.Mvc3.dll
+F:\Projects\GlobalHospitalApi\DBAccess\bin\Debug\EntityFramework.xml
+F:\Projects\GlobalHospitalApi\DBAccess\bin\Debug\EntityFramework.SqlServer.xml
+F:\Projects\GlobalHospitalApi\DBAccess\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
+F:\Projects\GlobalHospitalApi\DBAccess\bin\Debug\Microsoft.Practices.ServiceLocation.xml
+F:\Projects\GlobalHospitalApi\DBAccess\bin\Debug\Microsoft.Practices.Unity.xml
+F:\Projects\GlobalHospitalApi\DBAccess\bin\Debug\Microsoft.Practices.Unity.Configuration.xml
+F:\Projects\GlobalHospitalApi\DBAccess\bin\Debug\Newtonsoft.Json.xml
+F:\Projects\GlobalHospitalApi\DBAccess\bin\Debug\System.Net.Http.Formatting.xml
+F:\Projects\GlobalHospitalApi\DBAccess\obj\Debug\DBAccess.csprojResolveAssemblyReference.cache
+F:\Projects\GlobalHospitalApi\DBAccess\obj\Debug\DBAccess.dll
+F:\Projects\GlobalHospitalApi\DBAccess\obj\Debug\DBAccess.pdb
+F:\Projects\GlobalHospitalApi\DBAccess\bin\Debug\CloudrailSI.dll
