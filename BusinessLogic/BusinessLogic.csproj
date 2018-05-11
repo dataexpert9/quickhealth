@@ -181,6 +181,8 @@
     <Compile Include="CustomAuthorization\Roles.cs" />
     <Compile Include="CustomAuthorization\SimpleRefreshTokenProvider.cs" />
     <Compile Include="DependencyResolver.cs" />
+    <Compile Include="DoctorServices\IDoctorService.cs" />
+    <Compile Include="DoctorServices\DoctorService.cs" />
     <Compile Include="Exceptions\BusinessException.cs" />
     <Compile Include="HelperServices\CryptoHelper.cs" />
     <Compile Include="HelperServices\GlobalUtility.cs" />

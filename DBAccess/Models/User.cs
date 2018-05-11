@@ -24,7 +24,7 @@ namespace DBAccess.Models
             //UserAddresses = new HashSet<UserAddress>();
             UserDevices = new HashSet<UserDevice>();
             //Feedback = new HashSet<ContactUs>();
-            DoctorDocuments = new HashSet<DoctorDocument>();
+
         }
 
         public int Id { get; set; }
@@ -35,7 +35,7 @@ namespace DBAccess.Models
         //[StringLength(100)]
         //public string LastName { get; set; }
 
-        public int Gender { get; set; }
+        public string Gender { get; set; }
 
         public string Email { get; set; }
 
@@ -44,17 +44,16 @@ namespace DBAccess.Models
         [JsonIgnore]
         public string Password { get; set; }
 
-        //public string AccountType { get; set; }
-
-        //public string ZipCode { get; set; }
-
-        public string DateofBirth { get; set; }
+        public DateTime? DateofBirth { get; set; }
 
         public int? SignInType { get; set; }
 
         public short? Status { get; set; }
 
         public bool EmailConfirmed { get; set; }
+
+        [NotMapped]
+        public string VerificationCode { get; set; }
 
         public string Location_Name { get; set; }
 
@@ -68,14 +67,29 @@ namespace DBAccess.Models
 
         public int ProviderType { get; set; }
 
-        public string Specialization { get; set; }
+        public string Name { get; set; }
 
-        public string Department { get; set; }
 
-        public string LatestQualification { get; set; }
+        public string PhoneNumber { get; set; }
+        
+        public string Address { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DoctorDocument> DoctorDocuments { get; set; }
+        public DateTime DOB { get; set; }
+
+        public string Weight { get; set; }
+
+        public string Height { get; set; }
+
+        public string BMI { get; set; }
+
+
+        //public string Specialization { get; set; }
+
+        //public string Department { get; set; }
+
+        //public string LatestQualification { get; set; }
+
+
         //[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         //public virtual ICollection<PaymentCard> PaymentCards { get; set; }
 
@@ -123,10 +137,7 @@ namespace DBAccess.Models
         public string ProfilePictureUrl { get; set; }
 
         public string SurName { get; set; }
-        public string Bio { get; set; }
-        //public string PassportNo { get; set; }
-        //public string PassportCountryIssued { get; set; }
-        //public string PassportExpiryDate { get; set; }
+        
         public string FullName { get; set; }
     }
 

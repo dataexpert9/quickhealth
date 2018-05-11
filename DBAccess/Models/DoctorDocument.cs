@@ -12,8 +12,8 @@ namespace DBAccess.Models
         public int DocumentType { get; set; }
         public string FilePath { get; set; }
         public DateTime UploadDate { get; set; }
-        public User User { get; set; }
-        public int UserId { get; set; }
+        public Doctor Doctor { get; set; }
+        public int Doctor_Id { get; set; }
     }
     
     public enum DoctorDocumentType

@@ -13,12 +13,23 @@ namespace DBAccess.Models
     {
 
         public int Id { get; set; }
+
         public string DeviceName { get; set; }
+
         public string UDID { get; set; }
+
         public bool Platform { get; set; }
-        public int User_Id { get; set; }
+
         public string AuthToken { get; set; }
+
         public bool IsActive { get; set; }
+
+        public int? Doctor_Id { get; set; }
+
+        public Doctor Doctor { get; set; }
+
+        public int? User_Id { get; set; }
+
         public User User { get; set; }
 
         [NotMapped]

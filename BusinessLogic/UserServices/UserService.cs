@@ -67,18 +67,19 @@ namespace BusinessLogic.UserServices
                     imageUrl = ImageHelper.SaveFileFromBytes(model.UserImage, "ProfileImages");
                 }
 
+                // change statuses later
                 User userModel = new User
                 {
                     FullName = model.FullName,
                     Email = model.Email,
                     Password = CryptoHelper.Hash(model.Password),
                     Phone = model.PhoneNumber,
-                    Status = (int)GlobalUtility.StatusCode.NotVerified,
+                    Status = (int)GlobalUtility.StatusCode.Verified,
                     SignInType = (int)RoleTypes.User,
                     IsNotificationsOn = true,
                     ProfilePictureUrl = imageUrl,
-                    PhoneConfirmed = false,
-                    EmailConfirmed = false
+                    PhoneConfirmed = true,
+                    EmailConfirmed = true
                 };
                 _UserRepository.Insert(userModel);
                 _UserRepository.Save();
@@ -138,7 +139,7 @@ namespace BusinessLogic.UserServices
                 });
                 if (results.messages.First().status == "0")
                 {
-                    user.ForgotPasswordTokens.Add(new ForgotPasswordToken { CreatedAt = DateTime.Now, IsDeleted = false, User_ID = user.Id, Code = Convert.ToString(codeInt) });
+                    //user.ForgotPasswordTokens.Add(new ForgotPasswordToken { CreatedAt = DateTime.Now, IsDeleted = false, User_ID = user.Id, Code = Convert.ToString(codeInt) });
                     _UserRepository.Update(user);
                     _UserRepository.Save();
                     return user;
@@ -176,24 +177,22 @@ namespace BusinessLogic.UserServices
             else
             {
                 User userModel;
+                // change statuses later
                 userModel = new User
                 {
                     FullName = model.FullName,
                     Phone = model.Phone,
                     Email = model.Email,
                     Password = CryptoHelper.Hash(model.Password),
-                    Status = (int)GlobalUtility.StatusCode.NotVerified,
+                    Status = (int)GlobalUtility.StatusCode.Verified,
                     SignInType = (int)RoleTypes.Doctor,
                     IsNotificationsOn = true,
-                    DateofBirth = model.DateOfBirth.ToShortDateString(),
+                    DateofBirth = model.DateOfBirth,
                     ProfilePictureUrl = ImageHelper.SaveFileFromBytes(model.ProfilePictureUrl, "ProfileImages"),
                     SurName = model.SurName,
                     Country = model.Country,
                     City = model.City,
-                    ProviderType = model.ProviderType,
-                    Specialization = model.Specialization,
-                    Department = model.Department,
-                    LatestQualification = model.LatestQualification
+                    ProviderType = model.ProviderType
                 };
                 //if (model.Specialization != null)
                 //{
@@ -235,24 +234,24 @@ namespace BusinessLogic.UserServices
                 {
                     foreach (var item in model.EductionCertificate)
                     {
-                        userModel.DoctorDocuments.Add(new DoctorDocument()
-                        {
-                            DocumentType = (int)DoctorDocumentType.EductionCertificate,
-                            FilePath = ImageHelper.SaveFileFromBytes(item, "DoctorDocuments"),
-                            UploadDate = DateTime.Now
-                        });
+                        //userModel.DoctorDocuments.Add(new DoctorDocument()
+                        //{
+                        //    DocumentType = (int)DoctorDocumentType.EductionCertificate,
+                        //    FilePath = ImageHelper.SaveFileFromBytes(item, "DoctorDocuments"),
+                        //    UploadDate = DateTime.Now
+                        //});
                     }
                 }
                 if (model.ProfessionalCertificate != null)
                 {
                     foreach (var item in model.ProfessionalCertificate)
                     {
-                        userModel.DoctorDocuments.Add(new DoctorDocument()
-                        {
-                            DocumentType = (int)DoctorDocumentType.ProfessionalCertificate,
-                            FilePath = ImageHelper.SaveFileFromBytes(item, "DoctorDocuments"),
-                            UploadDate = DateTime.Now
-                        });
+                        //userModel.DoctorDocuments.Add(new DoctorDocument()
+                        //{
+                        //    DocumentType = (int)DoctorDocumentType.ProfessionalCertificate,
+                        //    FilePath = ImageHelper.SaveFileFromBytes(item, "DoctorDocuments"),
+                        //    UploadDate = DateTime.Now
+                        //});
                     }
                 }
                 _UserRepository.Insert(userModel);
@@ -521,23 +520,46 @@ namespace BusinessLogic.UserServices
         {
             return _UserRepository.GetWithInclude(x => x.Id == userId && x.IsDeleted == false, "UserAddresses", "PaymentCards").FirstOrDefault();
         }
+
+
+        public User UpdateUserProfile(EditUserProfileBindingModel model)
+        {
+            string newFullPath = string.Empty;
+            string fileNameOnly = string.Empty;
+
+            //var userModel = _UserRepository.GetWithInclude(x => x.Email == model.Email, "UserAddresses", "PaymentCards").FirstOrDefault();
+            var userModel = _UserRepository.GetWithInclude(x => x.Email == model.Email).FirstOrDefault();
+
+            userModel.FullName = model.FullName;
+            userModel.Gender = model.Gender;
+            userModel.Location_Name = model.Location;
+            userModel.Phone = model.PhoneNumber;
+            userModel.DateofBirth = model.DOB;
+            userModel.Address = model.Address;
+            userModel.Weight = model.Weight;
+            userModel.Height = model.Height;
+            userModel.BMI = model.BMI;
+            _UserRepository.Save();
+            return userModel;
+
+        }
+
         public User UpdateUserProfileWithImage(EditUserProfileBindingModel model, HttpRequest httpRequest, HttpPostedFile postedFile)
         {
             string newFullPath = string.Empty;
             string fileNameOnly = string.Empty;
 
             var userModel = _UserRepository.GetWithInclude(x => x.Email == model.Email, "UserAddresses", "PaymentCards").FirstOrDefault();
-            //userModel.FirstName = model.FirstName;
-            //userModel.LastName = model.LastName;
-            userModel.SurName = model.SurName;
-            userModel.Gender = model.Gender;
-            userModel.Bio = model.Bio;
 
-            userModel.DateofBirth = model.DateofBirth;
-            //userModel.PassportNo = model.PassportNo;
-            //userModel.PassportCountryIssued = model.PassportCountryIssued;
-            //userModel.PassportExpiryDate = model.PassportExpiryDate;
+            userModel.FullName = model.FullName;
+            userModel.Gender = model.Gender;
+            userModel.Location_Name = model.Location;
             userModel.Phone = model.PhoneNumber;
+            userModel.DateofBirth = model.DOB;
+            userModel.Address = model.Address;
+            userModel.Weight = model.Weight;
+            userModel.Height = model.Height;
+            userModel.BMI = model.BMI;
 
             if (httpRequest.Files.Count > 0)
             {

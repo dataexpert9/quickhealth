@@ -17,11 +17,13 @@ namespace DBAccess.Models
 
         public bool IsDeleted { get; set; }
 
-        public int User_ID { get; set; }
+        public int? Doctor_Id { get; set; }
+
+        public virtual Doctor Doctor { get; set; }
+
+        public int? User_Id { get; set; }
 
         public virtual User User { get; set; }
-        
-        
         
     }
 }

@@ -131,7 +131,7 @@ namespace BusinessLogic.HelperServices
             Offer_Product,
             Offer_Package
         }
-
+     
         public class ResponseMessages
         {
             public const string Success = "Success";

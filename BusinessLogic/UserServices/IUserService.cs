@@ -23,6 +23,7 @@ namespace BusinessLogic.UserServices
         User UpdateNotificationStatus(bool Status,string Email);
 
 
+
         //User RegisterAsDoctor(NexmoBindingModel model);
 
         Admin CreateUpdateAdmin(Admin model);
@@ -43,6 +44,8 @@ namespace BusinessLogic.UserServices
         //User DeletePaymentCard(int UserId, int CardId, ref bool AddressNotExist);
         User ResetPasswordThroughEmail(string Email);
         User UpdateUserProfileWithImage(EditUserProfileBindingModel model, HttpRequest request, HttpPostedFile postedFile);
+        User UpdateUserProfile(EditUserProfileBindingModel model);
+
 
         User GetUserById(int userId);
         bool MarkDeviceAsInActive(int UserId, int DeviceId);

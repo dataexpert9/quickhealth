@@ -37,11 +37,13 @@ namespace AdminWebapi.Controllers
     {
         private ApplicationUserManager _userManager;
         private readonly IUserService _UserService;
+        private readonly IDoctorService _DoctorService;
         private readonly IImageUpload _ImageUpload;
-        public UserController(IUserService userService, IImageUpload imageUpload)
+        public UserController(IUserService userService,IDoctorService doctorService, IImageUpload imageUpload)
         {
             _UserService = userService;
             _ImageUpload = imageUpload;
+            _DoctorService = doctorService;
         }
 
         /// <summary>
@@ -78,14 +80,28 @@ namespace AdminWebapi.Controllers
                         Result = new Error { ErrorMessage = "Please verify your mobile number to proceed." }
                     });
                 }
+            }else
+            {
+                Doctor doctorModel = _DoctorService.ValidateDoctor(model);
+                if (doctorModel != null)
+                {
+                    await doctorModel.GenerateToken(Request);
+                    SettingsModel.LoadSettings();
+                    doctorModel.AppSettings = new Settings { Id = SettingsModel.Id, ContactNo = SettingsModel.ContactNo, AboutUs = SettingsModel.AboutUs, PrivacyPolicy = SettingsModel.PrivacyPolicy, TermsConditions = SettingsModel.TermsConditions, Tax = SettingsModel.Tax, Currency = SettingsModel.Currency };
+                    return Ok(new CustomResponse<Doctor> { Message = GlobalUtility.ResponseMessages.Success, StatusCode = (int)HttpStatusCode.OK, Result = doctorModel });
+
+                }else
+                {
+                    return Content(HttpStatusCode.OK, new CustomResponse<Error>
+                    {
+                        Message = "Forbidden",
+                        StatusCode = (int)HttpStatusCode.Forbidden,
+                        Result = new Error { ErrorMessage = "Invalid email or password." }
+                    });
+                }
             }
 
-            return Content(HttpStatusCode.OK, new CustomResponse<Error>
-            {
-                Message = "Forbidden",
-                StatusCode = (int)HttpStatusCode.Forbidden,
-                Result = new Error { ErrorMessage = "Invalid email or password." }
-            });
+           
             //  }
             //}
             //catch (Exception ex)
@@ -358,19 +374,21 @@ namespace AdminWebapi.Controllers
             {
                 NexmoBindingModel verificationMessageModel = new NexmoBindingModel();
 
-                var nexmoResponse = _UserService.UserVerificationSMS(new NexmoBindingModel {PhoneNumber=userModel.Phone,User_Id=userModel.Id });
+                //var nexmoResponse = _UserService.UserVerificationSMS(new NexmoBindingModel {PhoneNumber=userModel.Phone,User_Id=userModel.Id });
 
-                if(!nexmoResponse)
-                {
-                    return Content(HttpStatusCode.OK, new CustomResponse<Error>
-                    {
-                        Message = "Conflict",
-                        StatusCode = (int)HttpStatusCode.Conflict,
-                        Result = new Error { ErrorMessage = "Verification SMS failed due to some reason." }
+                //if(!nexmoResponse)
+                //{
+                //    return Content(HttpStatusCode.OK, new CustomResponse<Error>
+                //    {
+                //        Message = "Conflict",
+                //        StatusCode = (int)HttpStatusCode.Conflict,
+                //        Result = new Error { ErrorMessage = "Verification SMS failed due to some reason." }
 
-                    });
-                }
+                //    });
+                //}
 
+                Random _rdm = new Random();
+                userModel.VerificationCode = Convert.ToString(_rdm.Next(1000, 9999));
                 await userModel.GenerateToken(Request);
                 CustomResponse<User> response = new CustomResponse<User> { Message = GlobalUtility.ResponseMessages.Success, StatusCode = (int)HttpStatusCode.OK, Result = userModel };
                 return Ok(response);
@@ -386,7 +404,7 @@ namespace AdminWebapi.Controllers
             {
                 return BadRequest(ModelState);
             }
-            var doctor = _UserService.RegisterAsDoctor(model);
+            var doctor = _DoctorService.RegisterAsDoctor(model);
             if (doctor == null)
             {
                 return Content(HttpStatusCode.OK, new CustomResponse<Error>
@@ -399,10 +417,42 @@ namespace AdminWebapi.Controllers
             else
             {
                 await doctor.GenerateToken(Request);
-                CustomResponse<User> response = new CustomResponse<User> { Message = GlobalUtility.ResponseMessages.Success, StatusCode = (int)HttpStatusCode.OK, Result = doctor };
+                CustomResponse<Doctor> response = new CustomResponse<Doctor> { Message = GlobalUtility.ResponseMessages.Success, StatusCode = (int)HttpStatusCode.OK, Result = doctor };
                 return Ok(response);
             }
         }
+
+
+
+
+        [Route("UpdateUserProfile")]
+        [HttpPost]
+        [AllowAnonymous]
+        public async Task<IHttpActionResult> UpdateUserProfile(EditUserProfileBindingModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            var userModel = _UserService.UpdateUserProfile(model);
+            if (userModel == null)
+            {
+                return Content(HttpStatusCode.OK, new CustomResponse<Error>
+                {
+                    Message = "Conflict",
+                    StatusCode = (int)HttpStatusCode.Conflict,
+                    Result = new Error { ErrorMessage = "User with entered email already exists." }
+                });
+            }
+            else
+            {
+                await userModel.GenerateToken(Request);
+                CustomResponse<User> response = new CustomResponse<User> { Message = GlobalUtility.ResponseMessages.Success, StatusCode = (int)HttpStatusCode.OK, Result = userModel };
+                return Ok(response);
+            }
+        }
+
+
 
         //[Route("RegisterAsAdmin")]
         //[HttpPost]

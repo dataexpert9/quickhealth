@@ -10,53 +10,25 @@ namespace DBAccess.ViewModels
 {
     public class EditUserProfileBindingModel
     {
-        [Required]
-        public string FirstName { get; set; }
+        public string FullName { get; set; }
 
-        [Required]
-        public string LastName { get; set; }
-        
-        public string SurName { get; set; }
+        public string Gender { get; set; }
 
-        [Required]
-        public int Gender { get; set; }
+        public string Location { get; set; }
 
-        public string Bio { get; set; }
-
-        [Required]
-        public int Airline_Id { get; set; }
-
-        [Required]
-        public string JobTitle { get; set; }
-
-        [Required]
-        public string Grade { get; set; }
-
-        [Required]
-        public string AircraftTrainedFor { get; set; }
-
-        [Required]
-        public string Base { get; set; }
-
-        [Required]
-        public string DateofBirth { get; set; }
-
-        [Required]
-        public int Language_Id { get; set; }
-
-        public string PassportNo { get; set; }
-
-        public string PassportCountryIssued { get; set; }
-
-        public string ExpiryDate { get; set; }
-
-        [Required]
-        [Display(Name = "Email")]
-        public string Email { get; set; }
-        
-        [DataType(DataType.PhoneNumber)]
         public string PhoneNumber { get; set; }
-        public string PassportExpiryDate { get; set; }
+
+        public string Email { get; set; }
+
+        public string Address { get; set; }
+
+        public DateTime DOB { get; set; }
+
+        public string Weight { get; set; }
+
+        public string Height { get; set; }
+
+        public string BMI { get; set; }
     }
     
     public class UserViewModel

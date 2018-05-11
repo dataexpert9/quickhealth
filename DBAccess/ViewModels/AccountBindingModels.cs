@@ -77,13 +77,6 @@ namespace DBAccess.ViewModels
         [Display(Name = "Password")]
         public string Password { get; set; }
 
-        [Required]
-        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
-        [DataType(DataType.Password)]
-        [Display(Name = "Confirm Password")]
-        [CompareAttribute("Password", ErrorMessage = "Password does not match the confirm password.")]
-        public string ConfirmPassword { get; set; }
-
         public HttpFile UserImage { get; set; }
 
     }

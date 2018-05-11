@@ -22,6 +22,7 @@ namespace DBAccess
         public virtual DbSet<Notification> Notifications { get; set; }
         public virtual DbSet<Admin> Admins { get; set; }
         public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<Doctor> Doctors { get; set; }
         public virtual DbSet<AppRatings> AppRatings { get; set; }
         public virtual DbSet<UserAddress> UserAddresses { get; set; }
         public virtual DbSet<ContactUs> ContactUs { get; set; }
@@ -34,14 +35,14 @@ namespace DBAccess
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
 
-           
+
 
             modelBuilder.Entity<AdminNotifications>()
                .HasMany(e => e.Notifications)
                .WithOptional(e => e.AdminNotification)
                .HasForeignKey(e => e.AdminNotification_Id)
                .WillCascadeOnDelete(false);
-            
+
 
             modelBuilder.Entity<User>()
                 .HasMany(e => e.UserDevices)
@@ -56,7 +57,7 @@ namespace DBAccess
             //    .WillCascadeOnDelete(false);
 
             //modelBuilder.Entity<User>()
-            //  .HasMany(e => e.AppRatings)
+            //  .HasMany(e => e.AppSettings)
             //  .WithRequired(e => e.User)
             //  .HasForeignKey(e => e.User_ID)
             //  .WillCascadeOnDelete(false);
@@ -83,8 +84,14 @@ namespace DBAccess
 
             modelBuilder.Entity<User>()
                 .HasMany(e => e.ForgotPasswordTokens)
-                .WithRequired(e => e.User)
-                .HasForeignKey(e => e.User_ID)
+                .WithOptional(e => e.User)
+                .HasForeignKey(e => e.User_Id)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Doctor>()
+                .HasMany(e => e.ForgotPasswordTokens)
+                .WithOptional(e => e.Doctor)
+                .HasForeignKey(e => e.Doctor_Id)
                 .WillCascadeOnDelete(false);
 
             //modelBuilder.Entity<User>()
@@ -93,12 +100,12 @@ namespace DBAccess
             // .HasForeignKey(e => e.User_ID)
             // .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<User>()
+            modelBuilder.Entity<Doctor>()
                .HasMany(e => e.DoctorDocuments)
-               .WithRequired(e => e.User)
-               .HasForeignKey(e => e.UserId)
+               .WithRequired(e => e.Doctor)
+               .HasForeignKey(e => e.Doctor_Id)
                .WillCascadeOnDelete(false);
-            
+
         }
     }
 }
