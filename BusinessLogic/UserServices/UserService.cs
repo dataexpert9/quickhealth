@@ -79,7 +79,8 @@ namespace BusinessLogic.UserServices
                     IsNotificationsOn = true,
                     ProfilePictureUrl = imageUrl,
                     PhoneConfirmed = true,
-                    EmailConfirmed = true
+                    EmailConfirmed = true,
+                    DateofBirth=model.DOB
                 };
                 _UserRepository.Insert(userModel);
                 _UserRepository.Save();

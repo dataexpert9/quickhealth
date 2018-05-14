@@ -68,14 +68,11 @@ namespace DBAccess.Models
         public int ProviderType { get; set; }
 
         public string Name { get; set; }
-
-
+        
         public string PhoneNumber { get; set; }
         
         public string Address { get; set; }
-
-        public DateTime DOB { get; set; }
-
+        
         public string Weight { get; set; }
 
         public string Height { get; set; }
