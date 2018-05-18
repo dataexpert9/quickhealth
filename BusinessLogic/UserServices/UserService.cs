@@ -5,6 +5,7 @@ using DBAccess;
 using DBAccess.GenericRepository;
 using DBAccess.Models;
 using DBAccess.ViewModels;
+using DBAccess.ViewModels.User;
 using Nexmo.Api;
 using System;
 using System.Collections.Generic;
@@ -24,15 +25,21 @@ namespace BusinessLogic.UserServices
     {
         private readonly AdminDBContext _DBContext = new AdminDBContext();
         private readonly GenericRepository<User> _UserRepository;
+        private readonly GenericRepository<Doctor> _DoctorRepository;
         private readonly GenericRepository<ContactUs> _ContactUsRepository;
         private readonly GenericRepository<UserDevice> _UserDeviceRepository;
         private readonly GenericRepository<Admin> _AdminRepository;
+        private readonly GenericRepository<FamilyHistory> _FamilyHistory;
+
+
         public UserService()
         {
             _UserRepository = new GenericRepository<User>(_DBContext);
             _ContactUsRepository = new GenericRepository<ContactUs>(_DBContext);
             _UserDeviceRepository = new GenericRepository<UserDevice>(_DBContext);
             _AdminRepository = new GenericRepository<Admin>(_DBContext);
+            _DoctorRepository = new GenericRepository<Doctor>(_DBContext);
+
         }
 
         public Admin ValidateAdmin(LoginBindingModel loginModel)
@@ -42,7 +49,7 @@ namespace BusinessLogic.UserServices
         }
 
 
-        
+
         /* User Related Servies  */
         public User ValidateUser(LoginBindingModel loginModel)
         {
@@ -71,6 +78,7 @@ namespace BusinessLogic.UserServices
                 User userModel = new User
                 {
                     FullName = model.FullName,
+                    SurName = model.Surname,
                     Email = model.Email,
                     Password = CryptoHelper.Hash(model.Password),
                     Phone = model.PhoneNumber,
@@ -80,10 +88,14 @@ namespace BusinessLogic.UserServices
                     ProfilePictureUrl = imageUrl,
                     PhoneConfirmed = true,
                     EmailConfirmed = true,
-                    DateofBirth=model.DOB
+                    DateofBirth = model.DOB, 
+                    City=model.City,
+                    Country=model.Country
                 };
                 _UserRepository.Insert(userModel);
                 _UserRepository.Save();
+
+                _UserRepository.Delete(userModel.Id);
                 SettingsModel.LoadSettings();
                 userModel.AppSettings = new Settings { ContactNo = SettingsModel.ContactNo, AboutUs = SettingsModel.AboutUs, PrivacyPolicy = SettingsModel.PrivacyPolicy, TermsConditions = SettingsModel.TermsConditions, Tax = SettingsModel.Tax, Currency = SettingsModel.Currency };
                 return userModel;
@@ -263,7 +275,7 @@ namespace BusinessLogic.UserServices
             }
         }
         /* END Doctor Related Services */
-
+        
 
         /*Other Services or not verified section */
         public bool MarkDeviceAsInActive(int UserId, int DeviceId)
@@ -284,18 +296,41 @@ namespace BusinessLogic.UserServices
         public User ResetPasswordThroughEmail(string Email)
         {
             var user = _UserRepository.GetFirst(x => x.Email == Email);
-            if (user != null)
+            
+            if (user == null)
+            {
+                var doctor = _DoctorRepository.GetFirst(x => x.Email == Email);
+                if (doctor == null)
+                {
+                    return null;
+                }
+
+                var codeInt = new Random().Next(111111, 999999);
+                string subject = "Reset your password - " + EmailUtil.FromName;
+                string body = "Your new password is :";
+                body = body + " " + codeInt;
+
+                var encryptedPass = CryptoHelper.Hash(codeInt.ToString());
+                doctor.Password = encryptedPass;
+                EmailUtil.sendEmail(subject, body, Email);
+                _DoctorRepository.Update(doctor);
+                _DoctorRepository.Save();
+                return new User();
+            }else 
             {
                 var codeInt = new Random().Next(111111, 999999);
                 string subject = "Reset your password - " + EmailUtil.FromName;
                 string body = "Your new password is :";
                 body = body + " " + codeInt;
-                user.Password = codeInt.ToString();
+
+                var encryptedPass = CryptoHelper.Hash(codeInt.ToString());
+                user.Password = encryptedPass;
                 EmailUtil.sendEmail(subject, body, Email);
                 _UserRepository.Update(user);
                 _UserRepository.Save();
+                return new User();
             }
-            return user;
+            return null;
         }
         public Admin CreateUpdateAdmin(Admin model)
         {
@@ -519,7 +554,9 @@ namespace BusinessLogic.UserServices
         #endregion
         public User GetUserById(int userId)
         {
-            return _UserRepository.GetWithInclude(x => x.Id == userId && x.IsDeleted == false, "UserAddresses", "PaymentCards").FirstOrDefault();
+            //return _UserRepository.GetWithInclude(x => x.Id == userId && x.IsDeleted == false, "UserAddresses", "PaymentCards").FirstOrDefault();
+            return _UserRepository.GetWithInclude(x => x.Id == userId && x.IsDeleted == false).FirstOrDefault();
+
         }
 
 
@@ -531,6 +568,7 @@ namespace BusinessLogic.UserServices
             //var userModel = _UserRepository.GetWithInclude(x => x.Email == model.Email, "UserAddresses", "PaymentCards").FirstOrDefault();
             var userModel = _UserRepository.GetWithInclude(x => x.Email == model.Email).FirstOrDefault();
 
+
             userModel.FullName = model.FullName;
             userModel.Gender = model.Gender;
             userModel.Location_Name = model.Location;
@@ -540,6 +578,35 @@ namespace BusinessLogic.UserServices
             userModel.Weight = model.Weight;
             userModel.Height = model.Height;
             userModel.BMI = model.BMI;
+
+            //userModel.FullName = model.About.FullName;
+            //userModel.Gender = model.About.Gender;
+            //userModel.Location_Name = model.About.Location;
+            //userModel.Phone = model.About.PhoneNumber;
+            //userModel.DateofBirth = model.About.DOB;
+            //userModel.Address = model.About.Address;
+            //userModel.Weight = model.About.Weight;
+            //userModel.Height = model.About.Height;
+            //userModel.BMI = model.About.BMI;
+
+
+            //if (model.FamilyHistory.Count > 0)
+            //{
+            //    List<FamilyHistory> FamilyHistories = new List<FamilyHistory>();
+            //    _UserRepository.Delete(userModel.FamilyMembers);
+            //    foreach (var relative in model.FamilyHistory)
+            //    {
+            //        FamilyHistories.Add(new FamilyHistory
+            //        {
+            //            FamilyMember_Id = relative.FamilyMember_Id,
+            //            Reason = relative.Reason,
+            //            Relation = relative.Relation,
+            //            IsDeleted = false
+            //        });
+            //    }
+            //    _FamilyHistory.InsertMany(FamilyHistories);
+            //}
+
             _UserRepository.Save();
             return userModel;
 
@@ -550,7 +617,11 @@ namespace BusinessLogic.UserServices
             string newFullPath = string.Empty;
             string fileNameOnly = string.Empty;
 
-            var userModel = _UserRepository.GetWithInclude(x => x.Email == model.Email, "UserAddresses", "PaymentCards").FirstOrDefault();
+            //var userModel = _UserRepository.GetWithInclude(x => x.Email == model.Email, "UserAddresses", "PaymentCards").FirstOrDefault();
+
+
+            var userModel = _UserRepository.GetWithInclude(x => x.Email == model.Email).FirstOrDefault();
+
 
             userModel.FullName = model.FullName;
             userModel.Gender = model.Gender;
@@ -561,6 +632,16 @@ namespace BusinessLogic.UserServices
             userModel.Weight = model.Weight;
             userModel.Height = model.Height;
             userModel.BMI = model.BMI;
+
+            //userModel.FullName = model.About.FullName;
+            //userModel.Gender = model.About.Gender;
+            //userModel.Location_Name = model.About.Location;
+            //userModel.Phone = model.About.PhoneNumber;
+            //userModel.DateofBirth = model.About.DOB;
+            //userModel.Address = model.About.Address;
+            //userModel.Weight = model.About.Weight;
+            //userModel.Height = model.About.Height;
+            //userModel.BMI = model.About.BMI;
 
             if (httpRequest.Files.Count > 0)
             {
@@ -578,5 +659,15 @@ namespace BusinessLogic.UserServices
             return _UserRepository.GetFirst(x => x.Phone == phoneNumber && x.Email != exceptUserEmail) != null;
         }
         /* END Other Services or not verified section */
+
+        //public FamilyMember AddNewFamilyMember(AddFamilyMemberBindingModel model)
+        //{
+        //    _FamilyHistory.Insert()
+
+
+        //}
+
+
+
     }
 }

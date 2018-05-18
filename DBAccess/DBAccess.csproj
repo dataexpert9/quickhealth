@@ -100,14 +100,20 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Admin.cs" />
     <Compile Include="Models\AdminNotifications.cs" />
+    <Compile Include="Models\Allergies.cs" />
     <Compile Include="Models\Application.cs" />
     <Compile Include="Models\AppRatings.cs" />
     <Compile Include="Models\ContactUs.cs" />
     <Compile Include="Models\CreditCard.cs" />
     <Compile Include="Models\Doctor.cs" />
     <Compile Include="Models\DoctorDocument.cs" />
+    <Compile Include="Models\FamilyHistory.cs" />
+    <Compile Include="Models\FamilyMember.cs" />
     <Compile Include="Models\Favourite.cs" />
     <Compile Include="Models\ForgotPasswordToken.cs" />
+    <Compile Include="Models\LifeStyle.cs" />
+    <Compile Include="Models\MedicalConditions.cs" />
+    <Compile Include="Models\Medications.cs" />
     <Compile Include="Models\Notification.cs" />
     <Compile Include="Models\RefreshTokens.cs" />
     <Compile Include="Models\Settings.cs" />
@@ -115,11 +121,13 @@
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\UserAddress.cs" />
     <Compile Include="Models\UserDevices.cs" />
+    <Compile Include="Models\Vaccinations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SpContext.cs" />
     <Compile Include="ViewModels\AccountBindingModels.cs" />
     <Compile Include="ViewModels\Common\ImageUpload.cs" />
     <Compile Include="ViewModels\SocialUserViewModel.cs" />
+    <Compile Include="ViewModels\User\FamilyMemberModels.cs" />
     <Compile Include="ViewModels\User\UserAddressBindingModel.cs" />
     <Compile Include="ViewModels\User\UserViewModel.cs" />
   </ItemGroup>

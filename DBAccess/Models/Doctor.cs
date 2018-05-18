@@ -40,7 +40,7 @@ namespace DBAccess.Models
 
         public int ProviderType { get; set; }
 
-        public int Gender { get; set; }
+        public string Gender { get; set; }
 
         [JsonIgnore]
         public string Password { get; set; }

@@ -26,6 +26,7 @@ using BusinessLogic.HelperServices;
 using BusinessLogic.UserServices;
 using DBAccess.ViewModels;
 using BusinessLogic.CommonServices;
+using DBAccess.ViewModels.User;
 //using static BasketApi.Global;
 //using BasketApi.Components.Helpers;
 
@@ -56,9 +57,9 @@ namespace AdminWebapi.Controllers
         [HttpPost]
         public async Task<IHttpActionResult> Login(LoginBindingModel model)
         {
-            //try
-            //{
-            if (!ModelState.IsValid)
+            try
+            {
+                if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
@@ -101,14 +102,13 @@ namespace AdminWebapi.Controllers
                 }
             }
 
-           
-            //  }
-            //}
-            //catch (Exception ex)
-            //{
-            //    return StatusCode(Utility.LogError(ex));
-            //}
-        }
+
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(Utility.LogError(ex));
+            }
+}
 
         /// <summary>
         /// Login for web admin panel
@@ -356,42 +356,49 @@ namespace AdminWebapi.Controllers
         [AllowAnonymous]
         public async Task<IHttpActionResult> RegisterAsUser(RegisterUserBindingModel model)
         {
-            if (!ModelState.IsValid)
+            try
             {
-                return BadRequest(ModelState);
-            }
-            var userModel = _UserService.RegisterAsUser(model);
-            if (userModel == null)
-            {
-                return Content(HttpStatusCode.OK, new CustomResponse<Error>
+                if (!ModelState.IsValid)
                 {
-                    Message = "Conflict",
-                    StatusCode = (int)HttpStatusCode.Conflict,
-                    Result = new Error { ErrorMessage = "User with entered email already exists." }
-                });
+                    return BadRequest(ModelState);
+                }
+                var userModel = _UserService.RegisterAsUser(model);
+                if (userModel == null)
+                {
+                    return Content(HttpStatusCode.OK, new CustomResponse<Error>
+                    {
+                        Message = "Conflict",
+                        StatusCode = (int)HttpStatusCode.Conflict,
+                        Result = new Error { ErrorMessage = "User with entered email already exists." }
+                    });
+                }
+                else
+                {
+                    NexmoBindingModel verificationMessageModel = new NexmoBindingModel();
+
+                    //var nexmoResponse = _UserService.UserVerificationSMS(new NexmoBindingModel {PhoneNumber=userModel.Phone,User_Id=userModel.Id });
+
+                    //if(!nexmoResponse)
+                    //{
+                    //    return Content(HttpStatusCode.OK, new CustomResponse<Error>
+                    //    {
+                    //        Message = "Conflict",
+                    //        StatusCode = (int)HttpStatusCode.Conflict,
+                    //        Result = new Error { ErrorMessage = "Verification SMS failed due to some reason." }
+
+                    //    });
+                    //}
+
+                    Random _rdm = new Random();
+                    userModel.VerificationCode = Convert.ToString(_rdm.Next(1000, 9999));
+                    await userModel.GenerateToken(Request);
+                    CustomResponse<User> response = new CustomResponse<User> { Message = GlobalUtility.ResponseMessages.Success, StatusCode = (int)HttpStatusCode.OK, Result = userModel };
+                    return Ok(response);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                NexmoBindingModel verificationMessageModel = new NexmoBindingModel();
-
-                //var nexmoResponse = _UserService.UserVerificationSMS(new NexmoBindingModel {PhoneNumber=userModel.Phone,User_Id=userModel.Id });
-
-                //if(!nexmoResponse)
-                //{
-                //    return Content(HttpStatusCode.OK, new CustomResponse<Error>
-                //    {
-                //        Message = "Conflict",
-                //        StatusCode = (int)HttpStatusCode.Conflict,
-                //        Result = new Error { ErrorMessage = "Verification SMS failed due to some reason." }
-
-                //    });
-                //}
-
-                Random _rdm = new Random();
-                userModel.VerificationCode = Convert.ToString(_rdm.Next(1000, 9999));
-                await userModel.GenerateToken(Request);
-                CustomResponse<User> response = new CustomResponse<User> { Message = GlobalUtility.ResponseMessages.Success, StatusCode = (int)HttpStatusCode.OK, Result = userModel };
-                return Ok(response);
+                return StatusCode(Utility.LogError(ex));
             }
         }
 
@@ -400,25 +407,32 @@ namespace AdminWebapi.Controllers
         [AllowAnonymous]
         public async Task<IHttpActionResult> RegisterAsDoctor(RegisterDoctorBindingModel model)
         {
-            if (!ModelState.IsValid)
+            try
             {
-                return BadRequest(ModelState);
-            }
-            var doctor = _DoctorService.RegisterAsDoctor(model);
-            if (doctor == null)
-            {
-                return Content(HttpStatusCode.OK, new CustomResponse<Error>
+                if (!ModelState.IsValid)
                 {
-                    Message = "Conflict",
-                    StatusCode = (int)HttpStatusCode.Conflict,
-                    Result = new Error { ErrorMessage = "User with entered email already exists." }
-                });
+                    return BadRequest(ModelState);
+                }
+                var doctor = _DoctorService.RegisterAsDoctor(model);
+                if (doctor == null)
+                {
+                    return Content(HttpStatusCode.OK, new CustomResponse<Error>
+                    {
+                        Message = "Conflict",
+                        StatusCode = (int)HttpStatusCode.Conflict,
+                        Result = new Error { ErrorMessage = "User with entered email already exists." }
+                    });
+                }
+                else
+                {
+                    await doctor.GenerateToken(Request);
+                    CustomResponse<Doctor> response = new CustomResponse<Doctor> { Message = GlobalUtility.ResponseMessages.Success, StatusCode = (int)HttpStatusCode.OK, Result = doctor };
+                    return Ok(response);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                await doctor.GenerateToken(Request);
-                CustomResponse<Doctor> response = new CustomResponse<Doctor> { Message = GlobalUtility.ResponseMessages.Success, StatusCode = (int)HttpStatusCode.OK, Result = doctor };
-                return Ok(response);
+                return StatusCode(Utility.LogError(ex));
             }
         }
 
@@ -428,27 +442,35 @@ namespace AdminWebapi.Controllers
         [Route("UpdateUserProfile")]
         [HttpPost]
         [AllowAnonymous]
+        //[Authorize]
         public async Task<IHttpActionResult> UpdateUserProfile(EditUserProfileBindingModel model)
         {
-            if (!ModelState.IsValid)
+            try
             {
-                return BadRequest(ModelState);
-            }
-            var userModel = _UserService.UpdateUserProfile(model);
-            if (userModel == null)
-            {
-                return Content(HttpStatusCode.OK, new CustomResponse<Error>
+                if (!ModelState.IsValid)
                 {
-                    Message = "Conflict",
-                    StatusCode = (int)HttpStatusCode.Conflict,
-                    Result = new Error { ErrorMessage = "User with entered email already exists." }
-                });
+                    return BadRequest(ModelState);
+                }
+                var userModel = _UserService.UpdateUserProfile(model);
+                if (userModel == null)
+                {
+                    return Content(HttpStatusCode.OK, new CustomResponse<Error>
+                    {
+                        Message = "Conflict",
+                        StatusCode = (int)HttpStatusCode.Conflict,
+                        Result = new Error { ErrorMessage = "User with entered email already exists." }
+                    });
+                }
+                else
+                {
+                    await userModel.GenerateToken(Request);
+                    CustomResponse<User> response = new CustomResponse<User> { Message = GlobalUtility.ResponseMessages.Success, StatusCode = (int)HttpStatusCode.OK, Result = userModel };
+                    return Ok(response);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                await userModel.GenerateToken(Request);
-                CustomResponse<User> response = new CustomResponse<User> { Message = GlobalUtility.ResponseMessages.Success, StatusCode = (int)HttpStatusCode.OK, Result = userModel };
-                return Ok(response);
+                return StatusCode(Utility.LogError(ex));
             }
         }
 
@@ -486,7 +508,9 @@ namespace AdminWebapi.Controllers
         [Authorize]
         public async Task<IHttpActionResult> UploadUserImage()
         {
-            Dictionary<string, object> dict = new Dictionary<string, object>();
+            try
+            {
+                Dictionary<string, object> dict = new Dictionary<string, object>();
                 var httpRequest = HttpContext.Current.Request;
                 string newFullPath = string.Empty;
                 string fileNameOnly = string.Empty;
@@ -573,9 +597,14 @@ namespace AdminWebapi.Controllers
                 MessageViewModel successResponse = new MessageViewModel { StatusCode = "200 OK", Details = "Image Updated Successfully." };
                 var filePath = Utility.BaseUrl + ConfigurationManager.AppSettings["UserImageFolderPath"] + Path.GetFileName(newFullPath);
                 ImagePathViewModel model = new ImagePathViewModel { Path = filePath };
-                
+
                 _UserService.updateProfileImage(userEmail, filePath);
                 return Content(HttpStatusCode.OK, model);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(Utility.LogError(ex));
+            }
         }
 
         /// <summary>
@@ -587,6 +616,8 @@ namespace AdminWebapi.Controllers
         [Route("ChangePassword")]
         public async Task<IHttpActionResult> ChangePassword(SetPasswordBindingModel model)
         {
+            try
+            {
                 var userEmail = User.Identity.Name;
                 if (string.IsNullOrEmpty(userEmail))
                 {
@@ -596,28 +627,64 @@ namespace AdminWebapi.Controllers
                 {
                     return BadRequest(ModelState);
                 }
-                if (_UserService.ChangePassword(model,userEmail))
+                if (_UserService.ChangePassword(model, userEmail))
                 {
                     return Ok(new CustomResponse<string> { Message = GlobalUtility.ResponseMessages.Success, StatusCode = (int)HttpStatusCode.OK });
                 }
                 else
                     return Ok(new CustomResponse<Error> { Message = "Forbidden", StatusCode = (int)HttpStatusCode.Forbidden, Result = new Error { ErrorMessage = "Invalid old password." } });
+
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(Utility.LogError(ex));
+            }
         }
 
         [HttpGet]
         [Route("UpdateNotificationStatus")]
         public async Task<IHttpActionResult> UpdateNotificationStatus(bool Status,string Email)
         {
-            var user = _UserService.UpdateNotificationStatus(Status, Email);
-            if (user != null)
+            try
             {
-                return Ok(new CustomResponse<User> { Message = GlobalUtility.ResponseMessages.Success, StatusCode = (int)HttpStatusCode.OK, Result = user });
+                var user = _UserService.UpdateNotificationStatus(Status, Email);
+                if (user != null)
+                {
+                    return Ok(new CustomResponse<User> { Message = GlobalUtility.ResponseMessages.Success, StatusCode = (int)HttpStatusCode.OK, Result = user });
+                }
+                else
+                {
+                    return Ok(new CustomResponse<Error> { Message = "NotFound", StatusCode = (int)HttpStatusCode.NotFound, Result = new Error { ErrorMessage = "User with entered email doesn’t exist." } });
+                }
             }
-            else
+            catch (Exception ex)
             {
-                return Ok(new CustomResponse<Error> { Message = "NotFound", StatusCode = (int)HttpStatusCode.NotFound, Result = new Error { ErrorMessage = "User with entered email doesn’t exist." } });
+                return StatusCode(Utility.LogError(ex));
             }
         }
+
+
+
+        //[Authorize]
+        //[Route("AddFamilyMember")]
+        //public async Task<IHttpActionResult> AddFamilyMember(AddFamilyMemberBindingModel model)
+        //{
+        //    var userId = Convert.ToInt32(User.GetClaimValue("userid"));
+        //    if (userId != 0)
+        //    {
+        //        throw new Exception("User id is empty in user.identity.");
+        //    }
+        //    else if (!ModelState.IsValid)
+        //    {
+        //        return BadRequest(ModelState);
+        //    }
+        //    if (_UserService.)
+        //    {
+        //        return Ok(new CustomResponse<string> { Message = GlobalUtility.ResponseMessages.Success, StatusCode = (int)HttpStatusCode.OK });
+        //    }
+        //    else
+        //        return Ok(new CustomResponse<Error> { Message = "Forbidden", StatusCode = (int)HttpStatusCode.Forbidden, Result = new Error { ErrorMessage = "Invalid old password." } });
+        //}
 
 
         //[Route("AddExternalLogin")]
@@ -974,14 +1041,21 @@ namespace AdminWebapi.Controllers
         [Route("ResetPasswordThroughEmail")]
         public async Task<IHttpActionResult> ResetPasswordThroughEmail(string Email)
         {
-            var user = _UserService.ResetPasswordThroughEmail(Email);
-            if(user !=null)
+            try
             {
-                return Ok(new CustomResponse<User> { Message = GlobalUtility.ResponseMessages.Success, StatusCode = (int)HttpStatusCode.OK, Result = user });
+                var user = _UserService.ResetPasswordThroughEmail(Email);
+                if (user != null)
+                {
+                    return Ok(new CustomResponse<User> { Message = GlobalUtility.ResponseMessages.Success, StatusCode = (int)HttpStatusCode.OK});
+                }
+                else
+                {
+                    return Ok(new CustomResponse<Error> { Message = "NotFound", StatusCode = (int)HttpStatusCode.NotFound, Result = new Error { ErrorMessage = "User with entered email doesn’t exist." } });
+                }
             }
-            else
+            catch (Exception ex)
             {
-                return Ok(new CustomResponse<Error> { Message = "NotFound", StatusCode = (int)HttpStatusCode.NotFound, Result = new Error { ErrorMessage = "User with entered email doesn’t exist." } });
+                return StatusCode(Utility.LogError(ex));
             }
         }
 

@@ -24,19 +24,57 @@ namespace DBAccess
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<Doctor> Doctors { get; set; }
         public virtual DbSet<AppRatings> AppRatings { get; set; }
-        public virtual DbSet<UserAddress> UserAddresses { get; set; }
+        //public virtual DbSet<UserAddress> UserAddresses { get; set; }
         public virtual DbSet<ContactUs> ContactUs { get; set; }
         public virtual DbSet<UserDevice> UserDevices { get; set; }
         public virtual DbSet<RefreshTokens> RefreshTokens { get; set; }
         public virtual DbSet<Settings> Settings { get; set; }
         public virtual DbSet<AdminNotifications> AdminNotifications { get; set; }
         public virtual DbSet<DoctorDocument> DoctorDocuments { get; set; }
+        public virtual DbSet<FamilyMember> FamilyMember { get; set; }
+        public virtual DbSet<FamilyHistory> FamilyHistory { get; set; }
+        public virtual DbSet<MedicalConditions> MedicalConditions { get; set; }
+        public virtual DbSet<LifeStyle> LifeStyle { get; set; }
+        public virtual DbSet<Allergies> Allergies { get; set; }
+        public virtual DbSet<Vaccinations> Vaccinations { get; set; }
+        public virtual DbSet<Medications> Medications { get; set; }
+
+
+
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
 
+            modelBuilder.Entity<User>()
+                .HasMany(e => e.Medications)
+                .WithRequired(e => e.User)
+                .HasForeignKey(e => e.User_Id)
+                .WillCascadeOnDelete(false);
 
+            modelBuilder.Entity<User>()
+                .HasMany(e => e.Vaccinations)
+                .WithRequired(e => e.User)
+                .HasForeignKey(e => e.User_Id)
+                .WillCascadeOnDelete(false);
 
+            modelBuilder.Entity<User>()
+                .HasMany(e => e.Allergies)
+                .WithRequired(e => e.User)
+                .HasForeignKey(e => e.User_Id)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<User>()
+               .HasMany(e => e.MedicalConditions)
+               .WithRequired(e => e.User)
+               .HasForeignKey(e => e.User_Id)
+               .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<User>()
+               .HasMany(e => e.FamilyMembers)
+               .WithRequired(e => e.User)
+               .HasForeignKey(e => e.User_Id)
+               .WillCascadeOnDelete(false);
+            
             modelBuilder.Entity<AdminNotifications>()
                .HasMany(e => e.Notifications)
                .WithOptional(e => e.AdminNotification)

@@ -81,7 +81,14 @@ namespace DBAccess.GenericRepository
             DbSet.Add(entity);
         }
 
-
+        /// <summary>
+        /// generic Multiple Insert method for the entities
+        /// </summary>
+        /// <param name="entity"></param>
+        public virtual void InsertMany(IEnumerable<TEntity> entities)
+        {
+            DbSet.AddRange(entities);
+        }
 
 
         /// <summary>
@@ -93,6 +100,18 @@ namespace DBAccess.GenericRepository
             TEntity entityToDelete = DbSet.Find(id);
             Delete(entityToDelete);
         }
+
+
+        /// <summary>
+        /// Generic Multiple Delete method for the entities
+        /// </summary>
+        /// <param name="id"></param>
+        public virtual void DeleteMany(IEnumerable<TEntity> entities)
+        {
+            DbSet.RemoveRange(entities);
+        }
+
+
 
         public void SetEntityState(TEntity entity, EntityState state)
         {
@@ -112,6 +131,12 @@ namespace DBAccess.GenericRepository
             }
             DbSet.Remove(entityToDelete);
         }
+
+
+
+
+
+
 
         /// <summary>
         /// Generic update method for the entities
@@ -184,6 +209,9 @@ namespace DBAccess.GenericRepository
         public IQueryable<TEntity> GetWithInclude(Expression<Func<TEntity,bool>> predicate, params string[] include)
         {
             IQueryable<TEntity> query = DbSet;
+
+            
+
             query = include.Aggregate(query, (current, inc) => current.Include(inc));
             return query.Where(predicate);
         }
