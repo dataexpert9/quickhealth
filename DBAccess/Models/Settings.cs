@@ -11,7 +11,6 @@ namespace DBAccess.Models
     public class Settings
     {
         public int Id { get; set; }
-        
         public string Currency { get; set; }
         public string AboutUs { get; set; }
         public double Tax { get; set; }

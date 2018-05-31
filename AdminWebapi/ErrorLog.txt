@@ -451,3 +451,1366 @@ StackTrace   at DBAccess.Models.UserExtension.<GenerateToken>d__2.MoveNext() in 
    at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
    at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
    at AdminWebapi.Controllers.UserController.<WebPanelLogin>d__5.MoveNext() in E:\Mehmood ul Hassan\Test Project\AdminWebApi\AdminWebapi\Controllers\UserController.cs:line 121
+DateTime : 5/23/2018 12:15:33 PM
+
+
+MessageNo MediaTypeFormatter is available to read an object of type 'Token' from content with media type 'text/html'.
+
+StackTrace   at DBAccess.Models.UserExtension.<GenerateToken>d__1.MoveNext() in F:\Projects\GlobalHospitalApi\DBAccess\Models\User.cs:line 188
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at AdminWebapi.Controllers.UserController.<Login>d__5.MoveNext() in F:\Projects\GlobalHospitalApi\AdminWebapi\Controllers\UserController.cs:line 71
+DateTime : 5/23/2018 12:15:43 PM
+
+
+MessageNo MediaTypeFormatter is available to read an object of type 'Token' from content with media type 'text/html'.
+
+StackTrace   at DBAccess.Models.UserExtension.<GenerateToken>d__1.MoveNext() in F:\Projects\GlobalHospitalApi\DBAccess\Models\User.cs:line 188
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at AdminWebapi.Controllers.UserController.<Login>d__5.MoveNext() in F:\Projects\GlobalHospitalApi\AdminWebapi\Controllers\UserController.cs:line 71
+DateTime : 5/23/2018 12:54:05 PM
+
+
+MessageValue cannot be null.
+Parameter name: entity
+
+StackTrace   at System.Data.Entity.Utilities.Check.NotNull[T](T value, String parameterName)
+   at System.Data.Entity.DbContext.Entry[TEntity](TEntity entity)
+   at DBAccess.GenericRepository.GenericRepository`1.Delete(TEntity entityToDelete) in F:\Projects\GlobalHospitalApi\DBAccess\GenericRepository\GenericRepository.cs:line 128
+   at DBAccess.GenericRepository.GenericRepository`1.Delete(Object id) in F:\Projects\GlobalHospitalApi\DBAccess\GenericRepository\GenericRepository.cs:line 101
+   at BusinessLogic.UserServices.UserService.UpdateUserProfile(EditUserProfileBindingModel model)
+   at AdminWebapi.Controllers.UserController.<UpdateUserProfile>d__9.MoveNext() in F:\Projects\GlobalHospitalApi\AdminWebapi\Controllers\UserController.cs:line 455
+DateTime : 5/23/2018 12:54:18 PM
+
+
+MessageThe specified parameter type 'System.Collections.Generic.HashSet`1[[DBAccess.Models.FamilyMember, DBAccess, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]' is not valid. Only scalar types, such as System.Int32, System.Decimal, System.DateTime, and System.Guid, are supported.
+Parameter name: item
+
+StackTrace   at System.Data.Entity.Core.Objects.ObjectParameterCollection.Add(ObjectParameter item)
+   at System.Data.Entity.Core.Objects.ObjectContext.CreateQuery[T](String queryString, ObjectParameter[] parameters)
+   at System.Data.Entity.Internal.Linq.InternalSet`1.BuildFindQuery(WrappedEntityKey key)
+   at System.Data.Entity.Internal.Linq.InternalSet`1.FindInStore(WrappedEntityKey key, String keyValuesParamName)
+   at System.Data.Entity.Internal.Linq.InternalSet`1.Find(Object[] keyValues)
+   at System.Data.Entity.DbSet`1.Find(Object[] keyValues)
+   at DBAccess.GenericRepository.GenericRepository`1.Delete(Object id) in F:\Projects\GlobalHospitalApi\DBAccess\GenericRepository\GenericRepository.cs:line 100
+   at BusinessLogic.UserServices.UserService.UpdateUserProfile(EditUserProfileBindingModel model)
+   at AdminWebapi.Controllers.UserController.<UpdateUserProfile>d__9.MoveNext() in F:\Projects\GlobalHospitalApi\AdminWebapi\Controllers\UserController.cs:line 455
+DateTime : 5/23/2018 1:03:51 PM
+
+
+MessageValue cannot be null.
+Parameter name: entity
+
+StackTrace   at System.Data.Entity.Utilities.Check.NotNull[T](T value, String parameterName)
+   at System.Data.Entity.DbContext.Entry[TEntity](TEntity entity)
+   at DBAccess.GenericRepository.GenericRepository`1.Delete(TEntity entityToDelete) in F:\Projects\GlobalHospitalApi\DBAccess\GenericRepository\GenericRepository.cs:line 128
+   at DBAccess.GenericRepository.GenericRepository`1.Delete(Object id) in F:\Projects\GlobalHospitalApi\DBAccess\GenericRepository\GenericRepository.cs:line 101
+   at BusinessLogic.UserServices.UserService.UpdateUserProfile(EditUserProfileBindingModel model) in F:\Projects\GlobalHospitalApi\BusinessLogic\UserServices\UserService.cs:line 589
+   at AdminWebapi.Controllers.UserController.<UpdateUserProfile>d__9.MoveNext() in F:\Projects\GlobalHospitalApi\AdminWebapi\Controllers\UserController.cs:line 455
+DateTime : 5/24/2018 4:31:44 PM
+
+
+MessageObject reference not set to an instance of an object.
+
+StackTrace   at AdminWebapi.Controllers.CommonController.<GetAppSettings>d__4.MoveNext() in F:\Projects\GlobalHospitalApi\AdminWebapi\Controllers\CommonController.cs:line 42
+DateTime : 5/25/2018 9:34:45 AM
+
+
+MessageUnable to determine the principal end of an association between the types 'DBAccess.Models.LifeStyle' and 'DBAccess.Models.User'. The principal end of this association must be explicitly configured using either the relationship fluent API or data annotations.
+
+StackTrace   at System.Data.Entity.ModelConfiguration.Edm.Services.AssociationTypeMappingGenerator.GenerateIndependentAssociationType(AssociationType associationType, DbDatabaseMapping databaseMapping)
+   at System.Data.Entity.ModelConfiguration.Edm.Services.DatabaseMappingGenerator.GenerateAssociationTypes(DbDatabaseMapping databaseMapping)
+   at System.Data.Entity.ModelConfiguration.Edm.Services.DatabaseMappingGenerator.Generate(EdmModel conceptualModel)
+   at System.Data.Entity.DbModelBuilder.Build(DbProviderManifest providerManifest, DbProviderInfo providerInfo)
+   at System.Data.Entity.DbModelBuilder.Build(DbConnection providerConnection)
+   at System.Data.Entity.Internal.LazyInternalContext.CreateModel(LazyInternalContext internalContext)
+   at System.Data.Entity.Internal.RetryLazy`2.GetValue(TInput input)
+   at System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   at System.Data.Entity.Internal.InternalContext.Initialize()
+   at System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   at System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   at System.Data.Entity.Internal.Linq.InternalSet`1.Include(String path)
+   at System.Data.Entity.Infrastructure.DbQuery`1.Include(String path)
+   at System.Data.Entity.QueryableExtensions.Include[T](IQueryable`1 source, String path)
+   at DBAccess.GenericRepository.GenericRepository`1.<>c.<GetWithInclude>b__19_0(IQueryable`1 current, String inc) in F:\Projects\GlobalHospitalApi\DBAccess\GenericRepository\GenericRepository.cs:line 215
+   at System.Linq.Enumerable.Aggregate[TSource,TAccumulate](IEnumerable`1 source, TAccumulate seed, Func`3 func)
+   at DBAccess.GenericRepository.GenericRepository`1.GetWithInclude(Expression`1 predicate, String[] include) in F:\Projects\GlobalHospitalApi\DBAccess\GenericRepository\GenericRepository.cs:line 215
+   at BusinessLogic.UserServices.UserService.ValidateUser(LoginBindingModel loginModel) in F:\Projects\GlobalHospitalApi\BusinessLogic\UserServices\UserService.cs:line 61
+   at AdminWebapi.Controllers.UserController.<Login>d__5.MoveNext() in F:\Projects\GlobalHospitalApi\AdminWebapi\Controllers\UserController.cs:line 66
+DateTime : 5/25/2018 9:39:42 AM
+
+
+MessageA specified Include path is not valid. The EntityType 'DBAccess.User' does not declare a navigation property with the name 'LifeStyle'.
+
+StackTrace   at System.Data.Entity.Core.Objects.Internal.ObjectFullSpanRewriter.ConvertSpanPath(SpanPathInfo parentInfo, List`1 navPropNames, Int32 pos)
+   at System.Data.Entity.Core.Objects.Internal.ObjectFullSpanRewriter..ctor(DbCommandTree tree, DbExpression toRewrite, Span span, AliasGenerator aliasGenerator)
+   at System.Data.Entity.Core.Objects.Internal.ObjectSpanRewriter.TryRewrite(DbQueryCommandTree tree, Span span, MergeOption mergeOption, AliasGenerator aliasGenerator, DbExpression& newQuery, SpanIndex& spanInfo)
+   at System.Data.Entity.Core.Objects.Internal.ObjectQueryExecutionPlanFactory.Prepare(ObjectContext context, DbQueryCommandTree tree, Type elementType, MergeOption mergeOption, Boolean streaming, Span span, IEnumerable`1 compiledQueryParameters, AliasGenerator aliasGenerator)
+   at System.Data.Entity.Core.Objects.ELinq.ELinqQueryState.GetExecutionPlan(Nullable`1 forMergeOption)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__6()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__5()
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<System.Collections.Generic.IEnumerable<T>.GetEnumerator>b__0()
+   at System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   at System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.<GetElementFunction>b__1[TResult](IEnumerable`1 sequence)
+   at System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.ExecuteSingle[TResult](IEnumerable`1 query, Expression queryRoot)
+   at System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.System.Linq.IQueryProvider.Execute[TResult](Expression expression)
+   at System.Data.Entity.Internal.Linq.DbQueryProvider.Execute[TResult](Expression expression)
+   at System.Linq.Queryable.FirstOrDefault[TSource](IQueryable`1 source)
+   at BusinessLogic.UserServices.UserService.ValidateUser(LoginBindingModel loginModel) in F:\Projects\GlobalHospitalApi\BusinessLogic\UserServices\UserService.cs:line 61
+   at AdminWebapi.Controllers.UserController.<Login>d__5.MoveNext() in F:\Projects\GlobalHospitalApi\AdminWebapi\Controllers\UserController.cs:line 66
+DateTime : 5/25/2018 9:40:03 AM
+
+
+MessageA specified Include path is not valid. The EntityType 'DBAccess.User' does not declare a navigation property with the name 'LifeStyle'.
+
+StackTrace   at System.Data.Entity.Core.Objects.Internal.ObjectFullSpanRewriter.ConvertSpanPath(SpanPathInfo parentInfo, List`1 navPropNames, Int32 pos)
+   at System.Data.Entity.Core.Objects.Internal.ObjectFullSpanRewriter..ctor(DbCommandTree tree, DbExpression toRewrite, Span span, AliasGenerator aliasGenerator)
+   at System.Data.Entity.Core.Objects.Internal.ObjectSpanRewriter.TryRewrite(DbQueryCommandTree tree, Span span, MergeOption mergeOption, AliasGenerator aliasGenerator, DbExpression& newQuery, SpanIndex& spanInfo)
+   at System.Data.Entity.Core.Objects.Internal.ObjectQueryExecutionPlanFactory.Prepare(ObjectContext context, DbQueryCommandTree tree, Type elementType, MergeOption mergeOption, Boolean streaming, Span span, IEnumerable`1 compiledQueryParameters, AliasGenerator aliasGenerator)
+   at System.Data.Entity.Core.Objects.ELinq.ELinqQueryState.GetExecutionPlan(Nullable`1 forMergeOption)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__6()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__5()
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<System.Collections.Generic.IEnumerable<T>.GetEnumerator>b__0()
+   at System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   at System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.<GetElementFunction>b__1[TResult](IEnumerable`1 sequence)
+   at System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.ExecuteSingle[TResult](IEnumerable`1 query, Expression queryRoot)
+   at System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.System.Linq.IQueryProvider.Execute[TResult](Expression expression)
+   at System.Data.Entity.Internal.Linq.DbQueryProvider.Execute[TResult](Expression expression)
+   at System.Linq.Queryable.FirstOrDefault[TSource](IQueryable`1 source)
+   at BusinessLogic.UserServices.UserService.ValidateUser(LoginBindingModel loginModel) in F:\Projects\GlobalHospitalApi\BusinessLogic\UserServices\UserService.cs:line 61
+   at AdminWebapi.Controllers.UserController.<Login>d__5.MoveNext() in F:\Projects\GlobalHospitalApi\AdminWebapi\Controllers\UserController.cs:line 66
+DateTime : 5/25/2018 9:51:53 AM
+
+
+MessageOne or more validation errors were detected during model generation:
+
+User_LifeStyle_Target: : Multiplicity is not valid in Role 'User_LifeStyle_Target' in relationship 'User_LifeStyle'. Because the Dependent Role properties are not the key properties, the upper bound of the multiplicity of the Dependent Role must be '*'.
+
+
+StackTrace   at System.Data.Entity.Core.Metadata.Edm.EdmModel.Validate()
+   at System.Data.Entity.DbModelBuilder.Build(DbProviderManifest providerManifest, DbProviderInfo providerInfo)
+   at System.Data.Entity.DbModelBuilder.Build(DbConnection providerConnection)
+   at System.Data.Entity.Internal.LazyInternalContext.CreateModel(LazyInternalContext internalContext)
+   at System.Data.Entity.Internal.RetryLazy`2.GetValue(TInput input)
+   at System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   at System.Data.Entity.Internal.InternalContext.Initialize()
+   at System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   at System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   at System.Data.Entity.Internal.Linq.InternalSet`1.Include(String path)
+   at System.Data.Entity.Infrastructure.DbQuery`1.Include(String path)
+   at System.Data.Entity.QueryableExtensions.Include[T](IQueryable`1 source, String path)
+   at DBAccess.GenericRepository.GenericRepository`1.<>c.<GetWithInclude>b__19_0(IQueryable`1 current, String inc) in F:\Projects\GlobalHospitalApi\DBAccess\GenericRepository\GenericRepository.cs:line 215
+   at System.Linq.Enumerable.Aggregate[TSource,TAccumulate](IEnumerable`1 source, TAccumulate seed, Func`3 func)
+   at DBAccess.GenericRepository.GenericRepository`1.GetWithInclude(Expression`1 predicate, String[] include) in F:\Projects\GlobalHospitalApi\DBAccess\GenericRepository\GenericRepository.cs:line 215
+   at BusinessLogic.UserServices.UserService.ValidateUser(LoginBindingModel loginModel) in F:\Projects\GlobalHospitalApi\BusinessLogic\UserServices\UserService.cs:line 61
+   at AdminWebapi.Controllers.UserController.<Login>d__5.MoveNext() in F:\Projects\GlobalHospitalApi\AdminWebapi\Controllers\UserController.cs:line 66
+DateTime : 5/25/2018 9:53:36 AM
+
+
+MessageOne or more validation errors were detected during model generation:
+
+User_LifeStyle_Target: : Multiplicity is not valid in Role 'User_LifeStyle_Target' in relationship 'User_LifeStyle'. Because the Dependent Role properties are not the key properties, the upper bound of the multiplicity of the Dependent Role must be '*'.
+
+
+StackTrace   at System.Data.Entity.Core.Metadata.Edm.EdmModel.Validate()
+   at System.Data.Entity.DbModelBuilder.Build(DbProviderManifest providerManifest, DbProviderInfo providerInfo)
+   at System.Data.Entity.DbModelBuilder.Build(DbConnection providerConnection)
+   at System.Data.Entity.Internal.LazyInternalContext.CreateModel(LazyInternalContext internalContext)
+   at System.Data.Entity.Internal.RetryLazy`2.GetValue(TInput input)
+   at System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   at System.Data.Entity.Internal.InternalContext.Initialize()
+   at System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   at System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   at System.Data.Entity.Internal.Linq.InternalSet`1.Include(String path)
+   at System.Data.Entity.Infrastructure.DbQuery`1.Include(String path)
+   at System.Data.Entity.QueryableExtensions.Include[T](IQueryable`1 source, String path)
+   at DBAccess.GenericRepository.GenericRepository`1.<>c.<GetWithInclude>b__19_0(IQueryable`1 current, String inc) in F:\Projects\GlobalHospitalApi\DBAccess\GenericRepository\GenericRepository.cs:line 215
+   at System.Linq.Enumerable.Aggregate[TSource,TAccumulate](IEnumerable`1 source, TAccumulate seed, Func`3 func)
+   at DBAccess.GenericRepository.GenericRepository`1.GetWithInclude(Expression`1 predicate, String[] include) in F:\Projects\GlobalHospitalApi\DBAccess\GenericRepository\GenericRepository.cs:line 215
+   at BusinessLogic.UserServices.UserService.ValidateUser(LoginBindingModel loginModel) in F:\Projects\GlobalHospitalApi\BusinessLogic\UserServices\UserService.cs:line 61
+   at AdminWebapi.Controllers.UserController.<Login>d__5.MoveNext() in F:\Projects\GlobalHospitalApi\AdminWebapi\Controllers\UserController.cs:line 66
+DateTime : 5/25/2018 9:55:05 AM
+
+
+MessageThe object 'PK_dbo.LifeStyles' is dependent on column 'Id'.
+ALTER TABLE DROP COLUMN Id failed because one or more objects access this column.
+
+StackTrace   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.RunExecuteNonQueryTds(String methodName, Boolean async, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.<NonQuery>b__0(DbCommand t, DbCommandInterceptionContext`1 c)
+   at System.Data.Entity.Infrastructure.Interception.InternalDispatcher`1.Dispatch[TTarget,TInterceptionContext,TResult](TTarget target, Func`3 operation, TInterceptionContext interceptionContext, Action`3 executing, Action`3 executed)
+   at System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.NonQuery(DbCommand command, DbCommandInterceptionContext interceptionContext)
+   at System.Data.Entity.Internal.InterceptableDbCommand.ExecuteNonQuery()
+   at System.Data.Entity.Migrations.DbMigrator.ExecuteSql(MigrationStatement migrationStatement, DbConnection connection, DbTransaction transaction, DbInterceptionContext interceptionContext)
+   at System.Data.Entity.Migrations.DbMigrator.ExecuteStatementsInternal(IEnumerable`1 migrationStatements, DbConnection connection, DbTransaction transaction, DbInterceptionContext interceptionContext)
+   at System.Data.Entity.Migrations.DbMigrator.ExecuteStatementsWithinTransaction(IEnumerable`1 migrationStatements, DbTransaction transaction, DbInterceptionContext interceptionContext)
+   at System.Data.Entity.Migrations.DbMigrator.ExecuteStatementsWithinNewTransaction(IEnumerable`1 migrationStatements, DbConnection connection, DbInterceptionContext interceptionContext)
+   at System.Data.Entity.Migrations.DbMigrator.ExecuteStatementsInternal(IEnumerable`1 migrationStatements, DbConnection connection, DbInterceptionContext interceptionContext)
+   at System.Data.Entity.Migrations.DbMigrator.ExecuteStatementsInternal(IEnumerable`1 migrationStatements, DbConnection connection)
+   at System.Data.Entity.Migrations.DbMigrator.<>c__DisplayClass32.<ExecuteStatements>b__30()
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.<>c__DisplayClass1.<Execute>b__0()
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute(Action operation)
+   at System.Data.Entity.Migrations.DbMigrator.ExecuteStatements(IEnumerable`1 migrationStatements, DbTransaction existingTransaction)
+   at System.Data.Entity.Migrations.DbMigrator.ExecuteStatements(IEnumerable`1 migrationStatements)
+   at System.Data.Entity.Migrations.DbMigrator.ExecuteOperations(String migrationId, VersionedModel targetModel, IEnumerable`1 operations, IEnumerable`1 systemOperations, Boolean downgrading, Boolean auto)
+   at System.Data.Entity.Migrations.DbMigrator.AutoMigrate(String migrationId, VersionedModel sourceModel, VersionedModel targetModel, Boolean downgrading)
+   at System.Data.Entity.Migrations.DbMigrator.Upgrade(IEnumerable`1 pendingMigrations, String targetMigrationId, String lastMigrationId)
+   at System.Data.Entity.Migrations.DbMigrator.UpdateInternal(String targetMigration)
+   at System.Data.Entity.Migrations.DbMigrator.<>c__DisplayClasse.<Update>b__d()
+   at System.Data.Entity.Migrations.DbMigrator.EnsureDatabaseExists(Action mustSucceedToKeepDatabase)
+   at System.Data.Entity.Migrations.DbMigrator.Update(String targetMigration)
+   at System.Data.Entity.MigrateDatabaseToLatestVersion`2.InitializeDatabase(TContext context)
+   at System.Data.Entity.Internal.InternalContext.<>c__DisplayClassf`1.<CreateInitializationAction>b__e()
+   at System.Data.Entity.Internal.InternalContext.PerformInitializationAction(Action action)
+   at System.Data.Entity.Internal.InternalContext.PerformDatabaseInitialization()
+   at System.Data.Entity.Internal.LazyInternalContext.<InitializeDatabase>b__4(InternalContext c)
+   at System.Data.Entity.Internal.RetryAction`1.PerformAction(TInput input)
+   at System.Data.Entity.Internal.LazyInternalContext.InitializeDatabaseAction(Action`1 action)
+   at System.Data.Entity.Internal.LazyInternalContext.InitializeDatabase()
+   at System.Data.Entity.Internal.InternalContext.Initialize()
+   at System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   at System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   at System.Data.Entity.Internal.Linq.InternalSet`1.Include(String path)
+   at System.Data.Entity.Infrastructure.DbQuery`1.Include(String path)
+   at System.Data.Entity.QueryableExtensions.Include[T](IQueryable`1 source, String path)
+   at DBAccess.GenericRepository.GenericRepository`1.<>c.<GetWithInclude>b__19_0(IQueryable`1 current, String inc) in F:\Projects\GlobalHospitalApi\DBAccess\GenericRepository\GenericRepository.cs:line 215
+   at System.Linq.Enumerable.Aggregate[TSource,TAccumulate](IEnumerable`1 source, TAccumulate seed, Func`3 func)
+   at DBAccess.GenericRepository.GenericRepository`1.GetWithInclude(Expression`1 predicate, String[] include) in F:\Projects\GlobalHospitalApi\DBAccess\GenericRepository\GenericRepository.cs:line 215
+   at BusinessLogic.UserServices.UserService.ValidateUser(LoginBindingModel loginModel) in F:\Projects\GlobalHospitalApi\BusinessLogic\UserServices\UserService.cs:line 61
+   at AdminWebapi.Controllers.UserController.<Login>d__5.MoveNext() in F:\Projects\GlobalHospitalApi\AdminWebapi\Controllers\UserController.cs:line 66
+DateTime : 5/25/2018 10:01:39 AM
+
+
+MessageUnable to determine the principal end of an association between the types 'DBAccess.Models.LifeStyle' and 'DBAccess.Models.User'. The principal end of this association must be explicitly configured using either the relationship fluent API or data annotations.
+
+StackTrace   at System.Data.Entity.ModelConfiguration.Edm.Services.AssociationTypeMappingGenerator.GenerateIndependentAssociationType(AssociationType associationType, DbDatabaseMapping databaseMapping)
+   at System.Data.Entity.ModelConfiguration.Edm.Services.DatabaseMappingGenerator.GenerateAssociationTypes(DbDatabaseMapping databaseMapping)
+   at System.Data.Entity.ModelConfiguration.Edm.Services.DatabaseMappingGenerator.Generate(EdmModel conceptualModel)
+   at System.Data.Entity.DbModelBuilder.Build(DbProviderManifest providerManifest, DbProviderInfo providerInfo)
+   at System.Data.Entity.DbModelBuilder.Build(DbConnection providerConnection)
+   at System.Data.Entity.Internal.LazyInternalContext.CreateModel(LazyInternalContext internalContext)
+   at System.Data.Entity.Internal.RetryLazy`2.GetValue(TInput input)
+   at System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   at System.Data.Entity.Internal.InternalContext.Initialize()
+   at System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   at System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   at System.Data.Entity.Internal.Linq.InternalSet`1.Include(String path)
+   at System.Data.Entity.Infrastructure.DbQuery`1.Include(String path)
+   at System.Data.Entity.QueryableExtensions.Include[T](IQueryable`1 source, String path)
+   at DBAccess.GenericRepository.GenericRepository`1.<>c.<GetWithInclude>b__19_0(IQueryable`1 current, String inc) in F:\Projects\GlobalHospitalApi\DBAccess\GenericRepository\GenericRepository.cs:line 215
+   at System.Linq.Enumerable.Aggregate[TSource,TAccumulate](IEnumerable`1 source, TAccumulate seed, Func`3 func)
+   at DBAccess.GenericRepository.GenericRepository`1.GetWithInclude(Expression`1 predicate, String[] include) in F:\Projects\GlobalHospitalApi\DBAccess\GenericRepository\GenericRepository.cs:line 215
+   at BusinessLogic.UserServices.UserService.ValidateUser(LoginBindingModel loginModel) in F:\Projects\GlobalHospitalApi\BusinessLogic\UserServices\UserService.cs:line 61
+   at AdminWebapi.Controllers.UserController.<Login>d__5.MoveNext() in F:\Projects\GlobalHospitalApi\AdminWebapi\Controllers\UserController.cs:line 66
+DateTime : 5/25/2018 10:20:23 AM
+
+
+MessageThe object 'PK_dbo.LifeStyles' is dependent on column 'Id'.
+ALTER TABLE DROP COLUMN Id failed because one or more objects access this column.
+
+StackTrace   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.RunExecuteNonQueryTds(String methodName, Boolean async, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.<NonQuery>b__0(DbCommand t, DbCommandInterceptionContext`1 c)
+   at System.Data.Entity.Infrastructure.Interception.InternalDispatcher`1.Dispatch[TTarget,TInterceptionContext,TResult](TTarget target, Func`3 operation, TInterceptionContext interceptionContext, Action`3 executing, Action`3 executed)
+   at System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.NonQuery(DbCommand command, DbCommandInterceptionContext interceptionContext)
+   at System.Data.Entity.Internal.InterceptableDbCommand.ExecuteNonQuery()
+   at System.Data.Entity.Migrations.DbMigrator.ExecuteSql(MigrationStatement migrationStatement, DbConnection connection, DbTransaction transaction, DbInterceptionContext interceptionContext)
+   at System.Data.Entity.Migrations.DbMigrator.ExecuteStatementsInternal(IEnumerable`1 migrationStatements, DbConnection connection, DbTransaction transaction, DbInterceptionContext interceptionContext)
+   at System.Data.Entity.Migrations.DbMigrator.ExecuteStatementsWithinTransaction(IEnumerable`1 migrationStatements, DbTransaction transaction, DbInterceptionContext interceptionContext)
+   at System.Data.Entity.Migrations.DbMigrator.ExecuteStatementsWithinNewTransaction(IEnumerable`1 migrationStatements, DbConnection connection, DbInterceptionContext interceptionContext)
+   at System.Data.Entity.Migrations.DbMigrator.ExecuteStatementsInternal(IEnumerable`1 migrationStatements, DbConnection connection, DbInterceptionContext interceptionContext)
+   at System.Data.Entity.Migrations.DbMigrator.ExecuteStatementsInternal(IEnumerable`1 migrationStatements, DbConnection connection)
+   at System.Data.Entity.Migrations.DbMigrator.<>c__DisplayClass32.<ExecuteStatements>b__30()
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.<>c__DisplayClass1.<Execute>b__0()
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute(Action operation)
+   at System.Data.Entity.Migrations.DbMigrator.ExecuteStatements(IEnumerable`1 migrationStatements, DbTransaction existingTransaction)
+   at System.Data.Entity.Migrations.DbMigrator.ExecuteStatements(IEnumerable`1 migrationStatements)
+   at System.Data.Entity.Migrations.DbMigrator.ExecuteOperations(String migrationId, VersionedModel targetModel, IEnumerable`1 operations, IEnumerable`1 systemOperations, Boolean downgrading, Boolean auto)
+   at System.Data.Entity.Migrations.DbMigrator.AutoMigrate(String migrationId, VersionedModel sourceModel, VersionedModel targetModel, Boolean downgrading)
+   at System.Data.Entity.Migrations.DbMigrator.Upgrade(IEnumerable`1 pendingMigrations, String targetMigrationId, String lastMigrationId)
+   at System.Data.Entity.Migrations.DbMigrator.UpdateInternal(String targetMigration)
+   at System.Data.Entity.Migrations.DbMigrator.<>c__DisplayClasse.<Update>b__d()
+   at System.Data.Entity.Migrations.DbMigrator.EnsureDatabaseExists(Action mustSucceedToKeepDatabase)
+   at System.Data.Entity.Migrations.DbMigrator.Update(String targetMigration)
+   at System.Data.Entity.MigrateDatabaseToLatestVersion`2.InitializeDatabase(TContext context)
+   at System.Data.Entity.Internal.InternalContext.<>c__DisplayClassf`1.<CreateInitializationAction>b__e()
+   at System.Data.Entity.Internal.InternalContext.PerformInitializationAction(Action action)
+   at System.Data.Entity.Internal.InternalContext.PerformDatabaseInitialization()
+   at System.Data.Entity.Internal.LazyInternalContext.<InitializeDatabase>b__4(InternalContext c)
+   at System.Data.Entity.Internal.RetryAction`1.PerformAction(TInput input)
+   at System.Data.Entity.Internal.LazyInternalContext.InitializeDatabaseAction(Action`1 action)
+   at System.Data.Entity.Internal.LazyInternalContext.InitializeDatabase()
+   at System.Data.Entity.Internal.InternalContext.Initialize()
+   at System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   at System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   at System.Data.Entity.Internal.Linq.InternalSet`1.Include(String path)
+   at System.Data.Entity.Infrastructure.DbQuery`1.Include(String path)
+   at System.Data.Entity.QueryableExtensions.Include[T](IQueryable`1 source, String path)
+   at DBAccess.GenericRepository.GenericRepository`1.<>c.<GetWithInclude>b__19_0(IQueryable`1 current, String inc) in F:\Projects\GlobalHospitalApi\DBAccess\GenericRepository\GenericRepository.cs:line 215
+   at System.Linq.Enumerable.Aggregate[TSource,TAccumulate](IEnumerable`1 source, TAccumulate seed, Func`3 func)
+   at DBAccess.GenericRepository.GenericRepository`1.GetWithInclude(Expression`1 predicate, String[] include) in F:\Projects\GlobalHospitalApi\DBAccess\GenericRepository\GenericRepository.cs:line 215
+   at BusinessLogic.UserServices.UserService.ValidateUser(LoginBindingModel loginModel) in F:\Projects\GlobalHospitalApi\BusinessLogic\UserServices\UserService.cs:line 61
+   at AdminWebapi.Controllers.UserController.<Login>d__5.MoveNext() in F:\Projects\GlobalHospitalApi\AdminWebapi\Controllers\UserController.cs:line 66
+DateTime : 5/25/2018 12:02:27 PM
+
+
+MessageObject reference not set to an instance of an object.
+
+StackTrace   at BusinessLogic.UserServices.UserService.UpdateUserProfile(EditUserProfileBindingModel model) in F:\Projects\GlobalHospitalApi\BusinessLogic\UserServices\UserService.cs:line 602
+   at AdminWebapi.Controllers.UserController.<UpdateUserProfile>d__9.MoveNext() in F:\Projects\GlobalHospitalApi\AdminWebapi\Controllers\UserController.cs:line 455
+DateTime : 5/25/2018 12:06:25 PM
+
+
+MessageValue cannot be null.
+Parameter name: entity
+
+StackTrace   at System.Data.Entity.Utilities.Check.NotNull[T](T value, String parameterName)
+   at System.Data.Entity.DbContext.Entry[TEntity](TEntity entity)
+   at DBAccess.GenericRepository.GenericRepository`1.Delete(TEntity entityToDelete) in F:\Projects\GlobalHospitalApi\DBAccess\GenericRepository\GenericRepository.cs:line 128
+   at DBAccess.GenericRepository.GenericRepository`1.Delete(Object id) in F:\Projects\GlobalHospitalApi\DBAccess\GenericRepository\GenericRepository.cs:line 101
+   at BusinessLogic.UserServices.UserService.UpdateUserProfile(EditUserProfileBindingModel model) in F:\Projects\GlobalHospitalApi\BusinessLogic\UserServices\UserService.cs:line 646
+   at AdminWebapi.Controllers.UserController.<UpdateUserProfile>d__9.MoveNext() in F:\Projects\GlobalHospitalApi\AdminWebapi\Controllers\UserController.cs:line 455
+DateTime : 5/25/2018 12:06:57 PM
+
+
+MessageValue cannot be null.
+Parameter name: entity
+
+StackTrace   at System.Data.Entity.Utilities.Check.NotNull[T](T value, String parameterName)
+   at System.Data.Entity.DbContext.Entry[TEntity](TEntity entity)
+   at DBAccess.GenericRepository.GenericRepository`1.Delete(TEntity entityToDelete) in F:\Projects\GlobalHospitalApi\DBAccess\GenericRepository\GenericRepository.cs:line 128
+   at DBAccess.GenericRepository.GenericRepository`1.Delete(Object id) in F:\Projects\GlobalHospitalApi\DBAccess\GenericRepository\GenericRepository.cs:line 101
+   at BusinessLogic.UserServices.UserService.UpdateUserProfile(EditUserProfileBindingModel model) in F:\Projects\GlobalHospitalApi\BusinessLogic\UserServices\UserService.cs:line 646
+   at AdminWebapi.Controllers.UserController.<UpdateUserProfile>d__9.MoveNext() in F:\Projects\GlobalHospitalApi\AdminWebapi\Controllers\UserController.cs:line 455
+DateTime : 5/25/2018 12:10:38 PM
+
+
+MessageValue cannot be null.
+Parameter name: entity
+
+StackTrace   at System.Data.Entity.Utilities.Check.NotNull[T](T value, String parameterName)
+   at System.Data.Entity.DbContext.Entry[TEntity](TEntity entity)
+   at DBAccess.GenericRepository.GenericRepository`1.Delete(TEntity entityToDelete) in F:\Projects\GlobalHospitalApi\DBAccess\GenericRepository\GenericRepository.cs:line 128
+   at BusinessLogic.UserServices.UserService.UpdateUserProfile(EditUserProfileBindingModel model) in F:\Projects\GlobalHospitalApi\BusinessLogic\UserServices\UserService.cs:line 646
+   at AdminWebapi.Controllers.UserController.<UpdateUserProfile>d__9.MoveNext() in F:\Projects\GlobalHospitalApi\AdminWebapi\Controllers\UserController.cs:line 455
+DateTime : 5/25/2018 12:11:26 PM
+
+
+MessageValue cannot be null.
+Parameter name: entity
+
+StackTrace   at System.Data.Entity.Utilities.Check.NotNull[T](T value, String parameterName)
+   at System.Data.Entity.DbContext.Entry[TEntity](TEntity entity)
+   at DBAccess.GenericRepository.GenericRepository`1.Delete(TEntity entityToDelete) in F:\Projects\GlobalHospitalApi\DBAccess\GenericRepository\GenericRepository.cs:line 128
+   at BusinessLogic.UserServices.UserService.UpdateUserProfile(EditUserProfileBindingModel model) in F:\Projects\GlobalHospitalApi\BusinessLogic\UserServices\UserService.cs:line 646
+   at AdminWebapi.Controllers.UserController.<UpdateUserProfile>d__9.MoveNext() in F:\Projects\GlobalHospitalApi\AdminWebapi\Controllers\UserController.cs:line 455
+DateTime : 5/25/2018 12:13:20 PM
+
+
+MessageAn error occurred while updating the entries. See the inner exception for details.
+
+StackTrace   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   at System.Data.Entity.DbContext.SaveChanges()
+   at DBAccess.GenericRepository.GenericRepository`1.Save() in F:\Projects\GlobalHospitalApi\DBAccess\GenericRepository\GenericRepository.cs:line 284
+   at BusinessLogic.UserServices.UserService.UpdateUserProfile(EditUserProfileBindingModel model) in F:\Projects\GlobalHospitalApi\BusinessLogic\UserServices\UserService.cs:line 657
+   at AdminWebapi.Controllers.UserController.<UpdateUserProfile>d__9.MoveNext() in F:\Projects\GlobalHospitalApi\AdminWebapi\Controllers\UserController.cs:line 455
+
+Inner Exception : An error occurred while updating the entries. See the inner exception for details.
+
+Inner Exception : Cannot update identity column 'Id'.
+------******------
+DateTime : 5/25/2018 12:14:07 PM
+
+
+MessageAn error occurred while updating the entries. See the inner exception for details.
+
+StackTrace   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   at System.Data.Entity.DbContext.SaveChanges()
+   at DBAccess.GenericRepository.GenericRepository`1.Save() in F:\Projects\GlobalHospitalApi\DBAccess\GenericRepository\GenericRepository.cs:line 284
+   at BusinessLogic.UserServices.UserService.UpdateUserProfile(EditUserProfileBindingModel model) in F:\Projects\GlobalHospitalApi\BusinessLogic\UserServices\UserService.cs:line 657
+   at AdminWebapi.Controllers.UserController.<UpdateUserProfile>d__9.MoveNext() in F:\Projects\GlobalHospitalApi\AdminWebapi\Controllers\UserController.cs:line 455
+
+Inner Exception : An error occurred while updating the entries. See the inner exception for details.
+
+Inner Exception : Cannot update identity column 'Id'.
+------******------
+DateTime : 5/25/2018 12:19:53 PM
+
+
+MessageAn error occurred while updating the entries. See the inner exception for details.
+
+StackTrace   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   at System.Data.Entity.DbContext.SaveChanges()
+   at DBAccess.GenericRepository.GenericRepository`1.Save() in F:\Projects\GlobalHospitalApi\DBAccess\GenericRepository\GenericRepository.cs:line 284
+   at BusinessLogic.UserServices.UserService.UpdateUserProfile(EditUserProfileBindingModel model) in F:\Projects\GlobalHospitalApi\BusinessLogic\UserServices\UserService.cs:line 657
+   at AdminWebapi.Controllers.UserController.<UpdateUserProfile>d__9.MoveNext() in F:\Projects\GlobalHospitalApi\AdminWebapi\Controllers\UserController.cs:line 455
+
+Inner Exception : An error occurred while updating the entries. See the inner exception for details.
+
+Inner Exception : Cannot update identity column 'Id'.
+------******------
+DateTime : 5/25/2018 12:23:55 PM
+
+
+MessageAn error occurred while updating the entries. See the inner exception for details.
+
+StackTrace   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   at System.Data.Entity.DbContext.SaveChanges()
+   at DBAccess.GenericRepository.GenericRepository`1.Save() in F:\Projects\GlobalHospitalApi\DBAccess\GenericRepository\GenericRepository.cs:line 284
+   at BusinessLogic.UserServices.UserService.UpdateUserProfile(EditUserProfileBindingModel model) in F:\Projects\GlobalHospitalApi\BusinessLogic\UserServices\UserService.cs:line 657
+   at AdminWebapi.Controllers.UserController.<UpdateUserProfile>d__9.MoveNext() in F:\Projects\GlobalHospitalApi\AdminWebapi\Controllers\UserController.cs:line 455
+
+Inner Exception : An error occurred while updating the entries. See the inner exception for details.
+
+Inner Exception : Cannot update identity column 'Id'.
+------******------
+DateTime : 5/25/2018 12:29:54 PM
+
+
+MessageThe specified parameter type 'DBAccess.ViewModels.EditProfileLiftStyle' is not valid. Only scalar types, such as System.Int32, System.Decimal, System.DateTime, and System.Guid, are supported.
+Parameter name: item
+
+StackTrace   at System.Data.Entity.Core.Objects.ObjectParameterCollection.Add(ObjectParameter item)
+   at System.Data.Entity.Core.Objects.ObjectContext.CreateQuery[T](String queryString, ObjectParameter[] parameters)
+   at System.Data.Entity.Internal.Linq.InternalSet`1.BuildFindQuery(WrappedEntityKey key)
+   at System.Data.Entity.Internal.Linq.InternalSet`1.FindInStore(WrappedEntityKey key, String keyValuesParamName)
+   at System.Data.Entity.Internal.Linq.InternalSet`1.Find(Object[] keyValues)
+   at System.Data.Entity.DbSet`1.Find(Object[] keyValues)
+   at DBAccess.GenericRepository.GenericRepository`1.Delete(Object id) in F:\Projects\GlobalHospitalApi\DBAccess\GenericRepository\GenericRepository.cs:line 100
+   at BusinessLogic.UserServices.UserService.UpdateUserProfile(EditUserProfileBindingModel model) in F:\Projects\GlobalHospitalApi\BusinessLogic\UserServices\UserService.cs:line 646
+   at AdminWebapi.Controllers.UserController.<UpdateUserProfile>d__9.MoveNext() in F:\Projects\GlobalHospitalApi\AdminWebapi\Controllers\UserController.cs:line 455
+DateTime : 5/25/2018 12:30:32 PM
+
+
+MessageThe specified parameter type 'DBAccess.ViewModels.EditProfileLiftStyle' is not valid. Only scalar types, such as System.Int32, System.Decimal, System.DateTime, and System.Guid, are supported.
+Parameter name: item
+
+StackTrace   at System.Data.Entity.Core.Objects.ObjectParameterCollection.Add(ObjectParameter item)
+   at System.Data.Entity.Core.Objects.ObjectContext.CreateQuery[T](String queryString, ObjectParameter[] parameters)
+   at System.Data.Entity.Internal.Linq.InternalSet`1.BuildFindQuery(WrappedEntityKey key)
+   at System.Data.Entity.Internal.Linq.InternalSet`1.FindInStore(WrappedEntityKey key, String keyValuesParamName)
+   at System.Data.Entity.Internal.Linq.InternalSet`1.Find(Object[] keyValues)
+   at System.Data.Entity.DbSet`1.Find(Object[] keyValues)
+   at DBAccess.GenericRepository.GenericRepository`1.Delete(Object id) in F:\Projects\GlobalHospitalApi\DBAccess\GenericRepository\GenericRepository.cs:line 100
+   at BusinessLogic.UserServices.UserService.UpdateUserProfile(EditUserProfileBindingModel model) in F:\Projects\GlobalHospitalApi\BusinessLogic\UserServices\UserService.cs:line 646
+   at AdminWebapi.Controllers.UserController.<UpdateUserProfile>d__9.MoveNext() in F:\Projects\GlobalHospitalApi\AdminWebapi\Controllers\UserController.cs:line 455
+DateTime : 5/25/2018 12:30:56 PM
+
+
+MessageObject reference not set to an instance of an object.
+
+StackTrace   at BusinessLogic.UserServices.UserService.UpdateUserProfile(EditUserProfileBindingModel model)
+   at AdminWebapi.Controllers.UserController.<UpdateUserProfile>d__9.MoveNext() in F:\Projects\GlobalHospitalApi\AdminWebapi\Controllers\UserController.cs:line 455
+DateTime : 5/25/2018 12:31:42 PM
+
+
+MessageAn error occurred while updating the entries. See the inner exception for details.
+
+StackTrace   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   at System.Data.Entity.DbContext.SaveChanges()
+   at DBAccess.GenericRepository.GenericRepository`1.Save() in F:\Projects\GlobalHospitalApi\DBAccess\GenericRepository\GenericRepository.cs:line 284
+   at BusinessLogic.UserServices.UserService.UpdateUserProfile(EditUserProfileBindingModel model)
+   at AdminWebapi.Controllers.UserController.<UpdateUserProfile>d__9.MoveNext() in F:\Projects\GlobalHospitalApi\AdminWebapi\Controllers\UserController.cs:line 455
+
+Inner Exception : An error occurred while updating the entries. See the inner exception for details.
+
+Inner Exception : Cannot insert explicit value for identity column in table 'LifeStyles' when IDENTITY_INSERT is set to OFF.
+------******------
+DateTime : 5/25/2018 12:31:50 PM
+
+
+MessageValue cannot be null.
+Parameter name: entity
+
+StackTrace   at System.Data.Entity.Utilities.Check.NotNull[T](T value, String parameterName)
+   at System.Data.Entity.DbContext.Entry[TEntity](TEntity entity)
+   at DBAccess.GenericRepository.GenericRepository`1.Delete(TEntity entityToDelete) in F:\Projects\GlobalHospitalApi\DBAccess\GenericRepository\GenericRepository.cs:line 128
+   at BusinessLogic.UserServices.UserService.UpdateUserProfile(EditUserProfileBindingModel model)
+   at AdminWebapi.Controllers.UserController.<UpdateUserProfile>d__9.MoveNext() in F:\Projects\GlobalHospitalApi\AdminWebapi\Controllers\UserController.cs:line 455
+DateTime : 5/25/2018 12:33:50 PM
+
+
+MessageAn error occurred while updating the entries. See the inner exception for details.
+
+StackTrace   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   at System.Data.Entity.DbContext.SaveChanges()
+   at DBAccess.GenericRepository.GenericRepository`1.Save() in F:\Projects\GlobalHospitalApi\DBAccess\GenericRepository\GenericRepository.cs:line 284
+   at BusinessLogic.UserServices.UserService.UpdateUserProfile(EditUserProfileBindingModel model)
+   at AdminWebapi.Controllers.UserController.<UpdateUserProfile>d__9.MoveNext() in F:\Projects\GlobalHospitalApi\AdminWebapi\Controllers\UserController.cs:line 455
+
+Inner Exception : An error occurred while updating the entries. See the inner exception for details.
+
+Inner Exception : The INSERT statement conflicted with the FOREIGN KEY constraint "FK_dbo.FamilyMembers_dbo.Users_User_Id". The conflict occurred in database "GlobalHospital_DB", table "dbo.Users", column 'Id'.
+The statement has been terminated.
+------******------
+DateTime : 5/25/2018 12:34:26 PM
+
+
+MessageObject reference not set to an instance of an object.
+
+StackTrace   at BusinessLogic.UserServices.UserService.UpdateUserProfile(EditUserProfileBindingModel model)
+   at AdminWebapi.Controllers.UserController.<UpdateUserProfile>d__9.MoveNext() in F:\Projects\GlobalHospitalApi\AdminWebapi\Controllers\UserController.cs:line 455
+DateTime : 5/25/2018 12:35:20 PM
+
+
+MessageAn error occurred while updating the entries. See the inner exception for details.
+
+StackTrace   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   at System.Data.Entity.DbContext.SaveChanges()
+   at DBAccess.GenericRepository.GenericRepository`1.Save() in F:\Projects\GlobalHospitalApi\DBAccess\GenericRepository\GenericRepository.cs:line 284
+   at BusinessLogic.UserServices.UserService.UpdateUserProfile(EditUserProfileBindingModel model)
+   at AdminWebapi.Controllers.UserController.<UpdateUserProfile>d__9.MoveNext() in F:\Projects\GlobalHospitalApi\AdminWebapi\Controllers\UserController.cs:line 455
+
+Inner Exception : An error occurred while updating the entries. See the inner exception for details.
+
+Inner Exception : The INSERT statement conflicted with the FOREIGN KEY constraint "FK_dbo.FamilyMembers_dbo.Users_User_Id". The conflict occurred in database "GlobalHospital_DB", table "dbo.Users", column 'Id'.
+The statement has been terminated.
+------******------
+DateTime : 5/25/2018 12:36:42 PM
+
+
+MessageAn error occurred while updating the entries. See the inner exception for details.
+
+StackTrace   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   at System.Data.Entity.DbContext.SaveChanges()
+   at DBAccess.GenericRepository.GenericRepository`1.Save() in F:\Projects\GlobalHospitalApi\DBAccess\GenericRepository\GenericRepository.cs:line 284
+   at BusinessLogic.UserServices.UserService.UpdateUserProfile(EditUserProfileBindingModel model)
+   at AdminWebapi.Controllers.UserController.<UpdateUserProfile>d__9.MoveNext() in F:\Projects\GlobalHospitalApi\AdminWebapi\Controllers\UserController.cs:line 455
+
+Inner Exception : An error occurred while updating the entries. See the inner exception for details.
+
+Inner Exception : The INSERT statement conflicted with the FOREIGN KEY constraint "FK_dbo.FamilyMembers_dbo.Users_User_Id". The conflict occurred in database "GlobalHospital_DB", table "dbo.Users", column 'Id'.
+The statement has been terminated.
+------******------
+DateTime : 5/25/2018 12:39:53 PM
+
+
+MessageAn error occurred while updating the entries. See the inner exception for details.
+
+StackTrace   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   at System.Data.Entity.DbContext.SaveChanges()
+   at DBAccess.GenericRepository.GenericRepository`1.Save() in F:\Projects\GlobalHospitalApi\DBAccess\GenericRepository\GenericRepository.cs:line 284
+   at BusinessLogic.UserServices.UserService.UpdateUserProfile(EditUserProfileBindingModel model)
+   at AdminWebapi.Controllers.UserController.<UpdateUserProfile>d__9.MoveNext() in F:\Projects\GlobalHospitalApi\AdminWebapi\Controllers\UserController.cs:line 455
+
+Inner Exception : An error occurred while updating the entries. See the inner exception for details.
+
+Inner Exception : The INSERT statement conflicted with the FOREIGN KEY constraint "FK_dbo.FamilyMembers_dbo.Users_User_Id". The conflict occurred in database "GlobalHospital_DB", table "dbo.Users", column 'Id'.
+The statement has been terminated.
+------******------
+DateTime : 5/25/2018 12:46:56 PM
+
+
+MessageAn error occurred while updating the entries. See the inner exception for details.
+
+StackTrace   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   at System.Data.Entity.DbContext.SaveChanges()
+   at DBAccess.GenericRepository.GenericRepository`1.Save() in F:\Projects\GlobalHospitalApi\DBAccess\GenericRepository\GenericRepository.cs:line 284
+   at BusinessLogic.UserServices.UserService.UpdateUserProfile(EditUserProfileBindingModel model) in F:\Projects\GlobalHospitalApi\BusinessLogic\UserServices\UserService.cs:line 662
+   at AdminWebapi.Controllers.UserController.<UpdateUserProfile>d__9.MoveNext() in F:\Projects\GlobalHospitalApi\AdminWebapi\Controllers\UserController.cs:line 455
+
+Inner Exception : An error occurred while updating the entries. See the inner exception for details.
+
+Inner Exception : The INSERT statement conflicted with the FOREIGN KEY constraint "FK_dbo.FamilyMembers_dbo.Users_User_Id". The conflict occurred in database "GlobalHospital_DB", table "dbo.Users", column 'Id'.
+The statement has been terminated.
+------******------
+DateTime : 5/25/2018 12:47:24 PM
+
+
+MessageAn error occurred while updating the entries. See the inner exception for details.
+
+StackTrace   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   at System.Data.Entity.DbContext.SaveChanges()
+   at DBAccess.GenericRepository.GenericRepository`1.Save() in F:\Projects\GlobalHospitalApi\DBAccess\GenericRepository\GenericRepository.cs:line 284
+   at BusinessLogic.UserServices.UserService.UpdateUserProfile(EditUserProfileBindingModel model) in F:\Projects\GlobalHospitalApi\BusinessLogic\UserServices\UserService.cs:line 662
+   at AdminWebapi.Controllers.UserController.<UpdateUserProfile>d__9.MoveNext() in F:\Projects\GlobalHospitalApi\AdminWebapi\Controllers\UserController.cs:line 455
+
+Inner Exception : An error occurred while updating the entries. See the inner exception for details.
+
+Inner Exception : The INSERT statement conflicted with the FOREIGN KEY constraint "FK_dbo.FamilyMembers_dbo.Users_User_Id". The conflict occurred in database "GlobalHospital_DB", table "dbo.Users", column 'Id'.
+The statement has been terminated.
+------******------
+DateTime : 5/25/2018 12:54:59 PM
+
+
+MessageAn error occurred while updating the entries. See the inner exception for details.
+
+StackTrace   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   at System.Data.Entity.DbContext.SaveChanges()
+   at DBAccess.GenericRepository.GenericRepository`1.Save() in F:\Projects\GlobalHospitalApi\DBAccess\GenericRepository\GenericRepository.cs:line 284
+   at BusinessLogic.UserServices.UserService.UpdateUserProfile(EditUserProfileBindingModel model) in F:\Projects\GlobalHospitalApi\BusinessLogic\UserServices\UserService.cs:line 662
+   at AdminWebapi.Controllers.UserController.<UpdateUserProfile>d__9.MoveNext() in F:\Projects\GlobalHospitalApi\AdminWebapi\Controllers\UserController.cs:line 455
+
+Inner Exception : An error occurred while updating the entries. See the inner exception for details.
+
+Inner Exception : The INSERT statement conflicted with the FOREIGN KEY constraint "FK_dbo.FamilyMembers_dbo.Users_User_Id". The conflict occurred in database "GlobalHospital_DB", table "dbo.Users", column 'Id'.
+The statement has been terminated.
+------******------
+DateTime : 5/25/2018 12:55:18 PM
+
+
+MessageAn error occurred while updating the entries. See the inner exception for details.
+
+StackTrace   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   at System.Data.Entity.DbContext.SaveChanges()
+   at DBAccess.GenericRepository.GenericRepository`1.Save() in F:\Projects\GlobalHospitalApi\DBAccess\GenericRepository\GenericRepository.cs:line 284
+   at BusinessLogic.UserServices.UserService.UpdateUserProfile(EditUserProfileBindingModel model) in F:\Projects\GlobalHospitalApi\BusinessLogic\UserServices\UserService.cs:line 662
+   at AdminWebapi.Controllers.UserController.<UpdateUserProfile>d__9.MoveNext() in F:\Projects\GlobalHospitalApi\AdminWebapi\Controllers\UserController.cs:line 455
+
+Inner Exception : An error occurred while updating the entries. See the inner exception for details.
+
+Inner Exception : Cannot insert explicit value for identity column in table 'LifeStyles' when IDENTITY_INSERT is set to OFF.
+------******------
+DateTime : 5/25/2018 12:58:15 PM
+
+
+MessageAn error occurred while updating the entries. See the inner exception for details.
+
+StackTrace   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   at System.Data.Entity.DbContext.SaveChanges()
+   at DBAccess.GenericRepository.GenericRepository`1.Save() in F:\Projects\GlobalHospitalApi\DBAccess\GenericRepository\GenericRepository.cs:line 284
+   at BusinessLogic.UserServices.UserService.UpdateUserProfile(EditUserProfileBindingModel model) in F:\Projects\GlobalHospitalApi\BusinessLogic\UserServices\UserService.cs:line 662
+   at AdminWebapi.Controllers.UserController.<UpdateUserProfile>d__9.MoveNext() in F:\Projects\GlobalHospitalApi\AdminWebapi\Controllers\UserController.cs:line 455
+
+Inner Exception : An error occurred while updating the entries. See the inner exception for details.
+
+Inner Exception : Cannot insert explicit value for identity column in table 'LifeStyles' when IDENTITY_INSERT is set to OFF.
+------******------
+DateTime : 5/25/2018 1:00:14 PM
+
+
+MessageAn error occurred while updating the entries. See the inner exception for details.
+
+StackTrace   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   at System.Data.Entity.DbContext.SaveChanges()
+   at DBAccess.GenericRepository.GenericRepository`1.Save() in F:\Projects\GlobalHospitalApi\DBAccess\GenericRepository\GenericRepository.cs:line 284
+   at BusinessLogic.UserServices.UserService.UpdateUserProfile(EditUserProfileBindingModel model) in F:\Projects\GlobalHospitalApi\BusinessLogic\UserServices\UserService.cs:line 662
+   at AdminWebapi.Controllers.UserController.<UpdateUserProfile>d__9.MoveNext() in F:\Projects\GlobalHospitalApi\AdminWebapi\Controllers\UserController.cs:line 455
+
+Inner Exception : An error occurred while updating the entries. See the inner exception for details.
+
+Inner Exception : Cannot insert explicit value for identity column in table 'LifeStyles' when IDENTITY_INSERT is set to OFF.
+------******------
+DateTime : 5/26/2018 10:26:00 AM
+
+
+MessageAn error occurred while updating the entries. See the inner exception for details.
+
+StackTrace   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   at System.Data.Entity.DbContext.SaveChanges()
+   at DBAccess.GenericRepository.GenericRepository`1.Save() in F:\Projects\GlobalHospitalApi\DBAccess\GenericRepository\GenericRepository.cs:line 284
+   at BusinessLogic.UserServices.UserService.UpdateUserProfile(EditUserProfileBindingModel model) in F:\Projects\GlobalHospitalApi\BusinessLogic\UserServices\UserService.cs:line 662
+   at AdminWebapi.Controllers.UserController.<UpdateUserProfile>d__9.MoveNext() in F:\Projects\GlobalHospitalApi\AdminWebapi\Controllers\UserController.cs:line 455
+
+Inner Exception : An error occurred while updating the entries. See the inner exception for details.
+
+Inner Exception : Cannot insert explicit value for identity column in table 'LifeStyles' when IDENTITY_INSERT is set to OFF.
+------******------
+DateTime : 5/26/2018 10:29:11 AM
+
+
+MessageAn error occurred while updating the entries. See the inner exception for details.
+
+StackTrace   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   at System.Data.Entity.DbContext.SaveChanges()
+   at DBAccess.GenericRepository.GenericRepository`1.Save() in F:\Projects\GlobalHospitalApi\DBAccess\GenericRepository\GenericRepository.cs:line 284
+   at BusinessLogic.UserServices.UserService.UpdateUserProfile(EditUserProfileBindingModel model) in F:\Projects\GlobalHospitalApi\BusinessLogic\UserServices\UserService.cs:line 662
+   at AdminWebapi.Controllers.UserController.<UpdateUserProfile>d__9.MoveNext() in F:\Projects\GlobalHospitalApi\AdminWebapi\Controllers\UserController.cs:line 455
+
+Inner Exception : An error occurred while updating the entries. See the inner exception for details.
+
+Inner Exception : Cannot insert explicit value for identity column in table 'LifeStyles' when IDENTITY_INSERT is set to OFF.
+------******------
+DateTime : 5/26/2018 10:32:33 AM
+
+
+MessageAn error occurred while updating the entries. See the inner exception for details.
+
+StackTrace   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   at System.Data.Entity.DbContext.SaveChanges()
+   at DBAccess.GenericRepository.GenericRepository`1.Save() in F:\Projects\GlobalHospitalApi\DBAccess\GenericRepository\GenericRepository.cs:line 284
+   at BusinessLogic.UserServices.UserService.UpdateUserProfile(EditUserProfileBindingModel model) in F:\Projects\GlobalHospitalApi\BusinessLogic\UserServices\UserService.cs:line 662
+   at AdminWebapi.Controllers.UserController.<UpdateUserProfile>d__9.MoveNext() in F:\Projects\GlobalHospitalApi\AdminWebapi\Controllers\UserController.cs:line 455
+
+Inner Exception : An error occurred while updating the entries. See the inner exception for details.
+
+Inner Exception : Cannot insert explicit value for identity column in table 'LifeStyles' when IDENTITY_INSERT is set to OFF.
+------******------
+DateTime : 5/26/2018 10:33:51 AM
+
+
+MessageAn error occurred while updating the entries. See the inner exception for details.
+
+StackTrace   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   at System.Data.Entity.DbContext.SaveChanges()
+   at DBAccess.GenericRepository.GenericRepository`1.Save() in F:\Projects\GlobalHospitalApi\DBAccess\GenericRepository\GenericRepository.cs:line 284
+   at BusinessLogic.UserServices.UserService.UpdateUserProfile(EditUserProfileBindingModel model) in F:\Projects\GlobalHospitalApi\BusinessLogic\UserServices\UserService.cs:line 662
+   at AdminWebapi.Controllers.UserController.<UpdateUserProfile>d__9.MoveNext() in F:\Projects\GlobalHospitalApi\AdminWebapi\Controllers\UserController.cs:line 455
+
+Inner Exception : An error occurred while updating the entries. See the inner exception for details.
+
+Inner Exception : Cannot insert explicit value for identity column in table 'LifeStyles' when IDENTITY_INSERT is set to OFF.
+------******------
+DateTime : 5/26/2018 10:36:24 AM
+
+
+MessageUnable to determine composite primary key ordering for type 'DBAccess.Models.LifeStyle'. Use the ColumnAttribute (see http://go.microsoft.com/fwlink/?LinkId=386388) or the HasKey method (see http://go.microsoft.com/fwlink/?LinkId=386387) to specify an order for composite primary keys.
+
+StackTrace   at System.Data.Entity.ModelConfiguration.Configuration.Types.EntityTypeConfiguration.ConfigureKey(EntityType entityType)
+   at System.Data.Entity.ModelConfiguration.Configuration.Types.EntityTypeConfiguration.Configure(EntityType entityType, EdmModel model)
+   at System.Data.Entity.ModelConfiguration.Configuration.ModelConfiguration.ConfigureEntities(EdmModel model)
+   at System.Data.Entity.DbModelBuilder.Build(DbProviderManifest providerManifest, DbProviderInfo providerInfo)
+   at System.Data.Entity.DbModelBuilder.Build(DbConnection providerConnection)
+   at System.Data.Entity.Internal.LazyInternalContext.CreateModel(LazyInternalContext internalContext)
+   at System.Data.Entity.Internal.RetryLazy`2.GetValue(TInput input)
+   at System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   at System.Data.Entity.Internal.InternalContext.Initialize()
+   at System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   at System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   at System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   at System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   at System.Linq.Queryable.FirstOrDefault[TSource](IQueryable`1 source)
+   at DBAccess.GenericRepository.GenericRepository`1.GetFirstRecord() in F:\Projects\GlobalHospitalApi\DBAccess\GenericRepository\GenericRepository.cs:line 267
+   at BusinessLogic.CommonServices.CommonServices.GetAppSettings() in F:\Projects\GlobalHospitalApi\BusinessLogic\CommonServices\CommonServices.cs:line 27
+   at AdminWebapi.Controllers.CommonController.<GetAppSettings>d__4.MoveNext() in F:\Projects\GlobalHospitalApi\AdminWebapi\Controllers\CommonController.cs:line 43
+DateTime : 5/26/2018 10:43:28 AM
+
+
+MessageOne or more validation errors were detected during model generation:
+
+LifeStyle_User_Source: : Multiplicity is not valid in Role 'LifeStyle_User_Source' in relationship 'LifeStyle_User'. Because the Dependent Role properties are not the key properties, the upper bound of the multiplicity of the Dependent Role must be '*'.
+
+
+StackTrace   at System.Data.Entity.Core.Metadata.Edm.EdmModel.Validate()
+   at System.Data.Entity.DbModelBuilder.Build(DbProviderManifest providerManifest, DbProviderInfo providerInfo)
+   at System.Data.Entity.DbModelBuilder.Build(DbConnection providerConnection)
+   at System.Data.Entity.Internal.LazyInternalContext.CreateModel(LazyInternalContext internalContext)
+   at System.Data.Entity.Internal.RetryLazy`2.GetValue(TInput input)
+   at System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   at System.Data.Entity.Internal.InternalContext.Initialize()
+   at System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   at System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   at System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   at System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   at System.Linq.Queryable.FirstOrDefault[TSource](IQueryable`1 source)
+   at DBAccess.GenericRepository.GenericRepository`1.GetFirstRecord() in F:\Projects\GlobalHospitalApi\DBAccess\GenericRepository\GenericRepository.cs:line 267
+   at BusinessLogic.CommonServices.CommonServices.GetAppSettings() in F:\Projects\GlobalHospitalApi\BusinessLogic\CommonServices\CommonServices.cs:line 27
+   at AdminWebapi.Controllers.CommonController.<GetAppSettings>d__4.MoveNext() in F:\Projects\GlobalHospitalApi\AdminWebapi\Controllers\CommonController.cs:line 43
+DateTime : 5/26/2018 11:17:09 AM
+
+
+MessageThe specified parameter type 'System.Collections.Generic.HashSet`1[[DBAccess.Models.Vaccinations, DBAccess, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]' is not valid. Only scalar types, such as System.Int32, System.Decimal, System.DateTime, and System.Guid, are supported.
+Parameter name: item
+
+StackTrace   at System.Data.Entity.Core.Objects.ObjectParameterCollection.Add(ObjectParameter item)
+   at System.Data.Entity.Core.Objects.ObjectContext.CreateQuery[T](String queryString, ObjectParameter[] parameters)
+   at System.Data.Entity.Internal.Linq.InternalSet`1.BuildFindQuery(WrappedEntityKey key)
+   at System.Data.Entity.Internal.Linq.InternalSet`1.FindInStore(WrappedEntityKey key, String keyValuesParamName)
+   at System.Data.Entity.Internal.Linq.InternalSet`1.Find(Object[] keyValues)
+   at System.Data.Entity.DbSet`1.Find(Object[] keyValues)
+   at DBAccess.GenericRepository.GenericRepository`1.Delete(Object id) in F:\Projects\GlobalHospitalApi\DBAccess\GenericRepository\GenericRepository.cs:line 100
+   at BusinessLogic.UserServices.UserService.UpdateUserProfile(EditUserProfileBindingModel model) in F:\Projects\GlobalHospitalApi\BusinessLogic\UserServices\UserService.cs:line 607
+   at AdminWebapi.Controllers.UserController.<UpdateUserProfile>d__9.MoveNext() in F:\Projects\GlobalHospitalApi\AdminWebapi\Controllers\UserController.cs:line 456
+DateTime : 5/26/2018 11:24:42 AM
+
+
+MessageAn error occurred while updating the entries. See the inner exception for details.
+
+StackTrace   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   at System.Data.Entity.DbContext.SaveChanges()
+   at DBAccess.GenericRepository.GenericRepository`1.Save()
+   at BusinessLogic.UserServices.UserService.UpdateUserProfile(EditUserProfileBindingModel model) in F:\Projects\GlobalHospitalApi\BusinessLogic\UserServices\UserService.cs:line 621
+   at AdminWebapi.Controllers.UserController.<UpdateUserProfile>d__9.MoveNext() in F:\Projects\GlobalHospitalApi\AdminWebapi\Controllers\UserController.cs:line 456
+
+Inner Exception : An error occurred while updating the entries. See the inner exception for details.
+
+Inner Exception : The INSERT statement conflicted with the FOREIGN KEY constraint "FK_dbo.FamilyMembers_dbo.Users_User_Id". The conflict occurred in database "GlobalHospital_DB", table "dbo.Users", column 'Id'.
+The statement has been terminated.
+------******------
+DateTime : 5/26/2018 11:25:21 AM
+
+
+MessageObject reference not set to an instance of an object.
+
+StackTrace   at BusinessLogic.UserServices.UserService.UpdateUserProfile(EditUserProfileBindingModel model)
+   at AdminWebapi.Controllers.UserController.<UpdateUserProfile>d__9.MoveNext() in F:\Projects\GlobalHospitalApi\AdminWebapi\Controllers\UserController.cs:line 456
+DateTime : 5/26/2018 11:34:38 AM
+
+
+MessageAn error occurred while updating the entries. See the inner exception for details.
+
+StackTrace   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   at System.Data.Entity.DbContext.SaveChanges()
+   at DBAccess.GenericRepository.GenericRepository`1.Save() in F:\Projects\GlobalHospitalApi\DBAccess\GenericRepository\GenericRepository.cs:line 284
+   at BusinessLogic.UserServices.UserService.UpdateUserProfile(EditUserProfileBindingModel model) in F:\Projects\GlobalHospitalApi\BusinessLogic\UserServices\UserService.cs:line 622
+   at AdminWebapi.Controllers.UserController.<UpdateUserProfile>d__9.MoveNext() in F:\Projects\GlobalHospitalApi\AdminWebapi\Controllers\UserController.cs:line 456
+
+Inner Exception : An error occurred while updating the entries. See the inner exception for details.
+
+Inner Exception : The INSERT statement conflicted with the FOREIGN KEY constraint "FK_dbo.FamilyHistories_dbo.FamilyMembers_FamilyMember_Id". The conflict occurred in database "GlobalHospital_DB", table "dbo.FamilyMembers", column 'Id'.
+The statement has been terminated.
+------******------
+DateTime : 5/26/2018 11:35:47 AM
+
+
+MessageAn error occurred while updating the entries. See the inner exception for details.
+
+StackTrace   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   at System.Data.Entity.DbContext.SaveChanges()
+   at DBAccess.GenericRepository.GenericRepository`1.Save() in F:\Projects\GlobalHospitalApi\DBAccess\GenericRepository\GenericRepository.cs:line 284
+   at BusinessLogic.UserServices.UserService.UpdateUserProfile(EditUserProfileBindingModel model) in F:\Projects\GlobalHospitalApi\BusinessLogic\UserServices\UserService.cs:line 622
+   at AdminWebapi.Controllers.UserController.<UpdateUserProfile>d__9.MoveNext() in F:\Projects\GlobalHospitalApi\AdminWebapi\Controllers\UserController.cs:line 456
+
+Inner Exception : An error occurred while updating the entries. See the inner exception for details.
+
+Inner Exception : The INSERT statement conflicted with the FOREIGN KEY constraint "FK_dbo.FamilyHistories_dbo.FamilyMembers_FamilyMember_Id". The conflict occurred in database "GlobalHospital_DB", table "dbo.FamilyMembers", column 'Id'.
+The statement has been terminated.
+------******------
+DateTime : 5/28/2018 9:38:53 AM
+
+
+MessageObject reference not set to an instance of an object.
+
+StackTrace   at BusinessLogic.UserServices.UserService.GetAppointment(AppointmentViewModel model) in F:\Projects\GlobalHospitalApi\BusinessLogic\UserServices\UserService.cs:line 878
+   at AdminWebapi.Controllers.UserController.<GetAppointment>d__16.MoveNext() in F:\Projects\GlobalHospitalApi\AdminWebapi\Controllers\UserController.cs:line 777
+DateTime : 5/28/2018 9:44:29 AM
+
+
+MessageThe specified type member 'Date' is not supported in LINQ to Entities. Only initializers, entity members, and entity navigation properties are supported.
+
+StackTrace   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MemberAccessTranslator.TypedTranslate(ExpressionConverter parent, MemberExpression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TypedTranslator`1.Translate(ExpressionConverter parent, Expression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.EqualsTranslator.TypedTranslate(ExpressionConverter parent, BinaryExpression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TypedTranslator`1.Translate(ExpressionConverter parent, Expression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.BinaryTranslator.TypedTranslate(ExpressionConverter parent, BinaryExpression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TypedTranslator`1.Translate(ExpressionConverter parent, Expression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateLambda(LambdaExpression lambda, DbExpression input)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateLambda(LambdaExpression lambda, DbExpression input, DbExpressionBinding& binding)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.OneLambdaTranslator.Translate(ExpressionConverter parent, MethodCallExpression call, DbExpression& source, DbExpressionBinding& sourceBinding, DbExpression& lambda)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.FirstPredicateTranslatorBase.Translate(ExpressionConverter parent, MethodCallExpression call)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.SequenceMethodTranslator.Translate(ExpressionConverter parent, MethodCallExpression call, SequenceMethod sequenceMethod)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.TypedTranslate(ExpressionConverter parent, MethodCallExpression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TypedTranslator`1.Translate(ExpressionConverter parent, Expression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.Convert()
+   at System.Data.Entity.Core.Objects.ELinq.ELinqQueryState.GetExecutionPlan(Nullable`1 forMergeOption)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__6()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__5()
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<System.Collections.Generic.IEnumerable<T>.GetEnumerator>b__0()
+   at System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   at System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.<GetElementFunction>b__1[TResult](IEnumerable`1 sequence)
+   at System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.ExecuteSingle[TResult](IEnumerable`1 query, Expression queryRoot)
+   at System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.System.Linq.IQueryProvider.Execute[TResult](Expression expression)
+   at System.Data.Entity.Internal.Linq.DbQueryProvider.Execute[TResult](Expression expression)
+   at System.Linq.Queryable.FirstOrDefault[TSource](IQueryable`1 source, Expression`1 predicate)
+   at DBAccess.GenericRepository.GenericRepository`1.GetFirst(Expression`1 predicate) in F:\Projects\GlobalHospitalApi\DBAccess\GenericRepository\GenericRepository.cs:line 257
+   at BusinessLogic.UserServices.UserService.GetAppointment(AppointmentViewModel model) in F:\Projects\GlobalHospitalApi\BusinessLogic\UserServices\UserService.cs:line 857
+   at AdminWebapi.Controllers.UserController.<GetAppointment>d__16.MoveNext() in F:\Projects\GlobalHospitalApi\AdminWebapi\Controllers\UserController.cs:line 777
+DateTime : 5/28/2018 9:50:28 AM
+
+
+MessageAn error occurred while executing the command definition. See the inner exception for details.
+
+StackTrace   at System.Data.Entity.Core.EntityClient.Internal.EntityCommandDefinition.ExecuteStoreCommands(EntityCommand entityCommand, CommandBehavior behavior)
+   at System.Data.Entity.Core.Objects.Internal.ObjectQueryExecutionPlan.Execute[TResultType](ObjectContext context, ObjectParameterCollection parameterValues)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__6()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__5()
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<System.Collections.Generic.IEnumerable<T>.GetEnumerator>b__0()
+   at System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   at System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.<GetElementFunction>b__1[TResult](IEnumerable`1 sequence)
+   at System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.ExecuteSingle[TResult](IEnumerable`1 query, Expression queryRoot)
+   at System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.System.Linq.IQueryProvider.Execute[TResult](Expression expression)
+   at System.Data.Entity.Internal.Linq.DbQueryProvider.Execute[TResult](Expression expression)
+   at System.Linq.Queryable.FirstOrDefault[TSource](IQueryable`1 source, Expression`1 predicate)
+   at DBAccess.GenericRepository.GenericRepository`1.GetFirst(Expression`1 predicate) in F:\Projects\GlobalHospitalApi\DBAccess\GenericRepository\GenericRepository.cs:line 257
+   at BusinessLogic.UserServices.UserService.GetAppointment(AppointmentViewModel model) in F:\Projects\GlobalHospitalApi\BusinessLogic\UserServices\UserService.cs:line 857
+   at AdminWebapi.Controllers.UserController.<GetAppointment>d__16.MoveNext() in F:\Projects\GlobalHospitalApi\AdminWebapi\Controllers\UserController.cs:line 777
+
+Inner Exception : Invalid column name 'AppointmentDateTime'.
+------******------
+DateTime : 5/28/2018 9:51:54 AM
+
+
+MessageAn error occurred while executing the command definition. See the inner exception for details.
+
+StackTrace   at System.Data.Entity.Core.EntityClient.Internal.EntityCommandDefinition.ExecuteStoreCommands(EntityCommand entityCommand, CommandBehavior behavior)
+   at System.Data.Entity.Core.Objects.Internal.ObjectQueryExecutionPlan.Execute[TResultType](ObjectContext context, ObjectParameterCollection parameterValues)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__6()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__5()
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<System.Collections.Generic.IEnumerable<T>.GetEnumerator>b__0()
+   at System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   at System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.<GetElementFunction>b__1[TResult](IEnumerable`1 sequence)
+   at System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.ExecuteSingle[TResult](IEnumerable`1 query, Expression queryRoot)
+   at System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.System.Linq.IQueryProvider.Execute[TResult](Expression expression)
+   at System.Data.Entity.Internal.Linq.DbQueryProvider.Execute[TResult](Expression expression)
+   at System.Linq.Queryable.FirstOrDefault[TSource](IQueryable`1 source, Expression`1 predicate)
+   at DBAccess.GenericRepository.GenericRepository`1.GetFirst(Expression`1 predicate) in F:\Projects\GlobalHospitalApi\DBAccess\GenericRepository\GenericRepository.cs:line 257
+   at BusinessLogic.UserServices.UserService.GetAppointment(AppointmentViewModel model) in F:\Projects\GlobalHospitalApi\BusinessLogic\UserServices\UserService.cs:line 857
+   at AdminWebapi.Controllers.UserController.<GetAppointment>d__16.MoveNext() in F:\Projects\GlobalHospitalApi\AdminWebapi\Controllers\UserController.cs:line 777
+
+Inner Exception : Invalid column name 'AppointmentDateTime'.
+------******------
+DateTime : 5/28/2018 11:55:18 AM
+
+
+MessageNon-static field requires a target.
+
+StackTrace   at System.Reflection.RtFieldInfo.CheckConsistency(Object target)
+   at System.Reflection.RtFieldInfo.InternalGetValue(Object obj, StackCrawlMark& stackMark)
+   at System.Reflection.RtFieldInfo.GetValue(Object obj)
+   at System.Data.Entity.Core.Objects.ELinq.QueryParameterExpression.TryGetFieldOrPropertyValue(MemberExpression me, Object instance, Object& memberValue)
+   at System.Data.Entity.Core.Objects.ELinq.QueryParameterExpression.TryEvaluatePath(Expression expression, ConstantExpression& constantExpression)
+   at System.Data.Entity.Core.Objects.ELinq.QueryParameterExpression.EvaluateParameter(Object[] arguments)
+   at System.Data.Entity.Core.Objects.ELinq.ELinqQueryState.GetExecutionPlan(Nullable`1 forMergeOption)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__6()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__5()
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<System.Collections.Generic.IEnumerable<T>.GetEnumerator>b__0()
+   at System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   at System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.<GetElementFunction>b__1[TResult](IEnumerable`1 sequence)
+   at System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.ExecuteSingle[TResult](IEnumerable`1 query, Expression queryRoot)
+   at System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.System.Linq.IQueryProvider.Execute[TResult](Expression expression)
+   at System.Data.Entity.Internal.Linq.DbQueryProvider.Execute[TResult](Expression expression)
+   at System.Linq.Queryable.FirstOrDefault[TSource](IQueryable`1 source, Expression`1 predicate)
+   at DBAccess.GenericRepository.GenericRepository`1.GetFirst(Expression`1 predicate) in F:\Projects\GlobalHospitalApi\DBAccess\GenericRepository\GenericRepository.cs:line 257
+   at BusinessLogic.UserServices.UserService.CancelAppointment(CancelAppointmentBindingModel model)
+   at AdminWebapi.Controllers.UserController.<CancelAppointment>d__17.MoveNext() in F:\Projects\GlobalHospitalApi\AdminWebapi\Controllers\UserController.cs:line 814
+DateTime : 5/28/2018 11:57:56 AM
+
+
+MessageObject reference not set to an instance of an object.
+
+StackTrace   at AdminWebapi.Controllers.UserController.<CancelAppointment>d__17.MoveNext()
+DateTime : 5/28/2018 12:50:12 PM
+
+
+MessageObject reference not set to an instance of an object.
+
+StackTrace   at BusinessLogic.CommonServices.CommonServices.CreateChannel(CreateChannelBindingModel model)
+   at AdminWebapi.Controllers.CommonController.<CreateChannel>d__5.MoveNext() in F:\Projects\GlobalHospitalApi\AdminWebapi\Controllers\CommonController.cs:line 73
+DateTime : 5/28/2018 12:50:27 PM
+
+
+MessageObject reference not set to an instance of an object.
+
+StackTrace   at BusinessLogic.CommonServices.CommonServices.CreateChannel(CreateChannelBindingModel model)
+   at AdminWebapi.Controllers.CommonController.<CreateChannel>d__5.MoveNext() in F:\Projects\GlobalHospitalApi\AdminWebapi\Controllers\CommonController.cs:line 73
+DateTime : 5/28/2018 12:50:39 PM
+
+
+MessageObject reference not set to an instance of an object.
+
+StackTrace   at BusinessLogic.CommonServices.CommonServices.CreateChannel(CreateChannelBindingModel model)
+   at AdminWebapi.Controllers.CommonController.<CreateChannel>d__5.MoveNext() in F:\Projects\GlobalHospitalApi\AdminWebapi\Controllers\CommonController.cs:line 73
+DateTime : 5/28/2018 12:51:19 PM
+
+
+MessageObject reference not set to an instance of an object.
+
+StackTrace   at BusinessLogic.CommonServices.CommonServices.CreateChannel(CreateChannelBindingModel model)
+   at AdminWebapi.Controllers.CommonController.<CreateChannel>d__5.MoveNext() in F:\Projects\GlobalHospitalApi\AdminWebapi\Controllers\CommonController.cs:line 73
+DateTime : 5/28/2018 12:51:35 PM
+
+
+MessageThe entity type Chat is not part of the model for the current context.
+
+StackTrace   at System.Data.Entity.Internal.InternalContext.UpdateEntitySetMappingsForType(Type entityType)
+   at System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   at System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   at System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   at System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   at System.Linq.Queryable.FirstOrDefault[TSource](IQueryable`1 source, Expression`1 predicate)
+   at DBAccess.GenericRepository.GenericRepository`1.GetFirst(Expression`1 predicate) in F:\Projects\GlobalHospitalApi\DBAccess\GenericRepository\GenericRepository.cs:line 257
+   at BusinessLogic.CommonServices.CommonServices.CreateChannel(CreateChannelBindingModel model)
+   at AdminWebapi.Controllers.CommonController.<CreateChannel>d__5.MoveNext() in F:\Projects\GlobalHospitalApi\AdminWebapi\Controllers\CommonController.cs:line 73
+DateTime : 5/28/2018 2:28:56 PM
+
+
+MessageObject reference not set to an instance of an object.
+
+StackTrace   at System.Data.Entity.Core.Objects.ELinq.QueryParameterExpression.EvaluateParameter(Object[] arguments)
+   at System.Data.Entity.Core.Objects.ELinq.ELinqQueryState.GetExecutionPlan(Nullable`1 forMergeOption)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__6()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__5()
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<System.Collections.Generic.IEnumerable<T>.GetEnumerator>b__0()
+   at System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   at System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.<GetElementFunction>b__1[TResult](IEnumerable`1 sequence)
+   at System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.ExecuteSingle[TResult](IEnumerable`1 query, Expression queryRoot)
+   at System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.System.Linq.IQueryProvider.Execute[TResult](Expression expression)
+   at System.Data.Entity.Internal.Linq.DbQueryProvider.Execute[TResult](Expression expression)
+   at System.Linq.Queryable.FirstOrDefault[TSource](IQueryable`1 source, Expression`1 predicate)
+   at DBAccess.GenericRepository.GenericRepository`1.GetFirst(Expression`1 predicate) in F:\Projects\GlobalHospitalApi\DBAccess\GenericRepository\GenericRepository.cs:line 257
+   at BusinessLogic.CommonServices.CommonServices.CreateChannel(CreateChannelBindingModel model)
+   at AdminWebapi.Controllers.CommonController.<CreateChannel>d__5.MoveNext() in F:\Projects\GlobalHospitalApi\AdminWebapi\Controllers\CommonController.cs:line 73
+DateTime : 5/28/2018 3:19:04 PM
+
+
+MessageThe entity type AppRating is not part of the model for the current context.
+
+StackTrace   at System.Data.Entity.Internal.InternalContext.UpdateEntitySetMappingsForType(Type entityType)
+   at System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   at System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   at System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   at System.Data.Entity.Internal.Linq.InternalSet`1.ActOnSet(Action action, EntityState newState, Object entity, String methodName)
+   at System.Data.Entity.Internal.Linq.InternalSet`1.Add(Object entity)
+   at System.Data.Entity.DbSet`1.Add(TEntity entity)
+   at DBAccess.GenericRepository.GenericRepository`1.Insert(TEntity entity) in F:\Projects\GlobalHospitalApi\DBAccess\GenericRepository\GenericRepository.cs:line 81
+   at BusinessLogic.CommonServices.CommonServices.RateApp(AppRatingModel model) in F:\Projects\GlobalHospitalApi\BusinessLogic\CommonServices\CommonServices.cs:line 95
+   at AdminWebapi.Controllers.CommonController.<RateApp>d__6.MoveNext() in F:\Projects\GlobalHospitalApi\AdminWebapi\Controllers\CommonController.cs:line 93
+DateTime : 5/28/2018 3:36:45 PM
+
+
+MessageOne or more validation errors were detected during model generation:
+
+DBAccess.User_AppRating: : Multiplicity conflicts with the referential constraint in Role 'User_AppRating_Source' in relationship 'User_AppRating'. Because all of the properties in the Dependent Role are non-nullable, multiplicity of the Principal Role must be '1'.
+
+
+StackTrace   at System.Data.Entity.Core.Metadata.Edm.EdmModel.Validate()
+   at System.Data.Entity.DbModelBuilder.Build(DbProviderManifest providerManifest, DbProviderInfo providerInfo)
+   at System.Data.Entity.DbModelBuilder.Build(DbConnection providerConnection)
+   at System.Data.Entity.Internal.LazyInternalContext.CreateModel(LazyInternalContext internalContext)
+   at System.Data.Entity.Internal.RetryLazy`2.GetValue(TInput input)
+   at System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   at System.Data.Entity.Internal.InternalContext.Initialize()
+   at System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   at System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   at System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   at System.Data.Entity.Internal.Linq.InternalSet`1.ActOnSet(Action action, EntityState newState, Object entity, String methodName)
+   at System.Data.Entity.Internal.Linq.InternalSet`1.Add(Object entity)
+   at System.Data.Entity.DbSet`1.Add(TEntity entity)
+   at DBAccess.GenericRepository.GenericRepository`1.Insert(TEntity entity) in F:\Projects\GlobalHospitalApi\DBAccess\GenericRepository\GenericRepository.cs:line 81
+   at BusinessLogic.CommonServices.CommonServices.RateApp(AppRatingModel model) in F:\Projects\GlobalHospitalApi\BusinessLogic\CommonServices\CommonServices.cs:line 95
+   at AdminWebapi.Controllers.CommonController.<RateApp>d__6.MoveNext() in F:\Projects\GlobalHospitalApi\AdminWebapi\Controllers\CommonController.cs:line 93
+DateTime : 5/29/2018 10:48:35 AM
+
+
+MessageNon-static field requires a target.
+
+StackTrace   at System.Reflection.RtFieldInfo.CheckConsistency(Object target)
+   at System.Reflection.RtFieldInfo.InternalGetValue(Object obj, StackCrawlMark& stackMark)
+   at System.Reflection.RtFieldInfo.GetValue(Object obj)
+   at System.Data.Entity.Core.Objects.ELinq.QueryParameterExpression.TryGetFieldOrPropertyValue(MemberExpression me, Object instance, Object& memberValue)
+   at System.Data.Entity.Core.Objects.ELinq.QueryParameterExpression.TryEvaluatePath(Expression expression, ConstantExpression& constantExpression)
+   at System.Data.Entity.Core.Objects.ELinq.QueryParameterExpression.EvaluateParameter(Object[] arguments)
+   at System.Data.Entity.Core.Objects.ELinq.ELinqQueryState.GetExecutionPlan(Nullable`1 forMergeOption)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__6()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__5()
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<System.Collections.Generic.IEnumerable<T>.GetEnumerator>b__0()
+   at System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at BusinessLogic.UserServices.UserService.GetMyCases(Int32 User_Id)
+   at AdminWebapi.Controllers.UserController.<GetMyCases>d__18.MoveNext() in F:\Projects\GlobalHospitalApi\AdminWebapi\Controllers\UserController.cs:line 852
+DateTime : 5/29/2018 11:18:52 AM
+
+
+MessageObject reference not set to an instance of an object.
+
+StackTrace   at BusinessLogic.UserServices.UserService.GetAppointment(AppointmentBindingModel model)
+   at AdminWebapi.Controllers.UserController.<GetAppointment>d__16.MoveNext() in F:\Projects\GlobalHospitalApi\AdminWebapi\Controllers\UserController.cs:line 779
+DateTime : 5/29/2018 11:19:20 AM
+
+
+MessageAn error occurred while updating the entries. See the inner exception for details.
+
+StackTrace   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   at System.Data.Entity.DbContext.SaveChanges()
+   at DBAccess.GenericRepository.GenericRepository`1.Save() in F:\Projects\GlobalHospitalApi\DBAccess\GenericRepository\GenericRepository.cs:line 301
+   at BusinessLogic.UserServices.UserService.GetAppointment(AppointmentBindingModel model)
+   at AdminWebapi.Controllers.UserController.<GetAppointment>d__16.MoveNext() in F:\Projects\GlobalHospitalApi\AdminWebapi\Controllers\UserController.cs:line 779
+
+Inner Exception : An error occurred while updating the entries. See the inner exception for details.
+
+Inner Exception : The INSERT statement conflicted with the FOREIGN KEY constraint "FK_dbo.Appointments_dbo.FamilyMembers_FamilyMember_Id1". The conflict occurred in database "GlobalHospital_DB", table "dbo.FamilyMembers", column 'Id'.
+The statement has been terminated.
+------******------
+DateTime : 5/29/2018 12:25:27 PM
+
+
+MessageCould not find a part of the path 'F:\Projects\GlobalHospitalApi\AdminWebapi\'.
+
+StackTrace   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.File.InternalReadAllBytes(String path, Boolean checkHost)
+   at PushSharp.Apple.ApnsConfiguration..ctor(ApnsServerEnvironment serverEnvironment, String certificateFile, String certificateFilePwd)
+   at BusinessLogic.HelperServices.PushNotifications.initializeConfiguration() in F:\Projects\GlobalHospitalApi\BusinessLogic\HelperServices\PushNotifications.cs:line 112
+   at BusinessLogic.HelperServices.PushNotifications..ctor(Boolean ProductionEnvironment) in F:\Projects\GlobalHospitalApi\BusinessLogic\HelperServices\PushNotifications.cs:line 138
+DateTime : 5/30/2018 2:03:41 PM
+
+
+MessageOne or more validation errors were detected during model generation:
+
+DBAccess.PharmacyAppointment_PharmacyAppointmentImages: : Multiplicity conflicts with the referential constraint in Role 'PharmacyAppointment_PharmacyAppointmentImages_Source' in relationship 'PharmacyAppointment_PharmacyAppointmentImages'. Because all of the properties in the Dependent Role are non-nullable, multiplicity of the Principal Role must be '1'.
+
+
+StackTrace   at System.Data.Entity.Core.Metadata.Edm.EdmModel.Validate()
+   at System.Data.Entity.DbModelBuilder.Build(DbProviderManifest providerManifest, DbProviderInfo providerInfo)
+   at System.Data.Entity.DbModelBuilder.Build(DbConnection providerConnection)
+   at System.Data.Entity.Internal.LazyInternalContext.CreateModel(LazyInternalContext internalContext)
+   at System.Data.Entity.Internal.RetryLazy`2.GetValue(TInput input)
+   at System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   at System.Data.Entity.Internal.InternalContext.Initialize()
+   at System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   at System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   at System.Data.Entity.Internal.Linq.InternalSet`1.Include(String path)
+   at System.Data.Entity.Infrastructure.DbQuery`1.Include(String path)
+   at System.Data.Entity.QueryableExtensions.Include[T](IQueryable`1 source, String path)
+   at DBAccess.GenericRepository.GenericRepository`1.<>c.<GetWithInclude>b__19_0(IQueryable`1 current, String inc) in F:\Projects\GlobalHospitalApi\DBAccess\GenericRepository\GenericRepository.cs:line 215
+   at System.Linq.Enumerable.Aggregate[TSource,TAccumulate](IEnumerable`1 source, TAccumulate seed, Func`3 func)
+   at DBAccess.GenericRepository.GenericRepository`1.GetWithInclude(Expression`1 predicate, String[] include) in F:\Projects\GlobalHospitalApi\DBAccess\GenericRepository\GenericRepository.cs:line 215
+   at BusinessLogic.UserServices.UserService.ValidateUser(LoginBindingModel loginModel) in F:\Projects\GlobalHospitalApi\BusinessLogic\UserServices\UserService.cs:line 83
+   at AdminWebapi.Controllers.UserController.<Login>d__5.MoveNext() in F:\Projects\GlobalHospitalApi\AdminWebapi\Controllers\UserController.cs:line 68
+DateTime : 5/30/2018 3:34:53 PM
+
+
+MessageIncorrect syntax near 'bca'.
+
+StackTrace   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.<Reader>b__c(DbCommand t, DbCommandInterceptionContext`1 c)
+   at System.Data.Entity.Infrastructure.Interception.InternalDispatcher`1.Dispatch[TTarget,TInterceptionContext,TResult](TTarget target, Func`3 operation, TInterceptionContext interceptionContext, Action`3 executing, Action`3 executed)
+   at System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.Reader(DbCommand command, DbCommandInterceptionContext interceptionContext)
+   at System.Data.Entity.Internal.InterceptableDbCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteStoreQueryInternal[TElement](String commandText, String entitySetName, ExecutionOptions executionOptions, Object[] parameters)
+   at System.Data.Entity.Core.Objects.ObjectContext.<>c__DisplayClass69`1.<ExecuteStoreQueryReliably>b__68()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectContext.<>c__DisplayClass69`1.<ExecuteStoreQueryReliably>b__67()
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteStoreQueryReliably[TElement](String commandText, String entitySetName, ExecutionOptions executionOptions, Object[] parameters)
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteStoreQuery[TElement](String commandText, ExecutionOptions executionOptions, Object[] parameters)
+   at System.Data.Entity.Internal.InternalContext.<>c__DisplayClass14`1.<ExecuteSqlQuery>b__13()
+   at System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at BusinessLogic.PharmacyServices.PharmacyServices.SearchPharmacies(String Name, String PhoneNumber, String ZipCode)
+   at AdminWebapi.Controllers.PharmacyController.<SearchPharmacies>d__3.MoveNext() in F:\Projects\GlobalHospitalApi\AdminWebapi\Controllers\PharmacyController.cs:line 59
+DateTime : 5/30/2018 3:35:00 PM
+
+
+MessageIncorrect syntax near 'bca'.
+
+StackTrace   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.<Reader>b__c(DbCommand t, DbCommandInterceptionContext`1 c)
+   at System.Data.Entity.Infrastructure.Interception.InternalDispatcher`1.Dispatch[TTarget,TInterceptionContext,TResult](TTarget target, Func`3 operation, TInterceptionContext interceptionContext, Action`3 executing, Action`3 executed)
+   at System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.Reader(DbCommand command, DbCommandInterceptionContext interceptionContext)
+   at System.Data.Entity.Internal.InterceptableDbCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteStoreQueryInternal[TElement](String commandText, String entitySetName, ExecutionOptions executionOptions, Object[] parameters)
+   at System.Data.Entity.Core.Objects.ObjectContext.<>c__DisplayClass69`1.<ExecuteStoreQueryReliably>b__68()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectContext.<>c__DisplayClass69`1.<ExecuteStoreQueryReliably>b__67()
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteStoreQueryReliably[TElement](String commandText, String entitySetName, ExecutionOptions executionOptions, Object[] parameters)
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteStoreQuery[TElement](String commandText, ExecutionOptions executionOptions, Object[] parameters)
+   at System.Data.Entity.Internal.InternalContext.<>c__DisplayClass14`1.<ExecuteSqlQuery>b__13()
+   at System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at BusinessLogic.PharmacyServices.PharmacyServices.SearchPharmacies(String Name, String PhoneNumber, String ZipCode)
+   at AdminWebapi.Controllers.PharmacyController.<SearchPharmacies>d__3.MoveNext() in F:\Projects\GlobalHospitalApi\AdminWebapi\Controllers\PharmacyController.cs:line 59
+DateTime : 5/30/2018 3:35:31 PM
+
+
+MessageInvalid column name 'false'.
+
+StackTrace   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.<Reader>b__c(DbCommand t, DbCommandInterceptionContext`1 c)
+   at System.Data.Entity.Infrastructure.Interception.InternalDispatcher`1.Dispatch[TTarget,TInterceptionContext,TResult](TTarget target, Func`3 operation, TInterceptionContext interceptionContext, Action`3 executing, Action`3 executed)
+   at System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.Reader(DbCommand command, DbCommandInterceptionContext interceptionContext)
+   at System.Data.Entity.Internal.InterceptableDbCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteStoreQueryInternal[TElement](String commandText, String entitySetName, ExecutionOptions executionOptions, Object[] parameters)
+   at System.Data.Entity.Core.Objects.ObjectContext.<>c__DisplayClass69`1.<ExecuteStoreQueryReliably>b__68()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectContext.<>c__DisplayClass69`1.<ExecuteStoreQueryReliably>b__67()
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteStoreQueryReliably[TElement](String commandText, String entitySetName, ExecutionOptions executionOptions, Object[] parameters)
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteStoreQuery[TElement](String commandText, ExecutionOptions executionOptions, Object[] parameters)
+   at System.Data.Entity.Internal.InternalContext.<>c__DisplayClass14`1.<ExecuteSqlQuery>b__13()
+   at System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at BusinessLogic.PharmacyServices.PharmacyServices.SearchPharmacies(String Name, String PhoneNumber, String ZipCode)
+   at AdminWebapi.Controllers.PharmacyController.<SearchPharmacies>d__3.MoveNext() in F:\Projects\GlobalHospitalApi\AdminWebapi\Controllers\PharmacyController.cs:line 59
+DateTime : 5/30/2018 3:35:39 PM
+
+
+MessageInvalid column name 'false'.
+
+StackTrace   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.<Reader>b__c(DbCommand t, DbCommandInterceptionContext`1 c)
+   at System.Data.Entity.Infrastructure.Interception.InternalDispatcher`1.Dispatch[TTarget,TInterceptionContext,TResult](TTarget target, Func`3 operation, TInterceptionContext interceptionContext, Action`3 executing, Action`3 executed)
+   at System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.Reader(DbCommand command, DbCommandInterceptionContext interceptionContext)
+   at System.Data.Entity.Internal.InterceptableDbCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteStoreQueryInternal[TElement](String commandText, String entitySetName, ExecutionOptions executionOptions, Object[] parameters)
+   at System.Data.Entity.Core.Objects.ObjectContext.<>c__DisplayClass69`1.<ExecuteStoreQueryReliably>b__68()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectContext.<>c__DisplayClass69`1.<ExecuteStoreQueryReliably>b__67()
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteStoreQueryReliably[TElement](String commandText, String entitySetName, ExecutionOptions executionOptions, Object[] parameters)
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteStoreQuery[TElement](String commandText, ExecutionOptions executionOptions, Object[] parameters)
+   at System.Data.Entity.Internal.InternalContext.<>c__DisplayClass14`1.<ExecuteSqlQuery>b__13()
+   at System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at BusinessLogic.PharmacyServices.PharmacyServices.SearchPharmacies(String Name, String PhoneNumber, String ZipCode)
+   at AdminWebapi.Controllers.PharmacyController.<SearchPharmacies>d__3.MoveNext() in F:\Projects\GlobalHospitalApi\AdminWebapi\Controllers\PharmacyController.cs:line 59
+DateTime : 5/30/2018 3:36:14 PM
+
+
+MessageIncorrect syntax near 'e'.
+
+StackTrace   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.<Reader>b__c(DbCommand t, DbCommandInterceptionContext`1 c)
+   at System.Data.Entity.Infrastructure.Interception.InternalDispatcher`1.Dispatch[TTarget,TInterceptionContext,TResult](TTarget target, Func`3 operation, TInterceptionContext interceptionContext, Action`3 executing, Action`3 executed)
+   at System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.Reader(DbCommand command, DbCommandInterceptionContext interceptionContext)
+   at System.Data.Entity.Internal.InterceptableDbCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteStoreQueryInternal[TElement](String commandText, String entitySetName, ExecutionOptions executionOptions, Object[] parameters)
+   at System.Data.Entity.Core.Objects.ObjectContext.<>c__DisplayClass69`1.<ExecuteStoreQueryReliably>b__68()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectContext.<>c__DisplayClass69`1.<ExecuteStoreQueryReliably>b__67()
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteStoreQueryReliably[TElement](String commandText, String entitySetName, ExecutionOptions executionOptions, Object[] parameters)
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteStoreQuery[TElement](String commandText, ExecutionOptions executionOptions, Object[] parameters)
+   at System.Data.Entity.Internal.InternalContext.<>c__DisplayClass14`1.<ExecuteSqlQuery>b__13()
+   at System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at BusinessLogic.PharmacyServices.PharmacyServices.SearchPharmacies(String Name, String PhoneNumber, String ZipCode)
+   at AdminWebapi.Controllers.PharmacyController.<SearchPharmacies>d__3.MoveNext() in F:\Projects\GlobalHospitalApi\AdminWebapi\Controllers\PharmacyController.cs:line 59

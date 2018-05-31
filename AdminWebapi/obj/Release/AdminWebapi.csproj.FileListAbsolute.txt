@@ -275,5 +275,3 @@ F:\Projects\GlobalHospitalApi\AdminWebapi\bin\System.Web.Http.WebHost.xml
 F:\Projects\GlobalHospitalApi\AdminWebapi\obj\Release\AdminWebapi.csprojResolveAssemblyReference.cache
 F:\Projects\GlobalHospitalApi\AdminWebapi\obj\Release\AdminWebapi.dll
 F:\Projects\GlobalHospitalApi\AdminWebapi\obj\Release\AdminWebapi.pdb
-F:\Projects\GlobalHospitalApi\AdminWebapi\bin\Microsoft.Practices.ServiceLocation.dll
-F:\Projects\GlobalHospitalApi\AdminWebapi\bin\CommonServiceLocator.dll

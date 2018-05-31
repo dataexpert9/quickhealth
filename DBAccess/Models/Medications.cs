@@ -12,7 +12,7 @@ namespace DBAccess.Models
 
         public string Medicine_Name { get; set; }
 
-        public DateTime TimePeriod { get; set; }
+        public string TimePeriod { get; set; }
 
         public int User_Id { get; set; }
 

@@ -277,3 +277,4 @@ F:\Projects\GlobalHospitalApi\AdminWebapi\obj\Debug\AdminWebapi.dll
 F:\Projects\GlobalHospitalApi\AdminWebapi\obj\Debug\AdminWebapi.pdb
 F:\Projects\GlobalHospitalApi\AdminWebapi\bin\Microsoft.Practices.ServiceLocation.dll
 F:\Projects\GlobalHospitalApi\AdminWebapi\bin\CommonServiceLocator.dll
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\Z.EntityFramework.Plus.EF6.dll

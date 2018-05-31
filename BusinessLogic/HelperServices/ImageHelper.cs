@@ -34,7 +34,7 @@ namespace BusinessLogic.HelperServices
             {
                 var ext = httpFile.FileName.Substring(httpFile.FileName.LastIndexOf('.'));
                 var uniqueName = Guid.NewGuid().ToString() + ext;
-                ///   var currentPath = "E:\\Mehmood ul Hassan" + "\\ProfileImages\\";
+
                 var currentPath = HttpContext.Current.Server.MapPath("~\\api\\ImageDirectory") + "\\" + folderName + "\\";
                 if (!Directory.Exists(currentPath))
                 {

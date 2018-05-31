@@ -1,5 +1,6 @@
 ﻿using DBAccess.Models;
 using DBAccess.ViewModels;
+using DBAccess.ViewModels.User;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -50,5 +51,18 @@ namespace BusinessLogic.UserServices
         User GetUserById(int userId);
         bool MarkDeviceAsInActive(int UserId, int DeviceId);
         bool CheckPhoneAlreadyRegister(string phoneNumber, string exceptUserEmail);
+
+        FamilyMember AddNewFamilyMember(AddFamilyMemberBindingModel model);
+        List<FamilyMember> GetFamilyMembers(int userId);
+
+        bool DeleteFamilyMember(int FamilyMember_Id,int User_Id);
+
+        Appointment GetAppointment(AppointmentBindingModel model);
+
+
+        List<Appointment> GetMyCases(int User_Id);
+        
+        Appointment CancelAppointment(CancelAppointmentBindingModel model);
+
     }
 }

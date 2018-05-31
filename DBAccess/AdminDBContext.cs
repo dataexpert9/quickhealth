@@ -38,12 +38,84 @@ namespace DBAccess
         public virtual DbSet<Allergies> Allergies { get; set; }
         public virtual DbSet<Vaccinations> Vaccinations { get; set; }
         public virtual DbSet<Medications> Medications { get; set; }
+        public virtual DbSet<Appointment> Appointment { get; set; }
+        public virtual DbSet<AppointmentImages> AppointmentImages { get; set; }
+        public virtual DbSet<Chat> Chat { get; set; }
+        public virtual DbSet<AppRating> AppRating { get; set; }
+        public virtual DbSet<Pharmacy> Pharmacy { get; set; }
+        public virtual DbSet<PharmacyAppointment> PharmacyAppointment { get; set; }
+        public virtual DbSet<PharmacyAppointmentImages> PharmacyAppointmentImages { get; set; }
+
 
 
 
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+
+            //modelBuilder.Entity<PharmacyAppointment>()
+            //.HasMany(e => e.PharmacyAppointmentImages)
+            //.WithOptional(e => e.PharmacyAppointment)
+            //.HasForeignKey(e => e.PharmacyAppointment_Id)
+            //.WillCascadeOnDelete(false);
+
+            //modelBuilder.Entity<Pharmacy>()
+            //    .HasMany(e => e.PharmacyAppointment)
+            //    .WithOptional(e => e.Pharmacy)
+            //    .HasForeignKey(e => e.Pharmacy_Id)
+            //    .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<User>()
+                .HasMany(e => e.PharmacyAppointment)
+                .WithRequired(e => e.User)
+                .HasForeignKey(e => e.User_Id)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<User>()
+                .HasMany(e => e.AppRating)
+                .WithRequired(e => e.User)
+                .HasForeignKey(e => e.User_Id)
+                .WillCascadeOnDelete(false);
+
+
+
+            modelBuilder.Entity<Doctor>()
+                .HasMany(e => e.AppRating)
+                .WithOptional(e => e.Doctor)
+                .HasForeignKey(e => e.Doctor_Id)
+                .WillCascadeOnDelete(false);
+
+
+            modelBuilder.Entity<Doctor>()
+                .HasMany(e => e.Chat)
+                .WithOptional(e => e.Doctor)
+                .HasForeignKey(e => e.Doctor_Id)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<User>()
+                .HasMany(e => e.Chat)
+                .WithRequired(e => e.User)
+                .HasForeignKey(e => e.User_Id)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Doctor>()
+                .HasMany(e => e.Appointments)
+                .WithOptional(e => e.Doctor)
+                .HasForeignKey(e => e.Doctor_Id)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<User>()
+                .HasMany(e => e.Appointment)
+                .WithRequired(e => e.User)
+                .HasForeignKey(e => e.User_Id)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<FamilyMember>()
+                .HasMany(e => e.Appointment)
+                .WithOptional(e => e.FamilyMember)
+                .HasForeignKey(e => e.FamilyMember_Id)
+                .WillCascadeOnDelete(false);
+            
 
             modelBuilder.Entity<User>()
                 .HasMany(e => e.Medications)

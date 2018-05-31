@@ -56,6 +56,6 @@ F:\Projects\GlobalHospitalApi\DBAccess\bin\Release\Microsoft.Practices.Unity.xml
 F:\Projects\GlobalHospitalApi\DBAccess\bin\Release\Microsoft.Practices.Unity.Configuration.xml
 F:\Projects\GlobalHospitalApi\DBAccess\bin\Release\Newtonsoft.Json.xml
 F:\Projects\GlobalHospitalApi\DBAccess\bin\Release\System.Net.Http.Formatting.xml
+F:\Projects\GlobalHospitalApi\DBAccess\obj\Release\DBAccess.csprojResolveAssemblyReference.cache
 F:\Projects\GlobalHospitalApi\DBAccess\obj\Release\DBAccess.dll
 F:\Projects\GlobalHospitalApi\DBAccess\obj\Release\DBAccess.pdb
-F:\Projects\GlobalHospitalApi\DBAccess\obj\Release\DBAccess.csprojResolveAssemblyReference.cache

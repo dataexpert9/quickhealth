@@ -18,6 +18,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Http;
+using System.Data.Entity;
+using Z.EntityFramework.Plus;
 
 namespace BusinessLogic.UserServices
 {
@@ -30,6 +32,17 @@ namespace BusinessLogic.UserServices
         private readonly GenericRepository<UserDevice> _UserDeviceRepository;
         private readonly GenericRepository<Admin> _AdminRepository;
         private readonly GenericRepository<FamilyHistory> _FamilyHistory;
+        private readonly GenericRepository<FamilyMember> _FamilyMember;
+        private readonly GenericRepository<Allergies> _Allergies;
+        private readonly GenericRepository<LifeStyle> _LifeStyle;
+        private readonly GenericRepository<MedicalConditions> _MedicalConditions;
+        private readonly GenericRepository<Vaccinations> _Vaccinations;
+        private readonly GenericRepository<Medications> _Medications;
+        private readonly GenericRepository<Appointment> _Appointment;
+
+
+
+
 
 
         public UserService()
@@ -39,6 +52,18 @@ namespace BusinessLogic.UserServices
             _UserDeviceRepository = new GenericRepository<UserDevice>(_DBContext);
             _AdminRepository = new GenericRepository<Admin>(_DBContext);
             _DoctorRepository = new GenericRepository<Doctor>(_DBContext);
+            _FamilyHistory = new GenericRepository<FamilyHistory>(_DBContext);
+            _FamilyMember = new GenericRepository<FamilyMember>(_DBContext);
+            _Allergies = new GenericRepository<Allergies>(_DBContext);
+            _LifeStyle = new GenericRepository<LifeStyle>(_DBContext);
+            _MedicalConditions = new GenericRepository<MedicalConditions>(_DBContext);
+            _Vaccinations = new GenericRepository<Vaccinations>(_DBContext);
+            _Medications = new GenericRepository<Medications>(_DBContext);
+            _Appointment = new GenericRepository<Appointment>(_DBContext);
+
+
+
+
 
         }
 
@@ -55,7 +80,7 @@ namespace BusinessLogic.UserServices
         {
             var hashPass = CryptoHelper.Hash(loginModel.Password);
             //return _UserRepository.GetWithInclude(x => x.Email == loginModel.Email && x.Password == hashPass, "UserAddresses", "PaymentCards").FirstOrDefault();
-            return _UserRepository.GetWithInclude(x => x.Email == loginModel.Email && x.Password == hashPass).FirstOrDefault();
+            return _UserRepository.GetWithInclude(x => x.Email == loginModel.Email && x.Password == hashPass, "FamilyMembers", "FamilyHistory", "MedicalConditions", "Allergies", "Vaccinations", "Medications", "LifeStyle").FirstOrDefault();
 
         }
         public User RegisterAsUser(RegisterUserBindingModel model)
@@ -88,9 +113,9 @@ namespace BusinessLogic.UserServices
                     ProfilePictureUrl = imageUrl,
                     PhoneConfirmed = true,
                     EmailConfirmed = true,
-                    DateofBirth = model.DOB, 
-                    City=model.City,
-                    Country=model.Country
+                    DateofBirth = model.DOB,
+                    City = model.City,
+                    Country = model.Country
                 };
                 _UserRepository.Insert(userModel);
                 _UserRepository.Save();
@@ -275,7 +300,7 @@ namespace BusinessLogic.UserServices
             }
         }
         /* END Doctor Related Services */
-        
+
 
         /*Other Services or not verified section */
         public bool MarkDeviceAsInActive(int UserId, int DeviceId)
@@ -296,7 +321,7 @@ namespace BusinessLogic.UserServices
         public User ResetPasswordThroughEmail(string Email)
         {
             var user = _UserRepository.GetFirst(x => x.Email == Email);
-            
+
             if (user == null)
             {
                 var doctor = _DoctorRepository.GetFirst(x => x.Email == Email);
@@ -316,7 +341,8 @@ namespace BusinessLogic.UserServices
                 _DoctorRepository.Update(doctor);
                 _DoctorRepository.Save();
                 return new User();
-            }else 
+            }
+            else
             {
                 var codeInt = new Random().Next(111111, 999999);
                 string subject = "Reset your password - " + EmailUtil.FromName;
@@ -566,46 +592,158 @@ namespace BusinessLogic.UserServices
             string fileNameOnly = string.Empty;
 
             //var userModel = _UserRepository.GetWithInclude(x => x.Email == model.Email, "UserAddresses", "PaymentCards").FirstOrDefault();
-            var userModel = _UserRepository.GetWithInclude(x => x.Email == model.Email).FirstOrDefault();
+            var userModel = _UserRepository.GetWithInclude(x => x.Email == model.Email, "FamilyMembers", "FamilyHistory", "MedicalConditions", "Allergies", "Vaccinations", "Medications", "LifeStyle").FirstOrDefault();
+
+            userModel.FullName = model.About.FullName;
+            userModel.Gender = model.About.Gender;
+            userModel.Location_Name = model.About.Location;
+            userModel.Phone = model.About.PhoneNumber;
+            userModel.DateofBirth = model.About.DOB;
+            userModel.Address = model.About.Address;
+            userModel.Weight = model.About.Weight;
+            userModel.Height = model.About.Height;
+            userModel.BMI = model.About.BMI;
 
 
-            userModel.FullName = model.FullName;
-            userModel.Gender = model.Gender;
-            userModel.Location_Name = model.Location;
-            userModel.Phone = model.PhoneNumber;
-            userModel.DateofBirth = model.DOB;
-            userModel.Address = model.Address;
-            userModel.Weight = model.Weight;
-            userModel.Height = model.Height;
-            userModel.BMI = model.BMI;
+            if (model.FamilyHistory.Count > 0)
+            {
+                List<FamilyHistory> FamilyHistories = new List<FamilyHistory>();
+                if (userModel.FamilyHistory.Count != 0)
+                {
+                    _FamilyHistory.DeleteMany(userModel.FamilyHistory);
+                }
 
-            //userModel.FullName = model.About.FullName;
-            //userModel.Gender = model.About.Gender;
-            //userModel.Location_Name = model.About.Location;
-            //userModel.Phone = model.About.PhoneNumber;
-            //userModel.DateofBirth = model.About.DOB;
-            //userModel.Address = model.About.Address;
-            //userModel.Weight = model.About.Weight;
-            //userModel.Height = model.About.Height;
-            //userModel.BMI = model.About.BMI;
+                foreach (var relative in model.FamilyHistory)
+                {
+                    FamilyHistories.Add(new FamilyHistory
+                    {
+                        FamilyMember_Id = relative.FamilyMember_Id,
+                        Reason = relative.Reason,
+                        Relation = relative.Relation,
+                        IsDeleted = false,
+                        User_Id = model.User_Id
+                    });
+                }
+                _FamilyHistory.InsertMany(FamilyHistories);
+                _FamilyHistory.Save();
+
+            }
 
 
-            //if (model.FamilyHistory.Count > 0)
-            //{
-            //    List<FamilyHistory> FamilyHistories = new List<FamilyHistory>();
-            //    _UserRepository.Delete(userModel.FamilyMembers);
-            //    foreach (var relative in model.FamilyHistory)
-            //    {
-            //        FamilyHistories.Add(new FamilyHistory
-            //        {
-            //            FamilyMember_Id = relative.FamilyMember_Id,
-            //            Reason = relative.Reason,
-            //            Relation = relative.Relation,
-            //            IsDeleted = false
-            //        });
-            //    }
-            //    _FamilyHistory.InsertMany(FamilyHistories);
-            //}
+
+
+            if (model.Allergies.Count > 0)
+            {
+                List<Allergies> Allergies = new List<Allergies>();
+                if (userModel.Allergies.Count != 0)
+                {
+                    _Allergies.DeleteMany(userModel.Allergies);
+                }
+                foreach (var allergy in model.Allergies)
+                {
+                    Allergies.Add(new Allergies
+                    {
+                        AllergyName = allergy.Allergy_Name,
+                        User_Id = model.User_Id,
+                        IsDeleted = false
+
+                    });
+                }
+                _Allergies.InsertMany(Allergies);
+                _Allergies.Save();
+            }
+
+
+            if (model.LifeStyle != null)
+            {
+                LifeStyle LifeStyle = new LifeStyle();
+
+                if (userModel.LifeStyle != null)
+                {
+                    _LifeStyle.Delete(userModel.LifeStyle);
+
+                }
+
+                LifeStyle.Alcohol = model.LifeStyle.Alcohol;
+                LifeStyle.DietryRestrictions = model.LifeStyle.DietryRestrictions;
+                LifeStyle.RecreationalDrugs = model.LifeStyle.RecreationalDrugs;
+                LifeStyle.SexuallyActive = model.LifeStyle.SexuallyActive;
+                LifeStyle.Smoking = model.LifeStyle.Smoking;
+                LifeStyle.Id = model.User_Id;
+
+
+                _LifeStyle.Insert(LifeStyle);
+                _LifeStyle.Save();
+
+            }
+
+
+
+            if (model.MedicalConditions.Count > 0)
+            {
+                List<MedicalConditions> MedicalConditions = new List<MedicalConditions>();
+                if (userModel.MedicalConditions.Count != 0)
+                {
+                    _MedicalConditions.DeleteMany(userModel.MedicalConditions);
+                }
+
+                foreach (var condition in model.MedicalConditions)
+                {
+                    MedicalConditions.Add(new MedicalConditions
+                    {
+                        Condition = condition.Condition,
+                        User_Id = model.User_Id
+
+                    });
+                }
+                _MedicalConditions.InsertMany(MedicalConditions);
+                _MedicalConditions.Save();
+            }
+
+
+
+            if (model.Vaccinations.Count > 0)
+            {
+                List<Vaccinations> Vaccinations = new List<Vaccinations>();
+                if (userModel.Vaccinations.Count != 0)
+                {
+                    _Vaccinations.DeleteMany(userModel.Vaccinations);
+                }
+                foreach (var vaccine in model.Vaccinations)
+                {
+                    Vaccinations.Add(new Vaccinations
+                    {
+                        Vaccination_Name = vaccine.Name,
+                        User_Id = model.User_Id,
+                        IsDeleted = false
+
+                    });
+                }
+                _Vaccinations.InsertMany(Vaccinations);
+                _Vaccinations.Save();
+            }
+
+
+            if (model.Medications.Count > 0)
+            {
+                List<Medications> Medications = new List<Medications>();
+                if (userModel.Medications.Count != 0)
+                {
+                    _Medications.DeleteMany(userModel.Medications);
+                }
+
+                foreach (var medicine in model.Medications)
+                {
+                    Medications.Add(new Medications
+                    {
+                        Medicine_Name = medicine.Medicine_Name,
+                        TimePeriod = medicine.TimePeriod,
+
+                    });
+                }
+                _Medications.InsertMany(Medications);
+                _Medications.Save();
+            }
 
             _UserRepository.Save();
             return userModel;
@@ -622,26 +760,15 @@ namespace BusinessLogic.UserServices
 
             var userModel = _UserRepository.GetWithInclude(x => x.Email == model.Email).FirstOrDefault();
 
-
-            userModel.FullName = model.FullName;
-            userModel.Gender = model.Gender;
-            userModel.Location_Name = model.Location;
-            userModel.Phone = model.PhoneNumber;
-            userModel.DateofBirth = model.DOB;
-            userModel.Address = model.Address;
-            userModel.Weight = model.Weight;
-            userModel.Height = model.Height;
-            userModel.BMI = model.BMI;
-
-            //userModel.FullName = model.About.FullName;
-            //userModel.Gender = model.About.Gender;
-            //userModel.Location_Name = model.About.Location;
-            //userModel.Phone = model.About.PhoneNumber;
-            //userModel.DateofBirth = model.About.DOB;
-            //userModel.Address = model.About.Address;
-            //userModel.Weight = model.About.Weight;
-            //userModel.Height = model.About.Height;
-            //userModel.BMI = model.About.BMI;
+            userModel.FullName = model.About.FullName;
+            userModel.Gender = model.About.Gender;
+            userModel.Location_Name = model.About.Location;
+            userModel.Phone = model.About.PhoneNumber;
+            userModel.DateofBirth = model.About.DOB;
+            userModel.Address = model.About.Address;
+            userModel.Weight = model.About.Weight;
+            userModel.Height = model.About.Height;
+            userModel.BMI = model.About.BMI;
 
             if (httpRequest.Files.Count > 0)
             {
@@ -658,16 +785,173 @@ namespace BusinessLogic.UserServices
         {
             return _UserRepository.GetFirst(x => x.Phone == phoneNumber && x.Email != exceptUserEmail) != null;
         }
+
         /* END Other Services or not verified section */
 
-        //public FamilyMember AddNewFamilyMember(AddFamilyMemberBindingModel model)
-        //{
-        //    _FamilyHistory.Insert()
+        public FamilyMember AddNewFamilyMember(AddFamilyMemberBindingModel model)
+        {
 
 
-        //}
+            string newFullPath = string.Empty;
+            FamilyMember MemberToAdd = new FamilyMember();
+
+            if (model.Id == 0)
+                MemberToAdd = _FamilyMember.GetFirst(x => x.Name.Contains(model.FullName) && x.User_Id == model.User_Id);
+            else
+                MemberToAdd = _FamilyMember.GetFirst(x => x.Id == model.Id);
+
+            if (model.Id == 0 && MemberToAdd != null)
+            {
+                return null;
+            }
+            if (MemberToAdd == null)
+            {
+                MemberToAdd = new FamilyMember();
+            }
 
 
+            MemberToAdd.Name = model.FullName;
+            MemberToAdd.Age = model.Age;
+            MemberToAdd.Relation = model.Relation;
+            MemberToAdd.User_Id = model.User_Id;
+
+            if (model.ImageUrl != null)
+            {
+                MemberToAdd.ImageUrl = ImageHelper.SaveFileFromBytes(model.ImageUrl, "FamilyMembers");
+            }
+
+            if (model.Id == 0)
+                _FamilyMember.Insert(MemberToAdd);
+
+            _FamilyMember.Save();
+
+            return MemberToAdd;
+        }
+
+        public List<FamilyMember> GetFamilyMembers(int userId)
+        {
+            //return _UserRepository.GetWithInclude(x => x.Id == userId && x.IsDeleted == false, "UserAddresses", "PaymentCards").FirstOrDefault();
+            return _FamilyMember.GetMany(x => x.User_Id == userId);
+
+        }
+
+        public bool DeleteFamilyMember(int FamilyMember_Id, int User_Id)
+        {
+            var FamilyMember = _FamilyMember.GetFirst(x => x.Id == FamilyMember_Id && x.User_Id == User_Id);
+            if (FamilyMember == null)
+            {
+                return false;
+            }
+
+            _FamilyMember.Delete(FamilyMember);
+            _FamilyMember.Save();
+            return true;
+        }
+
+
+        public Appointment GetAppointment(AppointmentBindingModel model)
+        {
+
+            Appointment AppointmentModel;
+            List<AppointmentImages> Images = new List<AppointmentImages>();
+
+
+            //var UserModel = _UserRepository.GetFirstWithInclude(x=>x.Id==model.User_Id,"Appointment");
+
+            //UserModel.Appointment.Add(new Appointment {
+            //    AppointmentType = model.AppointmentType,
+            //    Purpose = model.Purpose,
+            //    IsFever = model.IsFever,
+            //    Temperature = model.Temperature,
+            //    Symptoms = model.Symptoms,
+            //    Status = (int)Utility.AppointmentStatus.Pending,
+            //    AppointmentDateTime = DateTime.UtcNow,
+            //    FamilyMember_Id = model.FamilyMember_Id,
+            //    User_Id = model.User_Id,
+            //    Doctor_Id = 4
+            //});
+
+            //_UserRepository.Save();
+
+
+
+            if (model.FamilyMember_Id != 0)
+                AppointmentModel = _Appointment.GetFirst(x => x.User_Id == model.User_Id && x.FamilyMember_Id == model.FamilyMember_Id.Value && x.Status != (int)Utility.AppointmentStatus.Cancel);
+            else
+                AppointmentModel = _Appointment.GetFirst(x => x.User_Id == model.User_Id && x.Status != (int)Utility.AppointmentStatus.Cancel);
+
+            if (AppointmentModel != null && AppointmentModel.AppointmentDateTime.Date == DateTime.Today)
+                return null;
+            else
+            {
+
+
+
+                AppointmentModel = new Appointment
+                {
+                    AppointmentType = model.AppointmentType,
+                    Purpose = model.Purpose,
+                    IsFever = model.IsFever,
+                    Temperature = model.Temperature,
+                    Symptoms = model.Symptoms,
+                    Status = (int)Utility.AppointmentStatus.Pending,
+                    AppointmentDateTime = DateTime.UtcNow,
+                    User_Id = model.User_Id,
+                    Doctor_Id = 4
+                };
+
+                if (model.FamilyMember_Id != 0)
+                    AppointmentModel.FamilyMember_Id = model.FamilyMember_Id;
+
+
+                _Appointment.Insert(AppointmentModel);
+                _Appointment.Save();
+
+                foreach (var file in model.ImageUrls)
+                {
+                    if (file != null)
+                    {
+                        Images.Add(new AppointmentImages
+                        {
+                            Appointment_Id = AppointmentModel.Id,
+                            ImageUrl = ImageHelper.SaveFileFromBytes(file, "AppointmentImages")
+                        });
+                    }
+                }
+
+                AppointmentModel = _Appointment.GetFirstWithInclude(x => x.Id == AppointmentModel.Id, "Doctor", "User", "FamilyMember");
+                return AppointmentModel;
+
+            }
+        }
+
+        public Appointment CancelAppointment(CancelAppointmentBindingModel model)
+        {
+            var AppointmentModel = _Appointment.GetFirst(x => x.Id == model.Appointment_Id);
+
+            if (AppointmentModel != null && AppointmentModel.Status == (int)Utility.AppointmentStatus.Pending)
+            {
+                AppointmentModel.Status = (int)Utility.AppointmentStatus.Cancel;
+                _Appointment.Save();
+                return AppointmentModel;
+            }
+
+            return null;
+
+        }
+        
+        public List<Appointment> GetMyCases(int User_Id)
+        {
+
+            List<Appointment> returnModel = new List<Appointment>();
+
+            using (AdminDBContext ctx = new AdminDBContext())
+            {
+                returnModel = ctx.Appointment.Include(x => x.Doctor).Include(x => x.User).Include(x => x.User.Medications).Include(x => x.User.Allergies).Include(x => x.User.MedicalConditions).Where(x => x.User_Id == User_Id).ToList();
+            }
+            return returnModel;
+
+        }
 
     }
 }

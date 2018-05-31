@@ -11,6 +11,8 @@ namespace BusinessLogic.SecurityServices
     {
         User GetUser(string email);
         User GetUser(string email, string password);
+        Doctor GetDoctor(string email);
+        Doctor GetDoctor(string email, string password);
         Admin GetAdmin(string email);
         Admin GetAdmin(string email, string password);
     }

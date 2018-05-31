@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
@@ -9,6 +11,7 @@ namespace DBAccess.Models
 {
     public partial class LifeStyle
     {
+        [Key, ForeignKey("User")]
         public int Id { get; set; }
 
         public string DietryRestrictions { get; set; }
@@ -21,10 +24,9 @@ namespace DBAccess.Models
 
         public string RecreationalDrugs { get; set; }
 
-        public int User_Id { get; set; }
+        //public int User_Id { get; set; }
 
-        [ForeignKey("User_Id")]
+        [JsonIgnore]
         public virtual User User { get; set; }
-
     }
 }

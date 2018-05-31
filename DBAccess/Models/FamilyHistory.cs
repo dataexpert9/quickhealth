@@ -9,11 +9,7 @@ namespace DBAccess.Models
 {
     public partial class FamilyHistory
     {
-        public FamilyHistory()
-        {
-            FamilyMember = new FamilyMember();
-        }
-
+      
         public int Id { get; set; }
 
         public string Relation { get; set; }
@@ -21,6 +17,12 @@ namespace DBAccess.Models
         public string Reason { get; set; }
 
         public bool IsDeleted { get; set; }
+
+        public int User_Id { get; set; }
+
+        [ForeignKey("User_Id")]
+        public virtual User User { get; set; }
+
 
         public int? FamilyMember_Id { get; set; }
 

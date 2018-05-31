@@ -14,10 +14,14 @@ namespace BusinessLogic.SecurityServices
         private readonly AdminDBContext _DBContext = new AdminDBContext();
         private readonly GenericRepository<User> _UserRepository;
         private readonly GenericRepository<Admin> _AdminRepository;
+        private readonly GenericRepository<Doctor> _DoctorRepository;
+
+
         public SecurityService()
         {
             _UserRepository = new GenericRepository<User>(_DBContext);
             _AdminRepository = new GenericRepository<Admin>(_DBContext);
+            _DoctorRepository = new GenericRepository<Doctor>(_DBContext);
         }
         public User GetUser(string email)
         {
@@ -28,6 +32,21 @@ namespace BusinessLogic.SecurityServices
         {
             return _UserRepository.GetFirst(x => x.Email == email && x.Password==password);
         }
+
+
+
+        public Doctor GetDoctor(string email)
+        {
+            return _DoctorRepository.GetFirst(x => x.Email == email);
+        }
+
+        public Doctor GetDoctor(string email, string password)
+        {
+            return _DoctorRepository.GetFirst(x => x.Email == email && x.Password == password);
+        }
+
+
+
         public Admin GetAdmin(string email)
         {
             return _AdminRepository.GetFirst(x => x.Email == email);

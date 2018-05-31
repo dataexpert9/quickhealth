@@ -30,6 +30,7 @@ E:\Mehmood ul Hassan\Global Hospital\DBAccess\obj\Debug\DBAccess.pdb
 F:\Projects\GlobalHospitalApi\DBAccess\bin\Debug\DBAccess.dll.config
 F:\Projects\GlobalHospitalApi\DBAccess\bin\Debug\DBAccess.dll
 F:\Projects\GlobalHospitalApi\DBAccess\bin\Debug\DBAccess.pdb
+F:\Projects\GlobalHospitalApi\DBAccess\bin\Debug\CloudrailSI.dll
 F:\Projects\GlobalHospitalApi\DBAccess\bin\Debug\EntityFramework.dll
 F:\Projects\GlobalHospitalApi\DBAccess\bin\Debug\EntityFramework.SqlServer.dll
 F:\Projects\GlobalHospitalApi\DBAccess\bin\Debug\Microsoft.Practices.ServiceLocation.dll
@@ -54,7 +55,6 @@ F:\Projects\GlobalHospitalApi\DBAccess\bin\Debug\Microsoft.Practices.Unity.xml
 F:\Projects\GlobalHospitalApi\DBAccess\bin\Debug\Microsoft.Practices.Unity.Configuration.xml
 F:\Projects\GlobalHospitalApi\DBAccess\bin\Debug\Newtonsoft.Json.xml
 F:\Projects\GlobalHospitalApi\DBAccess\bin\Debug\System.Net.Http.Formatting.xml
-F:\Projects\GlobalHospitalApi\DBAccess\obj\Debug\DBAccess.csprojResolveAssemblyReference.cache
 F:\Projects\GlobalHospitalApi\DBAccess\obj\Debug\DBAccess.dll
 F:\Projects\GlobalHospitalApi\DBAccess\obj\Debug\DBAccess.pdb
-F:\Projects\GlobalHospitalApi\DBAccess\bin\Debug\CloudrailSI.dll
+F:\Projects\GlobalHospitalApi\DBAccess\obj\Debug\DBAccess.csprojResolveAssemblyReference.cache

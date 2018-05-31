@@ -27,6 +27,7 @@ using BusinessLogic.UserServices;
 using DBAccess.ViewModels;
 using BusinessLogic.CommonServices;
 using DBAccess.ViewModels.User;
+using Newtonsoft.Json;
 //using static BasketApi.Global;
 //using BasketApi.Components.Helpers;
 
@@ -40,7 +41,8 @@ namespace AdminWebapi.Controllers
         private readonly IUserService _UserService;
         private readonly IDoctorService _DoctorService;
         private readonly IImageUpload _ImageUpload;
-        public UserController(IUserService userService,IDoctorService doctorService, IImageUpload imageUpload)
+
+        public UserController(IUserService userService, IDoctorService doctorService, IImageUpload imageUpload)
         {
             _UserService = userService;
             _ImageUpload = imageUpload;
@@ -60,47 +62,50 @@ namespace AdminWebapi.Controllers
             try
             {
                 if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-            User userModel = _UserService.ValidateUser(model);
-            if (userModel != null)
-            {
-                if (userModel.Status == (int)GlobalUtility.StatusCode.Verified)
                 {
-                    await userModel.GenerateToken(Request);
-                    SettingsModel.LoadSettings();
-                    userModel.AppSettings = new Settings { Id = SettingsModel.Id, ContactNo = SettingsModel.ContactNo, AboutUs = SettingsModel.AboutUs, PrivacyPolicy = SettingsModel.PrivacyPolicy, TermsConditions = SettingsModel.TermsConditions, Tax = SettingsModel.Tax, Currency = SettingsModel.Currency };
-                    return Ok(new CustomResponse<User> { Message = GlobalUtility.ResponseMessages.Success, StatusCode = (int)HttpStatusCode.OK, Result = userModel });
-                }else
-                {
-                    return Content(HttpStatusCode.OK, new CustomResponse<Error>
-                    {
-                        Message = "Forbidden",
-                        StatusCode = (int)HttpStatusCode.Forbidden,
-                        Result = new Error { ErrorMessage = "Please verify your mobile number to proceed." }
-                    });
+                    return BadRequest(ModelState);
                 }
-            }else
-            {
-                Doctor doctorModel = _DoctorService.ValidateDoctor(model);
-                if (doctorModel != null)
+                User userModel = _UserService.ValidateUser(model);
+                if (userModel != null)
                 {
-                    await doctorModel.GenerateToken(Request);
-                    SettingsModel.LoadSettings();
-                    doctorModel.AppSettings = new Settings { Id = SettingsModel.Id, ContactNo = SettingsModel.ContactNo, AboutUs = SettingsModel.AboutUs, PrivacyPolicy = SettingsModel.PrivacyPolicy, TermsConditions = SettingsModel.TermsConditions, Tax = SettingsModel.Tax, Currency = SettingsModel.Currency };
-                    return Ok(new CustomResponse<Doctor> { Message = GlobalUtility.ResponseMessages.Success, StatusCode = (int)HttpStatusCode.OK, Result = doctorModel });
+                    if (userModel.Status == (int)GlobalUtility.StatusCode.Verified)
+                    {
+                        await userModel.GenerateToken(Request);
+                        SettingsModel.LoadSettings();
+                        userModel.AppSettings = new Settings { Id = SettingsModel.Id, ContactNo = SettingsModel.ContactNo, AboutUs = SettingsModel.AboutUs, PrivacyPolicy = SettingsModel.PrivacyPolicy, TermsConditions = SettingsModel.TermsConditions, Tax = SettingsModel.Tax, Currency = SettingsModel.Currency };
+                        return Ok(new CustomResponse<User> { Message = GlobalUtility.ResponseMessages.Success, StatusCode = (int)HttpStatusCode.OK, Result = userModel });
+                    }
+                    else
+                    {
+                        return Content(HttpStatusCode.OK, new CustomResponse<Error>
+                        {
+                            Message = "Forbidden",
+                            StatusCode = (int)HttpStatusCode.Forbidden,
+                            Result = new Error { ErrorMessage = "Please verify your mobile number to proceed." }
+                        });
+                    }
+                }
+                else
+                {
+                    Doctor doctorModel = _DoctorService.ValidateDoctor(model);
+                    if (doctorModel != null)
+                    {
+                        await doctorModel.GenerateToken(Request);
+                        SettingsModel.LoadSettings();
+                        doctorModel.AppSettings = new Settings { Id = SettingsModel.Id, ContactNo = SettingsModel.ContactNo, AboutUs = SettingsModel.AboutUs, PrivacyPolicy = SettingsModel.PrivacyPolicy, TermsConditions = SettingsModel.TermsConditions, Tax = SettingsModel.Tax, Currency = SettingsModel.Currency };
+                        return Ok(new CustomResponse<Doctor> { Message = GlobalUtility.ResponseMessages.Success, StatusCode = (int)HttpStatusCode.OK, Result = doctorModel });
 
-                }else
-                {
-                    return Content(HttpStatusCode.OK, new CustomResponse<Error>
+                    }
+                    else
                     {
-                        Message = "Forbidden",
-                        StatusCode = (int)HttpStatusCode.Forbidden,
-                        Result = new Error { ErrorMessage = "Invalid email or password." }
-                    });
+                        return Content(HttpStatusCode.OK, new CustomResponse<Error>
+                        {
+                            Message = "Forbidden",
+                            StatusCode = (int)HttpStatusCode.Forbidden,
+                            Result = new Error { ErrorMessage = "Invalid email or password." }
+                        });
+                    }
                 }
-            }
 
 
             }
@@ -108,7 +113,7 @@ namespace AdminWebapi.Controllers
             {
                 return StatusCode(Utility.LogError(ex));
             }
-}
+        }
 
         /// <summary>
         /// Login for web admin panel
@@ -402,41 +407,39 @@ namespace AdminWebapi.Controllers
             }
         }
 
-        [Route("RegisterAsDoctor")]
-        [HttpPost]
-        [AllowAnonymous]
-        public async Task<IHttpActionResult> RegisterAsDoctor(RegisterDoctorBindingModel model)
-        {
-            try
-            {
-                if (!ModelState.IsValid)
-                {
-                    return BadRequest(ModelState);
-                }
-                var doctor = _DoctorService.RegisterAsDoctor(model);
-                if (doctor == null)
-                {
-                    return Content(HttpStatusCode.OK, new CustomResponse<Error>
-                    {
-                        Message = "Conflict",
-                        StatusCode = (int)HttpStatusCode.Conflict,
-                        Result = new Error { ErrorMessage = "User with entered email already exists." }
-                    });
-                }
-                else
-                {
-                    await doctor.GenerateToken(Request);
-                    CustomResponse<Doctor> response = new CustomResponse<Doctor> { Message = GlobalUtility.ResponseMessages.Success, StatusCode = (int)HttpStatusCode.OK, Result = doctor };
-                    return Ok(response);
-                }
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(Utility.LogError(ex));
-            }
-        }
-
-
+        //[Route("RegisterAsDoctor")]
+        //[HttpPost]
+        //[AllowAnonymous]
+        //public async Task<IHttpActionResult> RegisterAsDoctor(RegisterDoctorBindingModel model)
+        //{
+        //    try
+        //    {
+        //        if (!ModelState.IsValid)
+        //        {
+        //            return BadRequest(ModelState);
+        //        }
+        //        var doctor = _DoctorService.RegisterAsDoctor(model);
+        //        if (doctor == null)
+        //        {
+        //            return Content(HttpStatusCode.OK, new CustomResponse<Error>
+        //            {
+        //                Message = "Conflict",
+        //                StatusCode = (int)HttpStatusCode.Conflict,
+        //                Result = new Error { ErrorMessage = "User with entered email already exists." }
+        //            });
+        //        }
+        //        else
+        //        {
+        //            await doctor.GenerateToken(Request);
+        //            CustomResponse<Doctor> response = new CustomResponse<Doctor> { Message = GlobalUtility.ResponseMessages.Success, StatusCode = (int)HttpStatusCode.OK, Result = doctor };
+        //            return Ok(response);
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return StatusCode(Utility.LogError(ex));
+        //    }
+        //}
 
 
         [Route("UpdateUserProfile")]
@@ -451,6 +454,13 @@ namespace AdminWebapi.Controllers
                 {
                     return BadRequest(ModelState);
                 }
+
+                if (string.IsNullOrEmpty(model.Email))
+                {
+                    if (System.Web.HttpContext.Current.Request.Params["OBJ"] != null)
+                        model = JsonConvert.DeserializeObject<EditUserProfileBindingModel>(System.Web.HttpContext.Current.Request.Params["OBJ"]);
+                }
+
                 var userModel = _UserService.UpdateUserProfile(model);
                 if (userModel == null)
                 {
@@ -473,7 +483,6 @@ namespace AdminWebapi.Controllers
                 return StatusCode(Utility.LogError(ex));
             }
         }
-
 
 
         //[Route("RegisterAsAdmin")]
@@ -643,7 +652,7 @@ namespace AdminWebapi.Controllers
 
         [HttpGet]
         [Route("UpdateNotificationStatus")]
-        public async Task<IHttpActionResult> UpdateNotificationStatus(bool Status,string Email)
+        public async Task<IHttpActionResult> UpdateNotificationStatus(bool Status, string Email)
         {
             try
             {
@@ -665,26 +674,190 @@ namespace AdminWebapi.Controllers
 
 
 
+        [Authorize]
+        [Route("AddFamilyMember")]
+        public async Task<IHttpActionResult> AddFamilyMember(AddFamilyMemberBindingModel model)
+        {
+            if (model.User_Id == 0)
+                model.User_Id = Convert.ToInt32(User.GetClaimValue("userid"));
+
+            var httpRequest = HttpContext.Current.Request;
+            HttpPostedFile postedFile;
+
+            if (model.User_Id == 0)
+            {
+                throw new Exception("User id is empty in user.identity.");
+            }
+            else if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            var AddedMember = _UserService.AddNewFamilyMember(model);
+            if (AddedMember != null)
+            {
+                return Ok(new CustomResponse<FamilyMemberViewModel> { Message = GlobalUtility.ResponseMessages.Success, StatusCode = (int)HttpStatusCode.OK, Result = new FamilyMemberViewModel { FamilyMember = AddedMember } });
+            }
+            else
+                return Ok(new CustomResponse<Error> { Message = "Conflict", StatusCode = (int)HttpStatusCode.Conflict, Result = new Error { ErrorMessage = "Member with name already exists." } });
+        }
+
+
+        [HttpGet]
+        [Route("GetFamilyMembers")]
+        public async Task<IHttpActionResult> GetFamilyMembers()
+        {
+            try
+            {
+
+                var User_Id = Convert.ToInt32(User.GetClaimValue("userid"));
+                if (User_Id == 0)
+                {
+                    return Ok(new CustomResponse<Error> { Message = "InternalServerError", StatusCode = (int)HttpStatusCode.Conflict, Result = new Error { ErrorMessage = "User id is empty in user.identity." } });
+                }
+                FamilyMemberListViewModels returnModel = new FamilyMemberListViewModels();
+                returnModel.FamilyMembers = _UserService.GetFamilyMembers(User_Id);
+                return Ok(new CustomResponse<FamilyMemberListViewModels> { Message = GlobalUtility.ResponseMessages.Success, StatusCode = (int)HttpStatusCode.OK, Result = returnModel });
+
+
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(Utility.LogError(ex));
+            }
+        }
+
+
+
+        [HttpGet]
+        [Route("DeleteFamilyMember")]
+        public async Task<IHttpActionResult> DeleteFamilyMember(int FamilyMember_Id)
+        {
+            try
+            {
+                var User_Id = Convert.ToInt32(User.GetClaimValue("userid"));
+                if (User_Id == 0)
+                {
+                    throw new Exception("User id is empty in user.identity.");
+                }
+
+                var IsDeleted = _UserService.DeleteFamilyMember(FamilyMember_Id, User_Id);
+
+                if (IsDeleted)
+                {
+                    return Ok(new CustomResponse<string> { Message = GlobalUtility.ResponseMessages.Success, StatusCode = (int)HttpStatusCode.OK, Result = "Family member data successfully deleted." });
+                }
+                else
+                {
+                    return Ok(new CustomResponse<Error> { Message = "NotFound", StatusCode = (int)HttpStatusCode.NotFound, Result = new Error { ErrorMessage = "Family member doesn’t exist." } });
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(Utility.LogError(ex));
+            }
+        }
+
+
         //[Authorize]
-        //[Route("AddFamilyMember")]
-        //public async Task<IHttpActionResult> AddFamilyMember(AddFamilyMemberBindingModel model)
-        //{
-        //    var userId = Convert.ToInt32(User.GetClaimValue("userid"));
-        //    if (userId != 0)
-        //    {
-        //        throw new Exception("User id is empty in user.identity.");
-        //    }
-        //    else if (!ModelState.IsValid)
-        //    {
-        //        return BadRequest(ModelState);
-        //    }
-        //    if (_UserService.)
-        //    {
-        //        return Ok(new CustomResponse<string> { Message = GlobalUtility.ResponseMessages.Success, StatusCode = (int)HttpStatusCode.OK });
-        //    }
-        //    else
-        //        return Ok(new CustomResponse<Error> { Message = "Forbidden", StatusCode = (int)HttpStatusCode.Forbidden, Result = new Error { ErrorMessage = "Invalid old password." } });
-        //}
+        [Route("GetAppointment")]
+        [HttpPost]
+        public async Task<IHttpActionResult> GetAppointment(AppointmentBindingModel model)
+        {
+            try
+            {
+                AppointmentViewModel returnModel = new AppointmentViewModel();
+
+                if (model.User_Id == 0)
+                    model.User_Id = Convert.ToInt32(User.GetClaimValue("userid"));
+
+                if (!ModelState.IsValid)
+                {
+                    return BadRequest(ModelState);
+                }
+                returnModel.Appointment = _UserService.GetAppointment(model);
+                if (returnModel.Appointment != null)
+                {
+                    return Ok(new CustomResponse<AppointmentViewModel> { Message = GlobalUtility.ResponseMessages.Success, StatusCode = (int)HttpStatusCode.OK, Result = returnModel });
+                }
+                else
+                {
+                    return Content(HttpStatusCode.OK, new CustomResponse<Error>
+                    {
+                        Message = "Conflict",
+                        StatusCode = (int)HttpStatusCode.Conflict,
+                        Result = new Error { ErrorMessage = "You already have appointment today." }
+                    });
+                }
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(Utility.LogError(ex));
+            }
+        }
+
+
+        [Route("CancelAppointment")]
+        [HttpPost]
+        public async Task<IHttpActionResult> CancelAppointment(CancelAppointmentBindingModel model)
+        {
+            try
+            {
+                if (model.User_Id == 0)
+                    model.User_Id = Convert.ToInt32(User.GetClaimValue("userid"));
+
+                if (!ModelState.IsValid)
+                {
+                    return BadRequest(ModelState);
+                }
+                var AppointmentStatus = _UserService.CancelAppointment(model);
+                if (AppointmentStatus != null)
+                {
+                    return Ok(new CustomResponse<string> { Message = GlobalUtility.ResponseMessages.Success, StatusCode = (int)HttpStatusCode.OK, Result = "Appointment canceled successfully." });
+                }
+                else
+                {
+                    return Content(HttpStatusCode.OK, new CustomResponse<Error>
+                    {
+                        Message = "Not Found",
+                        StatusCode = (int)HttpStatusCode.NotFound,
+                        Result = new Error { ErrorMessage = "You have no pending appointment." }
+                    });
+                }
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(Utility.LogError(ex));
+            }
+        }
+
+
+
+        [Route("GetMyCases")]
+        [HttpGet]
+        public async Task<IHttpActionResult> GetMyCases(int? User_Id=0)
+        {
+            try
+            {
+                AppointmentListViewModel returnModel = new AppointmentListViewModel();
+
+                if (User_Id == 0)
+                    User_Id = Convert.ToInt32(User.GetClaimValue("userid"));
+
+                if (!ModelState.IsValid)
+                {
+                    return BadRequest(ModelState);
+                }
+                returnModel.Appointments = _UserService.GetMyCases(User_Id.Value);
+                return Ok(new CustomResponse<AppointmentListViewModel> { Message = GlobalUtility.ResponseMessages.Success, StatusCode = (int)HttpStatusCode.OK, Result = returnModel });
+
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(Utility.LogError(ex));
+            }
+        }
 
 
         //[Route("AddExternalLogin")]
@@ -1046,7 +1219,7 @@ namespace AdminWebapi.Controllers
                 var user = _UserService.ResetPasswordThroughEmail(Email);
                 if (user != null)
                 {
-                    return Ok(new CustomResponse<User> { Message = GlobalUtility.ResponseMessages.Success, StatusCode = (int)HttpStatusCode.OK});
+                    return Ok(new CustomResponse<User> { Message = GlobalUtility.ResponseMessages.Success, StatusCode = (int)HttpStatusCode.OK });
                 }
                 else
                 {
@@ -1065,69 +1238,69 @@ namespace AdminWebapi.Controllers
         ///// </summary>
         ///// <param name="model"></param>
         ///// <returns></returns>
-        //[Authorize]
-        //[HttpPost]
-        //[Route("RegisterPushNotification")]
-        //public async Task<IHttpActionResult> RegisterPushNotification(RegisterPushNotificationBindingModel model)
-        //{
-        //    try
-        //    {
-        //        if (!ModelState.IsValid)
-        //        {
-        //            return BadRequest(ModelState);
-        //        }
-        //        using (AdminDBContext ctx = new AdminDBContext())
-        //        {
-        //            var user = ctx.Users.Include(x => x.UserDevices).FirstOrDefault(x => x.Id == model.User_Id);
-        //            if (user != null)
-        //            {
-        //                var existingUserDevice = user.UserDevices.FirstOrDefault(x => x.UDID.Equals(model.UDID));
-        //                if (existingUserDevice == null)
-        //                {
-        //                    //foreach (var userDevice in user.UserDevices)
-        //                    //    userDevice.IsActive = false;
+        [Authorize]
+        [HttpPost]
+        [Route("RegisterPushNotification")]
+        public async Task<IHttpActionResult> RegisterPushNotification(RegisterPushNotificationBindingModel model)
+        {
+            try
+            {
+                if (!ModelState.IsValid)
+                {
+                    return BadRequest(ModelState);
+                }
+                using (AdminDBContext ctx = new AdminDBContext())
+                {
+                    var user = ctx.Users.Include(x => x.UserDevices).FirstOrDefault(x => x.Id == model.User_Id);
+                    if (user != null)
+                    {
+                        var existingUserDevice = user.UserDevices.FirstOrDefault(x => x.UDID.Equals(model.UDID));
+                        if (existingUserDevice == null)
+                        {
+                            //foreach (var userDevice in user.UserDevices)
+                            //    userDevice.IsActive = false;
 
-        //                    var userDeviceModel = new UserDevice
-        //                    {
-        //                        Platform = model.IsAndroidPlatform,
-        //                        ApplicationType = model.IsPlayStore ? UserDevice.ApplicationTypes.PlayStore : UserDevice.ApplicationTypes.Enterprise,
-        //                        EnvironmentType = model.IsProduction ? UserDevice.ApnsEnvironmentTypes.Production : UserDevice.ApnsEnvironmentTypes.Sandbox,
-        //                        UDID = model.UDID,
-        //                        AuthToken = model.AuthToken,
-        //                        IsActive = true
-        //                    };
+                            var userDeviceModel = new UserDevice
+                            {
+                                Platform = model.IsAndroidPlatform,
+                                ApplicationType = model.IsPlayStore ? UserDevice.ApplicationTypes.PlayStore : UserDevice.ApplicationTypes.Enterprise,
+                                EnvironmentType = model.IsProduction ? UserDevice.ApnsEnvironmentTypes.Production : UserDevice.ApnsEnvironmentTypes.Sandbox,
+                                UDID = model.UDID,
+                                AuthToken = model.AuthToken,
+                                IsActive = true
+                            };
 
-        //                    PushNotificationsUtil.ConfigurePushNotifications(userDeviceModel);
+                            PushNotificationsUtil.ConfigurePushNotifications(userDeviceModel);
 
-        //                    user.UserDevices.Add(userDeviceModel);
-        //                    ctx.SaveChanges();
-        //                    return Ok(new CustomResponse<UserDevice> { Message = GlobalUtility.ResponseMessages.Success, StatusCode = (int)HttpStatusCode.OK, Result = userDeviceModel });
-        //                }
-        //                else
-        //                {
-        //                    //foreach (var userDevice in user.UserDevices)
-        //                    //    userDevice.IsActive = false;
+                            user.UserDevices.Add(userDeviceModel);
+                            ctx.SaveChanges();
+                            return Ok(new CustomResponse<UserDevice> { Message = GlobalUtility.ResponseMessages.Success, StatusCode = (int)HttpStatusCode.OK, Result = userDeviceModel });
+                        }
+                        else
+                        {
+                            //foreach (var userDevice in user.UserDevices)
+                            //    userDevice.IsActive = false;
 
-        //                    existingUserDevice.Platform = model.IsAndroidPlatform;
-        //                    existingUserDevice.ApplicationType = model.IsPlayStore ? UserDevice.ApplicationTypes.PlayStore : UserDevice.ApplicationTypes.Enterprise;
-        //                    existingUserDevice.EnvironmentType = model.IsProduction ? UserDevice.ApnsEnvironmentTypes.Production : UserDevice.ApnsEnvironmentTypes.Sandbox;
-        //                    existingUserDevice.UDID = model.UDID;
-        //                    existingUserDevice.AuthToken = model.AuthToken;
-        //                    existingUserDevice.IsActive = true;
-        //                    ctx.SaveChanges();
-        //                    PushNotificationsUtil.ConfigurePushNotifications(existingUserDevice);
-        //                    return Ok(new CustomResponse<UserDevice> { Message = GlobalUtility.ResponseMessages.Success, StatusCode = (int)HttpStatusCode.OK, Result = existingUserDevice });
-        //                }
-        //            }
-        //            else
-        //                return Ok(new CustomResponse<Error> { Message = GlobalUtility.ResponseMessages.NotFound, StatusCode = (int)HttpStatusCode.NotFound, Result = new Error { ErrorMessage = GlobalUtility.ResponseMessages.GenerateNotFound("User") } });
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        return StatusCode(Utility.LogError(ex));
-        //    }
-        //}
+                            existingUserDevice.Platform = model.IsAndroidPlatform;
+                            existingUserDevice.ApplicationType = model.IsPlayStore ? UserDevice.ApplicationTypes.PlayStore : UserDevice.ApplicationTypes.Enterprise;
+                            existingUserDevice.EnvironmentType = model.IsProduction ? UserDevice.ApnsEnvironmentTypes.Production : UserDevice.ApnsEnvironmentTypes.Sandbox;
+                            existingUserDevice.UDID = model.UDID;
+                            existingUserDevice.AuthToken = model.AuthToken;
+                            existingUserDevice.IsActive = true;
+                            ctx.SaveChanges();
+                            PushNotificationsUtil.ConfigurePushNotifications(existingUserDevice);
+                            return Ok(new CustomResponse<UserDevice> { Message = GlobalUtility.ResponseMessages.Success, StatusCode = (int)HttpStatusCode.OK, Result = existingUserDevice });
+                        }
+                    }
+                    else
+                        return Ok(new CustomResponse<Error> { Message = GlobalUtility.ResponseMessages.NotFound, StatusCode = (int)HttpStatusCode.NotFound, Result = new Error { ErrorMessage = GlobalUtility.ResponseMessages.GenerateNotFound("User") } });
+                }
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(Utility.LogError(ex));
+            }
+        }
 
         //[Authorize]
         //[HttpPost]
@@ -1320,6 +1493,6 @@ namespace AdminWebapi.Controllers
                 };
             }
         }
-        
+
     }
 }

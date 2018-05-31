@@ -154,6 +154,41 @@ namespace BusinessLogic.HelperServices
             Pending,
             Paid
         }
+        public enum AppointmentStatus
+        {
+            Pending,
+            Assigned,
+            Rejected,
+            Completed,
+            Cancel
+        }
+        public enum ChatStatuses
+        {
+            InProgress,
+            Ended
+        }
+
+
+        public static string CreateChatChannel(int User1,int User2)
+        {
+            try
+            {
+                string ChannelName = string.Empty;
+                if(User1<User2)
+                    ChannelName= User1 + ":" + User2;
+                else
+                    ChannelName = User2 + ":" + User1;
+
+                return ChannelName;
+            }
+            catch (Exception ex)
+            {
+               LogError(ex);
+                return null;
+            }
+        }
+
+
         public static string GetOrderStatusName(int orderStatus)
         {
             try

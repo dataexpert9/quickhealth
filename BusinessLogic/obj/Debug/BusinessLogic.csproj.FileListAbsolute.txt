@@ -166,3 +166,4 @@ F:\Projects\GlobalHospitalApi\BusinessLogic\bin\Debug\Microsoft.Practices.Unity.
 F:\Projects\GlobalHospitalApi\BusinessLogic\obj\Debug\BusinessLogic.csprojResolveAssemblyReference.cache
 F:\Projects\GlobalHospitalApi\BusinessLogic\obj\Debug\BusinessLogic.dll
 F:\Projects\GlobalHospitalApi\BusinessLogic\obj\Debug\BusinessLogic.pdb
+F:\Projects\GlobalHospitalApi\BusinessLogic\bin\Debug\Z.EntityFramework.Plus.EF6.dll

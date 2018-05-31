@@ -5,6 +5,7 @@ using DBAccess;
 using DBAccess.GenericRepository;
 using DBAccess.Models;
 using DBAccess.ViewModels;
+using DBAccess.ViewModels.Doctor;
 using Nexmo.Api;
 using System;
 using System.Collections.Generic;
@@ -65,42 +66,7 @@ namespace BusinessLogic.UserServices
                     Department = model.Department,
                     LatestQualification = model.LatestQualification
                 };
-                //if (model.Specialization != null)
-                //{
-                //    foreach (var item in model.Specialization)
-                //    {
-                //        doctorModel.DoctorDocuments.Add(new DoctorDocument()
-                //        {
-                //            DocumentType = (int)DoctorDocumentType.Specialization,
-                //            FilePath = ImageHelper.SaveFileFromBytes(item, "DoctorDocuments"),
-                //            UploadDate = DateTime.Now
-                //        });
-                //    }
-                //}
-                //if (model.Department != null)
-                //{
-                //    foreach (var item in model.Department)
-                //    {
-                //        doctorModel.DoctorDocuments.Add(new DoctorDocument()
-                //        {
-                //            DocumentType = (int)DoctorDocumentType.Department,
-                //            FilePath = ImageHelper.SaveFileFromBytes(item, "DoctorDocuments"),
-                //            UploadDate = DateTime.Now
-                //        });
-                //    }
-                //}
-                //if (model.LatestQualification != null)
-                //{
-                //    foreach (var item in model.LatestQualification)
-                //    {
-                //        doctorModel.DoctorDocuments.Add(new DoctorDocument()
-                //        {
-                //            DocumentType = (int)DoctorDocumentType.LatestQualification,
-                //            FilePath = ImageHelper.SaveFileFromBytes(item, "DoctorDocuments"),
-                //            UploadDate = DateTime.Now
-                //        });
-                //    }
-                //}
+
                 if (model.EductionCertificate != null)
                 {
                     foreach (var item in model.EductionCertificate)
@@ -144,6 +110,53 @@ namespace BusinessLogic.UserServices
         }
 
 
+        public Doctor UpdateAvailabilityStatus(int Doctor_Id, bool IsAvailable)
+        {
+
+            var Doctor = _DoctorRepository.GetFirst(x => x.Id == Doctor_Id);
+            if (Doctor != null)
+            {
+                Doctor.IsAvailable = IsAvailable;
+                _DoctorRepository.Save();
+                return Doctor;
+            }
+            else
+                return null;
+
+        }
+
+
+        public Doctor UpdateDoctorProfile(EditDoctorProfileBindingModel model)
+        {
+            var doctorModel = _DoctorRepository.GetFirst(x => x.Id == model.Id);
+
+            if (doctorModel != null)
+            {
+                doctorModel.FullName = model.FullName;
+                doctorModel.SurName = model.SurName;
+                doctorModel.Country = model.Country;
+                doctorModel.City = model.City;
+                doctorModel.ProviderType = model.ProviderType;
+                doctorModel.Specialization = model.Specialization;
+                doctorModel.Department = model.Department;
+                doctorModel.LatestQualification = model.LatestQualification;
+                doctorModel.Bio = model.Bio;
+                doctorModel.Address = model.Address;
+
+                if (model.ProfilePicture != null)
+                {
+                    doctorModel.ProfilePictureUrl = ImageHelper.SaveFileFromBytes(model.ProfilePicture, "ProfileImages");
+                }
+
+                _DoctorRepository.Save();
+                return doctorModel;
+            }
+            else
+                return null;
+
+
+
+        }
 
         //public Admin ValidateAdmin(LoginBindingModel loginModel)
         //{

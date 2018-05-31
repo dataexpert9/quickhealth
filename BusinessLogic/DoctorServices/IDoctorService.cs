@@ -1,5 +1,6 @@
 ﻿using DBAccess.Models;
 using DBAccess.ViewModels;
+using DBAccess.ViewModels.Doctor;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -51,5 +52,10 @@ namespace BusinessLogic.UserServices
         //User GetUserById(int userId);
         //bool MarkDeviceAsInActive(int UserId, int DeviceId);
         //bool CheckPhoneAlreadyRegister(string phoneNumber, string exceptUserEmail);
+
+        Doctor UpdateAvailabilityStatus(int Doctor_Id,bool IsAvailable);
+        Doctor UpdateDoctorProfile(EditDoctorProfileBindingModel model);
+
+
     }
 }

@@ -216,6 +216,23 @@ namespace DBAccess.GenericRepository
             return query.Where(predicate);
         }
 
+        public TEntity GetFirstWithInclude(Expression<Func<TEntity, bool>> predicate, params string[] include)
+        {
+            IQueryable<TEntity> query = DbSet;
+
+            query = include.Aggregate(query, (current, inc) => current.Include(inc));
+
+            return query.Where(predicate).FirstOrDefault();
+        }
+
+        public IEnumerable<TEntity> GetWithIncludeList(Expression<Func<TEntity, bool>> predicate, params string[] include)
+        {
+            IQueryable<TEntity> query = DbSet;
+            
+            query = include.Aggregate(query, (current, inc) => current.Include(inc));
+            return query.Where(predicate).ToList();
+        }
+
         /// <summary>
         /// Generic method to check if entity exists
         /// </summary>
@@ -256,6 +273,21 @@ namespace DBAccess.GenericRepository
         {
             return DbSet.FirstOrDefault(predicate);
         }
+
+
+        /// <summary>
+        /// The first record without matching the specified criteria
+        /// </summary>
+        /// <returns>A single record</returns>
+        public TEntity GetFirstRecord()
+        {
+            return DbSet.FirstOrDefault();
+        }
+
+
+
+
+
 
         /// <summary>
         /// Save DB Context changes
