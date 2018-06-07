@@ -42,9 +42,20 @@ namespace DBAccess
         public virtual DbSet<AppointmentImages> AppointmentImages { get; set; }
         public virtual DbSet<Chat> Chat { get; set; }
         public virtual DbSet<AppRating> AppRating { get; set; }
+        public virtual DbSet<DoctorPrescription> DoctorPrescription { get; set; }
+        
+
+
+        // Pharmacy 
         public virtual DbSet<Pharmacy> Pharmacy { get; set; }
-        public virtual DbSet<PharmacyAppointment> PharmacyAppointment { get; set; }
-        public virtual DbSet<PharmacyAppointmentImages> PharmacyAppointmentImages { get; set; }
+        public virtual DbSet<PharmacyRequestImages> PharmacyAppointmentImages { get; set; }
+        //public virtual DbSet<Medicine> Medicine { get; set; }
+        public virtual DbSet<PharmacyRequest> PharmacyRequest { get; set; }
+        public virtual DbSet<PharmacyPrescription> PharmacyPrescription { get; set; }
+        public virtual DbSet<DoctorPrescriptionImages> PrescriptionImages { get; set; }
+        
+
+
 
 
 
@@ -53,20 +64,66 @@ namespace DBAccess
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
 
-            //modelBuilder.Entity<PharmacyAppointment>()
-            //.HasMany(e => e.PharmacyAppointmentImages)
-            //.WithOptional(e => e.PharmacyAppointment)
-            //.HasForeignKey(e => e.PharmacyAppointment_Id)
-            //.WillCascadeOnDelete(false);
+            modelBuilder.Entity<DoctorPrescription>()
+               .HasMany(e => e.DoctorPrescriptionImages)
+               .WithRequired(e => e.DoctorPrescription)
+               .HasForeignKey(e => e.DoctorPrescription_Id)
+               .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<PharmacyRequest>()
+               .HasMany(e => e.PharmacyRequestImages)
+               .WithOptional(e => e.PharmacyRequest)
+               .HasForeignKey(e => e.PharmacyRequest_Id)
+               .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<FamilyMember>()
+                .HasMany(e => e.PharmacyRequest)
+                .WithOptional(e => e.FamilyMember)
+                .HasForeignKey(e => e.FamilyMember_Id)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<User>()
+                .HasMany(e => e.PharmacyRequest)
+                .WithRequired(e => e.User)
+                .HasForeignKey(e => e.User_Id)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<PharmacyRequest>()
+                .HasMany(e => e.PharmacyPrescription)
+                .WithRequired(e => e.PharmacyRequest)
+                .HasForeignKey(e => e.PharmacyRequest_Id)
+                .WillCascadeOnDelete(false);
+
+
+            modelBuilder.Entity<Pharmacy>()
+                .HasMany(e => e.PharmacyRequest)
+                .WithRequired(e => e.Pharmacy)
+                .HasForeignKey(e => e.Pharmacy_Id)
+                .WillCascadeOnDelete(false);
+
 
             //modelBuilder.Entity<Pharmacy>()
-            //    .HasMany(e => e.PharmacyAppointment)
-            //    .WithOptional(e => e.Pharmacy)
+            //    .HasMany(e => e.Medicine)
+            //    .WithRequired(e => e.Pharmacy)
             //    .HasForeignKey(e => e.Pharmacy_Id)
             //    .WillCascadeOnDelete(false);
 
+            modelBuilder.Entity<Appointment>()
+                .HasMany(e => e.AppointmentImages)
+                .WithRequired(e => e.Appointment)
+                .HasForeignKey(e => e.Appointment_Id)
+                .WillCascadeOnDelete(false);
+
+
+            modelBuilder.Entity<Appointment>()
+                 .HasMany(e => e.DoctorPrescription)
+                 .WithOptional(e => e.Appointment)
+                 .HasForeignKey(e => e.Appointment_Id)
+                 .WillCascadeOnDelete(false);
+
+
             modelBuilder.Entity<User>()
-                .HasMany(e => e.PharmacyAppointment)
+                .HasMany(e => e.PharmacyRequest)
                 .WithRequired(e => e.User)
                 .HasForeignKey(e => e.User_Id)
                 .WillCascadeOnDelete(false);

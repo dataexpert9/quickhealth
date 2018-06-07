@@ -17,6 +17,10 @@ namespace BusinessLogic.UserServices
 
         Doctor RegisterAsDoctor(RegisterDoctorBindingModel model);
         Doctor ValidateDoctor(LoginBindingModel loginModel);
+        List<Appointment> GetRequestQueries();
+        List<Appointment> GetHistory(int Doctor_Id);
+
+        
         //User ValidateUser(LoginBindingModel loginModel);
         //Admin ValidateAdmin(LoginBindingModel loginModel);
 

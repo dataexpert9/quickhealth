@@ -779,7 +779,7 @@ namespace AdminWebapi.Controllers
                 returnModel.Appointment = _UserService.GetAppointment(model);
                 if (returnModel.Appointment != null)
                 {
-                    return Ok(new CustomResponse<AppointmentViewModel> { Message = GlobalUtility.ResponseMessages.Success, StatusCode = (int)HttpStatusCode.OK, Result = returnModel });
+                    return Ok(new CustomResponse<string> { Message = GlobalUtility.ResponseMessages.Success, StatusCode = (int)HttpStatusCode.OK, Result = "Appointment submitted successfully. Doctor will be in contact with you shortly." });
                 }
                 else
                 {
@@ -851,6 +851,31 @@ namespace AdminWebapi.Controllers
                 }
                 returnModel.Appointments = _UserService.GetMyCases(User_Id.Value);
                 return Ok(new CustomResponse<AppointmentListViewModel> { Message = GlobalUtility.ResponseMessages.Success, StatusCode = (int)HttpStatusCode.OK, Result = returnModel });
+
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(Utility.LogError(ex));
+            }
+        }
+
+        [Route("GetUserProfile")]
+        [HttpGet]
+        public async Task<IHttpActionResult> GetUserProfile(int? User_Id = 0)
+        {
+            try
+            {
+                GetUserProfileModel returnModel = new GetUserProfileModel();
+
+                if (User_Id == 0)
+                    User_Id = Convert.ToInt32(User.GetClaimValue("userid"));
+
+                if (!ModelState.IsValid)
+                {
+                    return BadRequest(ModelState);
+                }
+                returnModel.User = _UserService.GetUserProfile(User_Id.Value);
+                return Ok(new CustomResponse<GetUserProfileModel> { Message = GlobalUtility.ResponseMessages.Success, StatusCode = (int)HttpStatusCode.OK, Result = returnModel });
 
             }
             catch (Exception ex)

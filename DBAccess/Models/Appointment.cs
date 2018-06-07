@@ -25,17 +25,43 @@ namespace DBAccess.Models
 
         public DateTime AppointmentDateTime { get; set; }
 
+        public string Allergies { get; set; }// will be comma or colon seperated
+
+        public string MedicalConditions { get; set; }// will be comma or colon seperated
+
+
+
+
+
         public int? FamilyMember_Id { get; set; }
 
         public virtual FamilyMember FamilyMember { get; set; }
+
+
+
 
         public int User_Id { get; set; }
 
         public virtual User User { get; set; }
 
+
+
+
         public int? Doctor_Id { get; set; }
 
         public virtual Doctor Doctor { get; set; }
+
+
+
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual List<AppointmentImages> AppointmentImages { get; set; }
+
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<DoctorPrescription> DoctorPrescription { get; set; }
+
+
 
 
     }

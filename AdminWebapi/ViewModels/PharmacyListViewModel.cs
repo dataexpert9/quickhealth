@@ -15,4 +15,16 @@ namespace AdminWebapi.ViewModels
         }
         public List<Pharmacy> Pharmacies { get; set; }
     }
+
+    public class PharmacyRequestsViewModel
+    {
+        public List<PharmacyRequest> MyPrescriptions { get; set; }
+    }
+    public class PharmacyRequestViewModel
+    {
+        public PharmacyRequest PharmacyRequest { get; set; }
+    }
+
+ 
+
 }

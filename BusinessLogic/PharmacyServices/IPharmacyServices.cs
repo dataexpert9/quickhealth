@@ -13,7 +13,13 @@ namespace BusinessLogic.PharmacyServices
     {
         List<Pharmacy> GetNearByPharmacies(double lat,double lng,string City);
         List<Pharmacy> SearchPharmacies(string Name = "", string PhoneNumber = "", string ZipCode = "");
-        //PharmacyAppointment GetPharmacyAppointment(PharmacyAppointmentBindingModel model);
+        PharmacyRequest PharmacyRequest(PharmacyAppointmentBindingModel model);
+        PharmacyRequest UpdatePharmacyRequest(UpdatePharmacyAppointmentBindingModel model);
+        List<PharmacyRequest> GetMyPrescriptions(int User_Id,int? FamilyMember_Id);
+        bool CancelPharmacyAppointment(CancelPharmacyAppointmentBindingModel model);
+
+
+
 
 
 

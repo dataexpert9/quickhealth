@@ -66,51 +66,138 @@ namespace AdminWebapi.Controllers
                 return StatusCode(Utility.LogError(ex));
             }
         }
+        
+
+        [Authorize]
+        [Route("PharmacyRequest")]
+        [HttpPost]
+        public async Task<IHttpActionResult> PharmacyRequest(PharmacyAppointmentBindingModel model)
+        {
+            try
+            {
 
 
+                if (model.User_Id == 0)
+                    model.User_Id = Convert.ToInt32(User.GetClaimValue("userid"));
+
+                if (!ModelState.IsValid)
+                {
+                    return BadRequest(ModelState);
+                }
+                var request = _pharmacyService.PharmacyRequest(model);
+                if (request != null)
+                {
+                    PharmacyRequestViewModel returnModel = new PharmacyRequestViewModel();
+                    returnModel.PharmacyRequest = request;
+                    return Ok(new CustomResponse<PharmacyRequestViewModel> { Message = GlobalUtility.ResponseMessages.Success, StatusCode = (int)HttpStatusCode.OK, Result = returnModel });
+                }
+                else
+                {
+                    return Content(HttpStatusCode.OK, new CustomResponse<Error>
+                    {
+                        Message = "Conflict",
+                        StatusCode = (int)HttpStatusCode.Conflict,
+                        Result = new Error { ErrorMessage = "You already have appointment today." }
+                    });
+                }
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(Utility.LogError(ex));
+            }
+        }
+
+        [Authorize]
+        [Route("UpdatePharmacyRequest")]
+        [HttpPost]
+        public async Task<IHttpActionResult> UpdatePharmacyRequest(UpdatePharmacyAppointmentBindingModel model)
+        {
+            try
+            {
 
 
+                if (model.User_Id == 0 || model.User_Id==null)
+                    model.User_Id = Convert.ToInt32(User.GetClaimValue("userid"));
 
-        //[Route("GetPharmacyAppointment")]
-        //[HttpPost]
-        //public async Task<IHttpActionResult> GetPharmacyAppointment(PharmacyAppointmentBindingModel model)
-        //{
-        //    try
-        //    {
-
-
-        //        if (model.User_Id == 0)
-        //            model.User_Id = Convert.ToInt32(User.GetClaimValue("userid"));
-
-        //        if (!ModelState.IsValid)
-        //        {
-        //            return BadRequest(ModelState);
-        //        }
-        //        var appointment = _pharmacyService.GetPharmacyAppointment(model);
-        //        if (appointment != null)
-        //        {
-        //            return Ok(new CustomResponse<string> { Message = GlobalUtility.ResponseMessages.Success, StatusCode = (int)HttpStatusCode.OK, Result = "Request for appointment submitted successfully." });
-        //        }
-        //        else
-        //        {
-        //            return Content(HttpStatusCode.OK, new CustomResponse<Error>
-        //            {
-        //                Message = "Conflict",
-        //                StatusCode = (int)HttpStatusCode.Conflict,
-        //                Result = new Error { ErrorMessage = "You already have appointment today." }
-        //            });
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        return StatusCode(Utility.LogError(ex));
-        //    }
-        //}
+                if (!ModelState.IsValid)
+                {
+                    return BadRequest(ModelState);
+                }
+                var requestUpdate = _pharmacyService.UpdatePharmacyRequest(model);
+                if (requestUpdate != null)
+                {
+                    return Ok(new CustomResponse<string> { Message = GlobalUtility.ResponseMessages.Success, StatusCode = (int)HttpStatusCode.OK, Result = "Request updated successfully." });
+                }
+                else
+                {
+                    return Content(HttpStatusCode.OK, new CustomResponse<Error>
+                    {
+                        Message = "Conflict",
+                        StatusCode = (int)HttpStatusCode.Conflict,
+                        Result = new Error { ErrorMessage = "Request not found." }
+                    });
+                }
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(Utility.LogError(ex));
+            }
+        }
 
 
+        [Authorize]
+        [HttpGet]
+        [Route("GetMyPrescriptions")]
+        public async Task<IHttpActionResult> GetMyPrescriptions(int User_Id, int? FamilyMember_Id=0)
+        {
+            try
+            {
+
+                PharmacyRequestsViewModel returnModel = new PharmacyRequestsViewModel();
+                returnModel.MyPrescriptions = _pharmacyService.GetMyPrescriptions(User_Id,FamilyMember_Id);
+                return Ok(new CustomResponse<PharmacyRequestsViewModel> { Message = GlobalUtility.ResponseMessages.Success, StatusCode = (int)HttpStatusCode.OK, Result = returnModel });
 
 
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(Utility.LogError(ex));
+            }
+        }
 
 
+        [Route("CancelPharmacyAppointment")]
+        [HttpPost]
+        public async Task<IHttpActionResult> CancelPharmacyAppointment(CancelPharmacyAppointmentBindingModel model)
+        {
+            try
+            {
+                if (model.User_Id == 0)
+                    model.User_Id = Convert.ToInt32(User.GetClaimValue("userid"));
+
+                if (!ModelState.IsValid)
+                {
+                    return BadRequest(ModelState);
+                }
+                var PharmacyStatus= _pharmacyService.CancelPharmacyAppointment(model);
+                if (PharmacyStatus)
+                {
+                    return Ok(new CustomResponse<string> { Message = GlobalUtility.ResponseMessages.Success, StatusCode = (int)HttpStatusCode.OK, Result = "Request canceled successfully." });
+                }
+                else
+                {
+                    return Content(HttpStatusCode.OK, new CustomResponse<Error>
+                    {
+                        Message = "Not Found",
+                        StatusCode = (int)HttpStatusCode.NotFound,
+                        Result = new Error { ErrorMessage = "You have no pending request." }
+                    });
+                }
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(Utility.LogError(ex));
+            }
+        }
     }
 }

@@ -1814,3 +1814,336 @@ StackTrace   at System.Data.SqlClient.SqlConnection.OnError(SqlException excepti
    at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
    at BusinessLogic.PharmacyServices.PharmacyServices.SearchPharmacies(String Name, String PhoneNumber, String ZipCode)
    at AdminWebapi.Controllers.PharmacyController.<SearchPharmacies>d__3.MoveNext() in F:\Projects\GlobalHospitalApi\AdminWebapi\Controllers\PharmacyController.cs:line 59
+DateTime : 6/1/2018 10:36:23 AM
+
+
+MessageUnable to determine the principal end of an association between the types 'DBAccess.Models.DoctorPrescription' and 'DBAccess.Models.Appointment'. The principal end of this association must be explicitly configured using either the relationship fluent API or data annotations.
+
+StackTrace   at System.Data.Entity.ModelConfiguration.Edm.Services.AssociationTypeMappingGenerator.GenerateIndependentAssociationType(AssociationType associationType, DbDatabaseMapping databaseMapping)
+   at System.Data.Entity.ModelConfiguration.Edm.Services.DatabaseMappingGenerator.GenerateAssociationTypes(DbDatabaseMapping databaseMapping)
+   at System.Data.Entity.ModelConfiguration.Edm.Services.DatabaseMappingGenerator.Generate(EdmModel conceptualModel)
+   at System.Data.Entity.DbModelBuilder.Build(DbProviderManifest providerManifest, DbProviderInfo providerInfo)
+   at System.Data.Entity.DbModelBuilder.Build(DbConnection providerConnection)
+   at System.Data.Entity.Internal.LazyInternalContext.CreateModel(LazyInternalContext internalContext)
+   at System.Data.Entity.Internal.RetryLazy`2.GetValue(TInput input)
+   at System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   at System.Data.Entity.Internal.InternalContext.Initialize()
+   at System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   at System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   at System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   at System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   at System.Linq.Queryable.FirstOrDefault[TSource](IQueryable`1 source)
+   at DBAccess.GenericRepository.GenericRepository`1.GetFirstRecord() in F:\Projects\GlobalHospitalApi\DBAccess\GenericRepository\GenericRepository.cs:line 284
+   at BusinessLogic.CommonServices.CommonServices.GetAppSettings() in F:\Projects\GlobalHospitalApi\BusinessLogic\CommonServices\CommonServices.cs:line 35
+   at AdminWebapi.Controllers.CommonController.<GetAppSettings>d__4.MoveNext() in F:\Projects\GlobalHospitalApi\AdminWebapi\Controllers\CommonController.cs:line 43
+DateTime : 6/1/2018 10:39:41 AM
+
+
+MessageUnable to determine the principal end of an association between the types 'DBAccess.Models.DoctorPrescription' and 'DBAccess.Models.Appointment'. The principal end of this association must be explicitly configured using either the relationship fluent API or data annotations.
+
+StackTrace   at System.Data.Entity.ModelConfiguration.Edm.Services.AssociationTypeMappingGenerator.GenerateIndependentAssociationType(AssociationType associationType, DbDatabaseMapping databaseMapping)
+   at System.Data.Entity.ModelConfiguration.Edm.Services.DatabaseMappingGenerator.GenerateAssociationTypes(DbDatabaseMapping databaseMapping)
+   at System.Data.Entity.ModelConfiguration.Edm.Services.DatabaseMappingGenerator.Generate(EdmModel conceptualModel)
+   at System.Data.Entity.DbModelBuilder.Build(DbProviderManifest providerManifest, DbProviderInfo providerInfo)
+   at System.Data.Entity.DbModelBuilder.Build(DbConnection providerConnection)
+   at System.Data.Entity.Internal.LazyInternalContext.CreateModel(LazyInternalContext internalContext)
+   at System.Data.Entity.Internal.RetryLazy`2.GetValue(TInput input)
+   at System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   at System.Data.Entity.Internal.InternalContext.Initialize()
+   at System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   at System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   at System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   at System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   at System.Linq.Queryable.FirstOrDefault[TSource](IQueryable`1 source)
+   at DBAccess.GenericRepository.GenericRepository`1.GetFirstRecord() in F:\Projects\GlobalHospitalApi\DBAccess\GenericRepository\GenericRepository.cs:line 284
+   at BusinessLogic.CommonServices.CommonServices.GetAppSettings() in F:\Projects\GlobalHospitalApi\BusinessLogic\CommonServices\CommonServices.cs:line 35
+   at AdminWebapi.Controllers.CommonController.<GetAppSettings>d__4.MoveNext() in F:\Projects\GlobalHospitalApi\AdminWebapi\Controllers\CommonController.cs:line 43
+DateTime : 6/1/2018 10:40:54 AM
+
+
+MessageUnable to determine the principal end of an association between the types 'DBAccess.Models.DoctorPrescription' and 'DBAccess.Models.Appointment'. The principal end of this association must be explicitly configured using either the relationship fluent API or data annotations.
+
+StackTrace   at System.Data.Entity.ModelConfiguration.Edm.Services.AssociationTypeMappingGenerator.GenerateIndependentAssociationType(AssociationType associationType, DbDatabaseMapping databaseMapping)
+   at System.Data.Entity.ModelConfiguration.Edm.Services.DatabaseMappingGenerator.GenerateAssociationTypes(DbDatabaseMapping databaseMapping)
+   at System.Data.Entity.ModelConfiguration.Edm.Services.DatabaseMappingGenerator.Generate(EdmModel conceptualModel)
+   at System.Data.Entity.DbModelBuilder.Build(DbProviderManifest providerManifest, DbProviderInfo providerInfo)
+   at System.Data.Entity.DbModelBuilder.Build(DbConnection providerConnection)
+   at System.Data.Entity.Internal.LazyInternalContext.CreateModel(LazyInternalContext internalContext)
+   at System.Data.Entity.Internal.RetryLazy`2.GetValue(TInput input)
+   at System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   at System.Data.Entity.Internal.InternalContext.Initialize()
+   at System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   at System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   at System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   at System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   at System.Linq.Queryable.FirstOrDefault[TSource](IQueryable`1 source)
+   at DBAccess.GenericRepository.GenericRepository`1.GetFirstRecord() in F:\Projects\GlobalHospitalApi\DBAccess\GenericRepository\GenericRepository.cs:line 284
+   at BusinessLogic.CommonServices.CommonServices.GetAppSettings() in F:\Projects\GlobalHospitalApi\BusinessLogic\CommonServices\CommonServices.cs:line 35
+   at AdminWebapi.Controllers.CommonController.<GetAppSettings>d__4.MoveNext() in F:\Projects\GlobalHospitalApi\AdminWebapi\Controllers\CommonController.cs:line 43
+DateTime : 6/1/2018 12:27:42 PM
+
+
+MessageObject reference not set to an instance of an object.
+
+StackTrace   at BusinessLogic.UserServices.UserService.GetAppointment(AppointmentBindingModel model)
+   at AdminWebapi.Controllers.UserController.<GetAppointment>d__16.MoveNext() in F:\Projects\GlobalHospitalApi\AdminWebapi\Controllers\UserController.cs:line 779
+DateTime : 6/1/2018 12:29:14 PM
+
+
+MessageObject reference not set to an instance of an object.
+
+StackTrace   at BusinessLogic.UserServices.UserService.GetAppointment(AppointmentBindingModel model)
+   at AdminWebapi.Controllers.UserController.<GetAppointment>d__16.MoveNext() in F:\Projects\GlobalHospitalApi\AdminWebapi\Controllers\UserController.cs:line 779
+DateTime : 6/1/2018 12:30:47 PM
+
+
+MessageObject reference not set to an instance of an object.
+
+StackTrace   at BusinessLogic.UserServices.UserService.GetAppointment(AppointmentBindingModel model)
+   at AdminWebapi.Controllers.UserController.<GetAppointment>d__16.MoveNext() in F:\Projects\GlobalHospitalApi\AdminWebapi\Controllers\UserController.cs:line 779
+DateTime : 6/1/2018 12:31:11 PM
+
+
+MessageObject reference not set to an instance of an object.
+
+StackTrace   at System.Collections.Generic.List`1.Enumerator.MoveNext()
+   at BusinessLogic.UserServices.UserService.GetAppointment(AppointmentBindingModel model)
+   at AdminWebapi.Controllers.UserController.<GetAppointment>d__16.MoveNext() in F:\Projects\GlobalHospitalApi\AdminWebapi\Controllers\UserController.cs:line 779
+DateTime : 6/1/2018 12:31:53 PM
+
+
+MessageObject reference not set to an instance of an object.
+
+StackTrace   at System.Collections.Generic.List`1.Enumerator.MoveNext()
+   at BusinessLogic.UserServices.UserService.GetAppointment(AppointmentBindingModel model)
+   at AdminWebapi.Controllers.UserController.<GetAppointment>d__16.MoveNext() in F:\Projects\GlobalHospitalApi\AdminWebapi\Controllers\UserController.cs:line 779
+DateTime : 6/1/2018 12:34:48 PM
+
+
+MessageObject reference not set to an instance of an object.
+
+StackTrace   at BusinessLogic.UserServices.UserService.GetAppointment(AppointmentBindingModel model) in F:\Projects\GlobalHospitalApi\BusinessLogic\UserServices\UserService.cs:line 928
+   at AdminWebapi.Controllers.UserController.<GetAppointment>d__16.MoveNext() in F:\Projects\GlobalHospitalApi\AdminWebapi\Controllers\UserController.cs:line 779
+DateTime : 6/2/2018 11:34:08 AM
+
+
+MessageObject reference not set to an instance of an object.
+
+StackTrace   at BusinessLogic.PharmacyServices.PharmacyServices.PharmacyRequest(PharmacyAppointmentBindingModel model) in F:\Projects\GlobalHospitalApi\BusinessLogic\PharmacyServices\PharmacyServices.cs:line 85
+   at AdminWebapi.Controllers.PharmacyController.<PharmacyRequest>d__4.MoveNext() in F:\Projects\GlobalHospitalApi\AdminWebapi\Controllers\PharmacyController.cs:line 89
+DateTime : 6/2/2018 11:34:53 AM
+
+
+MessageObject reference not set to an instance of an object.
+
+StackTrace   at BusinessLogic.PharmacyServices.PharmacyServices.PharmacyRequest(PharmacyAppointmentBindingModel model)
+   at AdminWebapi.Controllers.PharmacyController.<PharmacyRequest>d__4.MoveNext() in F:\Projects\GlobalHospitalApi\AdminWebapi\Controllers\PharmacyController.cs:line 89
+DateTime : 6/2/2018 11:35:28 AM
+
+
+MessageObject reference not set to an instance of an object.
+
+StackTrace   at BusinessLogic.PharmacyServices.PharmacyServices.PharmacyRequest(PharmacyAppointmentBindingModel model)
+   at AdminWebapi.Controllers.PharmacyController.<PharmacyRequest>d__4.MoveNext() in F:\Projects\GlobalHospitalApi\AdminWebapi\Controllers\PharmacyController.cs:line 89
+DateTime : 6/2/2018 11:38:57 AM
+
+
+MessageObject reference not set to an instance of an object.
+
+StackTrace   at BusinessLogic.PharmacyServices.PharmacyServices.PharmacyRequest(PharmacyAppointmentBindingModel model)
+   at AdminWebapi.Controllers.PharmacyController.<PharmacyRequest>d__4.MoveNext() in F:\Projects\GlobalHospitalApi\AdminWebapi\Controllers\PharmacyController.cs:line 89
+DateTime : 6/2/2018 3:00:56 PM
+
+
+MessageObject reference not set to an instance of an object.
+
+StackTrace   at BusinessLogic.PharmacyServices.PharmacyServices.GetMyPrescriptions(Int32 User_Id, Nullable`1 FamilyMember_Id)
+   at AdminWebapi.Controllers.PharmacyController.<GetMyPrescriptions>d__6.MoveNext() in F:\Projects\GlobalHospitalApi\AdminWebapi\Controllers\PharmacyController.cs:line 155
+DateTime : 6/5/2018 10:10:59 AM
+
+
+MessageCould not find a part of the path 'F:\Projects\GlobalHospitalApi\AdminWebapi\'.
+
+StackTrace   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.File.InternalReadAllBytes(String path, Boolean checkHost)
+   at PushSharp.Apple.ApnsConfiguration..ctor(ApnsServerEnvironment serverEnvironment, String certificateFile, String certificateFilePwd)
+   at BusinessLogic.HelperServices.PushNotifications.initializeConfiguration() in F:\Projects\GlobalHospitalApi\BusinessLogic\HelperServices\PushNotifications.cs:line 112
+   at BusinessLogic.HelperServices.PushNotifications..ctor(Boolean ProductionEnvironment) in F:\Projects\GlobalHospitalApi\BusinessLogic\HelperServices\PushNotifications.cs:line 138
+DateTime : 6/5/2018 10:11:40 AM
+
+
+MessageNullable object must have a value.
+
+StackTrace   at System.ThrowHelper.ThrowInvalidOperationException(ExceptionResource resource)
+   at System.Nullable`1.get_Value()
+   at BusinessLogic.PharmacyServices.PharmacyServices.PharmacyRequest(PharmacyAppointmentBindingModel model) in F:\Projects\GlobalHospitalApi\BusinessLogic\PharmacyServices\PharmacyServices.cs:line 81
+   at AdminWebapi.Controllers.PharmacyController.<PharmacyRequest>d__4.MoveNext() in F:\Projects\GlobalHospitalApi\AdminWebapi\Controllers\PharmacyController.cs:line 87
+DateTime : 6/5/2018 10:12:31 AM
+
+
+MessageNullable object must have a value.
+
+StackTrace   at System.ThrowHelper.ThrowInvalidOperationException(ExceptionResource resource)
+   at System.Nullable`1.get_Value()
+   at BusinessLogic.PharmacyServices.PharmacyServices.PharmacyRequest(PharmacyAppointmentBindingModel model) in F:\Projects\GlobalHospitalApi\BusinessLogic\PharmacyServices\PharmacyServices.cs:line 81
+   at AdminWebapi.Controllers.PharmacyController.<PharmacyRequest>d__4.MoveNext() in F:\Projects\GlobalHospitalApi\AdminWebapi\Controllers\PharmacyController.cs:line 87
+DateTime : 6/5/2018 11:00:22 AM
+
+
+MessageObject reference not set to an instance of an object.
+
+StackTrace   at BusinessLogic.PharmacyServices.PharmacyServices.GetMyPrescriptions(Int32 User_Id, Nullable`1 FamilyMember_Id)
+   at AdminWebapi.Controllers.PharmacyController.<GetMyPrescriptions>d__6.MoveNext() in F:\Projects\GlobalHospitalApi\AdminWebapi\Controllers\PharmacyController.cs:line 157
+DateTime : 6/5/2018 11:19:22 AM
+
+
+MessageA specified Include path is not valid. The EntityType 'DBAccess.PharmacyRequest' does not declare a navigation property with the name 'PharmacyRequest'.
+
+StackTrace   at System.Data.Entity.Core.Objects.Internal.ObjectFullSpanRewriter.ConvertSpanPath(SpanPathInfo parentInfo, List`1 navPropNames, Int32 pos)
+   at System.Data.Entity.Core.Objects.Internal.ObjectFullSpanRewriter..ctor(DbCommandTree tree, DbExpression toRewrite, Span span, AliasGenerator aliasGenerator)
+   at System.Data.Entity.Core.Objects.Internal.ObjectSpanRewriter.TryRewrite(DbQueryCommandTree tree, Span span, MergeOption mergeOption, AliasGenerator aliasGenerator, DbExpression& newQuery, SpanIndex& spanInfo)
+   at System.Data.Entity.Core.Objects.Internal.ObjectQueryExecutionPlanFactory.Prepare(ObjectContext context, DbQueryCommandTree tree, Type elementType, MergeOption mergeOption, Boolean streaming, Span span, IEnumerable`1 compiledQueryParameters, AliasGenerator aliasGenerator)
+   at System.Data.Entity.Core.Objects.ELinq.ELinqQueryState.GetExecutionPlan(Nullable`1 forMergeOption)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__6()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__5()
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<System.Collections.Generic.IEnumerable<T>.GetEnumerator>b__0()
+   at System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at DBAccess.GenericRepository.GenericRepository`1.GetWithIncludeList(Expression`1 predicate, String[] include) in F:\Projects\GlobalHospitalApi\DBAccess\GenericRepository\GenericRepository.cs:line 233
+   at BusinessLogic.PharmacyServices.PharmacyServices.GetMyPrescriptions(Int32 User_Id, Nullable`1 FamilyMember_Id) in F:\Projects\GlobalHospitalApi\BusinessLogic\PharmacyServices\PharmacyServices.cs:line 162
+   at AdminWebapi.Controllers.PharmacyController.<GetMyPrescriptions>d__6.MoveNext() in F:\Projects\GlobalHospitalApi\AdminWebapi\Controllers\PharmacyController.cs:line 157
+DateTime : 6/5/2018 11:19:41 AM
+
+
+MessageA specified Include path is not valid. The EntityType 'DBAccess.PharmacyRequest' does not declare a navigation property with the name 'PharmacyRequest'.
+
+StackTrace   at System.Data.Entity.Core.Objects.Internal.ObjectFullSpanRewriter.ConvertSpanPath(SpanPathInfo parentInfo, List`1 navPropNames, Int32 pos)
+   at System.Data.Entity.Core.Objects.Internal.ObjectFullSpanRewriter..ctor(DbCommandTree tree, DbExpression toRewrite, Span span, AliasGenerator aliasGenerator)
+   at System.Data.Entity.Core.Objects.Internal.ObjectSpanRewriter.TryRewrite(DbQueryCommandTree tree, Span span, MergeOption mergeOption, AliasGenerator aliasGenerator, DbExpression& newQuery, SpanIndex& spanInfo)
+   at System.Data.Entity.Core.Objects.Internal.ObjectQueryExecutionPlanFactory.Prepare(ObjectContext context, DbQueryCommandTree tree, Type elementType, MergeOption mergeOption, Boolean streaming, Span span, IEnumerable`1 compiledQueryParameters, AliasGenerator aliasGenerator)
+   at System.Data.Entity.Core.Objects.ELinq.ELinqQueryState.GetExecutionPlan(Nullable`1 forMergeOption)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__6()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__5()
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<System.Collections.Generic.IEnumerable<T>.GetEnumerator>b__0()
+   at System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at DBAccess.GenericRepository.GenericRepository`1.GetWithIncludeList(Expression`1 predicate, String[] include) in F:\Projects\GlobalHospitalApi\DBAccess\GenericRepository\GenericRepository.cs:line 233
+   at BusinessLogic.PharmacyServices.PharmacyServices.GetMyPrescriptions(Int32 User_Id, Nullable`1 FamilyMember_Id)
+   at AdminWebapi.Controllers.PharmacyController.<GetMyPrescriptions>d__6.MoveNext() in F:\Projects\GlobalHospitalApi\AdminWebapi\Controllers\PharmacyController.cs:line 157
+DateTime : 6/5/2018 12:35:37 PM
+
+
+MessageNon-static field requires a target.
+
+StackTrace   at System.Reflection.RtFieldInfo.CheckConsistency(Object target)
+   at System.Reflection.RtFieldInfo.InternalGetValue(Object obj, StackCrawlMark& stackMark)
+   at System.Reflection.RtFieldInfo.GetValue(Object obj)
+   at System.Data.Entity.Core.Objects.ELinq.QueryParameterExpression.TryGetFieldOrPropertyValue(MemberExpression me, Object instance, Object& memberValue)
+   at System.Data.Entity.Core.Objects.ELinq.QueryParameterExpression.TryEvaluatePath(Expression expression, ConstantExpression& constantExpression)
+   at System.Data.Entity.Core.Objects.ELinq.QueryParameterExpression.EvaluateParameter(Object[] arguments)
+   at System.Data.Entity.Core.Objects.ELinq.ELinqQueryState.GetExecutionPlan(Nullable`1 forMergeOption)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__6()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__5()
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<System.Collections.Generic.IEnumerable<T>.GetEnumerator>b__0()
+   at System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at BusinessLogic.UserServices.UserService.GetMyCases(Int32 User_Id)
+   at AdminWebapi.Controllers.UserController.<GetMyCases>d__18.MoveNext() in F:\Projects\GlobalHospitalApi\AdminWebapi\Controllers\UserController.cs:line 852
+DateTime : 6/6/2018 2:06:57 PM
+
+
+MessageNon-static field requires a target.
+
+StackTrace   at System.Reflection.RtFieldInfo.CheckConsistency(Object target)
+   at System.Reflection.RtFieldInfo.InternalGetValue(Object obj, StackCrawlMark& stackMark)
+   at System.Reflection.RtFieldInfo.GetValue(Object obj)
+   at System.Data.Entity.Core.Objects.ELinq.QueryParameterExpression.TryGetFieldOrPropertyValue(MemberExpression me, Object instance, Object& memberValue)
+   at System.Data.Entity.Core.Objects.ELinq.QueryParameterExpression.TryEvaluatePath(Expression expression, ConstantExpression& constantExpression)
+   at System.Data.Entity.Core.Objects.ELinq.QueryParameterExpression.EvaluateParameter(Object[] arguments)
+   at System.Data.Entity.Core.Objects.ELinq.ELinqQueryState.GetExecutionPlan(Nullable`1 forMergeOption)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__6()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__5()
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<System.Collections.Generic.IEnumerable<T>.GetEnumerator>b__0()
+   at System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   at System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.<GetElementFunction>b__1[TResult](IEnumerable`1 sequence)
+   at System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.ExecuteSingle[TResult](IEnumerable`1 query, Expression queryRoot)
+   at System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.System.Linq.IQueryProvider.Execute[TResult](Expression expression)
+   at System.Data.Entity.Internal.Linq.DbQueryProvider.Execute[TResult](Expression expression)
+   at System.Linq.Queryable.FirstOrDefault[TSource](IQueryable`1 source, Expression`1 predicate)
+   at DBAccess.GenericRepository.GenericRepository`1.GetFirst(Expression`1 predicate) in F:\Projects\GlobalHospitalApi\DBAccess\GenericRepository\GenericRepository.cs:line 274
+   at BusinessLogic.PharmacyServices.PharmacyServices.CancelPharmacyAppointment(CancelPharmacyAppointmentBindingModel model)
+   at AdminWebapi.Controllers.PharmacyController.<CancelPharmacyAppointment>d__7.MoveNext() in F:\Projects\GlobalHospitalApi\AdminWebapi\Controllers\PharmacyController.cs:line 182
+DateTime : 6/6/2018 3:06:43 PM
+
+
+MessageObject reference not set to an instance of an object.
+
+StackTrace   at BusinessLogic.UserServices.DoctorService.GetRequestQueries() in F:\Projects\GlobalHospitalApi\BusinessLogic\DoctorServices\DoctorService.cs:line 167
+   at AdminWebapi.Controllers.DoctorController.<GetRequestQueries>d__7.MoveNext() in F:\Projects\GlobalHospitalApi\AdminWebapi\Controllers\DoctorController.cs:line 132
+DateTime : 6/6/2018 3:07:06 PM
+
+
+MessageObject reference not set to an instance of an object.
+
+StackTrace   at BusinessLogic.UserServices.DoctorService.GetRequestQueries()
+   at AdminWebapi.Controllers.DoctorController.<GetRequestQueries>d__7.MoveNext() in F:\Projects\GlobalHospitalApi\AdminWebapi\Controllers\DoctorController.cs:line 132
+DateTime : 6/6/2018 3:07:13 PM
+
+
+MessageObject reference not set to an instance of an object.
+
+StackTrace   at BusinessLogic.UserServices.DoctorService.GetRequestQueries()
+   at AdminWebapi.Controllers.DoctorController.<GetRequestQueries>d__7.MoveNext() in F:\Projects\GlobalHospitalApi\AdminWebapi\Controllers\DoctorController.cs:line 132
+DateTime : 6/6/2018 3:07:56 PM
+
+
+MessageObject reference not set to an instance of an object.
+
+StackTrace   at BusinessLogic.UserServices.DoctorService.GetRequestQueries()
+   at AdminWebapi.Controllers.DoctorController.<GetRequestQueries>d__7.MoveNext() in F:\Projects\GlobalHospitalApi\AdminWebapi\Controllers\DoctorController.cs:line 132
+DateTime : 6/6/2018 3:09:33 PM
+
+
+MessageObject reference not set to an instance of an object.
+
+StackTrace   at BusinessLogic.UserServices.DoctorService.GetRequestQueries()
+   at AdminWebapi.Controllers.DoctorController.<GetRequestQueries>d__7.MoveNext() in F:\Projects\GlobalHospitalApi\AdminWebapi\Controllers\DoctorController.cs:line 132
+DateTime : 6/6/2018 3:10:26 PM
+
+
+MessageObject reference not set to an instance of an object.
+
+StackTrace   at BusinessLogic.UserServices.DoctorService.GetRequestQueries() in F:\Projects\GlobalHospitalApi\BusinessLogic\DoctorServices\DoctorService.cs:line 167
+   at AdminWebapi.Controllers.DoctorController.<GetRequestQueries>d__7.MoveNext() in F:\Projects\GlobalHospitalApi\AdminWebapi\Controllers\DoctorController.cs:line 132
+DateTime : 6/6/2018 3:10:35 PM
+
+
+MessageObject reference not set to an instance of an object.
+
+StackTrace   at BusinessLogic.UserServices.DoctorService.GetRequestQueries()
+   at AdminWebapi.Controllers.DoctorController.<GetRequestQueries>d__7.MoveNext() in F:\Projects\GlobalHospitalApi\AdminWebapi\Controllers\DoctorController.cs:line 132
+DateTime : 6/6/2018 3:10:56 PM
+
+
+MessageObject reference not set to an instance of an object.
+
+StackTrace   at BusinessLogic.UserServices.DoctorService.GetRequestQueries()
+   at AdminWebapi.Controllers.DoctorController.<GetRequestQueries>d__7.MoveNext() in F:\Projects\GlobalHospitalApi\AdminWebapi\Controllers\DoctorController.cs:line 132

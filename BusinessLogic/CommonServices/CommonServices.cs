@@ -49,9 +49,9 @@ namespace BusinessLogic.CommonServices
             if (string.IsNullOrEmpty(model.ChannelName))
             {
                 if (model.Doctor_Id.HasValue)
-                    model.ChannelName = Utility.CreateChatChannel(model.User_Id, model.Doctor_Id.Value);
+                    model.ChannelName = Utility.CreateChatChannel(model.User_Id, model.Doctor_Id.Value,"D");
                 else
-                    model.ChannelName = Utility.CreateChatChannel(model.User_Id, model.Pharmacy_Id.Value);
+                    model.ChannelName = Utility.CreateChatChannel(model.User_Id, model.Pharmacy_Id.Value, "D");
             }
 
             //var chatModel = _ChatRepository.GetWithInclude(x => x.ChannelName.Contains(model.ChannelName),"User","Doctor","Pharmacy");

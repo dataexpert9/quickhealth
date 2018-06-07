@@ -880,6 +880,8 @@ namespace BusinessLogic.UserServices
             else
                 AppointmentModel = _Appointment.GetFirst(x => x.User_Id == model.User_Id && x.Status != (int)Utility.AppointmentStatus.Cancel);
 
+
+
             if (AppointmentModel != null && AppointmentModel.AppointmentDateTime.Date == DateTime.Today)
                 return null;
             else
@@ -893,11 +895,11 @@ namespace BusinessLogic.UserServices
                     Purpose = model.Purpose,
                     IsFever = model.IsFever,
                     Temperature = model.Temperature,
-                    Symptoms = model.Symptoms,
+                    Allergies=model.Allergies,
+                    MedicalConditions=model.MedicalCondition,
                     Status = (int)Utility.AppointmentStatus.Pending,
                     AppointmentDateTime = DateTime.UtcNow,
-                    User_Id = model.User_Id,
-                    Doctor_Id = 4
+                    User_Id = model.User_Id
                 };
 
                 if (model.FamilyMember_Id != 0)
@@ -909,6 +911,11 @@ namespace BusinessLogic.UserServices
 
                 foreach (var file in model.ImageUrls)
                 {
+                    if (AppointmentModel.AppointmentImages == null)
+                    {
+                        AppointmentModel.AppointmentImages = new List<AppointmentImages>();
+                    }
+
                     if (file != null)
                     {
                         Images.Add(new AppointmentImages
@@ -917,9 +924,11 @@ namespace BusinessLogic.UserServices
                             ImageUrl = ImageHelper.SaveFileFromBytes(file, "AppointmentImages")
                         });
                     }
+                    AppointmentModel.AppointmentImages.AddRange(Images);
                 }
+                _Appointment.Save();
 
-                AppointmentModel = _Appointment.GetFirstWithInclude(x => x.Id == AppointmentModel.Id, "Doctor", "User", "FamilyMember");
+                //AppointmentModel = _Appointment.GetFirstWithInclude(x => x.Id == AppointmentModel.Id, "Doctor", "User", "FamilyMember");
                 return AppointmentModel;
 
             }
@@ -947,10 +956,27 @@ namespace BusinessLogic.UserServices
 
             using (AdminDBContext ctx = new AdminDBContext())
             {
-                returnModel = ctx.Appointment.Include(x => x.Doctor).Include(x => x.User).Include(x => x.User.Medications).Include(x => x.User.Allergies).Include(x => x.User.MedicalConditions).Where(x => x.User_Id == User_Id).ToList();
+                returnModel = _Appointment.GetWithInclude(x => x.User_Id == User_Id, "Doctor", "User", "User.Allergies", "User.MedicalConditions", "DoctorPrescription", "DoctorPrescription.DoctorPrescriptionImages").ToList();
+
+                    //ctx.Appointment.Include(x => x.Doctor).Include(x => x.User).Include(x => x.User.Allergies).Include(x => x.User.MedicalConditions).Include(x=>x.).Where(x => x.User_Id == User_Id).ToList();
             }
             return returnModel;
 
+        }
+
+
+        public User GetUserProfile(int User_Id)
+        {
+
+            User returnModel = new User();
+
+            using (AdminDBContext ctx = new AdminDBContext())
+            {
+                returnModel = _UserRepository.GetFirstWithInclude(x => x.IsDeleted == false, "FamilyHistory", "MedicalConditions", "Allergies", "Vaccinations", "Medications", "LifeStyle");
+
+                //ctx.Appointment.Include(x => x.Doctor).Include(x => x.User).Include(x => x.User.Allergies).Include(x => x.User.MedicalConditions).Include(x=>x.).Where(x => x.User_Id == User_Id).ToList();
+            }
+            return returnModel;
         }
 
     }

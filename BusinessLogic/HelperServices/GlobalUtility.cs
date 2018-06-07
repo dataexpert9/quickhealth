@@ -131,6 +131,17 @@ namespace BusinessLogic.HelperServices
             Offer_Product,
             Offer_Package
         }
+
+        public enum PharmacyRequest {
+
+
+            Requested,
+            ReadyToDispatch,
+            Dispatched,
+            Delivered,
+            Cancel
+
+        }
      
         public class ResponseMessages
         {

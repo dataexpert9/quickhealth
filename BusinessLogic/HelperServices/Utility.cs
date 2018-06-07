@@ -167,17 +167,17 @@ namespace BusinessLogic.HelperServices
             InProgress,
             Ended
         }
+    
 
-
-        public static string CreateChatChannel(int User1,int User2)
+        public static string CreateChatChannel(int User1,int User2,string Medium)
         {
             try
             {
                 string ChannelName = string.Empty;
                 if(User1<User2)
-                    ChannelName= User1 + ":" + User2;
+                    ChannelName= User1 + ":" + User2+":"+Medium;
                 else
-                    ChannelName = User2 + ":" + User1;
+                    ChannelName = User2 + ":" + User1 + ":" + Medium;
 
                 return ChannelName;
             }

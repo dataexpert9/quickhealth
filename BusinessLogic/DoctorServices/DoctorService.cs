@@ -27,6 +27,7 @@ namespace BusinessLogic.UserServices
         private readonly GenericRepository<Doctor> _DoctorRepository;
         private readonly GenericRepository<ContactUs> _ContactUsRepository;
         private readonly GenericRepository<UserDevice> _UserDeviceRepository;
+        private readonly GenericRepository<Appointment> _AppointmentRepository;
         private readonly GenericRepository<Admin> _AdminRepository;
 
         public DoctorService()
@@ -35,6 +36,7 @@ namespace BusinessLogic.UserServices
             _ContactUsRepository = new GenericRepository<ContactUs>(_DBContext);
             _UserDeviceRepository = new GenericRepository<UserDevice>(_DBContext);
             _AdminRepository = new GenericRepository<Admin>(_DBContext);
+            _AppointmentRepository = new GenericRepository<Appointment>(_DBContext);
         }
 
 
@@ -156,6 +158,21 @@ namespace BusinessLogic.UserServices
 
 
 
+        }
+
+
+
+        public List<Appointment> GetRequestQueries()
+        {
+
+            var AppointmentList = _AppointmentRepository.GetWithIncludeList(x => x.Status==(int)Utility.AppointmentStatus.Pending,"User","FamilyMember","User.Medications").ToList();
+            return AppointmentList;
+        }
+
+        public List<Appointment> GetHistory(int Doctor_Id)
+        {
+
+            return new List<Appointment>();
         }
 
         //public Admin ValidateAdmin(LoginBindingModel loginModel)

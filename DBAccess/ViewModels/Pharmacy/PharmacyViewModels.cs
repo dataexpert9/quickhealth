@@ -14,14 +14,29 @@ namespace DBAccess.ViewModels.Pharmacy
 
     public class PharmacyAppointmentBindingModel
     {
-        public int? User_Id { get; set; }
 
+
+        public int? User_Id { get; set; }
+        
         [Required]
         public int Pharmacy_Id { get; set; }
 
         public string purpose { get; set; }
 
         public List<HttpFile> ImageUrls { get; set; }
+
         
+    }
+    public class UpdatePharmacyAppointmentBindingModel
+    {
+        public int? User_Id { get; set; }
+
+        public int? FamilyMember_Id { get; set; }
+
+        [Required]
+        public int Appointment_Id { get; set; }
+
+        [Required]
+        public int PharmacyRequest_Id { get; set; }
     }
 }

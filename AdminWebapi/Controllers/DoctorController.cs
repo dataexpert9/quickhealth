@@ -6,6 +6,7 @@ using BusinessLogic.UserServices;
 using DBAccess.Models;
 using DBAccess.ViewModels;
 using DBAccess.ViewModels.Doctor;
+using PubnubApi;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -89,7 +90,6 @@ namespace AdminWebapi.Controllers
         [Route("UpdateUserProfile")]
         [HttpPost]
         [AllowAnonymous]
-        //[Authorize]
         public async Task<IHttpActionResult> UpdateUserProfile(EditDoctorProfileBindingModel model)
         {
             try
@@ -114,6 +114,124 @@ namespace AdminWebapi.Controllers
                 }
                 else
                     throw new Exception("Doctor id is empty in doctor.identity.");
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(Utility.LogError(ex));
+            }
+        }
+
+
+        [HttpGet]
+        [Route("GetRequestQueries")]
+        public async Task<IHttpActionResult> GetRequestQueries()
+        {
+            try
+            {
+                var Doctor_Id = Convert.ToInt32(User.GetClaimValue("userid"));
+                RequestInquiries returnModel = new RequestInquiries();
+
+                returnModel.Inquiries = _DoctorService.GetRequestQueries();
+                return Ok(new CustomResponse<RequestInquiries> { Message = GlobalUtility.ResponseMessages.Success, StatusCode = (int)HttpStatusCode.OK, Result = returnModel });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(Utility.LogError(ex));
+            }
+        }
+
+        [HttpGet]
+        [Route("GetHistory")]
+        public async Task<IHttpActionResult> GetHistory(int? Doctor_Id = 0)
+        {
+            try
+            {
+                if (Doctor_Id == 0 || !Doctor_Id.HasValue)
+                    Doctor_Id = Convert.ToInt32(User.GetClaimValue("userid"));
+                DoctorHistory returnModel = new DoctorHistory();
+
+                returnModel.Inquiries = _DoctorService.GetHistory(Doctor_Id.Value);
+                return Ok(new CustomResponse<DoctorHistory> { Message = GlobalUtility.ResponseMessages.Success, StatusCode = (int)HttpStatusCode.OK, Result = returnModel });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(Utility.LogError(ex));
+            }
+        }
+
+        [HttpGet]
+        [Route("PubNub")]
+        public async Task<IHttpActionResult> PubNub()
+        {
+            try
+            {
+                PNConfiguration pnConfiguration = new PNConfiguration();
+                pnConfiguration.SubscribeKey = "sub-c-f956c704-63f5-11e8-90b6-8e3ee2a92f04";
+                pnConfiguration.PublishKey = "pub-c-ee31281d-c11a-4bd8-895f-cca3f587ce5a";
+                pnConfiguration.SecretKey = "sec-c-ZDMzZWY3MGUtNzExZi00ZDA3LWFiMTktYTFmMzMwOTVjZTc3";
+                pnConfiguration.LogVerbosity = PNLogVerbosity.BODY;
+                pnConfiguration.Uuid = "PubNubCSharpExample";
+
+                Dictionary<string, string> message = new Dictionary<string, string>();
+                message.Add("msg", "hello");
+
+                Pubnub pubnub = new Pubnub(pnConfiguration);
+
+                SubscribeCallbackExt subscribeCallback = new SubscribeCallbackExt(
+                    (pubnubObj, messageResult) => {
+                        if (messageResult != null)
+                        {
+                            System.Diagnostics.Debug.WriteLine("In Example, SusbcribeCallback received PNMessageResult");
+                            System.Diagnostics.Debug.WriteLine("In Example, SusbcribeCallback messsage channel = " + messageResult.Channel);
+                            string jsonString = messageResult.Message.ToString();
+                            Dictionary<string, string> msg = pubnub.JsonPluggableLibrary.DeserializeToObject<Dictionary<string, string>>(jsonString);
+                            System.Diagnostics.Debug.WriteLine("msg: " + msg["msg"]);
+                        }
+                    },
+                    (pubnubObj, presencResult) => {
+                        if (presencResult != null)
+                        {
+                            System.Diagnostics.Debug.WriteLine("In Example, SusbcribeCallback received PNPresenceEventResult");
+                            System.Diagnostics.Debug.WriteLine(presencResult.Channel + " " + presencResult.Occupancy + " " + presencResult.Event);
+                        }
+                    },
+                    (pubnubObj, statusResult) => {
+                        if (statusResult.Category == PNStatusCategory.PNConnectedCategory)
+                        {
+                            pubnub.Publish()
+                            .Channel("my_channel")
+                            .Message(message)
+                            .Async(new PNPublishResultExt((publishResult, publishStatus) => {
+                                if (!publishStatus.Error)
+                                {
+                                    System.Diagnostics.Debug.WriteLine(string.Format("DateTime {0}, In Publish Example, Timetoken: {1}", DateTime.UtcNow, publishResult.Timetoken));
+                                }
+                                else
+                                {
+                                    System.Diagnostics.Debug.WriteLine(publishStatus.Error);
+                                    System.Diagnostics.Debug.WriteLine(publishStatus.ErrorData.Information);
+                                }
+                            }));
+                        }
+                    }
+                );
+
+                pubnub.AddListener(subscribeCallback);
+
+                pubnub.Subscribe<string>()
+                    .Channels(new string[]{
+            "my_channel"
+                    }).Execute();
+
+
+                pubnub.History()
+                .Channel("history_channel")
+                .Count(100)
+                .Async(new PNHistoryResultExt(
+                    (result, status) => {
+                    }
+                ));
+                return Ok();
             }
             catch (Exception ex)
             {

@@ -64,5 +64,7 @@ namespace BusinessLogic.UserServices
         
         Appointment CancelAppointment(CancelAppointmentBindingModel model);
 
+        User GetUserProfile(int User_Id);
+
     }
 }

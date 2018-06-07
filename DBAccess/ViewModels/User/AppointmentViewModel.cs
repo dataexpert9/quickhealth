@@ -29,12 +29,14 @@ namespace DBAccess.ViewModels.User
 
         public string Temperature { get; set; }
 
+        public string Allergies { get; set; }
+
+        public string MedicalCondition { get; set; }
+
         [Required]
         public int User_Id { get; set; }
 
         public int? FamilyMember_Id { get; set; }
-
-        public string Symptoms { get; set; }
 
     }
 

@@ -167,3 +167,7 @@ F:\Projects\GlobalHospitalApi\BusinessLogic\obj\Debug\BusinessLogic.csprojResolv
 F:\Projects\GlobalHospitalApi\BusinessLogic\obj\Debug\BusinessLogic.dll
 F:\Projects\GlobalHospitalApi\BusinessLogic\obj\Debug\BusinessLogic.pdb
 F:\Projects\GlobalHospitalApi\BusinessLogic\bin\Debug\Z.EntityFramework.Plus.EF6.dll
+F:\Projects\GlobalHospitalApi\BusinessLogic\bin\Debug\crypto.dll
+F:\Projects\GlobalHospitalApi\BusinessLogic\bin\Debug\Pubnub.dll
+F:\Projects\GlobalHospitalApi\BusinessLogic\bin\Debug\crypto.pdb
+F:\Projects\GlobalHospitalApi\BusinessLogic\bin\Debug\crypto.xml

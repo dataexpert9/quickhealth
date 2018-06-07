@@ -111,6 +111,7 @@
     <Compile Include="Models\CreditCard.cs" />
     <Compile Include="Models\Doctor.cs" />
     <Compile Include="Models\DoctorDocument.cs" />
+    <Compile Include="Models\DoctorPrescription.cs" />
     <Compile Include="Models\FamilyHistory.cs" />
     <Compile Include="Models\FamilyMember.cs" />
     <Compile Include="Models\Favourite.cs" />
@@ -120,9 +121,11 @@
     <Compile Include="Models\Medications.cs" />
     <Compile Include="Models\Notification.cs" />
     <Compile Include="Models\Pharmacy.cs" />
-    <Compile Include="Models\PharmacyAppointment.cs" />
-    <Compile Include="Models\PharmacyAppointmentImages.cs" />
+    <Compile Include="Models\PharmacyRequestImages.cs" />
+    <Compile Include="Models\PharmacyPrescription.cs" />
+    <Compile Include="Models\PharmacyRequest.cs" />
     <Compile Include="Models\Prescription.cs" />
+    <Compile Include="Models\PrescriptionImages.cs" />
     <Compile Include="Models\RefreshTokens.cs" />
     <Compile Include="Models\Settings.cs" />
     <Compile Include="Models\Token.cs" />
@@ -137,6 +140,7 @@
     <Compile Include="ViewModels\Common\CreateChannelBindingModel.cs" />
     <Compile Include="ViewModels\Common\ImageUpload.cs" />
     <Compile Include="ViewModels\Doctor\DoctorProfile.cs" />
+    <Compile Include="ViewModels\Pharmacy\PharmacyBindingModels.cs" />
     <Compile Include="ViewModels\Pharmacy\PharmacyViewModels.cs" />
     <Compile Include="ViewModels\SocialUserViewModel.cs" />
     <Compile Include="ViewModels\User\AppointmentViewModel.cs" />
