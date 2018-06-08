@@ -80,6 +80,9 @@ namespace DBAccess.Models
 
         public string BMI { get; set; }
 
+        [NotMapped]
+        public double CompletionPercentage { get; set; }
+
 
         //public string Specialization { get; set; }
 

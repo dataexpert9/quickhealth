@@ -204,17 +204,24 @@ namespace DBAccess
                .HasForeignKey(e => e.User_Id)
                .WillCascadeOnDelete(false);
             
-            modelBuilder.Entity<AdminNotifications>()
-               .HasMany(e => e.Notifications)
-               .WithOptional(e => e.AdminNotification)
-               .HasForeignKey(e => e.AdminNotification_Id)
-               .WillCascadeOnDelete(false);
+            //modelBuilder.Entity<AdminNotifications>()
+            //   .HasMany(e => e.Notifications)
+            //   .WithOptional(e => e.AdminNotification)
+            //   .HasForeignKey(e => e.AdminNotification_Id)
+            //   .WillCascadeOnDelete(false);
 
 
             modelBuilder.Entity<User>()
                 .HasMany(e => e.UserDevices)
-                .WithRequired(e => e.User)
+                .WithOptional(e => e.User)
                 .HasForeignKey(e => e.User_Id)
+                .WillCascadeOnDelete(false);
+
+
+            modelBuilder.Entity<Doctor>()
+                .HasMany(e => e.UserDevices)
+                .WithOptional(e => e.Doctor)
+                .HasForeignKey(e => e.Doctor_Id)
                 .WillCascadeOnDelete(false);
 
             //modelBuilder.Entity<User>()
@@ -232,7 +239,13 @@ namespace DBAccess
             modelBuilder.Entity<User>()
                 .HasMany(e => e.Notifications)
                 .WithOptional(e => e.User)
-                .HasForeignKey(e => e.User_ID)
+                .HasForeignKey(e => e.User_Id)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Doctor>()
+                .HasMany(e => e.Notifications)
+                .WithOptional(e => e.Doctor)
+                .HasForeignKey(e => e.Doctor_Id)
                 .WillCascadeOnDelete(false);
 
             //modelBuilder.Entity<User>()

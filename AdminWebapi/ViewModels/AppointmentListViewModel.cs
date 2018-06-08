@@ -15,4 +15,15 @@ namespace AdminWebapi.ViewModels
         public List<Appointment> Appointments { get; set; }
 
     }
+
+    //public class AppointmentViewModel
+    //{
+    //    public AppointmentViewModel()
+    //    {
+    //        Appointment = new Appointment();
+    //    }
+    //    public Appointment Appointment { get; set; }
+
+    //}
+
 }

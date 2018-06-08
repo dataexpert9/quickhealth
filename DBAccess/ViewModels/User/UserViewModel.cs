@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using MultipartDataMediaFormatter.Infrastructure;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -26,6 +27,8 @@ namespace DBAccess.ViewModels
 
         public string Email { get; set; }
 
+        public HttpFile ProfileImage { get; set; }
+
         public EditProfileAbout About { get; set; }
 
         public List<EditProfileFamilyHistory> FamilyHistory { get; set; }
@@ -45,7 +48,7 @@ namespace DBAccess.ViewModels
     {
         public int Id { get; set; }
 
-        public string Name { get; set; }
+        public string Vaccination_Name { get; set; }
     }
 
     public class EditProfileMedications
@@ -62,7 +65,7 @@ namespace DBAccess.ViewModels
     {
         public int Id { get; set; }
 
-        public string Allergy_Name { get; set; }
+        public string AllergyName { get; set; }
     }
 
     public class EditProfileMedicalCondition

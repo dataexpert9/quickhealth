@@ -59,7 +59,7 @@ namespace BusinessLogic.UserServices
 
         Doctor UpdateAvailabilityStatus(int Doctor_Id,bool IsAvailable);
         Doctor UpdateDoctorProfile(EditDoctorProfileBindingModel model);
-
+        Appointment AcceptAppointment(AcceptAppointmentBindingModel model);
 
     }
 }

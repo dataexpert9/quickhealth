@@ -19,11 +19,16 @@ namespace DBAccess.Models
         [Required]
         public int Status { get; set; }
 
-        public int? User_ID { get; set; }
+        public int? User_Id { get; set; }
 
-        public int? DeliveryMan_ID { get; set; }
+        public int? Doctor_Id { get; set; }
 
-        public int? AdminNotification_Id { get; set; }
+        public string ImageUrl { get; set; }
+
+        public DateTime? CreatedDateTime { get; set; }
+            
+        [JsonIgnore]
+        public virtual Doctor Doctor { get; set; }
 
         [JsonIgnore]
         public virtual User User { get; set; }

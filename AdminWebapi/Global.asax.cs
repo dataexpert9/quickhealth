@@ -9,11 +9,13 @@ using System.Web.SessionState;
 using System.Web.Http;
 using MultipartDataMediaFormatter;
 using MultipartDataMediaFormatter.Infrastructure;
+using PubnubApi;
 
 namespace AdminWebapi
 {
     public class Global : HttpApplication
     {
+        public static Pubnub objPubnub;
         void Application_Start(object sender, EventArgs e)
         {
             //this is used for multipart direct model binding
@@ -22,7 +24,8 @@ namespace AdminWebapi
             AreaRegistration.RegisterAllAreas();
             GlobalConfiguration.Configure(App_Start.WebApiConfig.Register);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
-            Bootstrapper.Initialise();            
+            Bootstrapper.Initialise();
+            PubNub.Initialise(objPubnub);
         }
     }
 }

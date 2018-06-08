@@ -199,6 +199,7 @@
     <Compile Include="DoctorServices\DoctorService.cs" />
     <Compile Include="Exceptions\BusinessException.cs" />
     <Compile Include="HelperServices\CryptoHelper.cs" />
+    <Compile Include="HelperServices\Extensions.cs" />
     <Compile Include="HelperServices\GlobalUtility.cs" />
     <Compile Include="HelperServices\ImageHelper.cs" />
     <Compile Include="HelperServices\NotificationModel.cs" />

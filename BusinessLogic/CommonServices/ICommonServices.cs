@@ -16,5 +16,7 @@ namespace BusinessLogic.CommonServices
 
         AppRating RateApp(AppRatingModel model);
 
+        List<Notification> GetAllNotifications(int? User_Id = 0, int? Doctor_Id = 0);
+
     }
 }

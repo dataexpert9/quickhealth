@@ -6,6 +6,7 @@ using BusinessLogic.UserServices;
 using DBAccess.Models;
 using DBAccess.ViewModels;
 using DBAccess.ViewModels.Doctor;
+using DBAccess.ViewModels.User;
 using PubnubApi;
 using System;
 using System.Collections.Generic;
@@ -165,72 +166,73 @@ namespace AdminWebapi.Controllers
         {
             try
             {
-                PNConfiguration pnConfiguration = new PNConfiguration();
-                pnConfiguration.SubscribeKey = "sub-c-f956c704-63f5-11e8-90b6-8e3ee2a92f04";
-                pnConfiguration.PublishKey = "pub-c-ee31281d-c11a-4bd8-895f-cca3f587ce5a";
-                pnConfiguration.SecretKey = "sec-c-ZDMzZWY3MGUtNzExZi00ZDA3LWFiMTktYTFmMzMwOTVjZTc3";
-                pnConfiguration.LogVerbosity = PNLogVerbosity.BODY;
-                pnConfiguration.Uuid = "PubNubCSharpExample";
-
-                Dictionary<string, string> message = new Dictionary<string, string>();
-                message.Add("msg", "hello");
-
-                Pubnub pubnub = new Pubnub(pnConfiguration);
-
-                SubscribeCallbackExt subscribeCallback = new SubscribeCallbackExt(
-                    (pubnubObj, messageResult) => {
-                        if (messageResult != null)
-                        {
-                            System.Diagnostics.Debug.WriteLine("In Example, SusbcribeCallback received PNMessageResult");
-                            System.Diagnostics.Debug.WriteLine("In Example, SusbcribeCallback messsage channel = " + messageResult.Channel);
-                            string jsonString = messageResult.Message.ToString();
-                            Dictionary<string, string> msg = pubnub.JsonPluggableLibrary.DeserializeToObject<Dictionary<string, string>>(jsonString);
-                            System.Diagnostics.Debug.WriteLine("msg: " + msg["msg"]);
-                        }
-                    },
-                    (pubnubObj, presencResult) => {
-                        if (presencResult != null)
-                        {
-                            System.Diagnostics.Debug.WriteLine("In Example, SusbcribeCallback received PNPresenceEventResult");
-                            System.Diagnostics.Debug.WriteLine(presencResult.Channel + " " + presencResult.Occupancy + " " + presencResult.Event);
-                        }
-                    },
-                    (pubnubObj, statusResult) => {
-                        if (statusResult.Category == PNStatusCategory.PNConnectedCategory)
-                        {
-                            pubnub.Publish()
-                            .Channel("my_channel")
-                            .Message(message)
-                            .Async(new PNPublishResultExt((publishResult, publishStatus) => {
-                                if (!publishStatus.Error)
-                                {
-                                    System.Diagnostics.Debug.WriteLine(string.Format("DateTime {0}, In Publish Example, Timetoken: {1}", DateTime.UtcNow, publishResult.Timetoken));
-                                }
-                                else
-                                {
-                                    System.Diagnostics.Debug.WriteLine(publishStatus.Error);
-                                    System.Diagnostics.Debug.WriteLine(publishStatus.ErrorData.Information);
-                                }
-                            }));
-                        }
-                    }
-                );
-
-                pubnub.AddListener(subscribeCallback);
-
-                pubnub.Subscribe<string>()
-                    .Channels(new string[]{
-            "my_channel"
-                    }).Execute();
+                //    PNConfiguration pnConfiguration = new PNConfiguration();
+                //    pnConfiguration.SubscribeKey = "sub-c-f956c704-63f5-11e8-90b6-8e3ee2a92f04";
+                //    pnConfiguration.PublishKey = "pub-c-ee31281d-c11a-4bd8-895f-cca3f587ce5a";
+                //    pnConfiguration.SecretKey = "sec-c-ZDMzZWY3MGUtNzExZi00ZDA3LWFiMTktYTFmMzMwOTVjZTc3";
+                //    pnConfiguration.LogVerbosity = PNLogVerbosity.BODY;
 
 
-                pubnub.History()
-                .Channel("history_channel")
-                .Count(100)
-                .Async(new PNHistoryResultExt(
-                    (result, status) => {
-                    }
-                ));
+                //    Dictionary<string, string> message = new Dictionary<string, string>();
+                //    message.Add("msg", "hello");
+
+                //    Pubnub pubnub = new Pubnub(pnConfiguration);
+
+                //    SubscribeCallbackExt subscribeCallback = new SubscribeCallbackExt(
+                //        (pubnubObj, messageResult) => {
+                //            if (messageResult != null)
+                //            {
+                //                System.Diagnostics.Debug.WriteLine("In Example, SusbcribeCallback received PNMessageResult");
+                //                System.Diagnostics.Debug.WriteLine("In Example, SusbcribeCallback messsage channel = " + messageResult.Channel);
+                //                string jsonString = messageResult.Message.ToString();
+                //                Dictionary<string, string> msg = pubnub.JsonPluggableLibrary.DeserializeToObject<Dictionary<string, string>>(jsonString);
+                //                System.Diagnostics.Debug.WriteLine("msg: " + msg["msg"]);
+                //            }
+                //        },
+                //        (pubnubObj, presencResult) => {
+                //            if (presencResult != null)
+                //            {
+                //                System.Diagnostics.Debug.WriteLine("In Example, SusbcribeCallback received PNPresenceEventResult");
+                //                System.Diagnostics.Debug.WriteLine(presencResult.Channel + " " + presencResult.Occupancy + " " + presencResult.Event);
+                //            }
+                //        },
+                //        (pubnubObj, statusResult) => {
+                //            if (statusResult.Category == PNStatusCategory.PNConnectedCategory)
+                //            {
+                //                pubnub.Publish()
+                //                .Channel("TEST:QUICK_HEALTH")
+                //                .Message(message)
+                //                .Async(new PNPublishResultExt((publishResult, publishStatus) => {
+                //                    if (!publishStatus.Error)
+                //                    {
+                //                        System.Diagnostics.Debug.WriteLine(string.Format("DateTime {0}, In Publish Example, Timetoken: {1}", DateTime.UtcNow, publishResult.Timetoken));
+                //                    }
+                //                    else
+                //                    {
+                //                        System.Diagnostics.Debug.WriteLine(publishStatus.Error);
+                //                        System.Diagnostics.Debug.WriteLine(publishStatus.ErrorData.Information);
+                //                    }
+                //                }));
+                //            }
+                //        }
+                //    );
+
+                //    pubnub.AddListener(subscribeCallback);
+
+                //    pubnub.Subscribe<string>()
+                //        .Channels(new string[]{
+                //"TEST:QUICK_HEALTH"
+                //        }).Execute();
+
+
+                //    pubnub.History()
+                //    .Channel("TEST:QUICK_HEALTH")
+                //    .Count(100)
+                //    .Async(new PNHistoryResultExt(
+                //        (result, status) => {
+                //        }
+                //    ));
+                Global.objPubnub.Publish();
                 return Ok();
             }
             catch (Exception ex)
@@ -239,6 +241,45 @@ namespace AdminWebapi.Controllers
             }
         }
 
+
+        [Route("AcceptAppointment")]
+        [HttpPost]
+        [AllowAnonymous]
+        public async Task<IHttpActionResult> AcceptAppointment(AcceptAppointmentBindingModel model)
+        {
+            try
+            {
+                model.Doctor_Id = Convert.ToInt32(User.GetClaimValue("userid"));
+
+                if (model.Doctor_Id == 0)
+                    throw new Exception("User id is empty in user.identity.");
+                
+                if (!ModelState.IsValid)
+                {
+                    return BadRequest(ModelState);
+                }
+                var Appointment = _DoctorService.AcceptAppointment(model);
+
+                if (Appointment != null)
+                {
+                    CustomResponse<AppointmentViewModel> response = new CustomResponse<AppointmentViewModel> { Message = GlobalUtility.ResponseMessages.Success, StatusCode = (int)HttpStatusCode.OK, Result = new AppointmentViewModel { Appointment= Appointment } };
+                    return Ok(response);
+                }
+                else
+                {
+                    return Content(HttpStatusCode.OK, new CustomResponse<Error>
+                    {
+                        Message = "Conflict",
+                        StatusCode = (int)HttpStatusCode.Conflict,
+                        Result = new Error { ErrorMessage = "Appointment is already in progress." }
+                    });
+                }
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(Utility.LogError(ex));
+            }
+        }
 
 
     }

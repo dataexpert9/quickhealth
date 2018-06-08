@@ -203,7 +203,7 @@ namespace BusinessLogic.HelperServices
                         {
                             pushModel.aps.alert.title = AdminNotification.Title;
                             pushModel.aps.alert.body = AdminNotification.Description;
-                            pushModel.notification.NotificationId = device.User.Notifications.FirstOrDefault(x => x.AdminNotification_Id == AdminNotification.Id).Id;
+                            //pushModel.notification.NotificationId = device.User.Notifications.FirstOrDefault(x => x.AdminNotification_Id == AdminNotification.Id).Id;
                             pushModel.notification.Type = (int)PushNotificationType.Announcement;
                         }
                         else
@@ -293,10 +293,10 @@ namespace BusinessLogic.HelperServices
                     if (AdminNotification != null)
                     {
                         msgModel.Type = (int)PushNotificationType.Announcement;
-                        var notification = device.User.Notifications.FirstOrDefault(x => x.AdminNotification_Id == AdminNotification.Id);
+                        //var notification = device.User.Notifications.FirstOrDefault(x => x.AdminNotification_Id == AdminNotification.Id);
                         msgModel.Message = AdminNotification.Description;
-                        msgModel.NotificationId = notification.Id;
-                        msgModel.Title = notification.Title;
+                        //msgModel.NotificationId = notification.Id;
+                        //msgModel.Title = notification.Title;
                     }
                     else if (OtherNotification != null)
                     {

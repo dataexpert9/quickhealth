@@ -2147,3 +2147,21 @@ MessageObject reference not set to an instance of an object.
 
 StackTrace   at BusinessLogic.UserServices.DoctorService.GetRequestQueries()
    at AdminWebapi.Controllers.DoctorController.<GetRequestQueries>d__7.MoveNext() in F:\Projects\GlobalHospitalApi\AdminWebapi\Controllers\DoctorController.cs:line 132
+DateTime : 6/7/2018 4:35:03 PM
+
+
+MessageObject reference not set to an instance of an object.
+
+StackTrace   at AdminWebapi.Controllers.DoctorController.<PubNub>d__9.MoveNext() in F:\Projects\GlobalHospitalApi\AdminWebapi\Controllers\DoctorController.cs:line 235
+DateTime : 6/7/2018 4:37:34 PM
+
+
+MessageObject reference not set to an instance of an object.
+
+StackTrace   at AdminWebapi.Controllers.DoctorController.<PubNub>d__9.MoveNext() in F:\Projects\GlobalHospitalApi\AdminWebapi\Controllers\DoctorController.cs:line 235
+DateTime : 6/7/2018 5:00:01 PM
+
+
+MessageObject reference not set to an instance of an object.
+
+StackTrace   at AdminWebapi.Controllers.DoctorController.<PubNub>d__9.MoveNext() in F:\Projects\GlobalHospitalApi\AdminWebapi\Controllers\DoctorController.cs:line 235

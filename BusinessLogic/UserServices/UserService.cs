@@ -98,8 +98,7 @@ namespace BusinessLogic.UserServices
                 {
                     imageUrl = ImageHelper.SaveFileFromBytes(model.UserImage, "ProfileImages");
                 }
-
-                // change statuses later
+                
                 User userModel = new User
                 {
                     FullName = model.FullName,
@@ -643,7 +642,7 @@ namespace BusinessLogic.UserServices
                 {
                     Allergies.Add(new Allergies
                     {
-                        AllergyName = allergy.Allergy_Name,
+                        AllergyName = allergy.AllergyName,
                         User_Id = model.User_Id,
                         IsDeleted = false
 
@@ -713,7 +712,7 @@ namespace BusinessLogic.UserServices
                 {
                     Vaccinations.Add(new Vaccinations
                     {
-                        Vaccination_Name = vaccine.Name,
+                        Vaccination_Name = vaccine.Vaccination_Name,
                         User_Id = model.User_Id,
                         IsDeleted = false
 
@@ -738,6 +737,7 @@ namespace BusinessLogic.UserServices
                     {
                         Medicine_Name = medicine.Medicine_Name,
                         TimePeriod = medicine.TimePeriod,
+                        User_Id=model.User_Id
 
                     });
                 }
@@ -745,6 +745,11 @@ namespace BusinessLogic.UserServices
                 _Medications.Save();
             }
 
+
+            if (model.ProfileImage != null)
+            {
+                userModel.ProfilePictureUrl = ImageHelper.SaveFileFromBytes(model.ProfileImage, "ProfileImages");
+            }
             _UserRepository.Save();
             return userModel;
 
@@ -972,7 +977,7 @@ namespace BusinessLogic.UserServices
 
             using (AdminDBContext ctx = new AdminDBContext())
             {
-                returnModel = _UserRepository.GetFirstWithInclude(x => x.IsDeleted == false, "FamilyHistory", "MedicalConditions", "Allergies", "Vaccinations", "Medications", "LifeStyle");
+                returnModel = _UserRepository.GetFirstWithInclude(x =>x.Id==User_Id && x.IsDeleted == false, "FamilyHistory", "MedicalConditions", "Allergies", "Vaccinations", "Medications", "LifeStyle", "FamilyMembers");
 
                 //ctx.Appointment.Include(x => x.Doctor).Include(x => x.User).Include(x => x.User.Allergies).Include(x => x.User.MedicalConditions).Include(x=>x.).Where(x => x.User_Id == User_Id).ToList();
             }

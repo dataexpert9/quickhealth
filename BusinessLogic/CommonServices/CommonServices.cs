@@ -17,6 +17,7 @@ namespace BusinessLogic.CommonServices
         private readonly GenericRepository<Settings> _SettingsRepository;
         private readonly GenericRepository<Chat> _ChatRepository;
         private readonly GenericRepository<AppRating> _RatingRepository;
+        private readonly GenericRepository<Notification> _NotificationRepository;
 
 
 
@@ -26,6 +27,7 @@ namespace BusinessLogic.CommonServices
             _SettingsRepository = new GenericRepository<Settings>(_DBContext);
             _ChatRepository = new GenericRepository<Chat>(_DBContext);
             _RatingRepository = new GenericRepository<AppRating>(_DBContext);
+            _NotificationRepository = new GenericRepository<Notification>(_DBContext);
 
         }
 
@@ -49,7 +51,7 @@ namespace BusinessLogic.CommonServices
             if (string.IsNullOrEmpty(model.ChannelName))
             {
                 if (model.Doctor_Id.HasValue)
-                    model.ChannelName = Utility.CreateChatChannel(model.User_Id, model.Doctor_Id.Value,"D");
+                    model.ChannelName = Utility.CreateChatChannel(model.User_Id, model.Doctor_Id.Value, "D");
                 else
                     model.ChannelName = Utility.CreateChatChannel(model.User_Id, model.Pharmacy_Id.Value, "D");
             }
@@ -66,7 +68,7 @@ namespace BusinessLogic.CommonServices
                     Pharmacy_Id = model.Pharmacy_Id,
                     Status = (int)Utility.ChatStatuses.InProgress,
                     User_Id = model.User_Id
-                    
+
                 };
                 _ChatRepository.Insert(chatModel);
             }
@@ -84,19 +86,32 @@ namespace BusinessLogic.CommonServices
 
 
 
-            var RatingModel = new AppRating {
-                Rating=model.Rating,
-                Feedback=model.Feedback,
-                User_Id=model.User_Id,
-                Doctor_Id=model.Doctor_Id,
-                Pharmacy_Id=model.Pharmacy_Id
+            var RatingModel = new AppRating
+            {
+                Rating = model.Rating,
+                Feedback = model.Feedback,
+                User_Id = model.User_Id,
+                Doctor_Id = model.Doctor_Id,
+                Pharmacy_Id = model.Pharmacy_Id
 
             };
 
             _RatingRepository.Insert(RatingModel);
             _RatingRepository.Save();
-            
+
             return RatingModel;
+        }
+
+        public List<Notification> GetAllNotifications(int? User_Id = 0, int? Doctor_Id = 0)
+        {
+            List<Notification> Notifications = new List<Notification>();
+
+            if (User_Id != 0)
+                Notifications = _NotificationRepository.GetMany(x => x.User_Id == User_Id);
+            else
+                Notifications = _NotificationRepository.GetMany(x => x.Doctor_Id == Doctor_Id);
+
+            return Notifications;
         }
 
     }

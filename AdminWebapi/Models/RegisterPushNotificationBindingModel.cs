@@ -18,9 +18,10 @@ namespace AdminWebapi.Models
 
         [Required]
         public bool IsPlayStore { get; set; }
+        
+        public int? Doctor_Id { get; set; }
 
-        [Required]
-        public int User_Id { get; set; }
+        public int? User_Id { get; set; }
         
         [Required]
         public bool IsProduction { get; set; }

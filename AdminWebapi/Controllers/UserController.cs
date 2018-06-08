@@ -72,6 +72,7 @@ namespace AdminWebapi.Controllers
                     {
                         await userModel.GenerateToken(Request);
                         SettingsModel.LoadSettings();
+                        userModel.CalculateProfilePercentage();
                         userModel.AppSettings = new Settings { Id = SettingsModel.Id, ContactNo = SettingsModel.ContactNo, AboutUs = SettingsModel.AboutUs, PrivacyPolicy = SettingsModel.PrivacyPolicy, TermsConditions = SettingsModel.TermsConditions, Tax = SettingsModel.Tax, Currency = SettingsModel.Currency };
                         return Ok(new CustomResponse<User> { Message = GlobalUtility.ResponseMessages.Success, StatusCode = (int)HttpStatusCode.OK, Result = userModel });
                     }
@@ -859,6 +860,7 @@ namespace AdminWebapi.Controllers
             }
         }
 
+
         [Route("GetUserProfile")]
         [HttpGet]
         public async Task<IHttpActionResult> GetUserProfile(int? User_Id = 0)
@@ -875,6 +877,7 @@ namespace AdminWebapi.Controllers
                     return BadRequest(ModelState);
                 }
                 returnModel.User = _UserService.GetUserProfile(User_Id.Value);
+                returnModel.User.CalculateProfilePercentage();
                 return Ok(new CustomResponse<GetUserProfileModel> { Message = GlobalUtility.ResponseMessages.Success, StatusCode = (int)HttpStatusCode.OK, Result = returnModel });
 
             }
@@ -1249,76 +1252,6 @@ namespace AdminWebapi.Controllers
                 else
                 {
                     return Ok(new CustomResponse<Error> { Message = "NotFound", StatusCode = (int)HttpStatusCode.NotFound, Result = new Error { ErrorMessage = "User with entered email doesn’t exist." } });
-                }
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(Utility.LogError(ex));
-            }
-        }
-
-
-        ///// <summary>
-        ///// Register for getting push notifications
-        ///// </summary>
-        ///// <param name="model"></param>
-        ///// <returns></returns>
-        [Authorize]
-        [HttpPost]
-        [Route("RegisterPushNotification")]
-        public async Task<IHttpActionResult> RegisterPushNotification(RegisterPushNotificationBindingModel model)
-        {
-            try
-            {
-                if (!ModelState.IsValid)
-                {
-                    return BadRequest(ModelState);
-                }
-                using (AdminDBContext ctx = new AdminDBContext())
-                {
-                    var user = ctx.Users.Include(x => x.UserDevices).FirstOrDefault(x => x.Id == model.User_Id);
-                    if (user != null)
-                    {
-                        var existingUserDevice = user.UserDevices.FirstOrDefault(x => x.UDID.Equals(model.UDID));
-                        if (existingUserDevice == null)
-                        {
-                            //foreach (var userDevice in user.UserDevices)
-                            //    userDevice.IsActive = false;
-
-                            var userDeviceModel = new UserDevice
-                            {
-                                Platform = model.IsAndroidPlatform,
-                                ApplicationType = model.IsPlayStore ? UserDevice.ApplicationTypes.PlayStore : UserDevice.ApplicationTypes.Enterprise,
-                                EnvironmentType = model.IsProduction ? UserDevice.ApnsEnvironmentTypes.Production : UserDevice.ApnsEnvironmentTypes.Sandbox,
-                                UDID = model.UDID,
-                                AuthToken = model.AuthToken,
-                                IsActive = true
-                            };
-
-                            PushNotificationsUtil.ConfigurePushNotifications(userDeviceModel);
-
-                            user.UserDevices.Add(userDeviceModel);
-                            ctx.SaveChanges();
-                            return Ok(new CustomResponse<UserDevice> { Message = GlobalUtility.ResponseMessages.Success, StatusCode = (int)HttpStatusCode.OK, Result = userDeviceModel });
-                        }
-                        else
-                        {
-                            //foreach (var userDevice in user.UserDevices)
-                            //    userDevice.IsActive = false;
-
-                            existingUserDevice.Platform = model.IsAndroidPlatform;
-                            existingUserDevice.ApplicationType = model.IsPlayStore ? UserDevice.ApplicationTypes.PlayStore : UserDevice.ApplicationTypes.Enterprise;
-                            existingUserDevice.EnvironmentType = model.IsProduction ? UserDevice.ApnsEnvironmentTypes.Production : UserDevice.ApnsEnvironmentTypes.Sandbox;
-                            existingUserDevice.UDID = model.UDID;
-                            existingUserDevice.AuthToken = model.AuthToken;
-                            existingUserDevice.IsActive = true;
-                            ctx.SaveChanges();
-                            PushNotificationsUtil.ConfigurePushNotifications(existingUserDevice);
-                            return Ok(new CustomResponse<UserDevice> { Message = GlobalUtility.ResponseMessages.Success, StatusCode = (int)HttpStatusCode.OK, Result = existingUserDevice });
-                        }
-                    }
-                    else
-                        return Ok(new CustomResponse<Error> { Message = GlobalUtility.ResponseMessages.NotFound, StatusCode = (int)HttpStatusCode.NotFound, Result = new Error { ErrorMessage = GlobalUtility.ResponseMessages.GenerateNotFound("User") } });
                 }
             }
             catch (Exception ex)

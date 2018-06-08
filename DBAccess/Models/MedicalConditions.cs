@@ -8,11 +8,7 @@ namespace DBAccess.Models
 {
     public partial class MedicalConditions
     {
-        public MedicalConditions()
-        {
-            User = new User();
-        }
-
+        
         public int Id { get; set; }
         
         public string Condition { get; set; }

@@ -165,7 +165,7 @@ namespace BusinessLogic.UserServices
         public List<Appointment> GetRequestQueries()
         {
 
-            var AppointmentList = _AppointmentRepository.GetWithIncludeList(x => x.Status==(int)Utility.AppointmentStatus.Pending,"User","FamilyMember","User.Medications").ToList();
+            var AppointmentList = _AppointmentRepository.GetWithIncludeList(x => x.Status == (int)Utility.AppointmentStatus.Pending, "User", "FamilyMember", "User.Medications").ToList();
             return AppointmentList;
         }
 
@@ -173,6 +173,24 @@ namespace BusinessLogic.UserServices
         {
 
             return new List<Appointment>();
+        }
+
+
+        public Appointment AcceptAppointment(AcceptAppointmentBindingModel model)
+        {
+
+            var Appointment = _AppointmentRepository.GetFirst(x => x.Id == model.Appointment_Id);
+
+            if (Appointment.Doctor_Id == null)
+            {
+                Appointment.Doctor_Id = model.Doctor_Id;
+                _AppointmentRepository.Save();
+                return Appointment;
+            }
+            else
+                return null;
+
+
         }
 
         //public Admin ValidateAdmin(LoginBindingModel loginModel)

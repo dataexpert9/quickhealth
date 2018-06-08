@@ -139,6 +139,7 @@
     <Compile Include="ViewModels\Common\AppRatingModel.cs" />
     <Compile Include="ViewModels\Common\CreateChannelBindingModel.cs" />
     <Compile Include="ViewModels\Common\ImageUpload.cs" />
+    <Compile Include="ViewModels\Doctor\DoctorBindingModels.cs" />
     <Compile Include="ViewModels\Doctor\DoctorProfile.cs" />
     <Compile Include="ViewModels\Pharmacy\PharmacyBindingModels.cs" />
     <Compile Include="ViewModels\Pharmacy\PharmacyViewModels.cs" />
