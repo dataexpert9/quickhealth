@@ -1,0 +1,263 @@
+E:\Mehmood ul Hassan\Global Hospital\BusinessLogic\bin\Debug\BusinessLogic.dll.config
+E:\Mehmood ul Hassan\Global Hospital\BusinessLogic\bin\Debug\BusinessLogic.dll
+E:\Mehmood ul Hassan\Global Hospital\BusinessLogic\bin\Debug\BusinessLogic.pdb
+E:\Mehmood ul Hassan\Global Hospital\BusinessLogic\bin\Debug\DBAccess.dll
+E:\Mehmood ul Hassan\Global Hospital\BusinessLogic\bin\Debug\EntityFramework.dll
+E:\Mehmood ul Hassan\Global Hospital\BusinessLogic\bin\Debug\EntityFramework.SqlServer.dll
+E:\Mehmood ul Hassan\Global Hospital\BusinessLogic\bin\Debug\jose-jwt.dll
+E:\Mehmood ul Hassan\Global Hospital\BusinessLogic\bin\Debug\Microsoft.Extensions.Configuration.Abstractions.dll
+E:\Mehmood ul Hassan\Global Hospital\BusinessLogic\bin\Debug\Microsoft.Extensions.Configuration.dll
+E:\Mehmood ul Hassan\Global Hospital\BusinessLogic\bin\Debug\Microsoft.Extensions.Configuration.FileExtensions.dll
+E:\Mehmood ul Hassan\Global Hospital\BusinessLogic\bin\Debug\Microsoft.Extensions.Configuration.Json.dll
+E:\Mehmood ul Hassan\Global Hospital\BusinessLogic\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+E:\Mehmood ul Hassan\Global Hospital\BusinessLogic\bin\Debug\Microsoft.Extensions.DependencyInjection.dll
+E:\Mehmood ul Hassan\Global Hospital\BusinessLogic\bin\Debug\Microsoft.Extensions.FileProviders.Abstractions.dll
+E:\Mehmood ul Hassan\Global Hospital\BusinessLogic\bin\Debug\Microsoft.Extensions.FileProviders.Physical.dll
+E:\Mehmood ul Hassan\Global Hospital\BusinessLogic\bin\Debug\Microsoft.Extensions.FileSystemGlobbing.dll
+E:\Mehmood ul Hassan\Global Hospital\BusinessLogic\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+E:\Mehmood ul Hassan\Global Hospital\BusinessLogic\bin\Debug\Microsoft.Extensions.Logging.Console.dll
+E:\Mehmood ul Hassan\Global Hospital\BusinessLogic\bin\Debug\Microsoft.Extensions.Logging.dll
+E:\Mehmood ul Hassan\Global Hospital\BusinessLogic\bin\Debug\Microsoft.Extensions.Primitives.dll
+E:\Mehmood ul Hassan\Global Hospital\BusinessLogic\bin\Debug\Microsoft.Owin.dll
+E:\Mehmood ul Hassan\Global Hospital\BusinessLogic\bin\Debug\Microsoft.Owin.Security.dll
+E:\Mehmood ul Hassan\Global Hospital\BusinessLogic\bin\Debug\Microsoft.Owin.Security.OAuth.dll
+E:\Mehmood ul Hassan\Global Hospital\BusinessLogic\bin\Debug\Microsoft.Web.Infrastructure.dll
+E:\Mehmood ul Hassan\Global Hospital\BusinessLogic\bin\Debug\MultipartDataMediaFormatter.dll
+E:\Mehmood ul Hassan\Global Hospital\BusinessLogic\bin\Debug\Newtonsoft.Json.dll
+E:\Mehmood ul Hassan\Global Hospital\BusinessLogic\bin\Debug\Nexmo.Api.dll
+E:\Mehmood ul Hassan\Global Hospital\BusinessLogic\bin\Debug\Owin.dll
+E:\Mehmood ul Hassan\Global Hospital\BusinessLogic\bin\Debug\PushSharp.Amazon.dll
+E:\Mehmood ul Hassan\Global Hospital\BusinessLogic\bin\Debug\PushSharp.Apple.dll
+E:\Mehmood ul Hassan\Global Hospital\BusinessLogic\bin\Debug\PushSharp.Blackberry.dll
+E:\Mehmood ul Hassan\Global Hospital\BusinessLogic\bin\Debug\PushSharp.Core.dll
+E:\Mehmood ul Hassan\Global Hospital\BusinessLogic\bin\Debug\PushSharp.Firefox.dll
+E:\Mehmood ul Hassan\Global Hospital\BusinessLogic\bin\Debug\PushSharp.Google.dll
+E:\Mehmood ul Hassan\Global Hospital\BusinessLogic\bin\Debug\PushSharp.Windows.dll
+E:\Mehmood ul Hassan\Global Hospital\BusinessLogic\bin\Debug\Resolver.dll
+E:\Mehmood ul Hassan\Global Hospital\BusinessLogic\bin\Debug\System.Net.Http.Formatting.dll
+E:\Mehmood ul Hassan\Global Hospital\BusinessLogic\bin\Debug\System.Runtime.InteropServices.RuntimeInformation.dll
+E:\Mehmood ul Hassan\Global Hospital\BusinessLogic\bin\Debug\System.Web.Helpers.dll
+E:\Mehmood ul Hassan\Global Hospital\BusinessLogic\bin\Debug\System.Web.Http.dll
+E:\Mehmood ul Hassan\Global Hospital\BusinessLogic\bin\Debug\System.Web.Http.WebHost.dll
+E:\Mehmood ul Hassan\Global Hospital\BusinessLogic\bin\Debug\System.Web.Mvc.dll
+E:\Mehmood ul Hassan\Global Hospital\BusinessLogic\bin\Debug\System.Web.Razor.dll
+E:\Mehmood ul Hassan\Global Hospital\BusinessLogic\bin\Debug\System.Web.WebPages.Deployment.dll
+E:\Mehmood ul Hassan\Global Hospital\BusinessLogic\bin\Debug\System.Web.WebPages.dll
+E:\Mehmood ul Hassan\Global Hospital\BusinessLogic\bin\Debug\System.Web.WebPages.Razor.dll
+E:\Mehmood ul Hassan\Global Hospital\BusinessLogic\bin\Debug\WebActivatorEx.dll
+E:\Mehmood ul Hassan\Global Hospital\BusinessLogic\bin\Debug\Microsoft.Practices.Unity.dll
+E:\Mehmood ul Hassan\Global Hospital\BusinessLogic\bin\Debug\Unity.Mvc3.dll
+E:\Mehmood ul Hassan\Global Hospital\BusinessLogic\bin\Debug\DBAccess.pdb
+E:\Mehmood ul Hassan\Global Hospital\BusinessLogic\bin\Debug\DBAccess.dll.config
+E:\Mehmood ul Hassan\Global Hospital\BusinessLogic\bin\Debug\Resolver.pdb
+E:\Mehmood ul Hassan\Global Hospital\BusinessLogic\bin\Debug\Resolver.dll.config
+E:\Mehmood ul Hassan\Global Hospital\BusinessLogic\bin\Debug\EntityFramework.xml
+E:\Mehmood ul Hassan\Global Hospital\BusinessLogic\bin\Debug\EntityFramework.SqlServer.xml
+E:\Mehmood ul Hassan\Global Hospital\BusinessLogic\bin\Debug\Microsoft.Extensions.Configuration.xml
+E:\Mehmood ul Hassan\Global Hospital\BusinessLogic\bin\Debug\Microsoft.Extensions.Configuration.Abstractions.xml
+E:\Mehmood ul Hassan\Global Hospital\BusinessLogic\bin\Debug\Microsoft.Extensions.Configuration.FileExtensions.xml
+E:\Mehmood ul Hassan\Global Hospital\BusinessLogic\bin\Debug\Microsoft.Extensions.Configuration.Json.xml
+E:\Mehmood ul Hassan\Global Hospital\BusinessLogic\bin\Debug\Microsoft.Extensions.DependencyInjection.xml
+E:\Mehmood ul Hassan\Global Hospital\BusinessLogic\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+E:\Mehmood ul Hassan\Global Hospital\BusinessLogic\bin\Debug\Microsoft.Extensions.FileProviders.Abstractions.xml
+E:\Mehmood ul Hassan\Global Hospital\BusinessLogic\bin\Debug\Microsoft.Extensions.FileProviders.Physical.xml
+E:\Mehmood ul Hassan\Global Hospital\BusinessLogic\bin\Debug\Microsoft.Extensions.FileSystemGlobbing.xml
+E:\Mehmood ul Hassan\Global Hospital\BusinessLogic\bin\Debug\Microsoft.Extensions.Logging.xml
+E:\Mehmood ul Hassan\Global Hospital\BusinessLogic\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+E:\Mehmood ul Hassan\Global Hospital\BusinessLogic\bin\Debug\Microsoft.Extensions.Logging.Console.xml
+E:\Mehmood ul Hassan\Global Hospital\BusinessLogic\bin\Debug\Microsoft.Extensions.Primitives.xml
+E:\Mehmood ul Hassan\Global Hospital\BusinessLogic\bin\Debug\Microsoft.Owin.xml
+E:\Mehmood ul Hassan\Global Hospital\BusinessLogic\bin\Debug\Microsoft.Owin.Security.xml
+E:\Mehmood ul Hassan\Global Hospital\BusinessLogic\bin\Debug\Microsoft.Owin.Security.OAuth.xml
+E:\Mehmood ul Hassan\Global Hospital\BusinessLogic\bin\Debug\Newtonsoft.Json.xml
+E:\Mehmood ul Hassan\Global Hospital\BusinessLogic\bin\Debug\System.Net.Http.Formatting.xml
+E:\Mehmood ul Hassan\Global Hospital\BusinessLogic\bin\Debug\System.Web.Helpers.xml
+E:\Mehmood ul Hassan\Global Hospital\BusinessLogic\bin\Debug\System.Web.Http.xml
+E:\Mehmood ul Hassan\Global Hospital\BusinessLogic\bin\Debug\System.Web.Http.WebHost.xml
+E:\Mehmood ul Hassan\Global Hospital\BusinessLogic\bin\Debug\System.Web.Mvc.xml
+E:\Mehmood ul Hassan\Global Hospital\BusinessLogic\bin\Debug\System.Web.Razor.xml
+E:\Mehmood ul Hassan\Global Hospital\BusinessLogic\bin\Debug\System.Web.WebPages.xml
+E:\Mehmood ul Hassan\Global Hospital\BusinessLogic\bin\Debug\System.Web.WebPages.Deployment.xml
+E:\Mehmood ul Hassan\Global Hospital\BusinessLogic\bin\Debug\System.Web.WebPages.Razor.xml
+E:\Mehmood ul Hassan\Global Hospital\BusinessLogic\bin\Debug\Microsoft.Practices.Unity.xml
+E:\Mehmood ul Hassan\Global Hospital\BusinessLogic\obj\Debug\BusinessLogic.csprojResolveAssemblyReference.cache
+E:\Mehmood ul Hassan\Global Hospital\BusinessLogic\obj\Debug\BusinessLogic.dll
+E:\Mehmood ul Hassan\Global Hospital\BusinessLogic\obj\Debug\BusinessLogic.pdb
+F:\Projects\GlobalHospitalApi\BusinessLogic\bin\Debug\BusinessLogic.dll.config
+F:\Projects\GlobalHospitalApi\BusinessLogic\bin\Debug\BusinessLogic.dll
+F:\Projects\GlobalHospitalApi\BusinessLogic\bin\Debug\BusinessLogic.pdb
+F:\Projects\GlobalHospitalApi\BusinessLogic\bin\Debug\DBAccess.dll
+F:\Projects\GlobalHospitalApi\BusinessLogic\bin\Debug\EntityFramework.dll
+F:\Projects\GlobalHospitalApi\BusinessLogic\bin\Debug\EntityFramework.SqlServer.dll
+F:\Projects\GlobalHospitalApi\BusinessLogic\bin\Debug\jose-jwt.dll
+F:\Projects\GlobalHospitalApi\BusinessLogic\bin\Debug\Microsoft.Extensions.Configuration.Abstractions.dll
+F:\Projects\GlobalHospitalApi\BusinessLogic\bin\Debug\Microsoft.Extensions.Configuration.dll
+F:\Projects\GlobalHospitalApi\BusinessLogic\bin\Debug\Microsoft.Extensions.Configuration.FileExtensions.dll
+F:\Projects\GlobalHospitalApi\BusinessLogic\bin\Debug\Microsoft.Extensions.Configuration.Json.dll
+F:\Projects\GlobalHospitalApi\BusinessLogic\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+F:\Projects\GlobalHospitalApi\BusinessLogic\bin\Debug\Microsoft.Extensions.DependencyInjection.dll
+F:\Projects\GlobalHospitalApi\BusinessLogic\bin\Debug\Microsoft.Extensions.FileProviders.Abstractions.dll
+F:\Projects\GlobalHospitalApi\BusinessLogic\bin\Debug\Microsoft.Extensions.FileProviders.Physical.dll
+F:\Projects\GlobalHospitalApi\BusinessLogic\bin\Debug\Microsoft.Extensions.FileSystemGlobbing.dll
+F:\Projects\GlobalHospitalApi\BusinessLogic\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+F:\Projects\GlobalHospitalApi\BusinessLogic\bin\Debug\Microsoft.Extensions.Logging.Console.dll
+F:\Projects\GlobalHospitalApi\BusinessLogic\bin\Debug\Microsoft.Extensions.Logging.dll
+F:\Projects\GlobalHospitalApi\BusinessLogic\bin\Debug\Microsoft.Extensions.Primitives.dll
+F:\Projects\GlobalHospitalApi\BusinessLogic\bin\Debug\Microsoft.Owin.dll
+F:\Projects\GlobalHospitalApi\BusinessLogic\bin\Debug\Microsoft.Owin.Security.dll
+F:\Projects\GlobalHospitalApi\BusinessLogic\bin\Debug\Microsoft.Owin.Security.OAuth.dll
+F:\Projects\GlobalHospitalApi\BusinessLogic\bin\Debug\Microsoft.Web.Infrastructure.dll
+F:\Projects\GlobalHospitalApi\BusinessLogic\bin\Debug\MultipartDataMediaFormatter.dll
+F:\Projects\GlobalHospitalApi\BusinessLogic\bin\Debug\Newtonsoft.Json.dll
+F:\Projects\GlobalHospitalApi\BusinessLogic\bin\Debug\Nexmo.Api.dll
+F:\Projects\GlobalHospitalApi\BusinessLogic\bin\Debug\Owin.dll
+F:\Projects\GlobalHospitalApi\BusinessLogic\bin\Debug\PushSharp.Amazon.dll
+F:\Projects\GlobalHospitalApi\BusinessLogic\bin\Debug\PushSharp.Apple.dll
+F:\Projects\GlobalHospitalApi\BusinessLogic\bin\Debug\PushSharp.Blackberry.dll
+F:\Projects\GlobalHospitalApi\BusinessLogic\bin\Debug\PushSharp.Core.dll
+F:\Projects\GlobalHospitalApi\BusinessLogic\bin\Debug\PushSharp.Firefox.dll
+F:\Projects\GlobalHospitalApi\BusinessLogic\bin\Debug\PushSharp.Google.dll
+F:\Projects\GlobalHospitalApi\BusinessLogic\bin\Debug\PushSharp.Windows.dll
+F:\Projects\GlobalHospitalApi\BusinessLogic\bin\Debug\Resolver.dll
+F:\Projects\GlobalHospitalApi\BusinessLogic\bin\Debug\System.Net.Http.Formatting.dll
+F:\Projects\GlobalHospitalApi\BusinessLogic\bin\Debug\System.Runtime.InteropServices.RuntimeInformation.dll
+F:\Projects\GlobalHospitalApi\BusinessLogic\bin\Debug\System.Web.Helpers.dll
+F:\Projects\GlobalHospitalApi\BusinessLogic\bin\Debug\System.Web.Http.dll
+F:\Projects\GlobalHospitalApi\BusinessLogic\bin\Debug\System.Web.Http.WebHost.dll
+F:\Projects\GlobalHospitalApi\BusinessLogic\bin\Debug\System.Web.Mvc.dll
+F:\Projects\GlobalHospitalApi\BusinessLogic\bin\Debug\System.Web.Razor.dll
+F:\Projects\GlobalHospitalApi\BusinessLogic\bin\Debug\System.Web.WebPages.Deployment.dll
+F:\Projects\GlobalHospitalApi\BusinessLogic\bin\Debug\System.Web.WebPages.dll
+F:\Projects\GlobalHospitalApi\BusinessLogic\bin\Debug\System.Web.WebPages.Razor.dll
+F:\Projects\GlobalHospitalApi\BusinessLogic\bin\Debug\WebActivatorEx.dll
+F:\Projects\GlobalHospitalApi\BusinessLogic\bin\Debug\Microsoft.Practices.Unity.dll
+F:\Projects\GlobalHospitalApi\BusinessLogic\bin\Debug\Unity.Mvc3.dll
+F:\Projects\GlobalHospitalApi\BusinessLogic\bin\Debug\DBAccess.pdb
+F:\Projects\GlobalHospitalApi\BusinessLogic\bin\Debug\Resolver.pdb
+F:\Projects\GlobalHospitalApi\BusinessLogic\bin\Debug\EntityFramework.xml
+F:\Projects\GlobalHospitalApi\BusinessLogic\bin\Debug\EntityFramework.SqlServer.xml
+F:\Projects\GlobalHospitalApi\BusinessLogic\bin\Debug\Microsoft.Extensions.Configuration.xml
+F:\Projects\GlobalHospitalApi\BusinessLogic\bin\Debug\Microsoft.Extensions.Configuration.Abstractions.xml
+F:\Projects\GlobalHospitalApi\BusinessLogic\bin\Debug\Microsoft.Extensions.Configuration.FileExtensions.xml
+F:\Projects\GlobalHospitalApi\BusinessLogic\bin\Debug\Microsoft.Extensions.Configuration.Json.xml
+F:\Projects\GlobalHospitalApi\BusinessLogic\bin\Debug\Microsoft.Extensions.DependencyInjection.xml
+F:\Projects\GlobalHospitalApi\BusinessLogic\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+F:\Projects\GlobalHospitalApi\BusinessLogic\bin\Debug\Microsoft.Extensions.FileProviders.Abstractions.xml
+F:\Projects\GlobalHospitalApi\BusinessLogic\bin\Debug\Microsoft.Extensions.FileProviders.Physical.xml
+F:\Projects\GlobalHospitalApi\BusinessLogic\bin\Debug\Microsoft.Extensions.FileSystemGlobbing.xml
+F:\Projects\GlobalHospitalApi\BusinessLogic\bin\Debug\Microsoft.Extensions.Logging.xml
+F:\Projects\GlobalHospitalApi\BusinessLogic\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+F:\Projects\GlobalHospitalApi\BusinessLogic\bin\Debug\Microsoft.Extensions.Logging.Console.xml
+F:\Projects\GlobalHospitalApi\BusinessLogic\bin\Debug\Microsoft.Extensions.Primitives.xml
+F:\Projects\GlobalHospitalApi\BusinessLogic\bin\Debug\Microsoft.Owin.xml
+F:\Projects\GlobalHospitalApi\BusinessLogic\bin\Debug\Microsoft.Owin.Security.xml
+F:\Projects\GlobalHospitalApi\BusinessLogic\bin\Debug\Microsoft.Owin.Security.OAuth.xml
+F:\Projects\GlobalHospitalApi\BusinessLogic\bin\Debug\Newtonsoft.Json.xml
+F:\Projects\GlobalHospitalApi\BusinessLogic\bin\Debug\System.Net.Http.Formatting.xml
+F:\Projects\GlobalHospitalApi\BusinessLogic\bin\Debug\System.Web.Helpers.xml
+F:\Projects\GlobalHospitalApi\BusinessLogic\bin\Debug\System.Web.Http.xml
+F:\Projects\GlobalHospitalApi\BusinessLogic\bin\Debug\System.Web.Http.WebHost.xml
+F:\Projects\GlobalHospitalApi\BusinessLogic\bin\Debug\System.Web.Mvc.xml
+F:\Projects\GlobalHospitalApi\BusinessLogic\bin\Debug\System.Web.Razor.xml
+F:\Projects\GlobalHospitalApi\BusinessLogic\bin\Debug\System.Web.WebPages.xml
+F:\Projects\GlobalHospitalApi\BusinessLogic\bin\Debug\System.Web.WebPages.Deployment.xml
+F:\Projects\GlobalHospitalApi\BusinessLogic\bin\Debug\System.Web.WebPages.Razor.xml
+F:\Projects\GlobalHospitalApi\BusinessLogic\bin\Debug\Microsoft.Practices.Unity.xml
+F:\Projects\GlobalHospitalApi\BusinessLogic\obj\Debug\BusinessLogic.csprojResolveAssemblyReference.cache
+F:\Projects\GlobalHospitalApi\BusinessLogic\obj\Debug\BusinessLogic.dll
+F:\Projects\GlobalHospitalApi\BusinessLogic\obj\Debug\BusinessLogic.pdb
+F:\Projects\GlobalHospitalApi\BusinessLogic\bin\Debug\Z.EntityFramework.Plus.EF6.dll
+F:\Projects\GlobalHospitalApi\BusinessLogic\bin\Debug\crypto.dll
+F:\Projects\GlobalHospitalApi\BusinessLogic\bin\Debug\Pubnub.dll
+F:\Projects\GlobalHospitalApi\BusinessLogic\bin\Debug\crypto.pdb
+F:\Projects\GlobalHospitalApi\BusinessLogic\bin\Debug\crypto.xml
+F:\Projects\GlobalHospitalApi\QuickApi\BusinessLogic\bin\Debug\BusinessLogic.dll.config
+F:\Projects\GlobalHospitalApi\QuickApi\BusinessLogic\bin\Debug\BusinessLogic.dll
+F:\Projects\GlobalHospitalApi\QuickApi\BusinessLogic\bin\Debug\BusinessLogic.pdb
+F:\Projects\GlobalHospitalApi\QuickApi\BusinessLogic\bin\Debug\AutoMapper.dll
+F:\Projects\GlobalHospitalApi\QuickApi\BusinessLogic\bin\Debug\crypto.dll
+F:\Projects\GlobalHospitalApi\QuickApi\BusinessLogic\bin\Debug\DBAccess.dll
+F:\Projects\GlobalHospitalApi\QuickApi\BusinessLogic\bin\Debug\EntityFramework.dll
+F:\Projects\GlobalHospitalApi\QuickApi\BusinessLogic\bin\Debug\EntityFramework.SqlServer.dll
+F:\Projects\GlobalHospitalApi\QuickApi\BusinessLogic\bin\Debug\jose-jwt.dll
+F:\Projects\GlobalHospitalApi\QuickApi\BusinessLogic\bin\Debug\Microsoft.Extensions.Configuration.Abstractions.dll
+F:\Projects\GlobalHospitalApi\QuickApi\BusinessLogic\bin\Debug\Microsoft.Extensions.Configuration.dll
+F:\Projects\GlobalHospitalApi\QuickApi\BusinessLogic\bin\Debug\Microsoft.Extensions.Configuration.FileExtensions.dll
+F:\Projects\GlobalHospitalApi\QuickApi\BusinessLogic\bin\Debug\Microsoft.Extensions.Configuration.Json.dll
+F:\Projects\GlobalHospitalApi\QuickApi\BusinessLogic\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+F:\Projects\GlobalHospitalApi\QuickApi\BusinessLogic\bin\Debug\Microsoft.Extensions.DependencyInjection.dll
+F:\Projects\GlobalHospitalApi\QuickApi\BusinessLogic\bin\Debug\Microsoft.Extensions.FileProviders.Abstractions.dll
+F:\Projects\GlobalHospitalApi\QuickApi\BusinessLogic\bin\Debug\Microsoft.Extensions.FileProviders.Physical.dll
+F:\Projects\GlobalHospitalApi\QuickApi\BusinessLogic\bin\Debug\Microsoft.Extensions.FileSystemGlobbing.dll
+F:\Projects\GlobalHospitalApi\QuickApi\BusinessLogic\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+F:\Projects\GlobalHospitalApi\QuickApi\BusinessLogic\bin\Debug\Microsoft.Extensions.Logging.Console.dll
+F:\Projects\GlobalHospitalApi\QuickApi\BusinessLogic\bin\Debug\Microsoft.Extensions.Logging.dll
+F:\Projects\GlobalHospitalApi\QuickApi\BusinessLogic\bin\Debug\Microsoft.Extensions.Primitives.dll
+F:\Projects\GlobalHospitalApi\QuickApi\BusinessLogic\bin\Debug\Microsoft.Owin.dll
+F:\Projects\GlobalHospitalApi\QuickApi\BusinessLogic\bin\Debug\Microsoft.Owin.Security.dll
+F:\Projects\GlobalHospitalApi\QuickApi\BusinessLogic\bin\Debug\Microsoft.Owin.Security.OAuth.dll
+F:\Projects\GlobalHospitalApi\QuickApi\BusinessLogic\bin\Debug\Microsoft.Web.Infrastructure.dll
+F:\Projects\GlobalHospitalApi\QuickApi\BusinessLogic\bin\Debug\MultipartDataMediaFormatter.dll
+F:\Projects\GlobalHospitalApi\QuickApi\BusinessLogic\bin\Debug\Newtonsoft.Json.dll
+F:\Projects\GlobalHospitalApi\QuickApi\BusinessLogic\bin\Debug\Nexmo.Api.dll
+F:\Projects\GlobalHospitalApi\QuickApi\BusinessLogic\bin\Debug\Owin.dll
+F:\Projects\GlobalHospitalApi\QuickApi\BusinessLogic\bin\Debug\Pubnub.dll
+F:\Projects\GlobalHospitalApi\QuickApi\BusinessLogic\bin\Debug\PushSharp.Amazon.dll
+F:\Projects\GlobalHospitalApi\QuickApi\BusinessLogic\bin\Debug\PushSharp.Apple.dll
+F:\Projects\GlobalHospitalApi\QuickApi\BusinessLogic\bin\Debug\PushSharp.Blackberry.dll
+F:\Projects\GlobalHospitalApi\QuickApi\BusinessLogic\bin\Debug\PushSharp.Core.dll
+F:\Projects\GlobalHospitalApi\QuickApi\BusinessLogic\bin\Debug\PushSharp.Firefox.dll
+F:\Projects\GlobalHospitalApi\QuickApi\BusinessLogic\bin\Debug\PushSharp.Google.dll
+F:\Projects\GlobalHospitalApi\QuickApi\BusinessLogic\bin\Debug\PushSharp.Windows.dll
+F:\Projects\GlobalHospitalApi\QuickApi\BusinessLogic\bin\Debug\Resolver.dll
+F:\Projects\GlobalHospitalApi\QuickApi\BusinessLogic\bin\Debug\System.Net.Http.Formatting.dll
+F:\Projects\GlobalHospitalApi\QuickApi\BusinessLogic\bin\Debug\System.Runtime.InteropServices.RuntimeInformation.dll
+F:\Projects\GlobalHospitalApi\QuickApi\BusinessLogic\bin\Debug\System.Web.Helpers.dll
+F:\Projects\GlobalHospitalApi\QuickApi\BusinessLogic\bin\Debug\System.Web.Http.dll
+F:\Projects\GlobalHospitalApi\QuickApi\BusinessLogic\bin\Debug\System.Web.Http.WebHost.dll
+F:\Projects\GlobalHospitalApi\QuickApi\BusinessLogic\bin\Debug\System.Web.Mvc.dll
+F:\Projects\GlobalHospitalApi\QuickApi\BusinessLogic\bin\Debug\System.Web.Razor.dll
+F:\Projects\GlobalHospitalApi\QuickApi\BusinessLogic\bin\Debug\System.Web.WebPages.Deployment.dll
+F:\Projects\GlobalHospitalApi\QuickApi\BusinessLogic\bin\Debug\System.Web.WebPages.dll
+F:\Projects\GlobalHospitalApi\QuickApi\BusinessLogic\bin\Debug\System.Web.WebPages.Razor.dll
+F:\Projects\GlobalHospitalApi\QuickApi\BusinessLogic\bin\Debug\WebActivatorEx.dll
+F:\Projects\GlobalHospitalApi\QuickApi\BusinessLogic\bin\Debug\Z.EntityFramework.Plus.EF6.dll
+F:\Projects\GlobalHospitalApi\QuickApi\BusinessLogic\bin\Debug\Microsoft.Practices.Unity.dll
+F:\Projects\GlobalHospitalApi\QuickApi\BusinessLogic\bin\Debug\Unity.Mvc3.dll
+F:\Projects\GlobalHospitalApi\QuickApi\BusinessLogic\bin\Debug\DBAccess.pdb
+F:\Projects\GlobalHospitalApi\QuickApi\BusinessLogic\bin\Debug\Resolver.pdb
+F:\Projects\GlobalHospitalApi\QuickApi\BusinessLogic\bin\Debug\AutoMapper.xml
+F:\Projects\GlobalHospitalApi\QuickApi\BusinessLogic\bin\Debug\crypto.pdb
+F:\Projects\GlobalHospitalApi\QuickApi\BusinessLogic\bin\Debug\crypto.xml
+F:\Projects\GlobalHospitalApi\QuickApi\BusinessLogic\bin\Debug\EntityFramework.xml
+F:\Projects\GlobalHospitalApi\QuickApi\BusinessLogic\bin\Debug\EntityFramework.SqlServer.xml
+F:\Projects\GlobalHospitalApi\QuickApi\BusinessLogic\bin\Debug\Microsoft.Extensions.Configuration.xml
+F:\Projects\GlobalHospitalApi\QuickApi\BusinessLogic\bin\Debug\Microsoft.Extensions.Configuration.Abstractions.xml
+F:\Projects\GlobalHospitalApi\QuickApi\BusinessLogic\bin\Debug\Microsoft.Extensions.Configuration.FileExtensions.xml
+F:\Projects\GlobalHospitalApi\QuickApi\BusinessLogic\bin\Debug\Microsoft.Extensions.Configuration.Json.xml
+F:\Projects\GlobalHospitalApi\QuickApi\BusinessLogic\bin\Debug\Microsoft.Extensions.DependencyInjection.xml
+F:\Projects\GlobalHospitalApi\QuickApi\BusinessLogic\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+F:\Projects\GlobalHospitalApi\QuickApi\BusinessLogic\bin\Debug\Microsoft.Extensions.FileProviders.Abstractions.xml
+F:\Projects\GlobalHospitalApi\QuickApi\BusinessLogic\bin\Debug\Microsoft.Extensions.FileProviders.Physical.xml
+F:\Projects\GlobalHospitalApi\QuickApi\BusinessLogic\bin\Debug\Microsoft.Extensions.FileSystemGlobbing.xml
+F:\Projects\GlobalHospitalApi\QuickApi\BusinessLogic\bin\Debug\Microsoft.Extensions.Logging.xml
+F:\Projects\GlobalHospitalApi\QuickApi\BusinessLogic\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+F:\Projects\GlobalHospitalApi\QuickApi\BusinessLogic\bin\Debug\Microsoft.Extensions.Logging.Console.xml
+F:\Projects\GlobalHospitalApi\QuickApi\BusinessLogic\bin\Debug\Microsoft.Extensions.Primitives.xml
+F:\Projects\GlobalHospitalApi\QuickApi\BusinessLogic\bin\Debug\Microsoft.Owin.xml
+F:\Projects\GlobalHospitalApi\QuickApi\BusinessLogic\bin\Debug\Microsoft.Owin.Security.xml
+F:\Projects\GlobalHospitalApi\QuickApi\BusinessLogic\bin\Debug\Microsoft.Owin.Security.OAuth.xml
+F:\Projects\GlobalHospitalApi\QuickApi\BusinessLogic\bin\Debug\Newtonsoft.Json.xml
+F:\Projects\GlobalHospitalApi\QuickApi\BusinessLogic\bin\Debug\System.Net.Http.Formatting.xml
+F:\Projects\GlobalHospitalApi\QuickApi\BusinessLogic\bin\Debug\System.Web.Helpers.xml
+F:\Projects\GlobalHospitalApi\QuickApi\BusinessLogic\bin\Debug\System.Web.Http.xml
+F:\Projects\GlobalHospitalApi\QuickApi\BusinessLogic\bin\Debug\System.Web.Http.WebHost.xml
+F:\Projects\GlobalHospitalApi\QuickApi\BusinessLogic\bin\Debug\System.Web.Mvc.xml
+F:\Projects\GlobalHospitalApi\QuickApi\BusinessLogic\bin\Debug\System.Web.Razor.xml
+F:\Projects\GlobalHospitalApi\QuickApi\BusinessLogic\bin\Debug\System.Web.WebPages.xml
+F:\Projects\GlobalHospitalApi\QuickApi\BusinessLogic\bin\Debug\System.Web.WebPages.Deployment.xml
+F:\Projects\GlobalHospitalApi\QuickApi\BusinessLogic\bin\Debug\System.Web.WebPages.Razor.xml
+F:\Projects\GlobalHospitalApi\QuickApi\BusinessLogic\bin\Debug\Microsoft.Practices.Unity.xml
+F:\Projects\GlobalHospitalApi\QuickApi\BusinessLogic\obj\Debug\BusinessLogic.csprojResolveAssemblyReference.cache
+F:\Projects\GlobalHospitalApi\QuickApi\BusinessLogic\obj\Debug\BusinessLogic.dll
+F:\Projects\GlobalHospitalApi\QuickApi\BusinessLogic\obj\Debug\BusinessLogic.pdb

@@ -1,0 +1,422 @@
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\roslyn\csc.exe
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\roslyn\csc.exe.config
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\roslyn\csc.rsp
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\roslyn\csi.exe
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\roslyn\csi.rsp
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\roslyn\System.AppContext.dll
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\roslyn\System.Collections.Immutable.dll
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\roslyn\System.Diagnostics.StackTrace.dll
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\roslyn\System.IO.FileSystem.dll
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\roslyn\System.IO.FileSystem.Primitives.dll
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\roslyn\System.Reflection.Metadata.dll
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\roslyn\vbc.exe
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\roslyn\vbc.exe.config
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\roslyn\vbc.rsp
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\roslyn\VBCSCompiler.exe
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\roslyn\VBCSCompiler.exe.config
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\AdminWebapi.dll.config
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\AdminWebapi.dll
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\AdminWebapi.pdb
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\BusinessLogic.dll
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\DBAccess.dll
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\EntityFramework.dll
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\EntityFramework.SqlServer.dll
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\jose-jwt.dll
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\Microsoft.AspNet.Identity.Core.dll
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\Microsoft.AspNet.Identity.Owin.dll
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\Microsoft.Extensions.Configuration.Abstractions.dll
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\Microsoft.Extensions.Configuration.dll
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\Microsoft.Extensions.Configuration.FileExtensions.dll
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\Microsoft.Extensions.Configuration.Json.dll
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\Microsoft.Extensions.DependencyInjection.dll
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\Microsoft.Extensions.FileProviders.Abstractions.dll
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\Microsoft.Extensions.FileProviders.Physical.dll
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\Microsoft.Extensions.FileSystemGlobbing.dll
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\Microsoft.Extensions.Logging.Abstractions.dll
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\Microsoft.Extensions.Logging.Console.dll
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\Microsoft.Extensions.Logging.dll
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\Microsoft.Extensions.Primitives.dll
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\Microsoft.Owin.Cors.dll
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\Microsoft.Owin.dll
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\Microsoft.Owin.Host.SystemWeb.dll
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\Microsoft.Owin.Security.dll
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\Microsoft.Owin.Security.OAuth.dll
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\Microsoft.Practices.Unity.dll
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\Microsoft.Web.Infrastructure.dll
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\MultipartDataMediaFormatter.dll
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\Newtonsoft.Json.dll
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\Nexmo.Api.dll
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\Owin.dll
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\PushSharp.Amazon.dll
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\PushSharp.Apple.dll
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\PushSharp.Blackberry.dll
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\PushSharp.Core.dll
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\PushSharp.Firefox.dll
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\PushSharp.Google.dll
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\PushSharp.Windows.dll
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\Resolver.dll
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\Swashbuckle.Core.dll
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\System.Net.Http.Formatting.dll
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\System.Runtime.InteropServices.RuntimeInformation.dll
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\System.Web.Cors.dll
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\System.Web.Helpers.dll
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\System.Web.Http.dll
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\System.Web.Http.Owin.dll
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\System.Web.Http.WebHost.dll
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\System.Web.Mvc.dll
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\System.Web.Razor.dll
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\System.Web.Webpages.Deployment.dll
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\System.Web.Webpages.dll
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\System.Web.Webpages.Razor.dll
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\Unity.Abstractions.dll
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\Unity.AspNet.WebApi.dll
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\Unity.Container.dll
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\Unity.Interception.dll
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\Unity.Mvc.dll
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\Unity.Mvc3.dll
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\Unity.RegistrationByConvention.dll
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\Unity.ServiceLocation.dll
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\Unity.WebApi.dll
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\WebActivatorEx.dll
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\BusinessLogic.pdb
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\BusinessLogic.dll.config
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\DBAccess.pdb
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\DBAccess.dll.config
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\Resolver.pdb
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\Resolver.dll.config
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\EntityFramework.xml
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\EntityFramework.SqlServer.xml
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\Microsoft.AspNet.Identity.Core.xml
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\Microsoft.AspNet.Identity.Owin.xml
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\Microsoft.Extensions.Configuration.xml
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\Microsoft.Extensions.Configuration.Abstractions.xml
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\Microsoft.Extensions.Configuration.FileExtensions.xml
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\Microsoft.Extensions.Configuration.Json.xml
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\Microsoft.Extensions.DependencyInjection.xml
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\Microsoft.Extensions.FileProviders.Abstractions.xml
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\Microsoft.Extensions.FileProviders.Physical.xml
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\Microsoft.Extensions.FileSystemGlobbing.xml
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\Microsoft.Extensions.Logging.xml
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\Microsoft.Extensions.Logging.Abstractions.xml
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\Microsoft.Extensions.Logging.Console.xml
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\Microsoft.Extensions.Primitives.xml
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\Microsoft.Owin.xml
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\Microsoft.Owin.Cors.xml
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\Microsoft.Owin.Host.SystemWeb.xml
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\Microsoft.Owin.Security.xml
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\Microsoft.Owin.Security.OAuth.xml
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\Microsoft.Practices.Unity.xml
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\Newtonsoft.Json.xml
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\System.Net.Http.Formatting.xml
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\System.Web.Http.xml
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\System.Web.Http.Owin.xml
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\Unity.AspNet.WebApi.xml
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\Unity.Mvc.xml
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\System.Web.Razor.xml
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\System.Web.Webpages.xml
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\System.Web.Webpages.Deployment.xml
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\System.Web.Webpages.Razor.xml
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\System.Web.Helpers.xml
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\System.Web.Mvc.xml
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\bin\System.Web.Http.WebHost.xml
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\obj\Release\AdminWebapi.csprojResolveAssemblyReference.cache
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\obj\Release\AdminWebapi.dll
+E:\Mehmood ul Hassan\Global Hospital\AdminWebapi\obj\Release\AdminWebapi.pdb
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\roslyn\csc.exe
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\roslyn\csc.exe.config
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\roslyn\csc.rsp
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\roslyn\csi.exe
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\roslyn\csi.rsp
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\roslyn\Microsoft.CodeAnalysis.dll
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\roslyn\Microsoft.CSharp.Core.targets
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\roslyn\Microsoft.VisualBasic.Core.targets
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\roslyn\System.AppContext.dll
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\roslyn\System.Collections.Immutable.dll
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\roslyn\System.Diagnostics.StackTrace.dll
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\roslyn\System.IO.FileSystem.dll
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\roslyn\System.IO.FileSystem.Primitives.dll
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\roslyn\System.Reflection.Metadata.dll
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\roslyn\vbc.exe
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\roslyn\vbc.exe.config
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\roslyn\vbc.rsp
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\roslyn\VBCSCompiler.exe
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\roslyn\VBCSCompiler.exe.config
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\AdminWebapi.dll.config
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\AdminWebapi.dll
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\AdminWebapi.pdb
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\BusinessLogic.dll
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\DBAccess.dll
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\EntityFramework.dll
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\EntityFramework.SqlServer.dll
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\jose-jwt.dll
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\Microsoft.AspNet.Identity.Core.dll
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\Microsoft.AspNet.Identity.Owin.dll
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\Microsoft.Extensions.Configuration.Abstractions.dll
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\Microsoft.Extensions.Configuration.dll
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\Microsoft.Extensions.Configuration.FileExtensions.dll
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\Microsoft.Extensions.Configuration.Json.dll
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\Microsoft.Extensions.DependencyInjection.dll
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\Microsoft.Extensions.FileProviders.Abstractions.dll
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\Microsoft.Extensions.FileProviders.Physical.dll
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\Microsoft.Extensions.FileSystemGlobbing.dll
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\Microsoft.Extensions.Logging.Abstractions.dll
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\Microsoft.Extensions.Logging.Console.dll
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\Microsoft.Extensions.Logging.dll
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\Microsoft.Extensions.Primitives.dll
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\Microsoft.Owin.Cors.dll
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\Microsoft.Owin.dll
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\Microsoft.Owin.Host.SystemWeb.dll
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\Microsoft.Owin.Security.dll
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\Microsoft.Owin.Security.OAuth.dll
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\Microsoft.Practices.Unity.dll
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\Microsoft.Web.Infrastructure.dll
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\MultipartDataMediaFormatter.dll
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\Newtonsoft.Json.dll
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\Nexmo.Api.dll
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\Owin.dll
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\PushSharp.Amazon.dll
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\PushSharp.Apple.dll
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\PushSharp.Blackberry.dll
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\PushSharp.Core.dll
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\PushSharp.Firefox.dll
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\PushSharp.Google.dll
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\PushSharp.Windows.dll
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\Resolver.dll
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\Swashbuckle.Core.dll
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\System.Net.Http.Formatting.dll
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\System.Runtime.InteropServices.RuntimeInformation.dll
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\System.Web.Cors.dll
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\System.Web.Helpers.dll
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\System.Web.Http.dll
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\System.Web.Http.Owin.dll
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\System.Web.Http.WebHost.dll
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\System.Web.Mvc.dll
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\System.Web.Razor.dll
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\System.Web.Webpages.Deployment.dll
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\System.Web.Webpages.dll
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\System.Web.Webpages.Razor.dll
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\Unity.Abstractions.dll
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\Unity.AspNet.WebApi.dll
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\Unity.Container.dll
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\Unity.Interception.dll
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\Unity.Mvc.dll
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\Unity.Mvc3.dll
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\Unity.RegistrationByConvention.dll
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\Unity.ServiceLocation.dll
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\Unity.WebApi.dll
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\WebActivatorEx.dll
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\BusinessLogic.pdb
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\DBAccess.pdb
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\Resolver.pdb
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\EntityFramework.xml
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\EntityFramework.SqlServer.xml
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\Microsoft.AspNet.Identity.Core.xml
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\Microsoft.AspNet.Identity.Owin.xml
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\Microsoft.Extensions.Configuration.xml
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\Microsoft.Extensions.Configuration.Abstractions.xml
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\Microsoft.Extensions.Configuration.FileExtensions.xml
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\Microsoft.Extensions.Configuration.Json.xml
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\Microsoft.Extensions.DependencyInjection.xml
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\Microsoft.Extensions.FileProviders.Abstractions.xml
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\Microsoft.Extensions.FileProviders.Physical.xml
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\Microsoft.Extensions.FileSystemGlobbing.xml
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\Microsoft.Extensions.Logging.xml
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\Microsoft.Extensions.Logging.Abstractions.xml
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\Microsoft.Extensions.Logging.Console.xml
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\Microsoft.Extensions.Primitives.xml
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\Microsoft.Owin.xml
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\Microsoft.Owin.Cors.xml
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\Microsoft.Owin.Host.SystemWeb.xml
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\Microsoft.Owin.Security.xml
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\Microsoft.Owin.Security.OAuth.xml
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\Microsoft.Practices.Unity.xml
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\Newtonsoft.Json.xml
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\System.Net.Http.Formatting.xml
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\System.Web.Http.xml
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\System.Web.Http.Owin.xml
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\Unity.AspNet.WebApi.xml
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\Unity.Mvc.xml
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\System.Web.Razor.xml
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\System.Web.Webpages.xml
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\System.Web.Webpages.Deployment.xml
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\System.Web.Webpages.Razor.xml
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\System.Web.Helpers.xml
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\System.Web.Mvc.xml
+F:\Projects\GlobalHospitalApi\AdminWebapi\bin\System.Web.Http.WebHost.xml
+F:\Projects\GlobalHospitalApi\AdminWebapi\obj\Release\AdminWebapi.csprojResolveAssemblyReference.cache
+F:\Projects\GlobalHospitalApi\AdminWebapi\obj\Release\AdminWebapi.dll
+F:\Projects\GlobalHospitalApi\AdminWebapi\obj\Release\AdminWebapi.pdb
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\roslyn\csc.exe
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\roslyn\csc.exe.config
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\roslyn\csc.rsp
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\roslyn\csi.exe
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\roslyn\csi.rsp
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\roslyn\Microsoft.CodeAnalysis.dll
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\roslyn\Microsoft.CSharp.Core.targets
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\roslyn\Microsoft.VisualBasic.Core.targets
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\roslyn\System.AppContext.dll
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\roslyn\System.Collections.Immutable.dll
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\roslyn\System.Diagnostics.StackTrace.dll
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\roslyn\System.IO.FileSystem.dll
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\roslyn\System.IO.FileSystem.Primitives.dll
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\roslyn\System.Reflection.Metadata.dll
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\roslyn\vbc.exe
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\roslyn\vbc.exe.config
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\roslyn\vbc.rsp
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\roslyn\VBCSCompiler.exe
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\roslyn\VBCSCompiler.exe.config
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\AdminWebapi.dll.config
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\AdminWebapi.dll
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\AdminWebapi.pdb
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\AutoMapper.dll
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\BusinessLogic.dll
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\crypto.dll
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\DBAccess.dll
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\EntityFramework.dll
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\EntityFramework.SqlServer.dll
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\jose-jwt.dll
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\Microsoft.AspNet.Identity.Core.dll
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\Microsoft.AspNet.Identity.Owin.dll
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\Microsoft.Extensions.Configuration.Abstractions.dll
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\Microsoft.Extensions.Configuration.dll
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\Microsoft.Extensions.Configuration.FileExtensions.dll
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\Microsoft.Extensions.Configuration.Json.dll
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\Microsoft.Extensions.DependencyInjection.dll
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\Microsoft.Extensions.FileProviders.Abstractions.dll
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\Microsoft.Extensions.FileProviders.Physical.dll
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\Microsoft.Extensions.FileSystemGlobbing.dll
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\Microsoft.Extensions.Logging.Abstractions.dll
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\Microsoft.Extensions.Logging.Console.dll
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\Microsoft.Extensions.Logging.dll
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\Microsoft.Extensions.Primitives.dll
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\Microsoft.Owin.Cors.dll
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\Microsoft.Owin.dll
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\Microsoft.Owin.Host.SystemWeb.dll
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\Microsoft.Owin.Security.dll
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\Microsoft.Owin.Security.OAuth.dll
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\Microsoft.Practices.Unity.dll
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\Microsoft.Web.Infrastructure.dll
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\MultipartDataMediaFormatter.dll
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\Newtonsoft.Json.dll
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\Nexmo.Api.dll
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\Owin.dll
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\Pubnub.dll
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\PushSharp.Amazon.dll
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\PushSharp.Apple.dll
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\PushSharp.Blackberry.dll
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\PushSharp.Core.dll
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\PushSharp.Firefox.dll
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\PushSharp.Google.dll
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\PushSharp.Windows.dll
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\Resolver.dll
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\Swashbuckle.Core.dll
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\System.Net.Http.Formatting.dll
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\System.Runtime.InteropServices.RuntimeInformation.dll
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\System.Web.Cors.dll
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\System.Web.Helpers.dll
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\System.Web.Http.dll
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\System.Web.Http.Owin.dll
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\System.Web.Http.WebHost.dll
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\System.Web.Mvc.dll
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\System.Web.Razor.dll
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\System.Web.Webpages.Deployment.dll
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\System.Web.Webpages.dll
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\System.Web.Webpages.Razor.dll
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\Unity.Abstractions.dll
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\Unity.AspNet.WebApi.dll
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\Unity.Container.dll
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\Unity.Interception.dll
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\Unity.Mvc.dll
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\Unity.Mvc3.dll
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\Unity.RegistrationByConvention.dll
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\Unity.ServiceLocation.dll
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\Unity.WebApi.dll
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\WebActivatorEx.dll
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\Z.EntityFramework.Plus.EF6.dll
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\BusinessLogic.pdb
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\DBAccess.pdb
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\Resolver.pdb
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\AutoMapper.xml
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\crypto.pdb
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\crypto.xml
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\EntityFramework.xml
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\EntityFramework.SqlServer.xml
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\Microsoft.AspNet.Identity.Core.xml
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\Microsoft.AspNet.Identity.Owin.xml
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\Microsoft.Extensions.Configuration.xml
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\Microsoft.Extensions.Configuration.Abstractions.xml
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\Microsoft.Extensions.Configuration.FileExtensions.xml
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\Microsoft.Extensions.Configuration.Json.xml
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\Microsoft.Extensions.DependencyInjection.xml
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\Microsoft.Extensions.FileProviders.Abstractions.xml
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\Microsoft.Extensions.FileProviders.Physical.xml
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\Microsoft.Extensions.FileSystemGlobbing.xml
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\Microsoft.Extensions.Logging.xml
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\Microsoft.Extensions.Logging.Abstractions.xml
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\Microsoft.Extensions.Logging.Console.xml
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\Microsoft.Extensions.Primitives.xml
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\Microsoft.Owin.xml
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\Microsoft.Owin.Cors.xml
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\Microsoft.Owin.Host.SystemWeb.xml
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\Microsoft.Owin.Security.xml
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\Microsoft.Owin.Security.OAuth.xml
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\Microsoft.Practices.Unity.xml
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\Newtonsoft.Json.xml
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\System.Net.Http.Formatting.xml
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\System.Web.Http.xml
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\System.Web.Http.Owin.xml
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\Unity.AspNet.WebApi.xml
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\Unity.Mvc.xml
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\System.Web.Razor.xml
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\System.Web.Webpages.xml
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\System.Web.Webpages.Deployment.xml
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\System.Web.Webpages.Razor.xml
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\System.Web.Helpers.xml
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\System.Web.Mvc.xml
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\System.Web.Http.WebHost.xml
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\obj\Release\AdminWebapi.csprojResolveAssemblyReference.cache
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\obj\Release\AdminWebapi.dll
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\obj\Release\AdminWebapi.pdb
+F:\Projects\GlobalHospitalApi\QuickApi\AdminWebapi\bin\Microsoft.Practices.ServiceLocation.dll

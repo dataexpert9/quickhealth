@@ -1,0 +1,92 @@
+E:\Mehmood ul Hassan\Global Hospital\DBAccess\bin\Release\DBAccess.dll.config
+E:\Mehmood ul Hassan\Global Hospital\DBAccess\bin\Release\DBAccess.dll
+E:\Mehmood ul Hassan\Global Hospital\DBAccess\bin\Release\DBAccess.pdb
+E:\Mehmood ul Hassan\Global Hospital\DBAccess\bin\Release\EntityFramework.dll
+E:\Mehmood ul Hassan\Global Hospital\DBAccess\bin\Release\EntityFramework.SqlServer.dll
+E:\Mehmood ul Hassan\Global Hospital\DBAccess\bin\Release\Microsoft.Practices.ServiceLocation.dll
+E:\Mehmood ul Hassan\Global Hospital\DBAccess\bin\Release\Microsoft.Practices.Unity.Configuration.dll
+E:\Mehmood ul Hassan\Global Hospital\DBAccess\bin\Release\Microsoft.Practices.Unity.dll
+E:\Mehmood ul Hassan\Global Hospital\DBAccess\bin\Release\MultipartDataMediaFormatter.dll
+E:\Mehmood ul Hassan\Global Hospital\DBAccess\bin\Release\Newtonsoft.Json.dll
+E:\Mehmood ul Hassan\Global Hospital\DBAccess\bin\Release\PushSharp.Amazon.dll
+E:\Mehmood ul Hassan\Global Hospital\DBAccess\bin\Release\PushSharp.Apple.dll
+E:\Mehmood ul Hassan\Global Hospital\DBAccess\bin\Release\PushSharp.Blackberry.dll
+E:\Mehmood ul Hassan\Global Hospital\DBAccess\bin\Release\PushSharp.Core.dll
+E:\Mehmood ul Hassan\Global Hospital\DBAccess\bin\Release\PushSharp.Firefox.dll
+E:\Mehmood ul Hassan\Global Hospital\DBAccess\bin\Release\PushSharp.Google.dll
+E:\Mehmood ul Hassan\Global Hospital\DBAccess\bin\Release\PushSharp.Windows.dll
+E:\Mehmood ul Hassan\Global Hospital\DBAccess\bin\Release\System.Net.Http.Formatting.dll
+E:\Mehmood ul Hassan\Global Hospital\DBAccess\bin\Release\Unity.Mvc3.dll
+E:\Mehmood ul Hassan\Global Hospital\DBAccess\bin\Release\EntityFramework.xml
+E:\Mehmood ul Hassan\Global Hospital\DBAccess\bin\Release\EntityFramework.SqlServer.xml
+E:\Mehmood ul Hassan\Global Hospital\DBAccess\bin\Release\Microsoft.Practices.ServiceLocation.pdb
+E:\Mehmood ul Hassan\Global Hospital\DBAccess\bin\Release\Microsoft.Practices.ServiceLocation.xml
+E:\Mehmood ul Hassan\Global Hospital\DBAccess\bin\Release\Microsoft.Practices.Unity.xml
+E:\Mehmood ul Hassan\Global Hospital\DBAccess\bin\Release\Microsoft.Practices.Unity.Configuration.xml
+E:\Mehmood ul Hassan\Global Hospital\DBAccess\bin\Release\Newtonsoft.Json.xml
+E:\Mehmood ul Hassan\Global Hospital\DBAccess\bin\Release\System.Net.Http.Formatting.xml
+E:\Mehmood ul Hassan\Global Hospital\DBAccess\obj\Release\DBAccess.csprojResolveAssemblyReference.cache
+E:\Mehmood ul Hassan\Global Hospital\DBAccess\obj\Release\DBAccess.dll
+E:\Mehmood ul Hassan\Global Hospital\DBAccess\obj\Release\DBAccess.pdb
+F:\Projects\GlobalHospitalApi\DBAccess\bin\Release\DBAccess.dll.config
+F:\Projects\GlobalHospitalApi\DBAccess\bin\Release\DBAccess.dll
+F:\Projects\GlobalHospitalApi\DBAccess\bin\Release\DBAccess.pdb
+F:\Projects\GlobalHospitalApi\DBAccess\bin\Release\CloudrailSI.dll
+F:\Projects\GlobalHospitalApi\DBAccess\bin\Release\EntityFramework.dll
+F:\Projects\GlobalHospitalApi\DBAccess\bin\Release\EntityFramework.SqlServer.dll
+F:\Projects\GlobalHospitalApi\DBAccess\bin\Release\Microsoft.Practices.ServiceLocation.dll
+F:\Projects\GlobalHospitalApi\DBAccess\bin\Release\Microsoft.Practices.Unity.Configuration.dll
+F:\Projects\GlobalHospitalApi\DBAccess\bin\Release\Microsoft.Practices.Unity.dll
+F:\Projects\GlobalHospitalApi\DBAccess\bin\Release\MultipartDataMediaFormatter.dll
+F:\Projects\GlobalHospitalApi\DBAccess\bin\Release\Newtonsoft.Json.dll
+F:\Projects\GlobalHospitalApi\DBAccess\bin\Release\PushSharp.Amazon.dll
+F:\Projects\GlobalHospitalApi\DBAccess\bin\Release\PushSharp.Apple.dll
+F:\Projects\GlobalHospitalApi\DBAccess\bin\Release\PushSharp.Blackberry.dll
+F:\Projects\GlobalHospitalApi\DBAccess\bin\Release\PushSharp.Core.dll
+F:\Projects\GlobalHospitalApi\DBAccess\bin\Release\PushSharp.Firefox.dll
+F:\Projects\GlobalHospitalApi\DBAccess\bin\Release\PushSharp.Google.dll
+F:\Projects\GlobalHospitalApi\DBAccess\bin\Release\PushSharp.Windows.dll
+F:\Projects\GlobalHospitalApi\DBAccess\bin\Release\System.Net.Http.Formatting.dll
+F:\Projects\GlobalHospitalApi\DBAccess\bin\Release\Unity.Mvc3.dll
+F:\Projects\GlobalHospitalApi\DBAccess\bin\Release\EntityFramework.xml
+F:\Projects\GlobalHospitalApi\DBAccess\bin\Release\EntityFramework.SqlServer.xml
+F:\Projects\GlobalHospitalApi\DBAccess\bin\Release\Microsoft.Practices.ServiceLocation.pdb
+F:\Projects\GlobalHospitalApi\DBAccess\bin\Release\Microsoft.Practices.ServiceLocation.xml
+F:\Projects\GlobalHospitalApi\DBAccess\bin\Release\Microsoft.Practices.Unity.xml
+F:\Projects\GlobalHospitalApi\DBAccess\bin\Release\Microsoft.Practices.Unity.Configuration.xml
+F:\Projects\GlobalHospitalApi\DBAccess\bin\Release\Newtonsoft.Json.xml
+F:\Projects\GlobalHospitalApi\DBAccess\bin\Release\System.Net.Http.Formatting.xml
+F:\Projects\GlobalHospitalApi\DBAccess\obj\Release\DBAccess.csprojResolveAssemblyReference.cache
+F:\Projects\GlobalHospitalApi\DBAccess\obj\Release\DBAccess.dll
+F:\Projects\GlobalHospitalApi\DBAccess\obj\Release\DBAccess.pdb
+F:\Projects\GlobalHospitalApi\QuickApi\DBAccess\bin\Release\DBAccess.dll.config
+F:\Projects\GlobalHospitalApi\QuickApi\DBAccess\bin\Release\DBAccess.dll
+F:\Projects\GlobalHospitalApi\QuickApi\DBAccess\bin\Release\DBAccess.pdb
+F:\Projects\GlobalHospitalApi\QuickApi\DBAccess\bin\Release\CloudrailSI.dll
+F:\Projects\GlobalHospitalApi\QuickApi\DBAccess\bin\Release\EntityFramework.dll
+F:\Projects\GlobalHospitalApi\QuickApi\DBAccess\bin\Release\EntityFramework.SqlServer.dll
+F:\Projects\GlobalHospitalApi\QuickApi\DBAccess\bin\Release\Microsoft.Practices.ServiceLocation.dll
+F:\Projects\GlobalHospitalApi\QuickApi\DBAccess\bin\Release\Microsoft.Practices.Unity.Configuration.dll
+F:\Projects\GlobalHospitalApi\QuickApi\DBAccess\bin\Release\Microsoft.Practices.Unity.dll
+F:\Projects\GlobalHospitalApi\QuickApi\DBAccess\bin\Release\MultipartDataMediaFormatter.dll
+F:\Projects\GlobalHospitalApi\QuickApi\DBAccess\bin\Release\Newtonsoft.Json.dll
+F:\Projects\GlobalHospitalApi\QuickApi\DBAccess\bin\Release\PushSharp.Amazon.dll
+F:\Projects\GlobalHospitalApi\QuickApi\DBAccess\bin\Release\PushSharp.Apple.dll
+F:\Projects\GlobalHospitalApi\QuickApi\DBAccess\bin\Release\PushSharp.Blackberry.dll
+F:\Projects\GlobalHospitalApi\QuickApi\DBAccess\bin\Release\PushSharp.Core.dll
+F:\Projects\GlobalHospitalApi\QuickApi\DBAccess\bin\Release\PushSharp.Firefox.dll
+F:\Projects\GlobalHospitalApi\QuickApi\DBAccess\bin\Release\PushSharp.Google.dll
+F:\Projects\GlobalHospitalApi\QuickApi\DBAccess\bin\Release\PushSharp.Windows.dll
+F:\Projects\GlobalHospitalApi\QuickApi\DBAccess\bin\Release\System.Net.Http.Formatting.dll
+F:\Projects\GlobalHospitalApi\QuickApi\DBAccess\bin\Release\Unity.Mvc3.dll
+F:\Projects\GlobalHospitalApi\QuickApi\DBAccess\bin\Release\EntityFramework.xml
+F:\Projects\GlobalHospitalApi\QuickApi\DBAccess\bin\Release\EntityFramework.SqlServer.xml
+F:\Projects\GlobalHospitalApi\QuickApi\DBAccess\bin\Release\Microsoft.Practices.ServiceLocation.pdb
+F:\Projects\GlobalHospitalApi\QuickApi\DBAccess\bin\Release\Microsoft.Practices.ServiceLocation.xml
+F:\Projects\GlobalHospitalApi\QuickApi\DBAccess\bin\Release\Microsoft.Practices.Unity.xml
+F:\Projects\GlobalHospitalApi\QuickApi\DBAccess\bin\Release\Microsoft.Practices.Unity.Configuration.xml
+F:\Projects\GlobalHospitalApi\QuickApi\DBAccess\bin\Release\Newtonsoft.Json.xml
+F:\Projects\GlobalHospitalApi\QuickApi\DBAccess\bin\Release\System.Net.Http.Formatting.xml
+F:\Projects\GlobalHospitalApi\QuickApi\DBAccess\obj\Release\DBAccess.csprojResolveAssemblyReference.cache
+F:\Projects\GlobalHospitalApi\QuickApi\DBAccess\obj\Release\DBAccess.dll
+F:\Projects\GlobalHospitalApi\QuickApi\DBAccess\obj\Release\DBAccess.pdb
